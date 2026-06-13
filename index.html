@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pickleball Club Utilization Dashboard</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+  min-height: 100vh;
+  font-size: 14px;
+}
+
+.header {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0d7fc0 100%);
+  color: white;
+  padding: 18px 24px 16px;
+}
+.header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
+.header .sub { font-size: 0.78rem; opacity: 0.75; margin-top: 3px; }
+
+.stats-bar {
+  display: flex;
+  gap: 0;
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+.stat {
+  padding: 14px 20px;
+  border-right: 1px solid #f1f5f9;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+.stat-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; margin-bottom: 3px; }
+.stat-value { font-size: 1.25rem; font-weight: 700; line-height: 1.1; }
+.stat-sub { font-size: 0.7rem; color: #94a3b8; margin-top: 2px; }
+
+.tabs {
+  display: flex;
+  background: white;
+  border-bottom: 2px solid #e2e8f0;
+  padding: 0 20px;
+}
+.tab {
+  padding: 11px 18px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.15s;
+  user-select: none;
+}
+.tab.active { color: #0d7fc0; border-bottom-color: #0d7fc0; }
+.tab:hover:not(.active) { color: #334155; }
+
+.content { padding: 20px; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  margin-bottom: 18px;
+}
+.card-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+.chart-wrap { position: relative; height: 260px; }
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 12px;
+}
+.club-card {
+  background: white;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-left: 4px solid #ccc;
+  transition: box-shadow 0.15s;
+}
+.club-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+.cn { font-size: 0.82rem; font-weight: 600; margin-bottom: 1px; }
+.cl { font-size: 0.7rem; color: #94a3b8; margin-bottom: 11px; }
+.uv { font-size: 1.7rem; font-weight: 700; line-height: 1; }
+.ul { font-size: 0.7rem; color: #94a3b8; margin-left: 6px; }
+.urow { display: flex; align-items: baseline; margin-bottom: 6px; }
+.ubar-bg { height: 5px; background: #f1f5f9; border-radius: 3px; margin: 6px 0 8px; overflow: hidden; }
+.ubar { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
+.cmeta { font-size: 0.68rem; color: #b0bec5; line-height: 1.4; }
+.na-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  background: #f8fafc;
+  color: #94a3b8;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 6px;
+}
+
+.notice {
+  padding: 10px 14px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: #1d4ed8;
+  margin-bottom: 16px;
+}
+.notice-warn {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+th {
+  background: #f8fafc;
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+td { padding: 9px 12px; border-bottom: 1px solid #f8fafc; color: #334155; }
+tr:hover td { background: #fafcfe; }
+.pill {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.ph { background: #fee2e2; color: #dc2626; }
+.pm { background: #fef3c7; color: #b45309; }
+.pl { background: #dcfce7; color: #15803d; }
+.pn { background: #f1f5f9; color: #94a3b8; }
+
+.legend-badge {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<script>
+// ================================================================
+//  CLUB METADATA (static â not replaced by scheduled task)
+// ================================================================
+const CLUBS = {
+  fairgrounds_red_deer:  { name:"Fairgrounds Red Deer",      short:"FG Red Deer",   loc:"Red Deer, AB",    platform:"Podplay",       courts:14, color:"#e74c3c" },
+  fairgrounds_cloverdale:{ name:"Fairgrounds Cloverdale",    short:"FG Cloverdale", loc:"Etobicoke, ON",   platform:"Podplay",       courts:11, color:"#f39c12" },
+  picklr_toronto_west:   { name:"The Picklr Toronto West",   short:"Picklr TW",     loc:"Etobicoke, ON",   platform:"CatchCorner",   courts:9,  color:"#27ae60" },
+  vaughan_sportsplex:    { name:"Vaughan Sportsplex",        short:"Vaughan SP",    loc:"Vaughan, ON",     platform:"CatchCorner",   courts:11, color:"#2980b9" },
+  picklrs_hub:           { name:"Picklrs Hub",               short:"Picklrs Hub",   loc:"Location TBD",   platform:"CourtReserve",  courts:9,  color:"#8e44ad" },
+  picklex:               { name:"PickleX",                   short:"PickleX",       loc:"Oakville, ON",    platform:"CourtReserve",  courts:null,color:"#c0392b", limited:true, limitNote:"Member login required" },
+  blue_zone:             { name:"Blue Zone",                 short:"Blue Zone",     loc:"Location TBD",   platform:"Custom",        courts:null,color:"#16a085", limited:true, limitNote:"Login required to view" },
+  smash_pb_london:       { name:"Smash PB London",           short:"Smash PB",      loc:"London, ON",      platform:"Custom",        courts:9,  color:"#d35400" }
+};
+const CLUB_IDS = Object.keys(CLUBS);
+
+// ================================================================
+//  TODAY'S DATA  â replaced daily by scheduled task
+// ================================================================
+const TODAY_DATA = {
+  date: "2026-06-13",
+  scraped_at: "2026-06-13T21:00:00",
+  note: "Initial snapshot (evening scrape). Blue Zone & PickleX now included via logged-in session. Full-day 9am scrapes begin June 14.",
+  clubs: {
+    fairgrounds_red_deer:   { util:1.2,  booked:1,  total:84,  note:"14 courts Ã 6 remaining afternoon hrs" },
+    fairgrounds_cloverdale: { util:15.9, booked:7,  total:44,  note:"11 courts Ã 4 remaining afternoon hrs" },
+    picklr_toronto_west:    { util:null, note:"Scraped late in day â full-day data from June 14" },
+    vaughan_sportsplex:     { util:null, note:"Scraped late in day â full-day data from June 14" },
+    picklrs_hub:            { util:null, note:"Scraped late in day â full-day data from June 14" },
+    picklex:                { util:82.1, booked:81, total:98,  note:"7 courts Ã 14 hrs (8amâ10pm), 30-min slots" },
+    blue_zone:              { util:42.4, booked:70, total:165, note:"11 pickleball courts Ã 15 hrs (7amâ10pm)" },
+    smash_pb_london:        { util:51.3, booked:60, total:117, note:"9 courts Ã 13 hrs (7amâ8pm), calendar view" }
+  }
+};
+
+// ================================================================
+//  LOCALSTORAGE â accumulate snapshots across days
+// ================================================================
+const STORAGE_KEY = 'pb_tracker_v1';
+let history = [];
+try { history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) {}
+const ti = history.findIndex(s => s.date === TODAY_DATA.date);
+if (ti >= 0) history[ti] = TODAY_DATA; else history.push(TODAY_DATA);
+history.sort((a,b) => a.date.localeCompare(b.date));
+try { localStorage.setItem(STORAGE_KEY, JSON.stringify(history)); } catch(e) {}
+
+// ================================================================
+//  HELPERS
+// ================================================================
+function fmtDate(d) {
+  const [y,m,day] = d.split('-');
+  return new Date(+y,+m-1,+day).toLocaleDateString('en-CA', {month:'short', day:'numeric'});
+}
+function utilColor(u) {
+  if (u == null) return '#cbd5e1';
+  if (u >= 70) return '#ef4444';
+  if (u >= 40) return '#f59e0b';
+  return '#22c55e';
+}
+function pillCls(u) {
+  if (u == null) return 'pn';
+  if (u >= 70) return 'ph';
+  if (u >= 40) return 'pm';
+  return 'pl';
+}
+function pillTxt(u) {
+  if (u == null) return 'N/A';
+  if (u >= 70) return 'HIGH';
+  if (u >= 40) return 'MED';
+  return 'LOW';
+}
+function getLatest() { return history[history.length - 1]; }
+</script>
+
+<!-- ============ HEADER ============ -->
+<div class="header">
+  <h1>ð Pickleball Club Utilization Dashboard</h1>
+  <div class="sub">Competitor intelligence â 8 clubs Â· updated daily at 9am</div>
+</div>
+
+<!-- ============ STATS BAR ============ -->
+<div class="stats-bar" id="stats-bar"></div>
+
+<!-- ============ TABS ============ -->
+<div class="tabs">
+  <div class="tab active" data-tab="today">Today</div>
+  <div class="tab" data-tab="trends">Trends</div>
+  <div class="tab" data-tab="table">All Data</div>
+</div>
+
+<!-- ============ CONTENT ============ -->
+<div class="content">
+
+  <!-- TODAY -->
+  <div class="tab-panel active" id="panel-today">
+    <div class="notice" id="today-notice"></div>
+    <div class="notice notice-warn" id="login-notice" style="display:none">
+      â ï¸ <strong>Blue Zone</strong> and <strong>PickleX</strong> require login to view court availability. Check those sites manually and note here if needed.
+    </div>
+    <div class="card">
+      <div class="card-title">Utilization Rate by Club â <span id="today-label"></span></div>
+      <div class="chart-wrap"><canvas id="bar-chart"></canvas></div>
+    </div>
+    <div class="club-grid" id="club-grid"></div>
+  </div>
+
+  <!-- TRENDS -->
+  <div class="tab-panel" id="panel-trends">
+    <div class="card">
+      <div class="card-title">Daily Utilization Trend</div>
+      <div class="chart-wrap"><canvas id="line-chart"></canvas></div>
+    </div>
+    <div class="card" id="trend-legend" style="padding:14px 20px"></div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="tab-panel" id="panel-table">
+    <div class="card">
+      <div class="card-title">Full Historical Data</div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr>
+            <th>Date</th><th>Club</th><th>Platform</th>
+            <th>Util %</th><th>Booked hrs</th><th>Total hrs</th>
+            <th>Level</th><th>Notes</th>
+          </tr></thead>
+          <tbody id="history-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<script>
+// ================================================================
+//  RENDER STATS BAR
+// ================================================================
+function renderStats() {
+  const latest = getLatest();
+  const withData = CLUB_IDS.filter(id => latest.clubs[id]?.util != null);
+  const utils = withData.map(id => latest.clubs[id].util);
+  const avg = utils.length ? (utils.reduce((a,b)=>a+b,0)/utils.length).toFixed(1) : null;
+  const maxId = utils.length ? withData[utils.indexOf(Math.max(...utils))] : null;
+  const minId = utils.length ? withData[utils.indexOf(Math.min(...utils))] : null;
+
+  document.getElementById('stats-bar').innerHTML = `
+    <div class="stat">
+      <div class="stat-label">Tracking Since</div>
+      <div class="stat-value">${fmtDate(history[0].date)}</div>
+      <div class="stat-sub">${history.length} day${history.length!==1?'s':''} recorded</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Clubs with Data</div>
+      <div class="stat-value">${withData.length}<span style="font-size:0.9rem;color:#94a3b8"> / ${CLUB_IDS.length}</span></div>
+      <div class="stat-sub">2 require manual login</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Avg Utilization</div>
+      <div class="stat-value" style="color:#3b82f6">${avg != null ? avg+'%' : 'â'}</div>
+      <div class="stat-sub">clubs with data</div>
+    </div>
+    ${maxId ? `<div class="stat">
+      <div class="stat-label">ð´ Busiest</div>
+      <div class="stat-value" style="color:#ef4444">${latest.clubs[maxId].util.toFixed(1)}%</div>
+      <div class="stat-sub">${CLUBS[maxId].short}</div>
+    </div>` : ''}
+    ${minId ? `<div class="stat">
+      <div class="stat-label">ð¢ Most Available</div>
+      <div class="stat-value" style="color:#22c55e">${latest.clubs[minId].util.toFixed(1)}%</div>
+      <div class="stat-sub">${CLUBS[minId].short}</div>
+    </div>` : ''}
+    <div class="stat">
+      <div class="stat-label">Last Updated</div>
+      <div class="stat-value" style="font-size:1rem">${fmtDate(latest.date)}</div>
+      <div class="stat-sub">$x(latest.scraped_at||'').split('T')[1]?.slice(0,5)||''} Â· daily 9am</div>
+    </div>
+  `;
+}
+
+// ================================================================
+//  RENDER TODAY NOTICE & LABEL
+// ================================================================
+function renderTodayMeta() {
+  const latest = getLatest();
+  document.getElementById('today-notice').textContent = `ð ${latest.note || 'Data collected ' + latest.date}`;
+  document.getElementById('today-label').textContent = fmtDate(latest.date);
+  const hasLimited = CLUB_IDS.some(id => CLUBS[id].limited);
+  if (hasLimited) document.getElementById('login-notice').style.display = 'block';
+}
+
+// ================================================================
+//  BAR CHART
+// ================================================================
+let barChart;
+function renderBarChart() {
+  const latest = getLatest();
+  const labels = CLUB_IDS.map(id => CLUBS[id].short);
+  const data   = CLUB_IDS.map(id => {
+    const u = latest.clubs[id]?.util;
+    return u != null ? u : 0;
+  });
+  const colors = CLUB_IDS.map(id => {
+    const u = latest.clubs[id]?.util;
+    return u != null ? CLUBS[id].color : '#e2e8f0';
+  });
+
+  const ctx = document.getElementById('bar-chart').getContext('2d');
+  if (barChart) barChart.destroy();
+  barChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data, backgroundColor: colors,
+        borderRadius: 5, borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const id = CLUB_IDS[ctx.dataIndex];
+              const u = latest.clubs[id]?.util;
+              if (u == null) {
+                const n = latest.clubs[id]?.note;
+                return n ? `No data â ${n}` : 'No data';
+              }
+              return `${u.toFixed(1)}% utilization`;
+            },
+            title: ctx => CLUBS[CLUB_IDS[ctx[0].dataIndex]].name
+          }
+        }
+      },
+      scales: {
+        y: {
+          min:0, max:100,
+          ticks: { callback: v => v+'%', font:{size:11} },
+          grid: { color:'#f1f5f9' }
+        },
+        x: {
+          ticks: { font:{size:11} },
+          grid: { display:false }
+        }
+      }
+    }
+  });
+}
+
+// ================================================================
+//  CLUB CARDS
+// ================================================================
+function renderClubCards() {
+  const latest = getLatest();
+  document.getElementById('club-grid').innerHTML = CLUB_IDS.map(id => {
+    const m = CLUBS[id];
+    const d = latest.clubs[id] || {};
+    const u = d.util;
+    const hasData = u != null;
+    const c = utilColor(u);
+    return `<div class="club-card" style="border-left-color:${m.color}">
+      <div class="cn">${m.name}</div>
+      <div class="cl">${m.loc} Â· ${m.platform}</div>
+      ${hasData
+        ? `<div class="urow"><span class="uv" style="color:${c}">${u.toFixed(1)}%</span><span class="ul">utilized</span></div>
+           <div class="ubar-bg"><div class="ubar" style="width:${Math.min(u,100)}%;background:${c}"></div></div>
+           <div class="cmeta">${d.booked!=null?`${d.booked}/${d.total} court-hrs`:''}${d.note?' Â· '+d.note:''}</div>`
+        : `<span class="na-tag">No data</span>
+           <div class="cmeta">${d.note||m.limitNote||''}</div>`
+      }
+    </div>`;
+  }).join('');
+}
+
+// ================================================================
+//  LINE CHART
+// ================================================================
+let lineChart;
+function renderLineChart() {
+  const dates = history.map(s => fmtDate(s.date));
+  const datasets = CLUB_IDS.map(id => {
+    const vals = history.map(s => {
+      const u = s.clubs[id]?.util;
+      return u != null ? u : null;
+    });
+    if (vals.every(v => v === null)) return null;
+    return {
+      label: CLUBS[id].name,
+      data: vals,
+      borderColor: CLUBS[id].color,
+      backgroundColor: CLUBS[id].color + '18',
+      borderWidth: 2.5,
+      pointRadius: history.length > 14 ? 2 : 4,
+      pointHoverRadius: 6,
+      spanGaps: false,
+      tension: 0.3,
+      fill: false
+    };
+  }).filter(Boolean);
+
+  const ctx = document.getElementById('line-chart').getContext('2d');
+  if (lineChart) lineChart.destroy();
+  lineChart = new Chart(ctx, {
+    type: 'line',
+    data: { labels: dates, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { mode:'index', intersect:false,
+          callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(1)}%` }
+        }
+      },
+      scales: {
+        y: {
+          min:0, max:100,
+          ticks: { callback: v => v+'%', font:{size:11} },
+          grid: { color:'#f1f5f9' }
+        },
+        x: { grid: { color:'#f1f5f9' }, ticks: { font:{size:11} } }
+      }
+    }
+  });
+
+  // Custom legend
+  document.getElementById('trend-legend').innerHTML = datasets.map(ds =>
+    `<span style="margin-right:14px;white-space:nowrap;font-size:0.75rem">
+      <span class="legend-badge" style="background:${ds.borderColor}"></span>${ds.label}
+    </span>`
+  ).join('');
+}
+
+// ================================================================
+//  DATA TABLE
+// ================================================================
+function renderTable() {
+  const rows = [];
+  history.slice().reverse().forEach(snap => {
+    CLUB_IDS.forEach(id => {
+      const d = snap.clubs[id] || {};
+      const u = d.util;
+      rows.push(`<tr>
+        <td>${fmtDate(snap.date)}</td>
+        <td>${CLUBS[id].name}</td>
+        <td style="color:#94a3b8;font-size:0.7rem">${CLUBS[id].platform}</td>
+        <td><strong>${u!=null?u.toFixed(1)+'%':'â'}</strong></td>
+        <td>${d.booked??'â'}</td>
+        <td>${d.total??'â'}</td>
+        <td><span class="pill ${pillCls(u)}">${pillTxt(u)}</span></td>
+        <td style="color:#94a3b8;font-size:0.7rem;max-width:200px">${d.note||''}</td>
+      </tr>`);
+    });
+  });
+  document.getElementById('history-tbody').innerHTML = rows.join('');
+}
+
+// ================================================================
+//  TABS
+// ================================================================
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const name = tab.dataset.tab;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + name).classList.add('active');
+    if (name === 'trends') renderLineChart();
+    if (name === 'today') renderBarChart();
+  });
+});
+
+// ================================================================
+//  INIT
+// ================================================================
+renderStats();
+renderTodayMeta();
+renderBarChart();
+renderClubCards();
+renderTable();
+</script>
+</body>
+</html>
