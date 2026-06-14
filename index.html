@@ -188,18 +188,18 @@ const CLUB_IDS = Object.keys(CLUBS);
 //  TODAY'S DATA  â replaced daily by scheduled task
 // ================================================================
 const TODAY_DATA = {
-  date: "2026-06-13",
-  scraped_at: "2026-06-13T21:00:00",
-  note: "Initial snapshot (evening scrape). Blue Zone & PickleX now included via logged-in session. Full-day 9am scrapes begin June 14.",
+  date: "2026-06-14",
+  scraped_at: "2026-06-14T16:45:00",
+  note: "Daily snapshot — all 8 clubs with live data (Blue Zone & PickleX via member login).",
   clubs: {
-    fairgrounds_red_deer:   { util:1.2,  booked:1,  total:84,  note:"14 courts Ã 6 remaining afternoon hrs" },
-    fairgrounds_cloverdale: { util:15.9, booked:7,  total:44,  note:"11 courts Ã 4 remaining afternoon hrs" },
-    picklr_toronto_west:    { util:null, note:"Scraped late in day â full-day data from June 14" },
-    vaughan_sportsplex:     { util:null, note:"Scraped late in day â full-day data from June 14" },
-    picklrs_hub:            { util:null, note:"Scraped late in day â full-day data from June 14" },
-    picklex:                { util:82.1, booked:81, total:98,  note:"7 courts Ã 14 hrs (8amâ10pm), 30-min slots" },
-    blue_zone:              { util:42.4, booked:70, total:165, note:"11 pickleball courts Ã 15 hrs (7amâ10pm)" },
-    smash_pb_london:        { util:51.3, booked:60, total:117, note:"9 courts Ã 13 hrs (7amâ8pm), calendar view" }
+    fairgrounds_red_deer:   { util:20.1, booked:31,   total:154, note:"14 courts × 11 slots (11am–9pm); ladder event 6–9pm" },
+    fairgrounds_cloverdale: { util:67.7, booked:67,   total:99,  note:"11 courts × 9 slots (1pm–9pm); open play sessions heavily booked" },
+    picklr_toronto_west:    { util:88.2, booked:127,  total:144, note:"9 courts × 16 hrs (7am–11pm); 17 court-hrs remaining" },
+    vaughan_sportsplex:     { util:88.5, booked:146,  total:165, note:"11 courts × 15 hrs (7am–10pm); 19 court-hrs available" },
+    picklrs_hub:            { util:42.3, booked:22,   total:52,  note:"Reserve:30, Reserved:13, Waitlist:9; CourtReserve grid" },
+    picklex:                { util:25.0, booked:21,   total:84,  note:"7 courts, 30-min slots (8am–9pm); Reserve:63, Reserved:17, Waitlist:4" },
+    blue_zone:              { util:23.4, booked:37.5, total:160, note:"10 pickleball courts × 16 hrs (7am–11pm); calendar view parsed" },
+    smash_pb_london:        { util:74.4, booked:87,   total:117, note:"9 courts × 13 hrs (7am–8pm); calendar view parsed" }
   }
 };
 
