@@ -3,210 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pickleball Club Utilization Dashboard</title>
+<title>Pickleplex Competitive Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
 <style>
-:root { color-scheme: light; }
+:root { color-scheme: light; --px-green: #00a651; --px-dark: #007a3d; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-  background: #f1f5f9;
-  color: #0f172a;
-  min-height: 100vh;
-  font-size: 14px;
-}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; color: #0f172a; min-height: 100vh; font-size: 14px; }
 
-.header {
-  background: linear-gradient(135deg, #1e3a5f 0%, #0d7fc0 100%);
-  color: white;
-  padding: 18px 24px 16px;
-}
-.header h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
-.header .sub { font-size: 0.78rem; opacity: 0.75; margin-top: 3px; }
+.header { background: linear-gradient(135deg, #003d1f 0%, #00a651 100%); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.header h1 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
+.header .sub { font-size: 0.75rem; opacity: 0.8; margin-top: 2px; }
+.header-right { text-align: right; font-size: 0.72rem; opacity: 0.8; }
 
-.stats-bar {
-  display: flex;
-  gap: 0;
-  background: white;
-  border-bottom: 1px solid #e2e8f0;
-  overflow-x: auto;
-}
-.stat {
-  padding: 14px 20px;
-  border-right: 1px solid #f1f5f9;
-  min-width: 120px;
-  flex-shrink: 0;
-}
-.stat-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; margin-bottom: 3px; }
-.stat-value { font-size: 1.25rem; font-weight: 700; line-height: 1.1; }
-.stat-sub { font-size: 0.7rem; color: #94a3b8; margin-top: 2px; }
+.stats-bar { display: flex; background: white; border-bottom: 1px solid #e2e8f0; overflow-x: auto; }
+.stat { padding: 12px 18px; border-right: 1px solid #f1f5f9; min-width: 110px; flex-shrink: 0; }
+.stat-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; margin-bottom: 2px; }
+.stat-value { font-size: 1.2rem; font-weight: 700; line-height: 1.1; }
+.stat-sub { font-size: 0.68rem; color: #94a3b8; margin-top: 2px; }
 
-.tabs {
-  display: flex;
-  background: white;
-  border-bottom: 2px solid #e2e8f0;
-  padding: 0 20px;
-}
-.tab {
-  padding: 11px 18px;
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: #64748b;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-  transition: all 0.15s;
-  user-select: none;
-}
-.tab.active { color: #0d7fc0; border-bottom-color: #0d7fc0; }
+.tabs { display: flex; background: white; border-bottom: 2px solid #e2e8f0; padding: 0 20px; }
+.tab { padding: 10px 16px; font-size: 0.82rem; font-weight: 600; color: #64748b; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s; white-space: nowrap; }
+.tab.active { color: var(--px-green); border-bottom-color: var(--px-green); }
 .tab:hover:not(.active) { color: #334155; }
 
-.content { padding: 20px; }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-.card {
-  background: white;
-  border-radius: 10px;
-  padding: 18px 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
-  margin-bottom: 18px;
-}
-.card-title {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #64748b;
-  margin-bottom: 14px;
-}
-.chart-wrap { position: relative; height: 260px; }
+/* REGIONAL VIEW */
+.regions { padding: 16px 20px; display: flex; flex-direction: column; gap: 16px; }
+.region-section { background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); overflow: hidden; }
+.region-header { padding: 10px 16px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 0.8rem; font-weight: 700; color: #475569; display: flex; align-items: center; gap: 8px; }
+.region-header .region-name { color: #0f172a; }
+.region-clubs { display: flex; flex-wrap: wrap; gap: 0; }
 
-.club-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
-  gap: 12px;
-}
-.club-card {
-  background: white;
-  border-radius: 10px;
-  padding: 14px 16px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  border-left: 4px solid #ccc;
-  transition: box-shadow 0.15s;
-}
-.club-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
-.cn { font-size: 0.82rem; font-weight: 600; margin-bottom: 1px; }
-.cl { font-size: 0.7rem; color: #94a3b8; margin-bottom: 11px; }
-.uv { font-size: 1.7rem; font-weight: 700; line-height: 1; }
-.ul { font-size: 0.7rem; color: #94a3b8; margin-left: 6px; }
-.urow { display: flex; align-items: baseline; margin-bottom: 6px; }
-.ubar-bg { height: 5px; background: #f1f5f9; border-radius: 3px; margin: 6px 0 8px; overflow: hidden; }
-.ubar { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
-.cmeta { font-size: 0.68rem; color: #b0bec5; line-height: 1.4; }
-.na-tag {
-  display: inline-block;
-  font-size: 0.68rem;
-  padding: 2px 8px;
-  background: #f8fafc;
-  color: #94a3b8;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  margin-bottom: 6px;
-}
+.club-card { flex: 1; min-width: 150px; max-width: 220px; border-right: 1px solid #f1f5f9; padding: 12px 14px; position: relative; }
+.club-card:last-child { border-right: none; }
+.club-card.own { background: #f0fdf4; }
+.club-card.competitor { background: #fff; }
 
-.notice {
-  padding: 10px 14px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  border-radius: 8px;
-  font-size: 0.78rem;
-  color: #1d4ed8;
-  margin-bottom: 16px;
-}
-.notice-warn {
-  background: #fffbeb;
-  border-color: #fde68a;
-  color: #92400e;
-}
+.club-type-pill { display: inline-block; font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 6px; border-radius: 99px; margin-bottom: 5px; }
+.own .club-type-pill { background: #dcfce7; color: #166534; }
+.competitor .club-type-pill { background: #fef3c7; color: #92400e; }
 
-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
-th {
-  background: #f8fafc;
-  padding: 9px 12px;
-  text-align: left;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #94a3b8;
-  border-bottom: 1px solid #e2e8f0;
-  white-space: nowrap;
-}
-td { padding: 9px 12px; border-bottom: 1px solid #f8fafc; color: #334155; }
-tr:hover td { background: #fafcfe; }
-.pill {
-  display: inline-block;
-  padding: 2px 7px;
-  border-radius: 20px;
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-}
-.ph { background: #fee2e2; color: #dc2626; }
-.pm { background: #fef3c7; color: #b45309; }
-.pl { background: #dcfce7; color: #15803d; }
-.pn { background: #f1f5f9; color: #94a3b8; }
+.club-card-name { font-size: 0.82rem; font-weight: 700; color: #0f172a; line-height: 1.2; margin-bottom: 2px; }
+.club-card-loc { font-size: 0.68rem; color: #94a3b8; margin-bottom: 8px; }
+.club-util-num { font-size: 1.5rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+.util-bar-bg { height: 5px; background: #e2e8f0; border-radius: 99px; overflow: hidden; margin-bottom: 6px; }
+.util-bar-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+.club-card-meta { font-size: 0.65rem; color: #94a3b8; }
+.club-card-meta span { margin-right: 8px; }
+.club-card-note { font-size: 0.62rem; color: #94a3b8; font-style: italic; margin-top: 3px; }
 
-.legend-badge {
-  display: inline-block;
-  width: 10px; height: 10px;
-  border-radius: 2px;
-  margin-right: 5px;
-  vertical-align: middle;
-}
+.null-util { font-size: 1.1rem; font-weight: 700; color: #cbd5e1; }
+.limited-badge { display: inline-block; font-size: 0.58rem; background: #fef9c3; color: #854d0e; border: 1px solid #fde68a; border-radius: 3px; padding: 1px 5px; margin-top: 3px; }
+
+.vs-divider { width: 1px; background: linear-gradient(to bottom, transparent, #cbd5e1 30%, #cbd5e1 70%, transparent); margin: 8px 0; flex-shrink: 0; }
+
+/* CHARTS */
+.charts-panel { padding: 20px; display: flex; flex-direction: column; gap: 24px; }
+.chart-card { background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); padding: 20px; }
+.chart-title { font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+.chart-sub { font-size: 0.72rem; color: #94a3b8; margin-bottom: 16px; }
+.chart-wrap { position: relative; }
+
+/* TABLE */
+.table-panel { padding: 20px; }
+.data-table { width: 100%; background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); border-collapse: collapse; overflow: hidden; }
+.data-table th { padding: 10px 14px; text-align: left; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+.data-table td { padding: 9px 14px; border-bottom: 1px solid #f1f5f9; font-size: 0.8rem; vertical-align: middle; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: #f8fafc; }
+.type-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; vertical-align: middle; }
+.trend-up { color: #16a34a; }
+.trend-dn { color: #dc2626; }
+
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 0.72rem; color: #475569; }
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<script>
-// ================================================================
-//  CLUB METADATA (static â not replaced by scheduled task)
-// ================================================================
-const CLUBS = {
-  fairgrounds_red_deer:  { name:"Fairgrounds Red Deer",      short:"FG Red Deer",   loc:"Red Deer, AB",    platform:"Podplay",       courts:14, color:"#e74c3c" },
-  fairgrounds_cloverdale:{ name:"Fairgrounds Cloverdale",    short:"FG Cloverdale", loc:"Etobicoke, ON",   platform:"Podplay",       courts:11, color:"#f39c12" },
-  picklr_toronto_west:   { name:"The Picklr Toronto West",   short:"Picklr TW",     loc:"Etobicoke, ON",   platform:"CatchCorner",   courts:9,  color:"#27ae60" },
-  vaughan_sportsplex:    { name:"Vaughan Sportsplex",        short:"Vaughan SP",    loc:"Vaughan, ON",     platform:"CatchCorner",   courts:11, color:"#2980b9" },
-  picklrs_hub:           { name:"Picklrs Hub",               short:"Picklrs Hub",   loc:"Location TBD",   platform:"CourtReserve",  courts:9,  color:"#8e44ad" },
-  picklex:               { name:"PickleX",                   short:"PickleX",       loc:"Oakville, ON",    platform:"CourtReserve",  courts:null,color:"#c0392b", limited:true, limitNote:"Member login required" },
-  blue_zone:             { name:"Blue Zone",                 short:"Blue Zone",     loc:"Location TBD",   platform:"Custom",        courts:null,color:"#16a085", limited:true, limitNote:"Login required to view" },
-  smash_pb_london:       { name:"Smash PB London",           short:"Smash PB",      loc:"London, ON",      platform:"Custom",        courts:9,  color:"#d35400" }
-};
-const CLUB_IDS = Object.keys(CLUBS);
+<div class="header">
+  <div>
+    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">ð¥ Pickleplex Competitive Dashboard</div>
+    <div class="sub" id="hdr-sub">Loadingâ¦</div>
+  </div>
+  <div class="header-right" id="hdr-right"></div>
+</div>
 
-// ================================================================
-//  TODAY'S DATA  â replaced daily by scheduled task
-// ================================================================
+<div class="stats-bar" id="stats-bar"></div>
+
+<div class="tabs">
+  <div class="tab active" data-tab="regions">By Region</div>
+  <div class="tab" data-tab="charts">Charts</div>
+  <div class="tab" data-tab="table">All Data</div>
+  <div class="tab" data-tab="trends">Trends</div>
+</div>
+
+<div id="tab-regions" class="tab-panel active">
+  <div class="regions" id="regions-container"></div>
+</div>
+
+<div id="tab-charts" class="tab-panel">
+  <div class="charts-panel">
+    <div class="chart-card">
+      <div class="chart-title">Pickleplex Locations â Today's Utilization</div>
+      <div class="chart-sub" id="chart-sub-px">Court hours booked Ã· total court hours available (8amâ10pm)</div>
+      <div class="chart-wrap"><canvas id="barChartPX" height="160"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Competitors â Today's Utilization</div>
+      <div class="chart-sub">Data scraped from public booking pages</div>
+      <div class="chart-wrap"><canvas id="barChartComp" height="100"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-table" class="tab-panel">
+  <div class="table-panel">
+    <table class="data-table" id="data-table">
+      <thead><tr>
+        <th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>Booked Hrs</th><th>Total Hrs</th><th>Platform</th>
+      </tr></thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<div id="tab-trends" class="tab-panel">
+  <div class="charts-panel">
+    <div class="chart-card">
+      <div class="chart-title">Utilization Trends Over Time</div>
+      <div class="chart-sub">Historical daily utilization â accumulated from each 9am scrape</div>
+      <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
+      <div class="legend" id="trend-legend"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// âââ DATA ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+
+const CLUBS = {
+  // ââ Pickleplex (own) ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  pickleplex_barrie:     { name:"Pickleplex Barrie",     short:"Barrie",     loc:"Barrie, ON",       platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:13487 },
+  pickleplex_windsor:    { name:"Pickleplex Windsor",    short:"Windsor",    loc:"Windsor, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:13986 },
+  pickleplex_pickering:  { name:"Pickleplex Pickering",  short:"Pickering",  loc:"Pickering, ON",    platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:14195 },
+  pickleplex_belleville: { name:"Pickleplex Belleville", short:"Belleville", loc:"Belleville, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:15741 },
+  pickleplex_vaughan:    { name:"Pickleplex Vaughan",    short:"Vaughan",    loc:"Vaughan, ON",      platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:15790 },
+  pickleplex_promenade:  { name:"Pickleplex Promenade",  short:"Promenade",  loc:"Vaughan, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:15917 },
+  pickleplex_downsview:  { name:"Pickleplex Downsview",  short:"Downsview",  loc:"Toronto, ON",      platform:"CourtReserve", courts:13, color:"#00a651", type:"own", orgId:15926 },
+  pickleplex_oshawa:     { name:"Pickleplex Oshawa",     short:"Oshawa",     loc:"Oshawa, ON",       platform:"CourtReserve", courts:10, color:"#00a651", type:"own", orgId:15989 },
+  pickleplex_cambridge:  { name:"Pickleplex Cambridge",  short:"Cambridge",  loc:"Cambridge, ON",    platform:"CourtReserve", courts:12, color:"#00a651", type:"own", orgId:16359 },
+  pickleplex_red_deer:   { name:"Pickleplex Red Deer",   short:"PX Red Deer",loc:"Red Deer, AB",     platform:"CourtReserve", courts:9,  color:"#00a651", type:"own", orgId:16556 },
+  pickleplex_aurora:     { name:"Pickleplex Aurora",     short:"Aurora",     loc:"Aurora, ON",       platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17113 },
+  pickleplex_york_mills: { name:"Pickleplex York Mills", short:"York Mills", loc:"Toronto, ON",      platform:"CourtReserve", courts:3,  color:"#00a651", type:"own", orgId:17114 },
+  pickleplex_brantford:  { name:"Pickleplex Brantford",  short:"Brantford",  loc:"Brantford, ON",    platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17392 },
+  pickleplex_burloak:    { name:"Pickleplex Burloak",    short:"Burloak",    loc:"Burlington, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17621 },
+  // ââ Competitors ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+  fairgrounds_red_deer:  { name:"Fairgrounds Red Deer",       short:"FG Red Deer",  loc:"Red Deer, AB",    platform:"Podplay",      courts:14, color:"#e74c3c", type:"competitor" },
+  fairgrounds_cloverdale:{ name:"Fairgrounds Cloverdale",     short:"FG Cloverdale",loc:"Etobicoke, ON",   platform:"Podplay",      courts:11, color:"#f39c12", type:"competitor" },
+  picklr_toronto_west:   { name:"The Picklr Toronto West",    short:"Picklr TW",    loc:"Etobicoke, ON",   platform:"CatchCorner",  courts:9,  color:"#e67e22", type:"competitor" },
+  vaughan_sportsplex:    { name:"Vaughan Sportsplex",         short:"Vaughan SP",   loc:"Vaughan, ON",     platform:"CatchCorner",  courts:11, color:"#2980b9", type:"competitor" },
+  picklrs_hub:           { name:"Picklrs Hub",                short:"Picklrs Hub",  loc:"GTA, ON",         platform:"CourtReserve", courts:9,  color:"#8e44ad", type:"competitor" },
+  picklex:               { name:"PickleX",                    short:"PickleX",      loc:"Oakville, ON",    platform:"CourtReserve", courts:null,color:"#c0392b",type:"competitor", limited:true, limitNote:"Member login" },
+  blue_zone:             { name:"Blue Zone",                  short:"Blue Zone",    loc:"Toronto, ON",     platform:"Custom",       courts:null,color:"#16a085",type:"competitor", limited:true, limitNote:"Login required" },
+  smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" }
+};
+
+const REGIONS = [
+  { id:"red_deer",   name:"Red Deer, AB",            own:["pickleplex_red_deer"],                                             comp:["fairgrounds_red_deer"] },
+  { id:"north_gta",  name:"North GTA / Vaughan",      own:["pickleplex_vaughan","pickleplex_promenade","pickleplex_aurora"],   comp:["vaughan_sportsplex","picklrs_hub"] },
+  { id:"toronto",    name:"Toronto",                  own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west","blue_zone"] },
+  { id:"east_gta",   name:"East GTA",                 own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:[] },
+  { id:"burloak",    name:"Oakville / Burlington",    own:["pickleplex_burloak"],                                             comp:["picklex"] },
+  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:[] },
+  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
+  { id:"belleville", name:"Belleville, ON",           own:["pickleplex_belleville"],                                          comp:[] },
+  { id:"barrie",     name:"Barrie, ON",               own:["pickleplex_barrie"],                                              comp:[] },
+  { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:[] },
+];
+
+// ââ TODAY_DATA â replaced daily by scheduled task âââââââââââââââââââââââââ
 const TODAY_DATA = {
   date: "2026-06-16",
   scraped_at: "2026-06-16T09:00:00",
-  note: "Daily 9am snapshot",
+  note: "Pickleplex: live admin CourtReserve data. Competitors: last available scrape.",
   clubs: {
-    fairgrounds_red_deer:   { util:23.0, booked:45,  total:196, note:"14 courts x 14 slots (8am-9pm); 151 court-hrs available; 9am heavily booked (events)" },
-    fairgrounds_cloverdale: { util:53.8, booked:71,  total:132, note:"11 courts (8 std + 3 compact) x 12 slots (10am-9pm); std=32 avail, compact=29 avail" },
-    picklr_toronto_west:    { util:86.8, booked:125, total:144, note:"9 courts x 16 hrs (7am-11pm); 19 court-hrs available (courts 1,3-9 open 2-5pm)" },
-    vaughan_sportsplex:     { util:89.1, booked:147, total:165, note:"11 courts x 15 hrs (7am-10pm); 18 court-hrs available (courts 1,2,4,7,9-11 open noon-3pm)" },
-    picklrs_hub:            { util:22.9, booked:16,  total:70,  note:"CourtReserve: 54 Reserve, 8 Reserved, 8 Join Waitlist; total 70 slots" },
-    picklex:                { util:25.0, booked:25,  total:100, note:"7 courts, 30-min slots (8am-9pm); 75 Reserve, 17 Reserved, 8 Join Waitlist" },
-    blue_zone:              { util:39.4, booked:63,  total:160, note:"10 pickleball courts x 16hrs (7am-11pm); calendar view; courts 9-11 empty" },
-    smash_pb_london:        { util:70.9, booked:83,  total:117, note:"9 courts x 13hrs (7am-8pm); calendar view; courts 5-7 near-full" }
+    pickleplex_barrie:     { util:61.2, booked:60,  total:98,  note:"7 courts Ã 14 hrs" },
+    pickleplex_windsor:    { util:44.0, booked:37,  total:84,  note:"6 courts Ã 14 hrs" },
+    pickleplex_pickering:  { util:64.3, booked:63,  total:98,  note:"7 courts Ã 14 hrs" },
+    pickleplex_belleville: { util:67.9, booked:76,  total:112, note:"8 courts Ã 14 hrs" },
+    pickleplex_vaughan:    { util:69.6, booked:78,  total:112, note:"8 courts Ã 14 hrs" },
+    pickleplex_promenade:  { util:66.7, booked:56,  total:84,  note:"6 courts Ã 14 hrs" },
+    pickleplex_downsview:  { util:57.1, booked:104, total:182, note:"13 courts Ã 14 hrs" },
+    pickleplex_oshawa:     { util:54.3, booked:76,  total:140, note:"10 courts Ã 14 hrs" },
+    pickleplex_cambridge:  { util:30.4, booked:51,  total:168, note:"12 courts Ã 14 hrs" },
+    pickleplex_red_deer:   { util:42.1, booked:53,  total:126, note:"9 courts Ã 14 hrs" },
+    pickleplex_aurora:     { util:62.5, booked:70,  total:112, note:"8 courts Ã 14 hrs" },
+    pickleplex_york_mills: { util:52.4, booked:22,  total:42,  note:"3 courts Ã 14 hrs" },
+    pickleplex_brantford:  { util:17.9, booked:20,  total:112, note:"8 courts Ã 14 hrs" },
+    pickleplex_burloak:    { util:37.5, booked:42,  total:112, note:"8 courts Ã 14 hrs" },
+    fairgrounds_red_deer:  { util:1.2,  booked:1,   total:84,  note:"From Jun 13 scrape" },
+    fairgrounds_cloverdale:{ util:15.9, booked:7,   total:44,  note:"From Jun 13 scrape" },
+    picklr_toronto_west:   { util:null, note:"Awaiting 9am scrape" },
+    vaughan_sportsplex:    { util:null, note:"Awaiting 9am scrape" },
+    picklrs_hub:           { util:null, note:"Awaiting 9am scrape" },
+    picklex:               { util:82.1, booked:81,  total:98,  note:"Member login required" },
+    blue_zone:             { util:42.4, booked:70,  total:165, note:"From Jun 13 scrape" },
+    smash_pb_london:       { util:51.3, booked:60,  total:117, note:"From Jun 13 scrape" }
   }
 };
 
-// ================================================================
-//  LOCALSTORAGE â accumulate snapshots across days
-// ================================================================
-const STORAGE_KEY = 'pb_tracker_v1';
+// ââ localStorage history ââââââââââââââââââââââââââââââââââââââââââââââââââ
+const STORAGE_KEY = 'pb_tracker_v2';
 let history = [];
 try { history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) {}
 const ti = history.findIndex(s => s.date === TODAY_DATA.date);
@@ -214,342 +225,56 @@ if (ti >= 0) history[ti] = TODAY_DATA; else history.push(TODAY_DATA);
 history.sort((a,b) => a.date.localeCompare(b.date));
 try { localStorage.setItem(STORAGE_KEY, JSON.stringify(history)); } catch(e) {}
 
-// ================================================================
-//  HELPERS
-// ================================================================
-function fmtDate(d) {
-  const [y,m,day] = d.split('-');
-  return new Date(+y,+m-1,+day).toLocaleDateString('en-CA', {month:'short', day:'numeric'});
-}
+// ââ HELPERS âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+const CLUB_IDS = Object.keys(CLUBS);
+const OWN_IDS  = CLUB_IDS.filter(id => CLUBS[id].type === 'own');
+const COMP_IDS = CLUB_IDS.filter(id => CLUBS[id].type === 'competitor');
+
+function getUtil(id) { return TODAY_DATA.clubs[id]?.util ?? null; }
+
 function utilColor(u) {
-  if (u == null) return '#cbd5e1';
-  if (u >= 70) return '#ef4444';
-  if (u >= 40) return '#f59e0b';
-  return '#22c55e';
+  if (u === null) return '#cbd5e1';
+  if (u >= 70) return '#16a34a';
+  if (u >= 50) return '#ca8a04';
+  if (u >= 30) return '#ea580c';
+  return '#dc2626';
 }
-function pillCls(u) {
-  if (u == null) return 'pn';
-  if (u >= 70) return 'ph';
-  if (u >= 40) return 'pm';
-  return 'pl';
+
+function fmtUtil(u) {
+  if (u === null) return '<span class="null-util">â</span>';
+  return `<span style="color:${utilColor(u)}">${u.toFixed(1)}%</span>`;
 }
-function pillTxt(u) {
-  if (u == null) return 'N/A';
-  if (u >= 70) return 'HIGH';
-  if (u >= 40) return 'MED';
-  return 'LOW';
-}
-function getLatest() { return history[history.length - 1]; }
-</script>
 
-<!-- ============ HEADER ============ -->
-<div class="header">
-  <h1>ð Pickleball Club Utilization Dashboard</h1>
-  <div class="sub">Competitor intelligence â 8 clubs Â· updated daily at 9am</div>
-</div>
-
-<!-- ============ STATS BAR ============ -->
-<div class="stats-bar" id="stats-bar"></div>
-
-<!-- ============ TABS ============ -->
-<div class="tabs">
-  <div class="tab active" data-tab="today">Today</div>
-  <div class="tab" data-tab="trends">Trends</div>
-  <div class="tab" data-tab="table">All Data</div>
-</div>
-
-<!-- ============ CONTENT ============ -->
-<div class="content">
-
-  <!-- TODAY -->
-  <div class="tab-panel active" id="panel-today">
-    <div class="notice" id="today-notice"></div>
-    <div class="notice notice-warn" id="login-notice" style="display:none">
-      â ï¸ <strong>Blue Zone</strong> and <strong>PickleX</strong> require login to view court availability. Check those sites manually and note here if needed.
-    </div>
-    <div class="card">
-      <div class="card-title">Utilization Rate by Club â <span id="today-label"></span></div>
-      <div class="chart-wrap"><canvas id="bar-chart"></canvas></div>
-    </div>
-    <div class="club-grid" id="club-grid"></div>
-  </div>
-
-  <!-- TRENDS -->
-  <div class="tab-panel" id="panel-trends">
-    <div class="card">
-      <div class="card-title">Daily Utilization Trend</div>
-      <div class="chart-wrap"><canvas id="line-chart"></canvas></div>
-    </div>
-    <div class="card" id="trend-legend" style="padding:14px 20px"></div>
-  </div>
-
-  <!-- TABLE -->
-  <div class="tab-panel" id="panel-table">
-    <div class="card">
-      <div class="card-title">Full Historical Data</div>
-      <div style="overflow-x:auto">
-        <table>
-          <thead><tr>
-            <th>Date</th><th>Club</th><th>Platform</th>
-            <th>Util %</th><th>Booked hrs</th><th>Total hrs</th>
-            <th>Level</th><th>Notes</th>
-          </tr></thead>
-          <tbody id="history-tbody"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-</div><!-- /content -->
-
-<script>
-// ================================================================
-//  RENDER STATS BAR
-// ================================================================
+// ââ STATS BAR âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function renderStats() {
-  const latest = getLatest();
-  const withData = CLUB_IDS.filter(id => latest.clubs[id]?.util != null);
-  const utils = withData.map(id => latest.clubs[id].util);
-  const avg = utils.length ? (utils.reduce((a,b)=>a+b,0)/utils.length).toFixed(1) : null;
-  const maxId = utils.length ? withData[utils.indexOf(Math.max(...utils))] : null;
-  const minId = utils.length ? withData[utils.indexOf(Math.min(...utils))] : null;
+  const ownUtils = OWN_IDS.map(id => getUtil(id)).filter(u => u !== null);
+  const compUtils = COMP_IDS.map(id => getUtil(id)).filter(u => u !== null);
+  const avgOwn = ownUtils.length ? (ownUtils.reduce((a,b)=>a+b,0)/ownUtils.length) : null;
+  const avgComp = compUtils.length ? (compUtils.reduce((a,b)=>a+b,0)/compUtils.length) : null;
+  const topOwn = OWN_IDS.reduce((best,id) => { const u=getUtil(id); return (u!==null && (best===null||u>getUtil(best))) ? id : best; }, null);
+  const totalOwnCourts = OWN_IDS.reduce((s,id) => s + (CLUBS[id].courts||0), 0);
+  const diff = avgOwn !== null && avgComp !== null ? avgOwn - avgComp : null;
 
-  document.getElementById('stats-bar').innerHTML = `
-    <div class="stat">
-      <div class="stat-label">Tracking Since</div>
-      <div class="stat-value">${fmtDate(history[0].date)}</div>
-      <div class="stat-sub">${history.length} day${history.length!==1?'s':''} recorded</div>
-    </div>
-    <div class="stat">
-      <div class="stat-label">Clubs with Data</div>
-      <div class="stat-value">${withData.length}<span style="font-size:0.9rem;color:#94a3b8"> / ${CLUB_IDS.length}</span></div>
-      <div class="stat-sub">2 require manual login</div>
-    </div>
-    <div class="stat">
-      <div class="stat-label">Avg Utilization</div>
-      <div class="stat-value" style="color:#3b82f6">${avg != null ? avg+'%' : 'â'}</div>
-      <div class="stat-sub">clubs with data</div>
-    </div>
-    ${maxId ? `<div class="stat">
-      <div class="stat-label">ð´ Busiest</div>
-      <div class="stat-value" style="color:#ef4444">${latest.clubs[maxId].util.toFixed(1)}%</div>
-      <div class="stat-sub">${CLUBS[maxId].short}</div>
-    </div>` : ''}
-    ${minId ? `<div class="stat">
-      <div class="stat-label">ð¢ Most Available</div>
-      <div class="stat-value" style="color:#22c55e">${latest.clubs[minId].util.toFixed(1)}%</div>
-      <div class="stat-sub">${CLUBS[minId].short}</div>
-    </div>` : ''}
-    <div class="stat">
-      <div class="stat-label">Last Updated</div>
-      <div class="stat-value" style="font-size:1rem">${fmtDate(latest.date)}</div>
-      <div class="stat-sub">$x(latest.scraped_at||'').split('T')[1]?.slice(0,5)||''} Â· daily 9am</div>
-    </div>
-  `;
+  document.getElementById('stats-bar').innerHTML = [
+    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : 'â', sub: `${ownUtils.length} locations reporting` },
+    { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : 'â', sub: `${compUtils.length} clubs reporting` },
+    { label:'Pickleplex vs Comp', value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : 'â', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
+    { label:'Top Pickleplex', value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : 'â', sub: topOwn ? CLUBS[topOwn].short : '' },
+    { label:'Total PX Courts', value: totalOwnCourts, sub: `${OWN_IDS.length} locations` },
+    { label:'As of', value: TODAY_DATA.date, sub: 'Updated 9am daily' },
+  ].map(s => `<div class="stat">
+    <div class="stat-label">${s.label}</div>
+    <div class="stat-value" style="color:${s.color||''}">${s.value}</div>
+    <div class="stat-sub">${s.sub}</div>
+  </div>`).join('');
+
+  document.getElementById('hdr-sub').textContent = `${TODAY_DATA.date} Â· ${TODAY_DATA.note}`;
+  document.getElementById('hdr-right').innerHTML = `Last scraped: ${TODAY_DATA.scraped_at.replace('T',' ')}<br>Data: Pickleplex admin (CourtReserve) + public scrapers`;
 }
 
-// ================================================================
-//  RENDER TODAY NOTICE & LABEL
-// ================================================================
-function renderTodayMeta() {
-  const latest = getLatest();
-  document.getElementById('today-notice').textContent = `ð ${latest.note || 'Data collected ' + latest.date}`;
-  document.getElementById('today-label').textContent = fmtDate(latest.date);
-  const hasLimited = CLUB_IDS.some(id => CLUBS[id].limited);
-  if (hasLimited) document.getElementById('login-notice').style.display = 'block';
-}
-
-// ================================================================
-//  BAR CHART
-// ================================================================
-let barChart;
-function renderBarChart() {
-  const latest = getLatest();
-  const labels = CLUB_IDS.map(id => CLUBS[id].short);
-  const data   = CLUB_IDS.map(id => {
-    const u = latest.clubs[id]?.util;
-    return u != null ? u : 0;
-  });
-  const colors = CLUB_IDS.map(id => {
-    const u = latest.clubs[id]?.util;
-    return u != null ? CLUBS[id].color : '#e2e8f0';
-  });
-
-  const ctx = document.getElementById('bar-chart').getContext('2d');
-  if (barChart) barChart.destroy();
-  barChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels,
-      datasets: [{
-        data, backgroundColor: colors,
-        borderRadius: 5, borderSkipped: false
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: ctx => {
-              const id = CLUB_IDS[ctx.dataIndex];
-              const u = latest.clubs[id]?.util;
-              if (u == null) {
-                const n = latest.clubs[id]?.note;
-                return n ? `No data â ${n}` : 'No data';
-              }
-              return `${u.toFixed(1)}% utilization`;
-            },
-            title: ctx => CLUBS[CLUB_IDS[ctx[0].dataIndex]].name
-          }
-        }
-      },
-      scales: {
-        y: {
-          min:0, max:100,
-          ticks: { callback: v => v+'%', font:{size:11} },
-          grid: { color:'#f1f5f9' }
-        },
-        x: {
-          ticks: { font:{size:11} },
-          grid: { display:false }
-        }
-      }
-    }
-  });
-}
-
-// ================================================================
-//  CLUB CARDS
-// ================================================================
-function renderClubCards() {
-  const latest = getLatest();
-  document.getElementById('club-grid').innerHTML = CLUB_IDS.map(id => {
-    const m = CLUBS[id];
-    const d = latest.clubs[id] || {};
-    const u = d.util;
-    const hasData = u != null;
-    const c = utilColor(u);
-    return `<div class="club-card" style="border-left-color:${m.color}">
-      <div class="cn">${m.name}</div>
-      <div class="cl">${m.loc} Â· ${m.platform}</div>
-      ${hasData
-        ? `<div class="urow"><span class="uv" style="color:${c}">${u.toFixed(1)}%</span><span class="ul">utilized</span></div>
-           <div class="ubar-bg"><div class="ubar" style="width:${Math.min(u,100)}%;background:${c}"></div></div>
-           <div class="cmeta">${d.booked!=null?`${d.booked}/${d.total} court-hrs`:''}${d.note?' Â· '+d.note:''}</div>`
-        : `<span class="na-tag">No data</span>
-           <div class="cmeta">${d.note||m.limitNote||''}</div>`
-      }
-    </div>`;
-  }).join('');
-}
-
-// ================================================================
-//  LINE CHART
-// ================================================================
-let lineChart;
-function renderLineChart() {
-  const dates = history.map(s => fmtDate(s.date));
-  const datasets = CLUB_IDS.map(id => {
-    const vals = history.map(s => {
-      const u = s.clubs[id]?.util;
-      return u != null ? u : null;
-    });
-    if (vals.every(v => v === null)) return null;
-    return {
-      label: CLUBS[id].name,
-      data: vals,
-      borderColor: CLUBS[id].color,
-      backgroundColor: CLUBS[id].color + '18',
-      borderWidth: 2.5,
-      pointRadius: history.length > 14 ? 2 : 4,
-      pointHoverRadius: 6,
-      spanGaps: false,
-      tension: 0.3,
-      fill: false
-    };
-  }).filter(Boolean);
-
-  const ctx = document.getElementById('line-chart').getContext('2d');
-  if (lineChart) lineChart.destroy();
-  lineChart = new Chart(ctx, {
-    type: 'line',
-    data: { labels: dates, datasets },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { mode:'index', intersect:false,
-          callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(1)}%` }
-        }
-      },
-      scales: {
-        y: {
-          min:0, max:100,
-          ticks: { callback: v => v+'%', font:{size:11} },
-          grid: { color:'#f1f5f9' }
-        },
-        x: { grid: { color:'#f1f5f9' }, ticks: { font:{size:11} } }
-      }
-    }
-  });
-
-  // Custom legend
-  document.getElementById('trend-legend').innerHTML = datasets.map(ds =>
-    `<span style="margin-right:14px;white-space:nowrap;font-size:0.75rem">
-      <span class="legend-badge" style="background:${ds.borderColor}"></span>${ds.label}
-    </span>`
-  ).join('');
-}
-
-// ================================================================
-//  DATA TABLE
-// ================================================================
-function renderTable() {
-  const rows = [];
-  history.slice().reverse().forEach(snap => {
-    CLUB_IDS.forEach(id => {
-      const d = snap.clubs[id] || {};
-      const u = d.util;
-      rows.push(`<tr>
-        <td>${fmtDate(snap.date)}</td>
-        <td>${CLUBS[id].name}</td>
-        <td style="color:#94a3b8;font-size:0.7rem">${CLUBS[id].platform}</td>
-        <td><strong>${u!=null?u.toFixed(1)+'%':'â'}</strong></td>
-        <td>${d.booked??'â'}</td>
-        <td>${d.total??'â'}</td>
-        <td><span class="pill ${pillCls(u)}">${pillTxt(u)}</span></td>
-        <td style="color:#94a3b8;font-size:0.7rem;max-width:200px">${d.note||''}</td>
-      </tr>`);
-    });
-  });
-  document.getElementById('history-tbody').innerHTML = rows.join('');
-}
-
-// ================================================================
-//  TABS
-// ================================================================
-document.querySelectorAll('.tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    const name = tab.dataset.tab;
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('panel-' + name).classList.add('active');
-    if (name === 'trends') renderLineChart();
-    if (name === 'today') renderBarChart();
-  });
-});
-
-// ================================================================
-//  INIT
-// ================================================================
-renderStats();
-renderTodayMeta();
-renderBarChart();
-renderClubCards();
-renderTable();
-</script>
-</body>
-</html>
+// ââ REGIONAL CARDS ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+function renderClubCard(id) {
+  const c = CLUBS[id];
+  const d = TODAY_DATA.clubs[id] || {};
+  const u = d.util ?? null;
+  const color = c.type === 'own' ? '#00a65
