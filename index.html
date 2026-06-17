@@ -187,7 +187,10 @@ const CLUBS = {
   blue_zone:             { name:"Blue Zone",                  short:"Blue Zone",    loc:"Burlington, ON",  platform:"Custom",       courts:null,color:"#16a085",type:"competitor", limited:true, limitNote:"Login required" },
   smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" },
   fairgrounds_whitby:    { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null,color:"#8e6bbf",type:"competitor" },
-  hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" }
+  hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" },
+  four_fathers_pickleball: { name:"Four Fathers Pickleball", short:"Four Fathers", loc:"Cambridge, ON", platform:"CourtReserve", courts:7,  color:"#27ae60", type:"competitor" },
+  real_pickleball:         { name:"Real Pickleball",         short:"Real PB",      loc:"Cambridge, ON", platform:"CourtReserve", courts:8,  color:"#e91e63", type:"competitor" },
+  corte_kitchener:         { name:"Corte Kitchener",         short:"Corte KW",     loc:"Kitchener, ON", platform:"CatchCorner",  courts:4,  color:"#ff9800", type:"competitor" }
 };
 
 const REGIONS = [
@@ -196,8 +199,8 @@ const REGIONS = [
   { id:"toronto",    name:"Toronto",                  own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west"] },
   { id:"east_gta",   name:"East GTA",                 own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:["fairgrounds_whitby","hisports_durham"] },
   { id:"burloak",    name:"Oakville / Burlington",    own:["pickleplex_burloak"],                                             comp:["picklex","blue_zone"] },
-  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:[] },
-  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
+  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:["four_fathers_pickleball","real_pickleball"] },
+  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london","corte_kitchener"] },
   { id:"belleville", name:"Belleville, ON",           own:["pickleplex_belleville"],                                          comp:[] },
   { id:"barrie",     name:"Barrie, ON",               own:["pickleplex_barrie"],                                              comp:[] },
   { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:[] },
@@ -232,7 +235,10 @@ const TODAY_DATA = {
         picklrs_hub:            { util: 39.6, booked: 21, total: 53, note: "CourtReserve: 32 avail / 15 reserved / 6 waitlist" },
         picklex:                { util: 16.2, booked: 18, total: 111, note: "CourtReserve: 93 avail / 16 reserved / 2 waitlist" },
         blue_zone:              { util: 34.7, booked: 55.5, total: 160, note: "10 pickleball courts × 16hrs (padel ignored)" },
-        smash_pb_london:        { util: 69.2, booked: 81, total: 117, note: "9 courts × 13hrs, 52 bookings" }
+        smash_pb_london:        { util: 69.2, booked: 81, total: 117, note: "9 courts × 13hrs, 52 bookings" },
+        four_fathers_pickleball: { util: 42.9, booked: 30,   total: 70,  note: "7 courts, morn+aft+eve sessions" },
+        real_pickleball:         { util: 27.7, booked: 31,   total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
+        corte_kitchener:         { util: 81.3, booked: 19.5, total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 3 slots avail" }
       }
     };
 
