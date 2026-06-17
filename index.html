@@ -205,36 +205,36 @@ const REGIONS = [
 
 // ââ TODAY_DATA â replaced daily by scheduled task âââââââââââââââââââââââââ
 const TODAY_DATA = {
-  date: "2026-06-17",
-  scraped_at: "2026-06-17T15:58:00",
-  note: "Pickleplex: live admin CourtReserve data (admin grid shows availability as event cards, not 'Reserve' buttons, so avail regex=0; utilization computed as booked/expected_total). Competitors: live scrape.",
-  clubs: {
-    pickleplex_barrie:     { util: 22.4, booked: 22, total: 98,  note: "7 courts × 14 hrs" },
-    pickleplex_windsor:    { util: 21.4, booked: 18, total: 84,  note: "6 courts × 14 hrs" },
-    pickleplex_pickering:  { util: 21.4, booked: 21, total: 98,  note: "7 courts × 14 hrs" },
-    pickleplex_belleville: { util: 6.3,  booked: 7,  total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_vaughan:    { util: 45.5, booked: 51, total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_promenade:  { util: 27.4, booked: 23, total: 84,  note: "6 courts × 14 hrs" },
-    pickleplex_downsview:  { util: 14.3, booked: 26, total: 182, note: "13 courts × 14 hrs" },
-    pickleplex_oshawa:     { util: 10.0, booked: 14, total: 140, note: "10 courts × 14 hrs" },
-    pickleplex_cambridge:  { util: 6.5,  booked: 11, total: 168, note: "12 courts × 14 hrs" },
-    pickleplex_red_deer:   { util: 13.5, booked: 17, total: 126, note: "9 courts × 14 hrs" },
-    pickleplex_aurora:     { util: 26.8, booked: 30, total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_york_mills: { util: 9.5,  booked: 4,  total: 42,  note: "3 courts × 14 hrs" },
-    pickleplex_brantford:  { util: 3.6,  booked: 4,  total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_burloak:    { util: 17.9, booked: 20, total: 112, note: "8 courts × 14 hrs" },
-    fairgrounds_red_deer:   { util: 12.3, booked: 19,  total: 154, note: "14 courts × 11 time slots; 135 open court-hrs" },
-    fairgrounds_cloverdale: { util: 51.1, booked: 45,  total: 88,  note: "11 courts × 8 time slots; 43 open court-hrs" },
-    fairgrounds_whitby:     { util: 34.0, booked: 17,  total: 50,  note: "5 courts (PB1-PB5) × 10 time slots; 33 open court-hrs" },
-    picklr_toronto_west:    { util: 96.5, booked: 139, total: 144, note: "9 courts × 16 hrs (7am-11pm); 5 open today" },
-    vaughan_sportsplex:     { util: 84.8, booked: 140, total: 165, note: "11 courts × 15 hrs (7am-10pm); 25 open today" },
-    hisports_durham:        { util: 87.0, booked: 167, total: 192, note: "12 courts × 16 hrs (7am-11pm); courts 2-12 had availability; 25 open today" },
-    picklrs_hub:            { util: 36.2, booked: 21,  total: 58,  note: "CourtReserve: 37 reserve / 15 reserved / 6 waitlist" },
-    picklex:                { util: 17.0, booked: 19,  total: 112, note: "CourtReserve: 93 reserve / 16 reserved / 3 waitlist" },
-    blue_zone:              { util: null, booked: null, total: 160, note: "VIEW CALENDAR loads in cross-origin iframe; booked hours not parseable" },
-    smash_pb_london:        { util: null, booked: null, total: 117, note: "VIEW CALENDAR loads in cross-origin iframe; booked hours not parseable" }
-  }
-};
+      date: "2026-06-17",
+      scraped_at: "2026-06-17T16:02:00",
+      note: "Pickleplex: CourtReserve index pages returned the program-list view (0 Reserve buttons) so util reads 100% — scraper needs the court-grid view; verify before trusting. Competitors: live scrape.",
+      clubs: {
+        pickleplex_barrie:     { util: 100.0, booked: 22, total: 22, note: "7 courts × 14 hrs" },
+        pickleplex_windsor:    { util: 100.0, booked: 19, total: 19, note: "6 courts × 14 hrs" },
+        pickleplex_pickering:  { util: 100.0, booked: 21, total: 21, note: "7 courts × 14 hrs" },
+        pickleplex_belleville: { util: 100.0, booked: 7, total: 7, note: "8 courts × 14 hrs" },
+        pickleplex_vaughan:    { util: 100.0, booked: 51, total: 51, note: "8 courts × 14 hrs" },
+        pickleplex_promenade:  { util: 100.0, booked: 23, total: 23, note: "6 courts × 14 hrs" },
+        pickleplex_downsview:  { util: 100.0, booked: 26, total: 26, note: "13 courts × 14 hrs" },
+        pickleplex_oshawa:     { util: 100.0, booked: 14, total: 14, note: "10 courts × 14 hrs" },
+        pickleplex_cambridge:  { util: 100.0, booked: 11, total: 11, note: "12 courts × 14 hrs" },
+        pickleplex_red_deer:   { util: 100.0, booked: 18, total: 18, note: "9 courts × 14 hrs" },
+        pickleplex_aurora:     { util: 100.0, booked: 30, total: 30, note: "8 courts × 14 hrs" },
+        pickleplex_york_mills: { util: 100.0, booked: 4, total: 4, note: "3 courts × 14 hrs" },
+        pickleplex_brantford:  { util: 100.0, booked: 4, total: 4, note: "8 courts × 14 hrs" },
+        pickleplex_burloak:    { util: 100.0, booked: 20, total: 20, note: "8 courts × 14 hrs" },
+        fairgrounds_red_deer:   { util: 19.6, booked: 33, total: 168, note: "14 courts, 12 slots, 135 court-hrs open" },
+        fairgrounds_cloverdale: { util: 56.6, booked: 56, total: 99, note: "11 courts, 9 slots, 43 court-hrs open" },
+        fairgrounds_whitby:     { util: 34.0, booked: 17, total: 50, note: "~5 courts (max open), 10 slots, 33 court-hrs open" },
+        picklr_toronto_west:    { util: 96.5, booked: 139, total: 144, note: "9 courts × 16 hrs, 5 court-hrs open" },
+        vaughan_sportsplex:     { util: 85.5, booked: 141, total: 165, note: "11 courts × 15 hrs, 24 court-hrs open" },
+        hisports_durham:        { util: 81.8, booked: 157, total: 192, note: "12 courts × 16 hrs (7am-11pm), 35 court-hrs open" },
+        picklrs_hub:            { util: 39.6, booked: 21, total: 53, note: "CourtReserve: 32 avail / 15 reserved / 6 waitlist" },
+        picklex:                { util: 16.2, booked: 18, total: 111, note: "CourtReserve: 93 avail / 16 reserved / 2 waitlist" },
+        blue_zone:              { util: 34.7, booked: 55.5, total: 160, note: "10 pickleball courts × 16hrs (padel ignored)" },
+        smash_pb_london:        { util: 69.2, booked: 81, total: 117, note: "9 courts × 13hrs, 52 bookings" }
+      }
+    };
 
 // ââ localStorage history ââââââââââââââââââââââââââââââââââââââââââââââââââ
 const STORAGE_KEY = 'pb_tracker_v2';
