@@ -80,6 +80,24 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 0.72rem; color: #475569; }
 .legend-item { display: flex; align-items: center; gap: 5px; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* HISTORY */
+.history-panel { padding: 16px 20px; display: flex; flex-direction: column; gap: 16px; }
+.history-controls { background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); padding: 12px 16px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.period-toggle { display: flex; gap: 3px; background: #f1f5f9; border-radius: 6px; padding: 3px; }
+.period-btn { padding: 5px 14px; border: none; background: transparent; border-radius: 4px; font-size: 0.8rem; font-weight: 600; color: #64748b; cursor: pointer; transition: all 0.15s; }
+.period-btn.active { background: white; color: #0f172a; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+.nav-btn { padding: 5px 10px; border: 1px solid #e2e8f0; background: white; border-radius: 5px; cursor: pointer; font-size: 0.8rem; color: #475569; }
+.nav-btn:hover { background: #f8fafc; }
+.hist-nav-label { font-size: 0.85rem; font-weight: 700; color: #0f172a; min-width: 180px; text-align: center; }
+.hist-table-wrap { background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); overflow: auto; }
+.hist-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.hist-table th { padding: 8px 10px; text-align: left; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b; background: #f8fafc; border-bottom: 1px solid #e2e8f0; white-space: nowrap; }
+.hist-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+.hist-table tr:last-child td { border-bottom: none; }
+.hist-table tr:hover td { background: #f8fafc; }
+.hist-cell { display: inline-block; min-width: 44px; padding: 2px 5px; border-radius: 3px; font-weight: 700; text-align: center; }
+.hist-empty { color: #cbd5e1; }
 </style>
 </head>
 <body>
@@ -100,6 +118,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="tab" data-tab="table">All Data</div>
   <div class="tab" data-tab="trends">Trends</div>
   <div class="tab" data-tab="monthly">Monthly</div>
+  <div class="tab" data-tab="history">History</div>
 </div>
 
 <div id="tab-regions" class="tab-panel active">
@@ -156,6 +175,24 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div class="chart-wrap"><canvas id="monthlyDetailChart" height="220"></canvas></div>
       <div class="legend" id="monthly-legend"></div>
     </div>
+  </div>
+</div>
+<div id="tab-history" class="tab-panel">
+  <div class="history-panel">
+    <div class="history-controls">
+      <div class="period-toggle">
+        <button class="period-btn active" data-period="day" onclick="setHistPeriod('day')">Day</button>
+        <button class="period-btn" data-period="week" onclick="setHistPeriod('week')">Week</button>
+        <button class="period-btn" data-period="month" onclick="setHistPeriod('month')">Month</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="nav-btn" onclick="navHist(-1)">&#8592;</button>
+        <span class="hist-nav-label" id="hist-label"></span>
+        <button class="nav-btn" onclick="navHist(1)">&#8594;</button>
+        <button class="nav-btn" style="font-size:0.75rem" onclick="histDate=new Date(TODAY_DATA.date+'T12:00:00');renderHistory()">Today</button>
+      </div>
+    </div>
+    <div id="history-content"></div>
   </div>
 </div>
 <script>
@@ -415,6 +452,66 @@ function renderMonthly() {
   document.getElementById('monthly-legend').innerHTML = topIds.map(id=>'<div class="legend-item"><div class="legend-dot" style="background:'+CLUBS[id].color+'"></div>'+CLUBS[id].short+'</div>').join('');
 }
 
+// ── HISTORY ───────────────────────────────────────────────────────────────────────────────
+let histPeriod = 'day';
+let histDate = new Date(TODAY_DATA.date + 'T12:00:00');
+
+function setHistPeriod(p) { histPeriod = p; renderHistory(); }
+function navHist(dir) {
+  if (histPeriod === 'day') histDate.setDate(histDate.getDate() + dir);
+  else if (histPeriod === 'week') histDate.setDate(histDate.getDate() + dir * 7);
+  else histDate.setMonth(histDate.getMonth() + dir);
+  renderHistory();
+}
+function getWeekDates(d) {
+  const day = d.getDay();
+  const mon = new Date(d); mon.setDate(d.getDate() - (day === 0 ? 6 : day - 1));
+  return Array.from({length:7}, (_,i) => { const x = new Date(mon); x.setDate(mon.getDate()+i); return x.toISOString().slice(0,10); });
+}
+function getMonthDates(d) {
+  const y = d.getFullYear(), m = d.getMonth();
+  return Array.from({length: new Date(y,m+1,0).getDate()}, (_,i) => `${y}-${String(m+1).padStart(2,'0')}-${String(i+1).padStart(2,'0')}`);
+}
+function histDateLabel() {
+  if (histPeriod === 'day') return histDate.toLocaleDateString('en-CA',{weekday:'short',year:'numeric',month:'short',day:'numeric'});
+  if (histPeriod === 'week') {
+    const w = getWeekDates(histDate);
+    const fmt = s => new Date(s+'T12:00:00').toLocaleDateString('en-CA',{month:'short',day:'numeric'});
+    return fmt(w[0]) + ' – ' + fmt(w[6]);
+  }
+  return histDate.toLocaleDateString('en-CA',{year:'numeric',month:'long'});
+}
+function renderHistory() {
+  const lbl = document.getElementById('hist-label');
+  if (lbl) lbl.textContent = histDateLabel();
+  document.querySelectorAll('.period-btn').forEach(b => b.classList.toggle('active', b.dataset.period === histPeriod));
+  const byDate = {};
+  history.forEach(s => { byDate[s.date] = s; });
+  const allIds = [...OWN_IDS, ...COMP_IDS];
+  const content = document.getElementById('history-content');
+  if (!content) return;
+  const cell = u => u !== null
+    ? `<span class="hist-cell" style="background:${utilColor(u)}22;color:${utilColor(u)}">${u.toFixed(1)}%</span>`
+    : '<span class="hist-empty">—</span>';
+  if (histPeriod === 'day') {
+    const ds = histDate.toISOString().slice(0,10);
+    const snap = byDate[ds];
+    if (!snap) { content.innerHTML = '<div style="padding:40px;text-align:center;color:#94a3b8;background:white;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,0.07)">No data recorded for this date yet.</div>'; return; }
+    const rows = allIds.map(id => { const c=CLUBS[id],d=snap.clubs[id]||{},u=d.util??null; return `<tr><td><span class="type-dot" style="background:${c.color}"></span>${c.name}</td><td>${c.type==='own'?'Pickleplex':'Competitor'}</td><td>${c.loc}</td><td>${c.courts??'—'}</td><td>${cell(u)}</td><td>${d.booked??'—'}</td><td>${d.total??'—'}</td><td style="font-size:0.65rem;color:#94a3b8">${d.note||''}</td></tr>`; }).join('');
+    content.innerHTML = `<div class="hist-table-wrap"><table class="hist-table"><thead><tr><th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>Booked</th><th>Total</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  } else if (histPeriod === 'week') {
+    const dates = getWeekDates(histDate);
+    const hdrs = dates.map(d => { const dt=new Date(d+'T12:00:00'); return `<th>${dt.toLocaleDateString('en-CA',{weekday:'short'})}<br><span style="font-weight:400">${dt.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</span></th>`; }).join('');
+    const rows = allIds.map(id => { const c=CLUBS[id]; const cells=dates.map(date => `<td>${cell(byDate[date]?.clubs[id]?.util??null)}</td>`).join(''); return `<tr><td style="white-space:nowrap"><span class="type-dot" style="background:${c.color}"></span>${c.short}</td>${cells}</tr>`; }).join('');
+    content.innerHTML = `<div class="hist-table-wrap"><table class="hist-table"><thead><tr><th>Club</th>${hdrs}</tr></thead><tbody>${rows}</tbody></table></div>`;
+  } else {
+    const dates = getMonthDates(histDate);
+    const hdrs = dates.map((_,i) => `<th style="min-width:30px;padding:8px 4px">${i+1}</th>`).join('');
+    const rows = allIds.map(id => { const c=CLUBS[id]; const cells=dates.map(date => { const u=byDate[date]?.clubs[id]?.util??null; return u!==null?`<td style="padding:3px 2px"><span class="hist-cell" style="background:${utilColor(u)}22;color:${utilColor(u)};min-width:30px;font-size:0.68rem">${u.toFixed(0)}%</span></td>`:'<td><span class="hist-empty">·</span></td>'; }).join(''); return `<tr><td style="white-space:nowrap;padding-right:8px"><span class="type-dot" style="background:${c.color}"></span>${c.short}</td>${cells}</tr>`; }).join('');
+    content.innerHTML = `<div class="hist-table-wrap"><table class="hist-table"><thead><tr><th>Club</th>${hdrs}</tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
+}
+
 function renderAll() {
   renderStats();
   renderRegions();
@@ -422,6 +519,7 @@ function renderAll() {
   renderCharts();
   renderTrends();
   renderMonthly();
+  renderHistory();
 }
 
 document.querySelectorAll('.tab').forEach(tab => {
