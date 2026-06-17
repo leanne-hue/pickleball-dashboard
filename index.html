@@ -99,6 +99,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="tab" data-tab="charts">Charts</div>
   <div class="tab" data-tab="table">All Data</div>
   <div class="tab" data-tab="trends">Trends</div>
+  <div class="tab" data-tab="monthly">Monthly</div>
 </div>
 
 <div id="tab-regions" class="tab-panel active">
@@ -142,6 +143,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 </div>
 
+<div id="tab-monthly" class="tab-panel">
+  <div class="charts-panel">
+    <div class="chart-card">
+      <div class="chart-title">Monthly Average Utilization</div>
+      <div class="chart-sub">Average daily utilization per month — Pickleplex vs competitors</div>
+      <div class="chart-wrap"><canvas id="monthlyChart" height="180"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Monthly Average — Individual Locations</div>
+      <div class="chart-sub">Per-location monthly averages (top clubs with sufficient data)</div>
+      <div class="chart-wrap"><canvas id="monthlyDetailChart" height="220"></canvas></div>
+      <div class="legend" id="monthly-legend"></div>
+    </div>
+  </div>
+</div>
 <script>
 // âââ DATA ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
@@ -168,16 +184,18 @@ const CLUBS = {
   vaughan_sportsplex:    { name:"Vaughan Sportsplex",         short:"Vaughan SP",   loc:"Vaughan, ON",     platform:"CatchCorner",  courts:11, color:"#2980b9", type:"competitor" },
   picklrs_hub:           { name:"Picklrs Hub",                short:"Picklrs Hub",  loc:"GTA, ON",         platform:"CourtReserve", courts:9,  color:"#8e44ad", type:"competitor" },
   picklex:               { name:"PickleX",                    short:"PickleX",      loc:"Oakville, ON",    platform:"CourtReserve", courts:null,color:"#c0392b",type:"competitor", limited:true, limitNote:"Member login" },
-  blue_zone:             { name:"Blue Zone",                  short:"Blue Zone",    loc:"Toronto, ON",     platform:"Custom",       courts:null,color:"#16a085",type:"competitor", limited:true, limitNote:"Login required" },
-  smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" }
+  blue_zone:             { name:"Blue Zone",                  short:"Blue Zone",    loc:"Burlington, ON",  platform:"Custom",       courts:null,color:"#16a085",type:"competitor", limited:true, limitNote:"Login required" },
+  smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" },
+  fairgrounds_whitby:    { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null,color:"#8e6bbf",type:"competitor" },
+  hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" }
 };
 
 const REGIONS = [
   { id:"red_deer",   name:"Red Deer, AB",            own:["pickleplex_red_deer"],                                             comp:["fairgrounds_red_deer"] },
   { id:"north_gta",  name:"North GTA / Vaughan",      own:["pickleplex_vaughan","pickleplex_promenade","pickleplex_aurora"],   comp:["vaughan_sportsplex","picklrs_hub"] },
-  { id:"toronto",    name:"Toronto",                  own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west","blue_zone"] },
-  { id:"east_gta",   name:"East GTA",                 own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:[] },
-  { id:"burloak",    name:"Oakville / Burlington",    own:["pickleplex_burloak"],                                             comp:["picklex"] },
+  { id:"toronto",    name:"Toronto",                  own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west"] },
+  { id:"east_gta",   name:"East GTA",                 own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:["fairgrounds_whitby","hisports_durham"] },
+  { id:"burloak",    name:"Oakville / Burlington",    own:["pickleplex_burloak"],                                             comp:["picklex","blue_zone"] },
   { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:[] },
   { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
   { id:"belleville", name:"Belleville, ON",           own:["pickleplex_belleville"],                                          comp:[] },
@@ -212,7 +230,9 @@ const TODAY_DATA = {
     picklrs_hub: { util: 33.3, booked: 20, total: 60, note: "9 courts, 14 slots (9am–10pm); CourtReserve grid" },
     picklex: { util: 16.5, booked: 18, total: 109, note: "7 courts, 30-min slots (8am–9pm)" },
     blue_zone: { util: 32.5, booked: 52, total: 160, note: "10 pickleball courts × 16hrs (7am–11pm)" },
-    smash_pb_london: { util: 65.8, booked: 77, total: 117, note: "9 courts × 13hrs (7am–8pm)" }
+    smash_pb_london: { util: 65.8, booked: 77, total: 117, note: "9 courts × 13hrs (7am–8pm)" },
+    fairgrounds_whitby:    { util:null, note:"Awaiting first scrape" },
+    hisports_durham:       { util:null, note:"Awaiting first scrape" }
   }
 };
 
@@ -357,12 +377,45 @@ function renderTrends() {
   document.getElementById('trend-legend').innerHTML = topClubs.map(id => `<div class="legend-item"><div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}</div>`).join('');
 }
 
+function renderMonthly() {
+  const noData = msg => {
+    ['monthlyChart','monthlyDetailChart'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">' + msg + '</p>';
+    });
+  };
+  if (history.length < 2) { noData('Not enough historical data yet — monthly trends appear after multiple days of scraping.'); return; }
+  const byMonth = {};
+  history.forEach(s => { const m = s.date.slice(0,7); if (!byMonth[m]) byMonth[m]=[]; byMonth[m].push(s); });
+  const months = Object.keys(byMonth).sort();
+  const monthLabel = m => { const [y,mo]=m.split('-'); return new Date(+y,+mo-1,1).toLocaleString('en-CA',{month:'short',year:'numeric'}); };
+  const labels = months.map(monthLabel);
+  const monthAvg = (ids, m) => { const vals=byMonth[m].flatMap(s=>ids.map(id=>s.clubs[id]?.util).filter(u=>u!=null)); return vals.length ? Math.round(vals.reduce((a,b)=>a+b,0)/vals.length*10)/10 : null; };
+  new Chart(document.getElementById('monthlyChart'), {
+    type:'line',
+    data:{ labels, datasets:[
+      { label:'Avg Pickleplex',  data:months.map(m=>monthAvg(OWN_IDS,m)),  borderColor:'#00a651', backgroundColor:'rgba(0,166,81,0.08)',  tension:0.3, spanGaps:true, pointRadius:5, fill:true, borderWidth:2 },
+      { label:'Avg Competitors', data:months.map(m=>monthAvg(COMP_IDS,m)), borderColor:'#e74c3c', backgroundColor:'rgba(231,76,60,0.08)', tension:0.3, spanGaps:true, pointRadius:5, fill:true, borderWidth:2 }
+    ]},
+    options:{ plugins:{legend:{display:true,position:'top'}}, scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'}}}, responsive:true }
+  });
+  const scored = [...OWN_IDS,...COMP_IDS].map(id=>({id,count:history.filter(s=>s.clubs[id]?.util!=null).length}));
+  const topIds = scored.sort((a,b)=>b.count-a.count).slice(0,10).map(x=>x.id);
+  new Chart(document.getElementById('monthlyDetailChart'), {
+    type:'line',
+    data:{ labels, datasets:topIds.map(id=>({ label:CLUBS[id].short, data:months.map(m=>monthAvg([id],m)), borderColor:CLUBS[id].color, tension:0.3, spanGaps:true, pointRadius:4, borderWidth:1.5, fill:false })) },
+    options:{ plugins:{legend:{display:false}}, scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'}}}, responsive:true }
+  });
+  document.getElementById('monthly-legend').innerHTML = topIds.map(id=>'<div class="legend-item"><div class="legend-dot" style="background:'+CLUBS[id].color+'"></div>'+CLUBS[id].short+'</div>').join('');
+}
+
 function renderAll() {
   renderStats();
   renderRegions();
   renderTable();
   renderCharts();
   renderTrends();
+  renderMonthly();
 }
 
 document.querySelectorAll('.tab').forEach(tab => {
