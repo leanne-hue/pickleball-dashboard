@@ -104,8 +104,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 <div class="header">
   <div>
-    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">ð¥ Pickleplex Competitive Dashboard</div>
-    <div class="sub" id="hdr-sub">Loadingâ¦</div>
+    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">Pickleplex Competitive Dashboard</div>
+    <div class="sub" id="hdr-sub">Loading...</div>
   </div>
   <div class="header-right" id="hdr-right"></div>
 </div>
@@ -128,12 +128,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <div id="tab-charts" class="tab-panel">
   <div class="charts-panel">
     <div class="chart-card">
-      <div class="chart-title">Pickleplex Locations â Today's Utilization</div>
-      <div class="chart-sub" id="chart-sub-px">Court hours booked Ã· total court hours available (8amâ10pm)</div>
+      <div class="chart-title">Pickleplex Locations — Today's Utilization</div>
+      <div class="chart-sub" id="chart-sub-px">Court hours booked ÷ total court hours available (8amâ10pm)</div>
       <div class="chart-wrap"><canvas id="barChartPX" height="160"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Competitors â Today's Utilization</div>
+      <div class="chart-title">Competitors — Today's Utilization</div>
       <div class="chart-sub">Data scraped from public booking pages</div>
       <div class="chart-wrap"><canvas id="barChartComp" height="100"></canvas></div>
     </div>
@@ -155,7 +155,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="charts-panel">
     <div class="chart-card">
       <div class="chart-title">Utilization Trends Over Time</div>
-      <div class="chart-sub">Historical daily utilization â accumulated from each 9am scrape</div>
+      <div class="chart-sub">Historical daily utilization — accumulated from each 9am scrape</div>
       <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
       <div class="legend" id="trend-legend"></div>
     </div>
@@ -226,7 +226,7 @@ const CLUBS = {
   fairgrounds_whitby:    { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null,color:"#8e6bbf",type:"competitor" },
   hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" },
   four_fathers_pickleball: { name:"Four Fathers Pickleball", short:"Four Fathers", loc:"Cambridge, ON", platform:"CourtReserve", courts:7,  color:"#27ae60", type:"competitor" },
-  real_pickleball:         { name:"Real Pickleball",         short:"Real PB",      loc:"Cambridge, ON", platform:"CourtReserve", courts:8,  color:"#e91e63", type:"competitor" },
+  real_pickleball:         { name:"Real Pickleball",         short:"Real PB",      loc:"Guelph, ON", platform:"CourtReserve", courts:8,  color:"#e91e63", type:"competitor" },
   corte_kitchener:         { name:"Corte Kitchener",         short:"Corte KW",     loc:"Kitchener, ON", platform:"CatchCorner",  courts:4,  color:"#ff9800", type:"competitor" }
 };
 
@@ -236,14 +236,14 @@ const REGIONS = [
   { id:"toronto",    name:"Toronto",                  own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west"] },
   { id:"east_gta",   name:"East GTA",                 own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:["fairgrounds_whitby","hisports_durham"] },
   { id:"burloak",    name:"Oakville / Burlington",    own:["pickleplex_burloak"],                                             comp:["picklex","blue_zone"] },
-  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:["four_fathers_pickleball","real_pickleball"] },
-  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london","corte_kitchener"] },
+  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:["four_fathers_pickleball","real_pickleball","corte_kitchener"] },
+  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
   { id:"belleville", name:"Belleville, ON",           own:["pickleplex_belleville"],                                          comp:[] },
   { id:"barrie",     name:"Barrie, ON",               own:["pickleplex_barrie"],                                              comp:[] },
   { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:[] },
 ];
 
-// ââ TODAY_DATA â replaced daily by scheduled task âââââââââââââââââââââââââ
+// ââ TODAY_DATA — replaced daily by scheduled task âââââââââââââââââââââââââ
 const TODAY_DATA = {
       date: "2026-06-17",
       scraped_at: "2026-06-17T18:15:00",
@@ -304,7 +304,7 @@ function utilColor(u) {
 }
 
 function fmtUtil(u) {
-  if (u === null) return '<span class="null-util">â</span>';
+  if (u === null) return '<span class="null-util">—</span>';
   return `<span style="color:${utilColor(u)}">${u.toFixed(1)}%</span>`;
 }
 
@@ -319,10 +319,10 @@ function renderStats() {
   const diff = avgOwn !== null && avgComp !== null ? avgOwn - avgComp : null;
 
   document.getElementById('stats-bar').innerHTML = [
-    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : 'â', sub: `${ownUtils.length} locations reporting` },
-    { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : 'â', sub: `${compUtils.length} clubs reporting` },
-    { label:'Pickleplex vs Comp', value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : 'â', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
-    { label:'Top Pickleplex', value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : 'â', sub: topOwn ? CLUBS[topOwn].short : '' },
+    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : '—', sub: `${ownUtils.length} locations reporting` },
+    { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : '—', sub: `${compUtils.length} clubs reporting` },
+    { label:'Pickleplex vs Comp', value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : '—', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
+    { label:'Top Pickleplex', value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : '—', sub: topOwn ? CLUBS[topOwn].short : '' },
     { label:'Total PX Courts', value: totalOwnCourts, sub: `${OWN_IDS.length} locations` },
     { label:'As of', value: TODAY_DATA.date, sub: 'Updated 9am daily' },
   ].map(s => `<div class="stat">
@@ -331,7 +331,7 @@ function renderStats() {
     <div class="stat-sub">${s.sub}</div>
   </div>`).join('');
 
-  document.getElementById('hdr-sub').textContent = `${TODAY_DATA.date} Â· ${TODAY_DATA.note}`;
+  document.getElementById('hdr-sub').textContent = `${TODAY_DATA.date} · ${TODAY_DATA.note}`;
   document.getElementById('hdr-right').innerHTML = `Last scraped: ${TODAY_DATA.scraped_at.replace('T',' ')}<br>Data: Pickleplex admin (CourtReserve) + public scrapers`;
 }
 
@@ -348,7 +348,7 @@ function renderClubCard(id) {
     <div class="club-type-pill">${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</div>
     <div class="club-card-name">${c.name}</div>
     <div class="club-card-loc">${c.loc}</div>
-    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">â</span>'}</div>
+    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">—</span>'}</div>
     <div class="util-bar-bg"><div class="util-bar-fill" style="width:${pct}%;background:${utilColor(u)}"></div></div>
     <div class="club-card-meta"><span>${c.courts ? c.courts+' courts' : ''}</span><span>${c.platform}</span></div>
     ${limitedBadge}${note}
@@ -364,7 +364,7 @@ function renderRegions() {
     return `<div class="region-section">
       <div class="region-header">
         <span class="region-name">${region.name}</span>
-        <span style="color:#94a3b8;font-weight:400">${region.own.length} Pickleplex Â· ${region.comp.length} competitor${region.comp.length!==1?'s':''}</span>
+        <span style="color:#94a3b8;font-weight:400">${region.own.length} Pickleplex · ${region.comp.length} competitor${region.comp.length!==1?'s':''}</span>
       </div>
       <div class="region-clubs">${ownCards}${divider}${compCards}</div>
     </div>`;
@@ -381,10 +381,10 @@ function renderTable() {
       <td><span class="type-dot" style="background:${c.color}"></span>${c.name}</td>
       <td>${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</td>
       <td>${c.loc}</td>
-      <td>${c.courts ?? 'â'}</td>
+      <td>${c.courts ?? '—'}</td>
       <td>${fmtUtil(u)}</td>
-      <td>${d.booked ?? 'â'}</td>
-      <td>${d.total ?? 'â'}</td>
+      <td>${d.booked ?? '—'}</td>
+      <td>${d.total ?? '—'}</td>
       <td>${c.platform}</td>
     </tr>`;
   }).join('');
@@ -407,7 +407,7 @@ function renderCharts() {
 
 function renderTrends() {
   if (history.length < 2) {
-    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet â trends appear after 2+ days of scraping.</p>';
+    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
     return;
   }
   const dates = history.map(s => s.date);
