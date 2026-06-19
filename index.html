@@ -227,7 +227,8 @@ const CLUBS = {
   hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" },
   four_fathers_pickleball: { name:"Four Fathers Pickleball", short:"Four Fathers", loc:"Cambridge, ON", platform:"CourtReserve", courts:7,  color:"#27ae60", type:"competitor" },
   real_pickleball:         { name:"Real Pickleball",         short:"Real PB",      loc:"Guelph, ON", platform:"CourtReserve", courts:8,  color:"#e91e63", type:"competitor" },
-  corte_kitchener:         { name:"Corte Kitchener",         short:"Corte KW",     loc:"Kitchener, ON", platform:"CatchCorner",  courts:4,  color:"#ff9800", type:"competitor" }
+  corte_kitchener:         { name:"Corte Kitchener",         short:"Corte KW",     loc:"Kitchener, ON", platform:"CatchCorner",  courts:4,  color:"#ff9800", type:"competitor" },
+  prime_time:              { name:"Prime Time Pickleball",   short:"Prime Time",   loc:"LaSalle, ON",   platform:"CourtReserve", courts:8,  color:"#9c27b0", type:"competitor", orgId:11991 }
 };
 
 const REGIONS = [
@@ -240,7 +241,7 @@ const REGIONS = [
   { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
   { id:"belleville", name:"Belleville, ON",           own:["pickleplex_belleville"],                                          comp:[] },
   { id:"barrie",     name:"Barrie, ON",               own:["pickleplex_barrie"],                                              comp:[] },
-  { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:[] },
+  { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:["prime_time"] },
 ];
 
 // ââ TODAY_DATA — replaced daily by scheduled task âââââââââââââââââââââââââ
@@ -275,7 +276,8 @@ const TODAY_DATA = {
     smash_pb_london:        { util: 66.7, booked: 78,  total: 117, note: "9 courts × 13 hrs (7am-8pm)" },
     four_fathers_pickleball: { util: 25.7, booked: 18, total: 70,  note: "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)" },
     real_pickleball:         { util: 31.0, booked: 26, total: 84,  note: "6 of 8 courts active × 14 hrs (8am-10pm)" },
-    corte_kitchener:         { util: 29.2, booked: 7,  total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 17 court-hrs avail" }
+    corte_kitchener:         { util: 29.2, booked: 7,  total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 17 court-hrs avail" },
+    prime_time:              { util: 17.9, booked: 20,   total: 112, note: "8 courts × 14 hrs (7am-9pm)" }
   }
 };
 
