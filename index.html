@@ -98,6 +98,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .hist-table tr:hover td { background: #f8fafc; }
 .hist-cell { display: inline-block; min-width: 44px; padding: 2px 5px; border-radius: 3px; font-weight: 700; text-align: center; }
 .hist-empty { color: #cbd5e1; }
+/* TREND BADGES */
+.trend-badge { font-size: 0.6rem; font-weight: 700; display: inline-block; padding: 2px 5px; border-radius: 3px; white-space: nowrap; }
+.trend-badge.up   { color: #15803d; background: #dcfce7; }
+.trend-badge.dn   { color: #b91c1c; background: #fee2e2; }
+.trend-badge.flat { color: #64748b; background: #f1f5f9; }
+.club-util-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+/* DELTA TABLE */
+.delta-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.delta-table th { padding: 9px 12px; text-align: left; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+.delta-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+.delta-table tr:hover td { background: #f8fafc; }
+.delta-table .own-row td:first-child { border-left: 3px solid #00a651; }
+
 </style>
 </head>
 <body>
@@ -144,7 +157,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="table-panel">
     <table class="data-table" id="data-table">
       <thead><tr>
-        <th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>Booked Hrs</th><th>Total Hrs</th><th>Platform</th>
+        <th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>DoD</th><th>WoW</th><th>Booked Hrs</th><th>Total Hrs</th><th>Platform</th>
       </tr></thead>
       <tbody id="table-body"></tbody>
     </table>
@@ -153,7 +166,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 <div id="tab-trends" class="tab-panel">
   <div class="charts-panel">
-    <div class="chart-card">
+        <div class="chart-card">
+      <div class="chart-title">Utilization Changes vs Prior Periods</div>
+      <div class="chart-sub">Day-over-day, week-over-week, and month-over-month (from history in your browser)</div>
+      <div id="delta-table-container" style="overflow-x:auto"></div>
+    </div>
+<div class="chart-card">
       <div class="chart-title">Utilization Trends Over Time</div>
       <div class="chart-sub">Historical daily utilization — accumulated from each 9am scrape</div>
       <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
@@ -338,25 +356,68 @@ function renderStats() {
 }
 
 // ââ REGIONAL CARDS ââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+function getHistoricalUtil(id, daysAgo) {
+  if (history.length < 2) return null;
+  const target = new Date(TODAY_DATA.date);
+  target.setDate(target.getDate() - daysAgo);
+  const targetStr = target.toISOString().slice(0, 10);
+  const snap = [...history].reverse().find(s => s.date <= targetStr && s.date !== TODAY_DATA.date);
+  return snap?.clubs[id]?.util ?? null;
+}
+
+function fmtDelta(id, daysAgo) {
+  const now = getUtil(id);
+  const then = getHistoricalUtil(id, daysAgo);
+  if (now === null || then === null) return '<span style="color:#cbd5e1">—</span>';
+  const d = now - then;
+  const sign = d >= 0 ? '+' : '';
+  const cls = d > 0.5 ? 'up' : d < -0.5 ? 'dn' : 'flat';
+  return '<span class="trend-badge ' + cls + '">' + sign + d.toFixed(1) + 'pp</span>';
+}
+
+function renderDeltaTable() {
+  const allIds = [...OWN_IDS, ...COMP_IDS].filter(id => getUtil(id) !== null);
+  const container = document.getElementById('delta-table-container');
+  if (!container) return;
+  if (history.length < 2) {
+    container.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:16px 0">No historical data yet — check back after 2+ days of scraping.</p>';
+    return;
+  }
+  const rows = allIds.map(id => {
+    const c = CLUBS[id]; const u = getUtil(id); const isOwn = c.type === 'own';
+    return '<tr class="' + (isOwn?'own-row':'') + '">'
+      + '<td><span class="type-dot" style="background:' + c.color + '"></span><strong>' + c.short + '</strong></td>'
+      + '<td style="color:#64748b;font-size:0.72rem">' + (isOwn?'Pickleplex':'Competitor') + '</td>'
+      + '<td>' + fmtUtil(u) + '</td>'
+      + '<td>' + fmtDelta(id,1) + '</td>'
+      + '<td>' + fmtDelta(id,7) + '</td>'
+      + '<td>' + fmtDelta(id,30) + '</td>'
+      + '</tr>';
+  }).join('');
+  container.innerHTML = '<table class="delta-table"><thead><tr>'
+    + '<th>Club</th><th>Type</th><th>Today</th><th>Day/Day</th><th>Week/Week</th><th>Month/Month</th>'
+    + '</tr></thead><tbody>' + rows + '</tbody></table>';
+}
+
 function renderClubCard(id) {
   const c = CLUBS[id];
   const d = TODAY_DATA.clubs[id] || {};
   const u = d.util ?? null;
-  const color = c.type === 'own' ? '#00a651' : CLUBS[id].color;
-  const pct = u !== null ? Math.min(u, 100) : 0;
-  const limitedBadge = c.limited ? `<div class="limited-badge">${c.limitNote||'Limited data'}</div>` : '';
-  const note = d.note ? `<div class="club-card-note">${d.note}</div>` : '';
-  return `<div class="club-card ${c.type}">
-    <div class="club-type-pill">${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</div>
-    <div class="club-card-name">${c.name}</div>
-    <div class="club-card-loc">${c.loc}</div>
-    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">—</span>'}</div>
-    <div class="util-bar-bg"><div class="util-bar-fill" style="width:${pct}%;background:${utilColor(u)}"></div></div>
-    <div class="club-card-meta"><span>${c.courts ? c.courts+' courts' : ''}</span><span>${c.platform}</span></div>
-    ${limitedBadge}${note}
-  </div>`;
+  const pct = u !== null ? Math.min(u,100) : 0;
+  const limitedBadge = c.limited ? '<div class="limited-badge">' + (c.limitNote||'Limited data') + '</div>' : '';
+  const note = d.note ? '<div class="club-card-note">' + d.note + '</div>' : '';
+  const dod = fmtDelta(id, 1);
+  const dodBadge = dod.includes('cbd5e1') ? '' : dod;
+  const uNum = u !== null ? u.toFixed(1)+'%' : '<span class="null-util">—</span>';
+  return '<div class="club-card ' + c.type + '">'
+    + '<div class="club-type-pill">' + (c.type==='own'?'Pickleplex':'Competitor') + '</div>'
+    + '<div class="club-card-name">' + c.name + '</div>'
+    + '<div class="club-card-loc">' + c.loc + '</div>'
+    + '<div class="club-util-row"><div class="club-util-num" style="color:' + utilColor(u) + '">' + uNum + '</div>' + dodBadge + '</div>'
+    + '<div class="util-bar-bg"><div class="util-bar-fill" style="width:' + pct + '%;background:' + utilColor(u) + '"></div></div>'
+    + '<div class="club-card-meta"><span>' + (c.courts?c.courts+' courts':'') + '</span><span>' + c.platform + '</span></div>'
+    + limitedBadge + note + '</div>';
 }
-
 function renderRegions() {
   const container = document.getElementById('regions-container');
   container.innerHTML = REGIONS.map(region => {
@@ -376,22 +437,21 @@ function renderRegions() {
 function renderTable() {
   const tbody = document.getElementById('table-body');
   tbody.innerHTML = [...OWN_IDS, ...COMP_IDS].map(id => {
-    const c = CLUBS[id];
-    const d = TODAY_DATA.clubs[id] || {};
-    const u = d.util ?? null;
-    return `<tr>
-      <td><span class="type-dot" style="background:${c.color}"></span>${c.name}</td>
-      <td>${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</td>
-      <td>${c.loc}</td>
-      <td>${c.courts ?? '—'}</td>
-      <td>${fmtUtil(u)}</td>
-      <td>${d.booked ?? '—'}</td>
-      <td>${d.total ?? '—'}</td>
-      <td>${c.platform}</td>
-    </tr>`;
+    const c = CLUBS[id]; const d = TODAY_DATA.clubs[id] || {}; const u = d.util ?? null;
+    return '<tr>'
+      + '<td><span class="type-dot" style="background:' + c.color + '"></span>' + c.name + '</td>'
+      + '<td>' + (c.type==='own'?'Pickleplex':'Competitor') + '</td>'
+      + '<td>' + c.loc + '</td>'
+      + '<td>' + (c.courts??'\u2014') + '</td>'
+      + '<td>' + fmtUtil(u) + '</td>'
+      + '<td>' + fmtDelta(id,1) + '</td>'
+      + '<td>' + fmtDelta(id,7) + '</td>'
+      + '<td>' + (d.booked??'\u2014') + '</td>'
+      + '<td>' + (d.total??'\u2014') + '</td>'
+      + '<td>' + c.platform + '</td>'
+      + '</tr>';
   }).join('');
 }
-
 function renderCharts() {
   const pxIds  = OWN_IDS.filter(id => getUtil(id) !== null);
   const cmpIds = COMP_IDS.filter(id => getUtil(id) !== null);
@@ -408,20 +468,23 @@ function renderCharts() {
 }
 
 function renderTrends() {
+  renderDeltaTable();
   if (history.length < 2) {
-    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
+    const el = document.getElementById('trendChart');
+    if (el) el.parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:16px 0">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
     return;
   }
   const dates = history.map(s => s.date);
-  const topClubs = [...OWN_IDS, ...COMP_IDS].filter(id => history.some(s => s.clubs[id]?.util != null)).slice(0, 8);
+  const topClubs = [...OWN_IDS,...COMP_IDS].filter(id => history.some(s => s.clubs[id]?.util != null)).slice(0,8);
   new Chart(document.getElementById('trendChart'), {
     type: 'line',
-    data: { labels: dates, datasets: topClubs.map(id => ({ label: CLUBS[id].short, data: history.map(s => s.clubs[id]?.util ?? null), borderColor: CLUBS[id].color, tension: 0.3, spanGaps: true, pointRadius: 3 })) },
+    data: { labels: dates, datasets: topClubs.map(id => ({ label: CLUBS[id].short, data: history.map(s => s.clubs[id]?.util??null), borderColor: CLUBS[id].color, tension:0.3, spanGaps:true, pointRadius:3 })) },
     options: { plugins:{legend:{display:false}}, scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'}}}, responsive:true }
   });
-  document.getElementById('trend-legend').innerHTML = topClubs.map(id => `<div class="legend-item"><div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}</div>`).join('');
+  document.getElementById('trend-legend').innerHTML = topClubs.map(id =>
+    '<div class="legend-item"><div class="legend-dot" style="background:' + CLUBS[id].color + '"></div>' + CLUBS[id].short + '</div>'
+  ).join('');
 }
-
 function renderMonthly() {
   const noData = msg => {
     ['monthlyChart','monthlyDetailChart'].forEach(id => {
