@@ -243,10 +243,10 @@ const CLUBS = {
   smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" },
   fairgrounds_whitby:    { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null,color:"#8e6bbf",type:"competitor" },
   hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" },
-  four_fathers_pickleball: { util: 24.3, booked: 17, total: 70, note: "7 courts: morn 9am-2pm + aft 5pm-8pm + eve 8pm-10pm" },
+  four_fathers_pickleball: { name:"Four Fathers Pickleball", short:"Four Fathers", loc:"Cambridge, ON", platform:"CourtReserve", courts:7, color:"#27ae60", type:"competitor" },
   real_pickleball:         { name:"Real Pickleball",         short:"Real PB",      loc:"Guelph, ON", platform:"CourtReserve", courts:8,  color:"#e91e63", type:"competitor" },
   corte_kitchener:         { name:"Corte Kitchener",         short:"Corte KW",     loc:"Kitchener, ON", platform:"CatchCorner",  courts:4,  color:"#ff9800", type:"competitor" },
-  prime_time:              { util: 31.3, booked: 35, total: 112, note: "8 courts x 14 hrs (7am-9pm); AM bookings may undercount (scraped ~10:30am)" }
+  prime_time: { name:"Prime Time Pickleball", short:"Prime Time", loc:"LaSalle, ON", platform:"CourtReserve", courts:8, color:"#9c27b0", type:"competitor", orgId:11991 }
 };
 
 const REGIONS = [
@@ -292,10 +292,10 @@ const TODAY_DATA = {
     picklex:                { util: 14.7, booked: 19, total: 129, note: "Member login (session active)" },
     blue_zone:              { util: 29.4, booked: 47, total: 160, note: "10 pickleball courts × 16hrs (7am-11pm)" },
     smash_pb_london:        { util: 53.0, booked: 62, total: 117, note: "9 courts × 13hrs (7am-8pm)" },
-    four_fathers_pickleball: { util: null, booked: null, total: 70,  note: "Booking session pages redirect to portal home — login required" },
+    four_fathers_pickleball: { util: 24.3, booked: 17, total: 70, note: "7 courts: morn 9am-2pm + aft 5pm-8pm + eve 8pm-10pm" },
     real_pickleball:         { util: 40.2, booked: 45, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
     corte_kitchener:         { util: 31.3, booked: 7.5, total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 16.5 court-hrs avail (union)" },
-    prime_time:              { util: null, booked: null, total: 112, note: "Session expired — login required" }
+    prime_time:              { util: 31.3, booked: 35, total: 112, note: "8 courts x 14 hrs (7am-9pm); AM bookings may undercount (scraped ~10:30am)" }
   }
 };
 
