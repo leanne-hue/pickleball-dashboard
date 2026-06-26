@@ -243,10 +243,10 @@ const CLUBS = {
   smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" },
   fairgrounds_whitby:    { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null,color:"#8e6bbf",type:"competitor" },
   hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" },
-  four_fathers_pickleball: { name:"Four Fathers Pickleball", short:"Four Fathers", loc:"Cambridge, ON", platform:"CourtReserve", courts:7,  color:"#27ae60", type:"competitor" },
+  four_fathers_pickleball: { util: 24.3, booked: 17, total: 70, note: "7 courts: morn 9am-2pm + aft 5pm-8pm + eve 8pm-10pm" },
   real_pickleball:         { name:"Real Pickleball",         short:"Real PB",      loc:"Guelph, ON", platform:"CourtReserve", courts:8,  color:"#e91e63", type:"competitor" },
   corte_kitchener:         { name:"Corte Kitchener",         short:"Corte KW",     loc:"Kitchener, ON", platform:"CatchCorner",  courts:4,  color:"#ff9800", type:"competitor" },
-  prime_time:              { name:"Prime Time Pickleball",   short:"Prime Time",   loc:"LaSalle, ON",   platform:"CourtReserve", courts:8,  color:"#9c27b0", type:"competitor", orgId:11991 }
+  prime_time:              { util: 31.3, booked: 35, total: 112, note: "8 courts x 14 hrs (7am-9pm); AM bookings may undercount (scraped ~10:30am)" }
 };
 
 const REGIONS = [
@@ -546,6 +546,17 @@ function histDateLabel() {
   }
   return histDate.toLocaleDateString('en-CA',{year:'numeric',month:'long'});
 }
+function deltaAt(id, baseDateStr, daysAgo) {
+  const bd = {}; history.forEach(s=>bd[s.date]=s);
+  const nowU = bd[baseDateStr]?.clubs[id]?.util ?? null;
+  const t = new Date(baseDateStr+'T12:00:00'); t.setDate(t.getDate()-daysAgo);
+  const tStr = t.toISOString().slice(0,10);
+  const prior = [...history].reverse().find(s => s.date <= tStr && s.date !== baseDateStr);
+  const thenU = prior?.clubs[id]?.util ?? null;
+  if (nowU===null||thenU===null) return '<span style="color:#cbd5e1">—</span>';
+  const dd = nowU-thenU; const sign = dd>=0?'+':''; const cls = dd>0.5?'up':dd<-0.5?'dn':'flat';
+  return '<span class="trend-badge '+cls+'">'+sign+dd.toFixed(1)+'pp</span>';
+}
 function renderHistory() {
   const lbl = document.getElementById('hist-label');
   if (lbl) lbl.textContent = histDateLabel();
@@ -562,8 +573,8 @@ function renderHistory() {
     const ds = histDate.toISOString().slice(0,10);
     const snap = byDate[ds];
     if (!snap) { content.innerHTML = '<div style="padding:40px;text-align:center;color:#94a3b8;background:white;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,0.07)">No data recorded for this date yet.</div>'; return; }
-    const rows = allIds.map(id => { const c=CLUBS[id],d=snap.clubs[id]||{},u=d.util??null; return `<tr><td><span class="type-dot" style="background:${c.color}"></span>${c.name}</td><td>${c.type==='own'?'Pickleplex':'Competitor'}</td><td>${c.loc}</td><td>${c.courts??'—'}</td><td>${cell(u)}</td><td>${d.booked??'—'}</td><td>${d.total??'—'}</td><td style="font-size:0.65rem;color:#94a3b8">${d.note||''}</td></tr>`; }).join('');
-    content.innerHTML = `<div class="hist-table-wrap"><table class="hist-table"><thead><tr><th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>Booked</th><th>Total</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+    const rows = allIds.map(id => { const c=CLUBS[id],d=snap.clubs[id]||{},u=d.util??null; return `<tr><td><span class="type-dot" style="background:${c.color}"></span>${c.name}</td><td>${c.type==='own'?'Pickleplex':'Competitor'}</td><td>${c.loc}</td><td>${c.courts??'—'}</td><td>${cell(u)}</td><td>${deltaAt(id,ds,1)}</td><td>${deltaAt(id,ds,7)}</td><td>${deltaAt(id,ds,30)}</td><td>${d.booked??'—'}</td><td>${d.total??'—'}</td><td style="font-size:0.65rem;color:#94a3b8">${d.note||''}</td></tr>`; }).join('');
+    content.innerHTML = `<div class="hist-table-wrap"><table class="hist-table"><thead><tr><th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>D/D</th><th>W/W</th><th>M/M</th><th>Booked</th><th>Total</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>`;
   } else if (histPeriod === 'week') {
     const dates = getWeekDates(histDate);
     const hdrs = dates.map(d => { const dt=new Date(d+'T12:00:00'); return `<th>${dt.toLocaleDateString('en-CA',{weekday:'short'})}<br><span style="font-weight:400">${dt.toLocaleDateString('en-CA',{month:'short',day:'numeric'})}</span></th>`; }).join('');
