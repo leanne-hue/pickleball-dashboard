@@ -265,8 +265,8 @@ const REGIONS = [
 // ââ TODAY_DATA — replaced daily by scheduled task âââââââââââââââââââââââââ
 const TODAY_DATA = {
   date: "2026-07-16",
-  scraped_at: "2026-07-16T14:37:00",
-  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+  scraped_at: "2026-07-16T16:06:00",
+  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Smash PB, Four Fathers, Prime Time re-scraped after login.",
   clubs: {
     pickleplex_barrie:     { util: 79.6, booked: 78, total: 98, note: "7 courts × 14 hrs" },
     pickleplex_windsor:    { util: 75.0, booked: 63, total: 84, note: "6 courts × 14 hrs" },
@@ -290,12 +290,12 @@ const TODAY_DATA = {
     hisports_durham:        { util: 95.8, booked: 184, total: 192, note: "12 courts × 16 hrs, 8 court-hrs avail" },
     picklrs_hub:            { util: 37.7, booked: 29, total: 77, note: "Reserve/Reserved/Waitlist button count" },
     picklex:                { util: 36.1, booked: 26, total: 72, note: "Reserve/Reserved/Waitlist button count" },
-    blue_zone:              { util: null, booked: null, total: 160, note: "Session expired — login required" },
-    smash_pb_london:        { util: null, booked: null, total: 117, note: "Login required — calendar not accessible without account" },
-    four_fathers_pickleball: { util: null, booked: null, total: 70,  note: "Session expired — login required (redirects to portal home)" },
+    blue_zone:              { util: null, booked: null, total: 160, note: "Session expired — login required (still not logged in this session)" },
+    smash_pb_london:        { util: 74.4, booked: 87, total: 117, note: "9 courts × 13 hrs (7am-8pm); re-scraped after login" },
+    four_fathers_pickleball: { util: 41.4, booked: 29, total: 70,  note: "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm); re-scraped after login" },
     real_pickleball:         { util: 47.3, booked: 53, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
     corte_kitchener:         { util: 43.8, booked: 10.5, total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 13.5 court-hrs avail" },
-    prime_time:              { util: null, booked: null, total: 112, note: "Session expired — login required" }
+    prime_time:              { util: 28.6, booked: 32, total: 112, note: "8 courts × 14 hrs (7am-9pm); re-scraped after login" }
   }
 };
 
