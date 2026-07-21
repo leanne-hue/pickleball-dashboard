@@ -318,10 +318,10 @@
         "note": "Reserve/Reserved/Waitlist button count, session active"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": 160,
-        "note": "Session expired \u2014 login required"
+        "util": 27.3,
+        "booked": 48,
+        "total": 176,
+        "note": "11 pickleball courts \u00d7 16hrs (7am-11pm), Franklin Ct included"
       },
       "smash_pb_london": {
         "util": 74.4,
