@@ -171,6 +171,12 @@
         "booked": null,
         "total": 112,
         "note": "8 courts × 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "15 courts; ClubAutomation"
       }
     }
   }
