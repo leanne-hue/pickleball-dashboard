@@ -112,6 +112,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .club-picker label { display:flex; align-items:center; gap:7px; padding:4px 6px; font-size:0.76rem; cursor:pointer; border-radius:4px; white-space:nowrap; }
 .club-picker label:hover { background:#f8fafc; }
 .cp-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+
+/* DAILY DATA TABLE */
+.daily-table-wrap { overflow-x:auto; margin-top:18px; border-top:1px solid #f1f5f9; padding-top:14px; }
+.daily-table-toggle { font-size:0.75rem; font-weight:600; color:var(--px-purple); background:none; border:none; cursor:pointer; padding:0 0 10px 0; display:flex; align-items:center; gap:5px; }
+.daily-table-toggle:hover { opacity:0.75; }
+#daily-data-table { width:100%; border-collapse:collapse; font-size:0.74rem; display:none; }
+#daily-data-table.visible { display:table; }
+#daily-data-table th { padding:6px 10px; text-align:right; font-size:0.65rem; text-transform:uppercase; letter-spacing:.05em; color:#64748b; background:#f8fafc; border-bottom:1px solid #e2e8f0; white-space:nowrap; position:sticky; top:0; }
+#daily-data-table th:first-child { text-align:left; }
+#daily-data-table td { padding:5px 10px; text-align:right; border-bottom:1px solid #f8fafc; white-space:nowrap; }
+#daily-data-table td:first-child { text-align:left; color:#64748b; font-weight:600; }
+#daily-data-table tr:last-child td { border-bottom:none; }
+#daily-data-table tr:hover td { background:#fafafa; }
+.dt-null { color:#cbd5e1; }
 </style>
 </head>
 <body>
@@ -189,6 +203,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       </div>
       <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
       <div class="legend" id="trend-legend"></div>
+      <div class="daily-table-wrap">
+        <button class="daily-table-toggle" onclick="toggleDailyTable(this)">▶ Show daily data table</button>
+        <div style="overflow-x:auto"><table id="daily-data-table"><thead id="daily-table-head"></thead><tbody id="daily-table-body"></tbody></table></div>
+      </div>
     </div>
   </div>
 </div>
@@ -648,12 +666,43 @@ function buildTrendChart() {
     `<div class="legend-item" style="cursor:pointer;opacity:${_trendChecked && !_trendChecked.has(id)?0.35:1}" onclick="onLegendClick('${id}')">
        <div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}
      </div>`).join('');
+  if (document.getElementById('daily-data-table')?.classList.contains('visible')) buildDailyTable();
 }
 
 function onLegendClick(id) {
   if (!_trendChecked) _trendChecked = new Set(allClubsWithData());
   if (_trendChecked.has(id)) _trendChecked.delete(id); else _trendChecked.add(id);
   rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
+}
+
+function toggleDailyTable(btn) {
+  const tbl = document.getElementById('daily-data-table');
+  const visible = tbl.classList.toggle('visible');
+  btn.textContent = (visible ? '▼ Hide' : '▶ Show') + ' daily data table';
+  if (visible) buildDailyTable();
+}
+
+function buildDailyTable() {
+  const all = allClubsWithData();
+  const ids = (_trendChecked && _trendChecked.size > 0) ? [..._trendChecked].filter(id => all.includes(id)) : all;
+  if (!ids.length || !history.length) return;
+
+  // Sort history newest-first for the table
+  const rows = [...history].sort((a,b) => b.date.localeCompare(a.date));
+
+  document.getElementById('daily-table-head').innerHTML =
+    '<tr><th>Date</th>' + ids.map(id =>
+      `<th><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${CLUBS[id].color};margin-right:4px"></span>${CLUBS[id].short}</th>`
+    ).join('') + '</tr>';
+
+  document.getElementById('daily-table-body').innerHTML = rows.map(s =>
+    '<tr><td>' + s.date + '</td>' + ids.map(id => {
+      const u = s.clubs[id]?.util;
+      if (u == null) return '<td class="dt-null">—</td>';
+      const col = u >= 70 ? '#16a34a' : u >= 50 ? '#ca8a04' : u >= 30 ? '#ea580c' : '#dc2626';
+      return `<td style="color:${col};font-weight:600">${u.toFixed(1)}%</td>`;
+    }).join('') + '</tr>'
+  ).join('');
 }
 
 function renderTrends() {
