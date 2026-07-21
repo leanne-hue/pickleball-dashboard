@@ -94,6 +94,24 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 0.72rem; color: #475569; }
 .legend-item { display: flex; align-items: center; gap: 5px; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+/* TREND FILTERS */
+.trend-controls { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:14px; }
+.period-btns { display:flex; gap:4px; }
+.period-btn { padding:4px 13px; font-size:0.75rem; font-weight:600; border:1px solid #e2e8f0; border-radius:6px; background:white; color:#64748b; cursor:pointer; transition:all 0.15s; }
+.period-btn.active { background:var(--px-purple); color:white; border-color:var(--px-purple); }
+.period-btn:hover:not(.active) { border-color:#94a3b8; color:#334155; }
+.club-filter-wrap { position:relative; }
+.club-filter-btn { padding:4px 12px; font-size:0.75rem; font-weight:600; border:1px solid #e2e8f0; border-radius:6px; background:white; color:#475569; cursor:pointer; }
+.club-filter-btn:hover { border-color:#94a3b8; }
+.club-picker { display:none; position:absolute; top:calc(100% + 4px); left:0; z-index:200; background:white; border:1px solid #e2e8f0; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.12); padding:8px; min-width:210px; max-height:300px; overflow-y:auto; }
+.club-picker.open { display:block; }
+.cp-header { display:flex; gap:10px; padding:2px 4px 7px; border-bottom:1px solid #f1f5f9; margin-bottom:4px; }
+.cp-header button { font-size:0.7rem; color:var(--px-purple); background:none; border:none; cursor:pointer; padding:0; font-weight:600; }
+.cp-section { font-size:0.65rem; text-transform:uppercase; letter-spacing:.06em; color:#94a3b8; padding:5px 6px 2px; }
+.club-picker label { display:flex; align-items:center; gap:7px; padding:4px 6px; font-size:0.76rem; cursor:pointer; border-radius:4px; white-space:nowrap; }
+.club-picker label:hover { background:#f8fafc; }
+.cp-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
 </style>
 </head>
 <body>
@@ -158,7 +176,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
     <div class="chart-card">
       <div class="chart-title">Utilization Trends Over Time</div>
-      <div class="chart-sub">Historical daily utilization — accumulated from each 9am scrape</div>
+      <div class="trend-controls">
+        <div class="period-btns">
+          <button class="period-btn active" onclick="setTrendPeriod('day',this)">Daily</button>
+          <button class="period-btn" onclick="setTrendPeriod('week',this)">Weekly avg</button>
+          <button class="period-btn" onclick="setTrendPeriod('month',this)">Monthly avg</button>
+        </div>
+        <div class="club-filter-wrap">
+          <button class="club-filter-btn" id="club-filter-btn" onclick="toggleClubPicker()">Clubs ▾</button>
+          <div class="club-picker" id="club-picker"></div>
+        </div>
+      </div>
       <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
       <div class="legend" id="trend-legend"></div>
     </div>
@@ -463,20 +491,176 @@ function renderDeltaTable() {
 }
 
 // ── TRENDS ────────────────────────────────────────────────────────────────
-function renderTrends() {
-  renderDeltaTable();
-  if (history.length < 2) {
-    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:16px 0">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
+let _trendPeriod = 'day';
+let _trendChecked = null;   // null = "all clubs with data"
+let _trendChart   = null;
+let _pickerOpen   = false;
+
+function setTrendPeriod(p, btn) {
+  _trendPeriod = p;
+  document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  buildTrendChart();
+}
+
+function toggleClubPicker() {
+  _pickerOpen = !_pickerOpen;
+  const el = document.getElementById('club-picker');
+  if (_pickerOpen) {
+    if (!el.innerHTML) buildClubPicker();
+    el.classList.add('open');
+  } else {
+    el.classList.remove('open');
+  }
+}
+
+// Close picker when clicking outside
+document.addEventListener('click', e => {
+  if (_pickerOpen && !e.target.closest('.club-filter-wrap')) {
+    document.getElementById('club-picker').classList.remove('open');
+    _pickerOpen = false;
+  }
+});
+
+function allClubsWithData() {
+  return [...OWN_IDS, ...COMP_IDS].filter(id => history.some(s => s.clubs[id]?.util != null));
+}
+
+function buildClubPicker() {
+  const all = allClubsWithData();
+  if (_trendChecked === null) _trendChecked = new Set(all);
+  const own  = all.filter(id => CLUBS[id].type === 'own');
+  const comp = all.filter(id => CLUBS[id].type === 'competitor');
+  const row  = id => `<label>
+    <input type="checkbox" data-id="${id}" ${_trendChecked.has(id)?'checked':''} onchange="onClubCheck(this)">
+    <span class="cp-dot" style="background:${CLUBS[id].color}"></span>${CLUBS[id].short}
+  </label>`;
+  document.getElementById('club-picker').innerHTML =
+    `<div class="cp-header">
+       <button onclick="cpSelectAll()">All</button>
+       <button onclick="cpSelectOwn()">Pickleplex only</button>
+       <button onclick="cpClear()">None</button>
+     </div>
+     <div class="cp-section">Pickleplex</div>${own.map(row).join('')}
+     <div class="cp-section">Competitors</div>${comp.map(row).join('')}`;
+}
+
+function onClubCheck(cb) {
+  const id = cb.dataset.id;
+  if (cb.checked) _trendChecked.add(id); else _trendChecked.delete(id);
+  updateFilterBtn();
+  buildTrendChart();
+}
+
+function cpSelectAll() {
+  _trendChecked = new Set(allClubsWithData());
+  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
+}
+function cpSelectOwn() {
+  _trendChecked = new Set(allClubsWithData().filter(id => CLUBS[id].type === 'own'));
+  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
+}
+function cpClear() {
+  _trendChecked = new Set();
+  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
+}
+function rebuildPickerChecks() {
+  document.querySelectorAll('#club-picker input[data-id]').forEach(cb => {
+    cb.checked = _trendChecked.has(cb.dataset.id);
+  });
+}
+function updateFilterBtn() {
+  const all = allClubsWithData();
+  const n = _trendChecked ? _trendChecked.size : all.length;
+  document.getElementById('club-filter-btn').textContent =
+    (n === all.length || _trendChecked === null) ? 'Clubs ▾' : `Clubs (${n}) ▾`;
+}
+
+function weekKey(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const thu = new Date(d); thu.setDate(d.getDate() - ((d.getDay()+6)%7) + 3);
+  const jan4 = new Date(thu.getFullYear(), 0, 4);
+  const w = 1 + Math.round(((thu - jan4) / 86400000 - 3 + ((jan4.getDay()+6)%7)) / 7);
+  return `${thu.getFullYear()}-W${String(w).padStart(2,'0')}`;
+}
+function monthKey(dateStr) { return dateStr.slice(0,7); }
+function fmtWeek(k) { return k.replace('-W', ' W'); }
+function fmtMonth(k) { const [y,m]=k.split('-'); return new Date(+y,+m-1,1).toLocaleString('en-CA',{month:'short',year:'2-digit'}); }
+
+function aggregatePeriod(ids, period) {
+  if (period === 'day') {
+    return {
+      labels: history.map(s => s.date),
+      datasets: ids.map(id => ({
+        label: CLUBS[id].short,
+        data: history.map(s => s.clubs[id]?.util ?? null),
+        borderColor: CLUBS[id].color, backgroundColor: CLUBS[id].color + '22',
+        tension: 0.35, spanGaps: true, pointRadius: 3, borderWidth: 2, fill: false
+      }))
+    };
+  }
+  const keyFn  = period === 'week' ? weekKey : monthKey;
+  const fmtFn  = period === 'week' ? fmtWeek : fmtMonth;
+  const buckets = {};
+  history.forEach(s => {
+    const k = keyFn(s.date);
+    if (!buckets[k]) buckets[k] = {};
+    ids.forEach(id => {
+      const u = s.clubs[id]?.util;
+      if (u != null) { if (!buckets[k][id]) buckets[k][id] = []; buckets[k][id].push(u); }
+    });
+  });
+  const labels = Object.keys(buckets).sort();
+  return {
+    labels: labels.map(fmtFn),
+    datasets: ids.map(id => ({
+      label: CLUBS[id].short,
+      data: labels.map(k => {
+        const v = buckets[k]?.[id];
+        return v?.length ? Math.round(v.reduce((a,b)=>a+b,0)/v.length * 10)/10 : null;
+      }),
+      borderColor: CLUBS[id].color, backgroundColor: CLUBS[id].color + '22',
+      tension: 0.35, spanGaps: true, pointRadius: 5, borderWidth: 2, fill: false
+    }))
+  };
+}
+
+function buildTrendChart() {
+  const canvas = document.getElementById('trendChart');
+  if (!canvas) return;
+  if (_trendChart) { _trendChart.destroy(); _trendChart = null; }
+  const all = allClubsWithData();
+  if (all.length === 0 || history.length < 2) {
+    canvas.parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:16px 0">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
     return;
   }
-  const dates = history.map(s => s.date);
-  const topClubs = [...OWN_IDS, ...COMP_IDS].filter(id => history.some(s => s.clubs[id]?.util != null)).slice(0, 8);
-  new Chart(document.getElementById('trendChart'), {
+  const ids = (_trendChecked && _trendChecked.size > 0) ? [..._trendChecked].filter(id => all.includes(id)) : all;
+  if (ids.length === 0) {
+    document.getElementById('trend-legend').innerHTML = '<span style="color:#94a3b8;font-size:0.8rem">No clubs selected — use Clubs ▾ to add some.</span>';
+    return;
+  }
+  _trendChart = new Chart(canvas, {
     type: 'line',
-    data: { labels: dates, datasets: topClubs.map(id => ({ label: CLUBS[id].short, data: history.map(s => s.clubs[id]?.util ?? null), borderColor: CLUBS[id].color, tension: 0.3, spanGaps: true, pointRadius: 3 })) },
+    data: aggregatePeriod(ids, _trendPeriod),
     options: { plugins:{legend:{display:false}}, scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'}}}, responsive:true }
   });
-  document.getElementById('trend-legend').innerHTML = topClubs.map(id => `<div class="legend-item"><div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}</div>`).join('');
+  document.getElementById('trend-legend').innerHTML = ids.map(id =>
+    `<div class="legend-item" style="cursor:pointer;opacity:${_trendChecked && !_trendChecked.has(id)?0.35:1}" onclick="onLegendClick('${id}')">
+       <div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}
+     </div>`).join('');
+}
+
+function onLegendClick(id) {
+  if (!_trendChecked) _trendChecked = new Set(allClubsWithData());
+  if (_trendChecked.has(id)) _trendChecked.delete(id); else _trendChecked.add(id);
+  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
+}
+
+function renderTrends() {
+  renderDeltaTable();
+  if (_trendChecked === null) _trendChecked = new Set(allClubsWithData());
+  buildClubPicker();
+  buildTrendChart();
 }
 
 // ── MONTHLY ───────────────────────────────────────────────────────────────
