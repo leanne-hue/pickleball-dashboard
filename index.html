@@ -267,7 +267,7 @@ const REGIONS = [
 // ââ TODAY_DATA — replaced daily by scheduled task âââââââââââââââââââââââââ
 const TODAY_DATA = {
   date: "2026-07-21",
-  scraped_at: "2026-07-21T15:10:00",
+  scraped_at: "2026-07-21T15:35:00",
   note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
   clubs: {
     pickleplex_barrie:     { util: 73.5, booked: 72, total: 98, note: "7 courts × 14 hrs" },
@@ -293,7 +293,7 @@ const TODAY_DATA = {
     picklrs_hub:            { util: 41.5, booked: 27, total: 65, note: "CourtReserve Reserve/Reserved/Waitlist button count" },
     picklex:                { util: 26.3, booked: 26, total: 99, note: "CourtReserve Reserve/Reserved/Waitlist button count" },
     blue_zone:              { util: 29.4, booked: 47, total: 160, note: "10 pickleball courts × 16 hrs (7am-11pm); Franklin Court=Court 8; re-scraped after user login" },
-    smash_pb_london:        { util: null, booked: null, total: 117, note: "Login required — booking calendar now gated behind account login, 9 courts × 13hrs" },
+    smash_pb_london:        { util: 79.5, booked: 93, total: 117, note: "9 courts × 13 hrs; bookings observed extending to 9pm (beyond nominal 8pm close) — total capacity kept at fixed 117 per spec; re-scraped after user login" },
     four_fathers_pickleball: { util: 48.6, booked: 34, total: 70, note: "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); re-scraped after user login" },
     real_pickleball:         { util: 48.2, booked: 54, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
     corte_kitchener:         { util: 37.5, booked: 9, total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 15 court-hrs avail (deduped)" },
