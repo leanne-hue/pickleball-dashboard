@@ -482,9 +482,9 @@
         "total": 176
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
-        "total": null
+        "util": 57.3,
+        "booked": 67,
+        "total": 117
       },
       "four_fathers_pickleball": {
         "util": 41.4,
@@ -507,9 +507,9 @@
         "total": 112
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null
+        "util": 45.2,
+        "booked": 156,
+        "total": 345
       }
     }
   }
