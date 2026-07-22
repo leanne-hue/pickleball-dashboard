@@ -360,5 +360,157 @@
         "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 13:30-22:00 (run at 1:21pm ET; morning not captured)"
       }
     }
+  },
+  {
+    "date": "2026-07-22",
+    "scraped_at": "2026-07-22T14:46:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours \u00f7 courts \u00d7 14h, 8am-10pm). Competitors: live scrape. Run ~2:46pm ET \u2014 mid-day run, CatchCorner/Podplay availability figures reflect remaining afternoon window only.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 57.1,
+        "booked": 56,
+        "total": 98
+      },
+      "pickleplex_windsor": {
+        "util": 29.8,
+        "booked": 25,
+        "total": 84
+      },
+      "pickleplex_pickering": {
+        "util": 61.9,
+        "booked": 52,
+        "total": 84
+      },
+      "pickleplex_belleville": {
+        "util": 49.1,
+        "booked": 55,
+        "total": 112
+      },
+      "pickleplex_vaughan": {
+        "util": 67.9,
+        "booked": 76,
+        "total": 112
+      },
+      "pickleplex_promenade": {
+        "util": 90.5,
+        "booked": 76,
+        "total": 84
+      },
+      "pickleplex_downsview": {
+        "util": 79.1,
+        "booked": 144,
+        "total": 182
+      },
+      "pickleplex_oshawa": {
+        "util": 59.3,
+        "booked": 83,
+        "total": 140
+      },
+      "pickleplex_cambridge": {
+        "util": 32.9,
+        "booked": 46,
+        "total": 140
+      },
+      "pickleplex_red_deer": {
+        "util": 50.8,
+        "booked": 64,
+        "total": 126
+      },
+      "pickleplex_aurora": {
+        "util": 74.1,
+        "booked": 83,
+        "total": 112
+      },
+      "pickleplex_york_mills": {
+        "util": 35.7,
+        "booked": 15,
+        "total": 42
+      },
+      "pickleplex_brantford": {
+        "util": 29.8,
+        "booked": 25,
+        "total": 84
+      },
+      "pickleplex_burloak": {
+        "util": 76.8,
+        "booked": 86,
+        "total": 112
+      },
+      "fairgrounds_red_deer": {
+        "util": 17.6,
+        "booked": 32,
+        "total": 182
+      },
+      "fairgrounds_cloverdale": {
+        "util": 54.5,
+        "booked": 54,
+        "total": 99
+      },
+      "fairgrounds_whitby": {
+        "util": 47.5,
+        "booked": 19,
+        "total": 40
+      },
+      "picklr_toronto_west": {
+        "util": 76.4,
+        "booked": 110,
+        "total": 144
+      },
+      "vaughan_sportsplex": {
+        "util": 79.4,
+        "booked": 131,
+        "total": 165
+      },
+      "hisports_durham": {
+        "util": 84.1,
+        "booked": 161.5,
+        "total": 192
+      },
+      "picklrs_hub": {
+        "util": 50.8,
+        "booked": 64,
+        "total": 126
+      },
+      "picklex": {
+        "util": 64.3,
+        "booked": 63,
+        "total": 98
+      },
+      "blue_zone": {
+        "util": 31.8,
+        "booked": 56,
+        "total": 176
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": null
+      },
+      "four_fathers_pickleball": {
+        "util": 41.4,
+        "booked": 29,
+        "total": 70
+      },
+      "real_pickleball": {
+        "util": 43.8,
+        "booked": 49,
+        "total": 112
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24
+      },
+      "prime_time": {
+        "util": 34.8,
+        "booked": 39,
+        "total": 112
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null
+      }
+    }
   }
 ]
