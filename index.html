@@ -6,11 +6,11 @@
 <title>Pickleplex Competitive Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script>
 <style>
-:root { color-scheme: light; --px-green: #00a651; --px-dark: #007a3d; --px-purple: #7c3aed; --px-purple-dark: #3b0764; }
+:root { color-scheme: light; --px-green: #00a651; --px-dark: #007a3d; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f1f5f9; color: #0f172a; min-height: 100vh; font-size: 14px; }
 
-.header { background: linear-gradient(135deg, #3b0764 0%, #7c3aed 100%); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.header { background: linear-gradient(135deg, #003d1f 0%, #00a651 100%); color: white; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
 .header h1 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
 .header .sub { font-size: 0.75rem; opacity: 0.8; margin-top: 2px; }
 .header-right { text-align: right; font-size: 0.72rem; opacity: 0.8; }
@@ -23,7 +23,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 .tabs { display: flex; background: white; border-bottom: 2px solid #e2e8f0; padding: 0 20px; }
 .tab { padding: 10px 16px; font-size: 0.82rem; font-weight: 600; color: #64748b; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.15s; white-space: nowrap; }
-.tab.active { color: var(--px-purple); border-bottom-color: var(--px-purple); }
+.tab.active { color: var(--px-green); border-bottom-color: var(--px-green); }
 .tab:hover:not(.active) { color: #334155; }
 
 .tab-panel { display: none; }
@@ -47,8 +47,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 .club-card-name { font-size: 0.82rem; font-weight: 700; color: #0f172a; line-height: 1.2; margin-bottom: 2px; }
 .club-card-loc { font-size: 0.68rem; color: #94a3b8; margin-bottom: 8px; }
-.club-util-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
-.club-util-num { font-size: 1.5rem; font-weight: 800; line-height: 1; }
+.club-util-num { font-size: 1.5rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
 .util-bar-bg { height: 5px; background: #e2e8f0; border-radius: 99px; overflow: hidden; margin-bottom: 6px; }
 .util-bar-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
 .club-card-meta { font-size: 0.65rem; color: #94a3b8; }
@@ -59,19 +58,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .limited-badge { display: inline-block; font-size: 0.58rem; background: #fef9c3; color: #854d0e; border: 1px solid #fde68a; border-radius: 3px; padding: 1px 5px; margin-top: 3px; }
 
 .vs-divider { width: 1px; background: linear-gradient(to bottom, transparent, #cbd5e1 30%, #cbd5e1 70%, transparent); margin: 8px 0; flex-shrink: 0; }
-
-/* TREND BADGES */
-.trend-badge { font-size: 0.6rem; font-weight: 700; display: inline-block; padding: 2px 5px; border-radius: 3px; white-space: nowrap; }
-.trend-badge.up   { color: #15803d; background: #dcfce7; }
-.trend-badge.dn   { color: #b91c1c; background: #fee2e2; }
-.trend-badge.flat { color: #64748b; background: #f1f5f9; }
-
-/* DELTA TABLE */
-.delta-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
-.delta-table th { padding: 9px 12px; text-align: left; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
-.delta-table td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
-.delta-table tr:hover td { background: #f8fafc; }
-.delta-table .own-row td:first-child { border-left: 3px solid #7c3aed; }
 
 /* CHARTS */
 .charts-panel { padding: 20px; display: flex; flex-direction: column; gap: 24px; }
@@ -94,49 +80,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 0.72rem; color: #475569; }
 .legend-item { display: flex; align-items: center; gap: 5px; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-
-/* TREND FILTERS */
-.trend-controls { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:14px; }
-.period-btns { display:flex; gap:4px; }
-.period-btn { padding:4px 13px; font-size:0.75rem; font-weight:600; border:1px solid #e2e8f0; border-radius:6px; background:white; color:#64748b; cursor:pointer; transition:all 0.15s; }
-.period-btn.active { background:var(--px-purple); color:white; border-color:var(--px-purple); }
-.period-btn:hover:not(.active) { border-color:#94a3b8; color:#334155; }
-.club-filter-wrap { position:relative; }
-.club-filter-btn { padding:4px 12px; font-size:0.75rem; font-weight:600; border:1px solid #e2e8f0; border-radius:6px; background:white; color:#475569; cursor:pointer; }
-.club-filter-btn:hover { border-color:#94a3b8; }
-.club-picker { display:none; position:absolute; top:calc(100% + 4px); left:0; z-index:200; background:white; border:1px solid #e2e8f0; border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,0.12); padding:8px; min-width:210px; max-height:300px; overflow-y:auto; }
-.club-picker.open { display:block; }
-.cp-header { display:flex; gap:10px; padding:2px 4px 7px; border-bottom:1px solid #f1f5f9; margin-bottom:4px; }
-.cp-header button { font-size:0.7rem; color:var(--px-purple); background:none; border:none; cursor:pointer; padding:0; font-weight:600; }
-.cp-section { font-size:0.65rem; text-transform:uppercase; letter-spacing:.06em; color:#94a3b8; padding:5px 6px 2px; }
-.club-picker label { display:flex; align-items:center; gap:7px; padding:4px 6px; font-size:0.76rem; cursor:pointer; border-radius:4px; white-space:nowrap; }
-.club-picker label:hover { background:#f8fafc; }
-.cp-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-
-/* DAILY DATA TABLE */
-.daily-table-wrap { overflow-x:auto; margin-top:18px; border-top:1px solid #f1f5f9; padding-top:14px; }
-.daily-table-toggle { font-size:0.75rem; font-weight:600; color:var(--px-purple); background:none; border:none; cursor:pointer; padding:0 0 10px 0; display:flex; align-items:center; gap:5px; }
-.daily-table-toggle:hover { opacity:0.75; }
-#daily-data-table { width:100%; border-collapse:collapse; font-size:0.74rem; display:none; }
-#daily-data-table.visible { display:table; }
-#daily-data-table th { padding:6px 10px; text-align:right; font-size:0.65rem; text-transform:uppercase; letter-spacing:.05em; color:#64748b; background:#f8fafc; border-bottom:1px solid #e2e8f0; white-space:nowrap; position:sticky; top:0; }
-#daily-data-table th:first-child { text-align:left; }
-#daily-data-table td { padding:5px 10px; text-align:right; border-bottom:1px solid #f8fafc; white-space:nowrap; }
-#daily-data-table td:first-child { text-align:left; color:#64748b; font-weight:600; }
-#daily-data-table tr:last-child td { border-bottom:none; }
-#daily-data-table tr:hover td { background:#fafafa; }
-.dt-null { color:#cbd5e1; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div style="display:flex;align-items:center;gap:14px;">
-    <img src="data:image/avif;base64,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" style="height:52px;filter:brightness(0) invert(1);" alt="Pickleplex">
-    <div>
-      <div style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">Competitive Dashboard</div>
-      <div class="sub" id="hdr-sub">Loading…</div>
-    </div>
+  <div>
+    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">🥒 Pickleplex Competitive Dashboard</div>
+    <div class="sub" id="hdr-sub">Loading…</div>
   </div>
   <div class="header-right" id="hdr-right"></div>
 </div>
@@ -174,7 +125,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="table-panel">
     <table class="data-table" id="data-table">
       <thead><tr>
-        <th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>DoD</th><th>WoW</th><th>Booked Hrs</th><th>Total Hrs</th><th>Platform</th>
+        <th>Club</th><th>Type</th><th>Location</th><th>Courts</th><th>Utilization</th><th>Booked Hrs</th><th>Total Hrs</th><th>Platform</th>
       </tr></thead>
       <tbody id="table-body"></tbody>
     </table>
@@ -184,29 +135,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <div id="tab-trends" class="tab-panel">
   <div class="charts-panel">
     <div class="chart-card">
-      <div class="chart-title">Utilization Changes vs Prior Periods</div>
-      <div class="chart-sub">Day-over-day, week-over-week, and month-over-month (based on history stored in your browser)</div>
-      <div id="delta-table-container" style="overflow-x:auto"></div>
-    </div>
-    <div class="chart-card">
       <div class="chart-title">Utilization Trends Over Time</div>
-      <div class="trend-controls">
-        <div class="period-btns">
-          <button class="period-btn active" onclick="setTrendPeriod('day',this)">Daily</button>
-          <button class="period-btn" onclick="setTrendPeriod('week',this)">Weekly avg</button>
-          <button class="period-btn" onclick="setTrendPeriod('month',this)">Monthly avg</button>
-        </div>
-        <div class="club-filter-wrap">
-          <button class="club-filter-btn" id="club-filter-btn" onclick="toggleClubPicker()">Clubs ▾</button>
-          <div class="club-picker" id="club-picker"></div>
-        </div>
-      </div>
+      <div class="chart-sub">Historical daily utilization — accumulated from each 9am scrape</div>
       <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
       <div class="legend" id="trend-legend"></div>
-      <div class="daily-table-wrap">
-        <button class="daily-table-toggle" onclick="toggleDailyTable(this)">▶ Show daily data table</button>
-        <div style="overflow-x:auto"><table id="daily-data-table"><thead id="daily-table-head"></thead><tbody id="daily-table-body"></tbody></table></div>
-      </div>
     </div>
   </div>
 </div>
@@ -226,12 +158,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     </div>
   </div>
 </div>
-
 <script>
-// ─── DATA ──────────────────────────────────────────────────────────────────
+// ─── DATA ─────────────────────────────────────────────────────────────────
 
 const CLUBS = {
-  // ── Pickleplex (own) ────────────────────────────────────────────────────
+  // ── Pickleplex (own) ──────────────────────────────────────────────────
   pickleplex_barrie:     { name:"Pickleplex Barrie",     short:"Barrie",     loc:"Barrie, ON",       platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:13487 },
   pickleplex_windsor:    { name:"Pickleplex Windsor",    short:"Windsor",    loc:"Windsor, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:13986 },
   pickleplex_pickering:  { name:"Pickleplex Pickering",  short:"Pickering",  loc:"Pickering, ON",    platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:14195 },
@@ -246,22 +177,17 @@ const CLUBS = {
   pickleplex_york_mills: { name:"Pickleplex York Mills", short:"York Mills", loc:"Toronto, ON",      platform:"CourtReserve", courts:3,  color:"#00a651", type:"own", orgId:17114 },
   pickleplex_brantford:  { name:"Pickleplex Brantford",  short:"Brantford",  loc:"Brantford, ON",    platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17392 },
   pickleplex_burloak:    { name:"Pickleplex Burloak",    short:"Burloak",    loc:"Burlington, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17621 },
-  // ── Competitors ────────────────────────────────────────────────────────
-  fairgrounds_red_deer:    { name:"Fairgrounds Red Deer",       short:"FG Red Deer",  loc:"Red Deer, AB",    platform:"Podplay",      courts:14, color:"#e74c3c", type:"competitor" },
-  fairgrounds_cloverdale:  { name:"Fairgrounds Cloverdale",     short:"FG Cloverdale",loc:"Etobicoke, ON",   platform:"Podplay",      courts:11, color:"#f39c12", type:"competitor" },
-  fairgrounds_whitby:      { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null, color:"#8e6bbf", type:"competitor" },
-  picklr_toronto_west:     { name:"The Picklr Toronto West",    short:"Picklr TW",    loc:"Etobicoke, ON",   platform:"CatchCorner",  courts:9,  color:"#e67e22", type:"competitor" },
-  vaughan_sportsplex:      { name:"Vaughan Sportsplex",         short:"Vaughan SP",   loc:"Vaughan, ON",     platform:"CatchCorner",  courts:11, color:"#2980b9", type:"competitor" },
-  hisports_durham:         { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null, color:"#2471a3", type:"competitor" },
-  picklrs_hub:             { name:"Picklrs Hub",                short:"Picklrs Hub",  loc:"GTA, ON",         platform:"CourtReserve", courts:9,  color:"#8e44ad", type:"competitor" },
-  picklex:                 { name:"PickleX",                    short:"PickleX",      loc:"Oakville, ON",    platform:"CourtReserve", courts:null, color:"#c0392b", type:"competitor", limited:true, limitNote:"Member login" },
-  blue_zone:               { name:"Blue Zone",                  short:"Blue Zone",    loc:"Burlington, ON",  platform:"Custom",       courts:null, color:"#16a085", type:"competitor", limited:true, limitNote:"Login required" },
-  smash_pb_london:         { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" },
-  four_fathers_pickleball: { name:"Four Fathers Pickleball",      short:"Four Fathers", loc:"Brantford, ON",   platform:"CourtReserve", courts:7,  color:"#9b59b6", type:"competitor" },
-  real_pickleball:         { name:"Real Pickleball",              short:"Real PB",      loc:"Ontario",         platform:"CourtReserve", courts:8,  color:"#e91e63", type:"competitor" },
-  corte_kitchener:         { name:"Corte Kitchener",              short:"Corte KW",     loc:"Kitchener, ON",   platform:"CatchCorner",  courts:4,  color:"#ff9800", type:"competitor" },
-  prime_time:              { name:"Prime Time Pickleball",        short:"Prime Time",   loc:"LaSalle, ON",     platform:"CourtReserve", courts:8,  color:"#f44336", type:"competitor" },
-  rally_mississauga:       { name:"Rally Pickleball Mississauga", short:"Rally Msga",  loc:"Mississauga, ON", platform:"ClubAutomation", courts:15, color:"#00bcd4", type:"competitor" },
+  // ── Competitors ──────────────────────────────────────────────────────
+  fairgrounds_red_deer:  { name:"Fairgrounds Red Deer",       short:"FG Red Deer",  loc:"Red Deer, AB",    platform:"Podplay",      courts:14, color:"#e74c3c", type:"competitor" },
+  fairgrounds_cloverdale:{ name:"Fairgrounds Cloverdale",     short:"FG Cloverdale",loc:"Etobicoke, ON",   platform:"Podplay",      courts:11, color:"#f39c12", type:"competitor" },
+  picklr_toronto_west:   { name:"The Picklr Toronto West",    short:"Picklr TW",    loc:"Etobicoke, ON",   platform:"CatchCorner",  courts:9,  color:"#e67e22", type:"competitor" },
+  vaughan_sportsplex:    { name:"Vaughan Sportsplex",         short:"Vaughan SP",   loc:"Vaughan, ON",     platform:"CatchCorner",  courts:11, color:"#2980b9", type:"competitor" },
+  picklrs_hub:           { name:"Picklrs Hub",                short:"Picklrs Hub",  loc:"GTA, ON",         platform:"CourtReserve", courts:9,  color:"#8e44ad", type:"competitor" },
+  picklex:               { name:"PickleX",                    short:"PickleX",      loc:"Oakville, ON",    platform:"CourtReserve", courts:null,color:"#c0392b",type:"competitor", limited:true, limitNote:"Member login" },
+  blue_zone:             { name:"Blue Zone",                  short:"Blue Zone",    loc:"Burlington, ON",  platform:"Custom",       courts:null,color:"#16a085",type:"competitor", limited:true, limitNote:"Login required" },
+  smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" },
+  fairgrounds_whitby:    { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null,color:"#8e6bbf",type:"competitor" },
+  hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" }
 };
 
 const REGIONS = [
@@ -270,59 +196,61 @@ const REGIONS = [
   { id:"toronto",    name:"Toronto",                  own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west"] },
   { id:"east_gta",   name:"East GTA",                 own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:["fairgrounds_whitby","hisports_durham"] },
   { id:"burloak",    name:"Oakville / Burlington",    own:["pickleplex_burloak"],                                             comp:["picklex","blue_zone"] },
-  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:["corte_kitchener"] },
-  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london","four_fathers_pickleball","real_pickleball"] },
+  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:[] },
+  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
   { id:"belleville", name:"Belleville, ON",           own:["pickleplex_belleville"],                                          comp:[] },
   { id:"barrie",     name:"Barrie, ON",               own:["pickleplex_barrie"],                                              comp:[] },
-  { id:"mississauga", name:"Mississauga, ON",          own:[],                                                                comp:["rally_mississauga"] },
-  { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:["prime_time"] },
+  { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:[] },
 ];
 
 // ── TODAY_DATA — replaced daily by scheduled task ─────────────────────────
 const TODAY_DATA = {
-  date: "2026-07-22",
-  scraped_at: "2026-07-22T14:46:00",
-  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run ~2:46pm ET — mid-day run, CatchCorner/Podplay availability figures reflect remaining afternoon window only.",
+  date: "2026-07-23",
+  scraped_at: "2026-07-23T10:50:00",
+  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
   clubs: {
-    pickleplex_barrie:     { util: 57.1,  booked: 56,    total: 98,  note: "7 courts × 14 hrs" },
-    pickleplex_windsor:    { util: 29.8,  booked: 25,    total: 84,  note: "6 courts × 14 hrs" },
-    pickleplex_pickering:  { util: 61.9,  booked: 52,    total: 84,  note: "6 of 7 courts active × 14 hrs" },
-    pickleplex_belleville: { util: 49.1,  booked: 55,    total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_vaughan:    { util: 67.9,  booked: 76,    total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_promenade:  { util: 90.5,  booked: 76,    total: 84,  note: "6 courts × 14 hrs" },
-    pickleplex_downsview:  { util: 79.1,  booked: 144,   total: 182, note: "13 courts × 14 hrs" },
-    pickleplex_oshawa:     { util: 59.3,  booked: 83,    total: 140, note: "10 courts × 14 hrs" },
-    pickleplex_cambridge:  { util: 32.9,  booked: 46,    total: 140, note: "10 of 12 courts active × 14 hrs" },
-    pickleplex_red_deer:   { util: 50.8,  booked: 64,    total: 126, note: "9 courts × 14 hrs" },
-    pickleplex_aurora:     { util: 74.1,  booked: 83,    total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_york_mills: { util: 35.7,  booked: 15,    total: 42,  note: "3 courts × 14 hrs" },
-    pickleplex_brantford:  { util: 29.8,  booked: 25,    total: 84,  note: "6 of 8 courts active × 14 hrs" },
-    pickleplex_burloak:    { util: 76.8,  booked: 86,    total: 112, note: "8 courts × 14 hrs" },
-    fairgrounds_red_deer:   { util: 17.6,  booked: 32,   total: 182, note: "14 courts, 13 time slots (8:30am-9pm)" },
-    fairgrounds_cloverdale: { util: 54.5,  booked: 54,   total: 99,  note: "11 courts (Standard+Compact), 9 time slots visible (11am-9pm); mid-day run" },
-    fairgrounds_whitby:     { util: 47.5,  booked: 19,   total: 40,  note: "5 courts (max: PB5), 8 time slots visible (11am-9pm)" },
-    picklr_toronto_west:    { util: 76.4,  booked: 110,  total: 144, note: "9 courts × 16hrs (7am-11pm); mid-day run, 34 court-hrs avail from 2pm" },
-    vaughan_sportsplex:     { util: 79.4,  booked: 131,  total: 165, note: "11 courts × 15hrs (7am-10pm); mid-day run, 34 court-hrs avail" },
-    hisports_durham:        { util: 84.1,  booked: 161.5,total: 192, note: "12 courts × 16hrs; mid-day run, 30.5 court-hrs avail from 1pm" },
-    picklrs_hub:            { util: 50.8,  booked: 64,   total: 126, note: "9 courts × 14 hrs (Kendo scheduler)" },
-    picklex:                { util: 64.3,  booked: 63,   total: 98,  note: "7 courts × 14 hrs (Kendo scheduler)" },
-    blue_zone:              { util: 31.8,  booked: 56,   total: 176, note: "11 pickleball courts × 16hrs (7am-11pm), Franklin Ct included" },
-    smash_pb_london:        { util: 57.3,  booked: 67,   total: 117, note: "9 courts × 13 hrs (7am-8pm)" },
-    four_fathers_pickleball:{ util: 41.4,  booked: 29,   total: 70,  note: "7 courts, morn (9am-2pm): 14/35, aft (5pm-8pm): 15/21, eve (8pm-10pm): 0/14" },
-    real_pickleball:        { util: 43.8,  booked: 49,   total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
-    corte_kitchener:        { util: 43.8,  booked: 10.5, total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 13.5 court-hrs avail (90-min slots)" },
-    prime_time:             { util: 34.8,  booked: 39,   total: 112, note: "8 courts × 14 hrs (7am-9pm)" },
-    rally_mississauga:      { util: 45.2,  booked: 156,  total: 345, note: "15 courts; ClubAutomation live-availability (30-min granularity), window 11am-10pm; mid-day run, morning hours not captured" }
+    pickleplex_barrie:     { util: 67.3, booked: 66, total: 98, note: "7 courts × 14 hrs" },
+    pickleplex_windsor:    { util: 34.5, booked: 29, total: 84, note: "6 courts × 14 hrs" },
+    pickleplex_pickering:  { util: 81.0, booked: 68, total: 84, note: "6 of 7 courts active × 14 hrs" },
+    pickleplex_belleville: { util: 66.1, booked: 74, total: 112, note: "8 courts × 14 hrs" },
+    pickleplex_vaughan:    { util: 66.1, booked: 74, total: 112, note: "8 courts × 14 hrs" },
+    pickleplex_promenade:  { util: 76.2, booked: 64, total: 84, note: "6 courts × 14 hrs" },
+    pickleplex_downsview:  { util: 53.3, booked: 97, total: 182, note: "13 courts × 14 hrs" },
+    pickleplex_oshawa:     { util: 57.1, booked: 80, total: 140, note: "10 courts × 14 hrs" },
+    pickleplex_cambridge:  { util: 27.6, booked: 27, total: 98, note: "7 of 12 courts active × 14 hrs" },
+    pickleplex_red_deer:   { util: 42.9, booked: 54, total: 126, note: "9 courts × 14 hrs" },
+    pickleplex_aurora:     { util: 79.5, booked: 89, total: 112, note: "8 courts × 14 hrs" },
+    pickleplex_york_mills: { util: 64.3, booked: 27, total: 42, note: "3 courts × 14 hrs" },
+    pickleplex_brantford:  { util: 25.0, booked: 21, total: 84, note: "6 of 8 courts active × 14 hrs" },
+    pickleplex_burloak:    { util: 58.0, booked: 65, total: 112, note: "8 courts × 14 hrs" },
+    fairgrounds_red_deer:   { util: 26.4, booked: 48, total: 182, note: "13 time slots (8:30am-9pm), 134 court-hrs avail" },
+    fairgrounds_cloverdale: { util: 80.6, booked: 133, total: 165, note: "11 courts (Standard+Compact); 15 slot-rows combined, 32 court-hrs avail" },
+    fairgrounds_whitby:     { util: 55.6, booked: 25, total: 45, note: "5 courts (max seen) × 9 time slots (11am-9pm), 20 court-hrs avail" },
+    picklr_toronto_west:    { util: 91.7, booked: 132, total: 144, note: "9 courts × 16 hrs (7am-11pm); 12 court-hrs avail" },
+    vaughan_sportsplex:     { util: 89.7, booked: 148, total: 165, note: "11 courts × 15 hrs (7am-10pm); 17 court-hrs avail" },
+    hisports_durham:        { util: 95.3, booked: 183, total: 192, note: "12 courts × 16 hrs; 9 court-hrs avail" },
+    picklrs_hub:            { util: 21.3, booked: 16, total: 75, note: "9 courts; Reserve=59, Reserved=16, Waitlist=0" },
+    picklex:                { util: 19.8, booked: 20, total: 101, note: "Reserve=81, Reserved=16, Waitlist=4" },
+    blue_zone:              { util: null, booked: null, total: 160, note: "Session expired - login required" },
+    smash_pb_london:        { util: 66.7, booked: 78, total: 117, note: "9 courts × 13hrs (7am-8pm)" },
+    four_fathers_pickleball: { util: 40.0, booked: 28, total: 70,  note: "7 courts, morn (9am-2pm)=16/35 + aft (5pm-8pm)=12/21 + eve (8pm-10pm)=0/14" },
+    real_pickleball:         { util: 51.8, booked: 58, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
+    corte_kitchener:         { util: 25.0, booked: 6, total: 24,  note: "4 courts × 6 hrs (4pm-10pm), 18 court-hrs avail" },
+    prime_time:              { util: 31.3, booked: 35, total: 112, note: "8 of 8 courts active × 14 hrs (7am-9pm)" },
+    rally_mississauga:       { util: null, booked: null, total: null, note: "Session expired - login required" }
   }
 };
 
-// ── History: data.json (persistent, cross-device) ────────────────────────
-// data.json in the repo is the authoritative history store, appended by the
-// daily scraper. localStorage is kept as an offline fallback only.
+// ── localStorage history ──────────────────────────────────────────────────
 const STORAGE_KEY = 'pb_tracker_v2';
 let history = [];
+try { history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) {}
+const ti = history.findIndex(s => s.date === TODAY_DATA.date);
+if (ti >= 0) history[ti] = TODAY_DATA; else history.push(TODAY_DATA);
+history.sort((a,b) => a.date.localeCompare(b.date));
+try { localStorage.setItem(STORAGE_KEY, JSON.stringify(history)); } catch(e) {}
 
-// ── HELPERS ───────────────────────────────────────────────────────────────
+// ── HELPERS ─────────────────────────────────────────────────────────────
 const CLUB_IDS = Object.keys(CLUBS);
 const OWN_IDS  = CLUB_IDS.filter(id => CLUBS[id].type === 'own');
 const COMP_IDS = CLUB_IDS.filter(id => CLUBS[id].type === 'competitor');
@@ -342,28 +270,7 @@ function fmtUtil(u) {
   return `<span style="color:${utilColor(u)}">${u.toFixed(1)}%</span>`;
 }
 
-// ── TREND HELPERS ─────────────────────────────────────────────────────────
-function getHistoricalUtil(id, daysAgo) {
-  if (history.length < 2) return null;
-  const target = new Date(TODAY_DATA.date);
-  target.setDate(target.getDate() - daysAgo);
-  const targetStr = target.toISOString().slice(0, 10);
-  // Most recent snapshot at or before targetStr, excluding today
-  const snap = [...history].reverse().find(s => s.date <= targetStr && s.date !== TODAY_DATA.date);
-  return snap?.clubs[id]?.util ?? null;
-}
-
-function fmtDelta(id, daysAgo) {
-  const now = getUtil(id);
-  const then = getHistoricalUtil(id, daysAgo);
-  if (now === null || then === null) return '<span style="color:#cbd5e1">—</span>';
-  const d = now - then;
-  const sign = d >= 0 ? '+' : '';
-  const cls = d > 0.5 ? 'up' : d < -0.5 ? 'dn' : 'flat';
-  return `<span class="trend-badge ${cls}">${sign}${d.toFixed(1)}pp</span>`;
-}
-
-// ── STATS BAR ─────────────────────────────────────────────────────────────
+// ── STATS BAR ───────────────────────────────────────────────────────────
 function renderStats() {
   const ownUtils = OWN_IDS.map(id => getUtil(id)).filter(u => u !== null);
   const compUtils = COMP_IDS.map(id => getUtil(id)).filter(u => u !== null);
@@ -373,27 +280,16 @@ function renderStats() {
   const totalOwnCourts = OWN_IDS.reduce((s,id) => s + (CLUBS[id].courts||0), 0);
   const diff = avgOwn !== null && avgComp !== null ? avgOwn - avgComp : null;
 
-  // DoD badge for avg Pickleplex util
-  const ownDod = (() => {
-    const vals = OWN_IDS.map(id => getHistoricalUtil(id, 1)).filter(u => u !== null);
-    if (!vals.length || avgOwn === null) return '';
-    const prev = vals.reduce((a,b)=>a+b,0)/vals.length;
-    const d = avgOwn - prev;
-    const sign = d >= 0 ? '+' : '';
-    const cls = d > 0.5 ? 'up' : d < -0.5 ? 'dn' : 'flat';
-    return ` <span class="trend-badge ${cls}" style="font-size:0.58rem;vertical-align:middle">${sign}${d.toFixed(1)}pp DoD</span>`;
-  })();
-
   document.getElementById('stats-bar').innerHTML = [
-    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : '—', extra: ownDod, sub: `${ownUtils.length} locations reporting` },
+    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : '—', sub: `${ownUtils.length} locations reporting` },
     { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : '—', sub: `${compUtils.length} clubs reporting` },
-    { label:'Pickleplex vs Comp',  value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : '—', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
-    { label:'Top Pickleplex',      value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : '—', sub: topOwn ? CLUBS[topOwn].short : '' },
-    { label:'Total PX Courts',     value: totalOwnCourts, sub: `${OWN_IDS.length} locations` },
-    { label:'As of',               value: TODAY_DATA.date, sub: 'Updated 9am daily' },
+    { label:'Pickleplex vs Comp', value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : '—', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
+    { label:'Top Pickleplex', value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : '—', sub: topOwn ? CLUBS[topOwn].short : '' },
+    { label:'Total PX Courts', value: totalOwnCourts, sub: `${OWN_IDS.length} locations` },
+    { label:'As of', value: TODAY_DATA.date, sub: 'Updated 9am daily' },
   ].map(s => `<div class="stat">
     <div class="stat-label">${s.label}</div>
-    <div class="stat-value" style="color:${s.color||''}">${s.value}${s.extra||''}</div>
+    <div class="stat-value" style="color:${s.color||''}">${s.value}</div>
     <div class="stat-sub">${s.sub}</div>
   </div>`).join('');
 
@@ -401,24 +297,20 @@ function renderStats() {
   document.getElementById('hdr-right').innerHTML = `Last scraped: ${TODAY_DATA.scraped_at.replace('T',' ')}<br>Data: Pickleplex admin (CourtReserve) + public scrapers`;
 }
 
-// ── REGIONAL CARDS ────────────────────────────────────────────────────────
+// ── REGIONAL CARDS ──────────────────────────────────────────────────────
 function renderClubCard(id) {
   const c = CLUBS[id];
   const d = TODAY_DATA.clubs[id] || {};
   const u = d.util ?? null;
+  const color = c.type === 'own' ? '#00a651' : CLUBS[id].color;
   const pct = u !== null ? Math.min(u, 100) : 0;
   const limitedBadge = c.limited ? `<div class="limited-badge">${c.limitNote||'Limited data'}</div>` : '';
   const note = d.note ? `<div class="club-card-note">${d.note}</div>` : '';
-  const dod = fmtDelta(id, 1);
-  const dodBadge = dod.includes('cbd5e1') ? '' : dod;
   return `<div class="club-card ${c.type}">
     <div class="club-type-pill">${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</div>
     <div class="club-card-name">${c.name}</div>
     <div class="club-card-loc">${c.loc}</div>
-    <div class="club-util-row">
-      <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">—</span>'}</div>
-      ${dodBadge}
-    </div>
+    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">—</span>'}</div>
     <div class="util-bar-bg"><div class="util-bar-fill" style="width:${pct}%;background:${utilColor(u)}"></div></div>
     <div class="club-card-meta"><span>${c.courts ? c.courts+' courts' : ''}</span><span>${c.platform}</span></div>
     ${limitedBadge}${note}
@@ -441,7 +333,6 @@ function renderRegions() {
   }).join('');
 }
 
-// ── ALL DATA TABLE ────────────────────────────────────────────────────────
 function renderTable() {
   const tbody = document.getElementById('table-body');
   tbody.innerHTML = [...OWN_IDS, ...COMP_IDS].map(id => {
@@ -454,8 +345,6 @@ function renderTable() {
       <td>${c.loc}</td>
       <td>${c.courts ?? '—'}</td>
       <td>${fmtUtil(u)}</td>
-      <td>${fmtDelta(id, 1)}</td>
-      <td>${fmtDelta(id, 7)}</td>
       <td>${d.booked ?? '—'}</td>
       <td>${d.total ?? '—'}</td>
       <td>${c.platform}</td>
@@ -463,7 +352,6 @@ function renderTable() {
   }).join('');
 }
 
-// ── CHARTS ────────────────────────────────────────────────────────────────
 function renderCharts() {
   const pxIds  = OWN_IDS.filter(id => getUtil(id) !== null);
   const cmpIds = COMP_IDS.filter(id => getUtil(id) !== null);
@@ -479,240 +367,21 @@ function renderCharts() {
   });
 }
 
-// ── DELTA TABLE ───────────────────────────────────────────────────────────
-function renderDeltaTable() {
-  const allIds = [...OWN_IDS, ...COMP_IDS].filter(id => getUtil(id) !== null);
-  const container = document.getElementById('delta-table-container');
+function renderTrends() {
   if (history.length < 2) {
-    container.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:16px 0">No historical data yet — check back after 2+ days of automated scraping.</p>';
+    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
     return;
   }
-  const rows = allIds.map(id => {
-    const c = CLUBS[id];
-    const u = getUtil(id);
-    const isOwn = c.type === 'own';
-    return `<tr class="${isOwn ? 'own-row' : ''}">
-      <td><span class="type-dot" style="background:${c.color}"></span><strong>${c.short}</strong></td>
-      <td style="color:#64748b;font-size:0.72rem">${isOwn ? 'Pickleplex' : 'Competitor'}</td>
-      <td>${fmtUtil(u)}</td>
-      <td>${fmtDelta(id, 1)}</td>
-      <td>${fmtDelta(id, 7)}</td>
-      <td>${fmtDelta(id, 30)}</td>
-    </tr>`;
-  }).join('');
-  container.innerHTML = `<table class="delta-table">
-    <thead><tr>
-      <th>Club</th><th>Type</th><th>Today</th><th>Day / Day</th><th>Week / Week</th><th>Month / Month</th>
-    </tr></thead>
-    <tbody>${rows}</tbody>
-  </table>`;
-}
-
-// ── TRENDS ────────────────────────────────────────────────────────────────
-let _trendPeriod = 'day';
-let _trendChecked = null;   // null = "all clubs with data"
-let _trendChart   = null;
-let _pickerOpen   = false;
-
-function setTrendPeriod(p, btn) {
-  _trendPeriod = p;
-  document.querySelectorAll('.period-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  buildTrendChart();
-}
-
-function toggleClubPicker() {
-  _pickerOpen = !_pickerOpen;
-  const el = document.getElementById('club-picker');
-  if (_pickerOpen) {
-    if (!el.innerHTML) buildClubPicker();
-    el.classList.add('open');
-  } else {
-    el.classList.remove('open');
-  }
-}
-
-// Close picker when clicking outside
-document.addEventListener('click', e => {
-  if (_pickerOpen && !e.target.closest('.club-filter-wrap')) {
-    document.getElementById('club-picker').classList.remove('open');
-    _pickerOpen = false;
-  }
-});
-
-function allClubsWithData() {
-  return [...OWN_IDS, ...COMP_IDS].filter(id => history.some(s => s.clubs[id]?.util != null));
-}
-
-function buildClubPicker() {
-  const all = allClubsWithData();
-  if (_trendChecked === null) _trendChecked = new Set(all);
-  const own  = all.filter(id => CLUBS[id].type === 'own');
-  const comp = all.filter(id => CLUBS[id].type === 'competitor');
-  const row  = id => `<label>
-    <input type="checkbox" data-id="${id}" ${_trendChecked.has(id)?'checked':''} onchange="onClubCheck(this)">
-    <span class="cp-dot" style="background:${CLUBS[id].color}"></span>${CLUBS[id].short}
-  </label>`;
-  document.getElementById('club-picker').innerHTML =
-    `<div class="cp-header">
-       <button onclick="cpSelectAll()">All</button>
-       <button onclick="cpSelectOwn()">Pickleplex only</button>
-       <button onclick="cpClear()">None</button>
-     </div>
-     <div class="cp-section">Pickleplex</div>${own.map(row).join('')}
-     <div class="cp-section">Competitors</div>${comp.map(row).join('')}`;
-}
-
-function onClubCheck(cb) {
-  const id = cb.dataset.id;
-  if (cb.checked) _trendChecked.add(id); else _trendChecked.delete(id);
-  updateFilterBtn();
-  buildTrendChart();
-}
-
-function cpSelectAll() {
-  _trendChecked = new Set(allClubsWithData());
-  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
-}
-function cpSelectOwn() {
-  _trendChecked = new Set(allClubsWithData().filter(id => CLUBS[id].type === 'own'));
-  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
-}
-function cpClear() {
-  _trendChecked = new Set();
-  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
-}
-function rebuildPickerChecks() {
-  document.querySelectorAll('#club-picker input[data-id]').forEach(cb => {
-    cb.checked = _trendChecked.has(cb.dataset.id);
-  });
-}
-function updateFilterBtn() {
-  const all = allClubsWithData();
-  const n = _trendChecked ? _trendChecked.size : all.length;
-  document.getElementById('club-filter-btn').textContent =
-    (n === all.length || _trendChecked === null) ? 'Clubs ▾' : `Clubs (${n}) ▾`;
-}
-
-function weekKey(dateStr) {
-  const d = new Date(dateStr + 'T12:00:00');
-  const thu = new Date(d); thu.setDate(d.getDate() - ((d.getDay()+6)%7) + 3);
-  const jan4 = new Date(thu.getFullYear(), 0, 4);
-  const w = 1 + Math.round(((thu - jan4) / 86400000 - 3 + ((jan4.getDay()+6)%7)) / 7);
-  return `${thu.getFullYear()}-W${String(w).padStart(2,'0')}`;
-}
-function monthKey(dateStr) { return dateStr.slice(0,7); }
-function fmtWeek(k) { return k.replace('-W', ' W'); }
-function fmtMonth(k) { const [y,m]=k.split('-'); return new Date(+y,+m-1,1).toLocaleString('en-CA',{month:'short',year:'2-digit'}); }
-
-function aggregatePeriod(ids, period) {
-  if (period === 'day') {
-    return {
-      labels: history.map(s => s.date),
-      datasets: ids.map(id => ({
-        label: CLUBS[id].short,
-        data: history.map(s => s.clubs[id]?.util ?? null),
-        borderColor: CLUBS[id].color, backgroundColor: CLUBS[id].color + '22',
-        tension: 0.35, spanGaps: true, pointRadius: 3, borderWidth: 2, fill: false
-      }))
-    };
-  }
-  const keyFn  = period === 'week' ? weekKey : monthKey;
-  const fmtFn  = period === 'week' ? fmtWeek : fmtMonth;
-  const buckets = {};
-  history.forEach(s => {
-    const k = keyFn(s.date);
-    if (!buckets[k]) buckets[k] = {};
-    ids.forEach(id => {
-      const u = s.clubs[id]?.util;
-      if (u != null) { if (!buckets[k][id]) buckets[k][id] = []; buckets[k][id].push(u); }
-    });
-  });
-  const labels = Object.keys(buckets).sort();
-  return {
-    labels: labels.map(fmtFn),
-    datasets: ids.map(id => ({
-      label: CLUBS[id].short,
-      data: labels.map(k => {
-        const v = buckets[k]?.[id];
-        return v?.length ? Math.round(v.reduce((a,b)=>a+b,0)/v.length * 10)/10 : null;
-      }),
-      borderColor: CLUBS[id].color, backgroundColor: CLUBS[id].color + '22',
-      tension: 0.35, spanGaps: true, pointRadius: 5, borderWidth: 2, fill: false
-    }))
-  };
-}
-
-function buildTrendChart() {
-  const canvas = document.getElementById('trendChart');
-  if (!canvas) return;
-  if (_trendChart) { _trendChart.destroy(); _trendChart = null; }
-  const all = allClubsWithData();
-  if (all.length === 0 || history.length < 2) {
-    canvas.parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:16px 0">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
-    return;
-  }
-  const ids = (_trendChecked && _trendChecked.size > 0) ? [..._trendChecked].filter(id => all.includes(id)) : all;
-  if (ids.length === 0) {
-    document.getElementById('trend-legend').innerHTML = '<span style="color:#94a3b8;font-size:0.8rem">No clubs selected — use Clubs ▾ to add some.</span>';
-    return;
-  }
-  _trendChart = new Chart(canvas, {
+  const dates = history.map(s => s.date);
+  const topClubs = [...OWN_IDS, ...COMP_IDS].filter(id => history.some(s => s.clubs[id]?.util != null)).slice(0, 8);
+  new Chart(document.getElementById('trendChart'), {
     type: 'line',
-    data: aggregatePeriod(ids, _trendPeriod),
+    data: { labels: dates, datasets: topClubs.map(id => ({ label: CLUBS[id].short, data: history.map(s => s.clubs[id]?.util ?? null), borderColor: CLUBS[id].color, tension: 0.3, spanGaps: true, pointRadius: 3 })) },
     options: { plugins:{legend:{display:false}}, scales:{y:{min:0,max:100,ticks:{callback:v=>v+'%'}}}, responsive:true }
   });
-  document.getElementById('trend-legend').innerHTML = ids.map(id =>
-    `<div class="legend-item" style="cursor:pointer;opacity:${_trendChecked && !_trendChecked.has(id)?0.35:1}" onclick="onLegendClick('${id}')">
-       <div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}
-     </div>`).join('');
-  if (document.getElementById('daily-data-table')?.classList.contains('visible')) buildDailyTable();
+  document.getElementById('trend-legend').innerHTML = topClubs.map(id => `<div class="legend-item"><div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}</div>`).join('');
 }
 
-function onLegendClick(id) {
-  if (!_trendChecked) _trendChecked = new Set(allClubsWithData());
-  if (_trendChecked.has(id)) _trendChecked.delete(id); else _trendChecked.add(id);
-  rebuildPickerChecks(); updateFilterBtn(); buildTrendChart();
-}
-
-function toggleDailyTable(btn) {
-  const tbl = document.getElementById('daily-data-table');
-  const visible = tbl.classList.toggle('visible');
-  btn.textContent = (visible ? '▼ Hide' : '▶ Show') + ' daily data table';
-  if (visible) buildDailyTable();
-}
-
-function buildDailyTable() {
-  const all = allClubsWithData();
-  const ids = (_trendChecked && _trendChecked.size > 0) ? [..._trendChecked].filter(id => all.includes(id)) : all;
-  if (!ids.length || !history.length) return;
-
-  // Sort history newest-first for the table
-  const rows = [...history].sort((a,b) => b.date.localeCompare(a.date));
-
-  document.getElementById('daily-table-head').innerHTML =
-    '<tr><th>Date</th>' + ids.map(id =>
-      `<th><span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:${CLUBS[id].color};margin-right:4px"></span>${CLUBS[id].short}</th>`
-    ).join('') + '</tr>';
-
-  document.getElementById('daily-table-body').innerHTML = rows.map(s =>
-    '<tr><td>' + s.date + '</td>' + ids.map(id => {
-      const u = s.clubs[id]?.util;
-      if (u == null) return '<td class="dt-null">—</td>';
-      const col = u >= 70 ? '#16a34a' : u >= 50 ? '#ca8a04' : u >= 30 ? '#ea580c' : '#dc2626';
-      return `<td style="color:${col};font-weight:600">${u.toFixed(1)}%</td>`;
-    }).join('') + '</tr>'
-  ).join('');
-}
-
-function renderTrends() {
-  renderDeltaTable();
-  if (_trendChecked === null) _trendChecked = new Set(allClubsWithData());
-  buildClubPicker();
-  buildTrendChart();
-}
-
-// ── MONTHLY ───────────────────────────────────────────────────────────────
 function renderMonthly() {
   const noData = msg => {
     ['monthlyChart','monthlyDetailChart'].forEach(id => {
@@ -763,22 +432,7 @@ document.querySelectorAll('.tab').forEach(tab => {
   });
 });
 
-// Load history from data.json (persistent repo store), fall back to localStorage
-async function initHistory() {
-  try {
-    const r = await fetch('./data.json?_=' + Date.now());
-    if (r.ok) history = await r.json();
-  } catch(e) {
-    try { history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e2) {}
-  }
-  // Merge today's snapshot in-memory (written to data.json by the daily scraper)
-  const ti = history.findIndex(s => s.date === TODAY_DATA.date);
-  if (ti >= 0) history[ti] = TODAY_DATA; else history.push(TODAY_DATA);
-  history.sort((a,b) => a.date.localeCompare(b.date));
-  renderAll();
-}
-
-initHistory();
+renderAll();
 </script>
 </body>
 </html>
