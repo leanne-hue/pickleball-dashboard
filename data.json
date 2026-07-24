@@ -680,10 +680,10 @@
         "note": "Reserve/Reserved/Waitlist button count"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
+        "util": 33.1,
+        "booked": 53,
         "total": 160,
-        "note": "Session expired — login required"
+        "note": "10 pickleball courts × 16hrs (7am-11pm); Court8 shown as Franklin Court"
       },
       "smash_pb_london": {
         "util": 88.9,
@@ -716,10 +716,10 @@
         "note": "7 of 8 courts active × 14 hrs (7am-9pm)"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 48.7,
+        "booked": 146,
+        "total": 300,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 12:30pm-10pm — TRUNCATED (run after 9am, morning hours already dropped)"
       }
     }
   }
