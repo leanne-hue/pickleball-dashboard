@@ -692,10 +692,10 @@
         "note": "9 courts × 13 hrs (7am-8pm); CIBC Charity Tournament occupied most courts 9am-3pm"
       },
       "four_fathers_pickleball": {
-        "util": null,
-        "booked": null,
+        "util": 34.3,
+        "booked": 24,
         "total": 70,
-        "note": "Session expired — login required"
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
       },
       "real_pickleball": {
         "util": 32.1,
@@ -710,10 +710,10 @@
         "note": "4 courts × 6 hrs (4pm-10pm), 18 court-hrs avail"
       },
       "prime_time": {
-        "util": null,
-        "booked": null,
-        "total": 112,
-        "note": "Session expired — login required"
+        "util": 18.4,
+        "booked": 18,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs (7am-9pm)"
       },
       "rally_mississauga": {
         "util": null,
