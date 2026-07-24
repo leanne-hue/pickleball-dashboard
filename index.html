@@ -86,8 +86,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 <div class="header">
   <div>
-    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">🏓 Pickleplex Competitive Dashboard</div>
-    <div class="sub" id="hdr-sub">Loading&hellip;</div>
+    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">🥒 Pickleplex Competitive Dashboard</div>
+    <div class="sub" id="hdr-sub">Loading…</div>
   </div>
   <div class="header-right" id="hdr-right"></div>
 </div>
@@ -109,12 +109,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <div id="tab-charts" class="tab-panel">
   <div class="charts-panel">
     <div class="chart-card">
-      <div class="chart-title">Pickleplex Locations &mdash; Today's Utilization</div>
-      <div class="chart-sub" id="chart-sub-px">Court hours booked &divide; total court hours available (8am&ndash;10pm)</div>
+      <div class="chart-title">Pickleplex Locations — Today's Utilization</div>
+      <div class="chart-sub" id="chart-sub-px">Court hours booked ÷ total court hours available (8am–10pm)</div>
       <div class="chart-wrap"><canvas id="barChartPX" height="160"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Competitors &mdash; Today's Utilization</div>
+      <div class="chart-title">Competitors — Today's Utilization</div>
       <div class="chart-sub">Data scraped from public booking pages</div>
       <div class="chart-wrap"><canvas id="barChartComp" height="100"></canvas></div>
     </div>
@@ -136,7 +136,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="charts-panel">
     <div class="chart-card">
       <div class="chart-title">Utilization Trends Over Time</div>
-      <div class="chart-sub">Historical daily utilization &mdash; accumulated from each 9am scrape</div>
+      <div class="chart-sub">Historical daily utilization — accumulated from each 9am scrape</div>
       <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
       <div class="legend" id="trend-legend"></div>
     </div>
@@ -147,11 +147,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="charts-panel">
     <div class="chart-card">
       <div class="chart-title">Monthly Average Utilization</div>
-      <div class="chart-sub">Average daily utilization per month &mdash; Pickleplex vs competitors</div>
+      <div class="chart-sub">Average daily utilization per month — Pickleplex vs competitors</div>
       <div class="chart-wrap"><canvas id="monthlyChart" height="180"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Monthly Average &mdash; Individual Locations</div>
+      <div class="chart-title">Monthly Average — Individual Locations</div>
       <div class="chart-sub">Per-location monthly averages (top clubs with sufficient data)</div>
       <div class="chart-wrap"><canvas id="monthlyDetailChart" height="220"></canvas></div>
       <div class="legend" id="monthly-legend"></div>
@@ -159,95 +159,95 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 </div>
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────
+// ─── DATA ──────────────────────────────────────────────────────────────────
 
 const CLUBS = {
   // ── Pickleplex (own) ────────────────────────────────────────────────────
-  pickleplex_barrie:      { name:"Pickleplex Barrie",     short:"Barrie",      loc:"Barrie, ON",       platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:13487 },
-  pickleplex_windsor:     { name:"Pickleplex Windsor",    short:"Windsor",     loc:"Windsor, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:13986 },
-  pickleplex_pickering:   { name:"Pickleplex Pickering",  short:"Pickering",   loc:"Pickering, ON",    platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:14195 },
-  pickleplex_belleville:  { name:"Pickleplex Belleville", short:"Belleville",  loc:"Belleville, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:15741 },
-  pickleplex_vaughan:     { name:"Pickleplex Vaughan",    short:"Vaughan",     loc:"Vaughan, ON",      platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:15790 },
-  pickleplex_promenade:   { name:"Pickleplex Promenade",  short:"Promenade",   loc:"Vaughan, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:15917 },
-  pickleplex_downsview:   { name:"Pickleplex Downsview",  short:"Downsview",   loc:"Toronto, ON",      platform:"CourtReserve", courts:13, color:"#00a651", type:"own", orgId:15926 },
-  pickleplex_oshawa:      { name:"Pickleplex Oshawa",     short:"Oshawa",      loc:"Oshawa, ON",       platform:"CourtReserve", courts:10, color:"#00a651", type:"own", orgId:15989 },
-  pickleplex_cambridge:   { name:"Pickleplex Cambridge",  short:"Cambridge",   loc:"Cambridge, ON",    platform:"CourtReserve", courts:12, color:"#00a651", type:"own", orgId:16359 },
-  pickleplex_red_deer:    { name:"Pickleplex Red Deer",   short:"PX Red Deer", loc:"Red Deer, AB",     platform:"CourtReserve", courts:9,  color:"#00a651", type:"own", orgId:16556 },
-  pickleplex_aurora:      { name:"Pickleplex Aurora",     short:"Aurora",      loc:"Aurora, ON",       platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17113 },
-  pickleplex_york_mills:  { name:"Pickleplex York Mills", short:"York Mills",  loc:"Toronto, ON",      platform:"CourtReserve", courts:3,  color:"#00a651", type:"own", orgId:17114 },
-  pickleplex_brantford:   { name:"Pickleplex Brantford",  short:"Brantford",   loc:"Brantford, ON",    platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17392 },
-  pickleplex_burloak:     { name:"Pickleplex Burloak",    short:"Burloak",     loc:"Burlington, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17621 },
+  pickleplex_barrie:     { name:"Pickleplex Barrie",     short:"Barrie",     loc:"Barrie, ON",       platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:13487 },
+  pickleplex_windsor:    { name:"Pickleplex Windsor",    short:"Windsor",    loc:"Windsor, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:13986 },
+  pickleplex_pickering:  { name:"Pickleplex Pickering",  short:"Pickering",  loc:"Pickering, ON",    platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:14195 },
+  pickleplex_belleville: { name:"Pickleplex Belleville", short:"Belleville", loc:"Belleville, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:15741 },
+  pickleplex_vaughan:    { name:"Pickleplex Vaughan",    short:"Vaughan",    loc:"Vaughan, ON",      platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:15790 },
+  pickleplex_promenade:  { name:"Pickleplex Promenade",  short:"Promenade",  loc:"Vaughan, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:15917 },
+  pickleplex_downsview:  { name:"Pickleplex Downsview",  short:"Downsview",  loc:"Toronto, ON",      platform:"CourtReserve", courts:13, color:"#00a651", type:"own", orgId:15926 },
+  pickleplex_oshawa:     { name:"Pickleplex Oshawa",     short:"Oshawa",     loc:"Oshawa, ON",       platform:"CourtReserve", courts:10, color:"#00a651", type:"own", orgId:15989 },
+  pickleplex_cambridge:  { name:"Pickleplex Cambridge",  short:"Cambridge",  loc:"Cambridge, ON",    platform:"CourtReserve", courts:12, color:"#00a651", type:"own", orgId:16359 },
+  pickleplex_red_deer:   { name:"Pickleplex Red Deer",   short:"PX Red Deer",loc:"Red Deer, AB",     platform:"CourtReserve", courts:9,  color:"#00a651", type:"own", orgId:16556 },
+  pickleplex_aurora:     { name:"Pickleplex Aurora",     short:"Aurora",     loc:"Aurora, ON",       platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17113 },
+  pickleplex_york_mills: { name:"Pickleplex York Mills", short:"York Mills", loc:"Toronto, ON",      platform:"CourtReserve", courts:3,  color:"#00a651", type:"own", orgId:17114 },
+  pickleplex_brantford:  { name:"Pickleplex Brantford",  short:"Brantford",  loc:"Brantford, ON",    platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17392 },
+  pickleplex_burloak:    { name:"Pickleplex Burloak",    short:"Burloak",    loc:"Burlington, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17621 },
   // ── Competitors ─────────────────────────────────────────────────────────
-  fairgrounds_red_deer:   { name:"Fairgrounds Red Deer",        short:"FG Red Deer",   loc:"Red Deer, AB",     platform:"Podplay",       courts:14,  color:"#e74c3c", type:"competitor" },
-  fairgrounds_cloverdale: { name:"Fairgrounds Cloverdale",      short:"FG Cloverdale", loc:"Etobicoke, ON",    platform:"Podplay",       courts:11,  color:"#f39c12", type:"competitor" },
-  picklr_toronto_west:    { name:"The Picklr Toronto West",     short:"Picklr TW",     loc:"Etobicoke, ON",    platform:"CatchCorner",   courts:9,   color:"#e67e22", type:"competitor" },
-  vaughan_sportsplex:     { name:"Vaughan Sportsplex",          short:"Vaughan SP",    loc:"Vaughan, ON",      platform:"CatchCorner",   courts:11,  color:"#2980b9", type:"competitor" },
-  picklrs_hub:            { name:"Picklrs Hub",                 short:"Picklrs Hub",   loc:"GTA, ON",          platform:"CourtReserve",  courts:9,   color:"#8e44ad", type:"competitor" },
-  picklex:                { name:"PickleX",                     short:"PickleX",       loc:"Oakville, ON",     platform:"CourtReserve",  courts:null, color:"#c0392b", type:"competitor", limited:true, limitNote:"Member login" },
-  blue_zone:              { name:"Blue Zone",                   short:"Blue Zone",     loc:"Burlington, ON",   platform:"Custom",        courts:null, color:"#16a085", type:"competitor", limited:true, limitNote:"Login required" },
-  smash_pb_london:        { name:"Smash PB London",             short:"Smash PB",      loc:"London, ON",       platform:"Custom",        courts:9,   color:"#d35400", type:"competitor" },
-  fairgrounds_whitby:     { name:"Fairgrounds Whitby",          short:"FG Whitby",     loc:"Whitby, ON",       platform:"Podplay",       courts:null, color:"#8e6bbf", type:"competitor" },
-  hisports_durham:        { name:"HiSports Durham Sportsplex",  short:"Durham SP",     loc:"Oshawa, ON",       platform:"CatchCorner",   courts:null, color:"#2471a3", type:"competitor" },
-  four_fathers_pickleball:{ name:"Four Fathers Pickleball",     short:"Four Fathers",  loc:"Cambridge, ON",    platform:"CourtReserve",  courts:7,   color:"#7b3f00", type:"competitor" },
-  real_pickleball:        { name:"Real Pickleball",             short:"Real PB",       loc:"Cambridge, ON",    platform:"CourtReserve",  courts:8,   color:"#1f618d", type:"competitor" },
-  corte_kitchener:        { name:"Corte Kitchener",             short:"Corte KW",      loc:"Kitchener, ON",    platform:"CatchCorner",   courts:4,   color:"#76448a", type:"competitor" },
-  prime_time:             { name:"Prime Time Pickleball",       short:"Prime Time",    loc:"LaSalle, ON",      platform:"CourtReserve",  courts:8,   color:"#922b21", type:"competitor" },
-  rally_mississauga:      { name:"Rally Pickleball",            short:"Rally",         loc:"Mississauga, ON",  platform:"ClubAutomation",courts:15,  color:"#117a65", type:"competitor" }
+  fairgrounds_red_deer:  { name:"Fairgrounds Red Deer",       short:"FG Red Deer",  loc:"Red Deer, AB",    platform:"Podplay",      courts:14, color:"#e74c3c", type:"competitor" },
+  fairgrounds_cloverdale:{ name:"Fairgrounds Cloverdale",     short:"FG Cloverdale",loc:"Etobicoke, ON",   platform:"Podplay",      courts:11, color:"#f39c12", type:"competitor" },
+  picklr_toronto_west:   { name:"The Picklr Toronto West",    short:"Picklr TW",    loc:"Etobicoke, ON",   platform:"CatchCorner",  courts:9,  color:"#e67e22", type:"competitor" },
+  vaughan_sportsplex:    { name:"Vaughan Sportsplex",         short:"Vaughan SP",   loc:"Vaughan, ON",     platform:"CatchCorner",  courts:11, color:"#2980b9", type:"competitor" },
+  picklrs_hub:           { name:"Picklrs Hub",                short:"Picklrs Hub",  loc:"GTA, ON",         platform:"CourtReserve", courts:9,  color:"#8e44ad", type:"competitor" },
+  picklex:               { name:"PickleX",                    short:"PickleX",      loc:"Oakville, ON",    platform:"CourtReserve", courts:null,color:"#c0392b",type:"competitor", limited:true, limitNote:"Member login" },
+  blue_zone:             { name:"Blue Zone",                  short:"Blue Zone",    loc:"Burlington, ON",  platform:"Custom",       courts:null,color:"#16a085",type:"competitor", limited:true, limitNote:"Login required" },
+  smash_pb_london:       { name:"Smash PB London",            short:"Smash PB",     loc:"London, ON",      platform:"Custom",       courts:9,  color:"#d35400", type:"competitor" },
+  fairgrounds_whitby:    { name:"Fairgrounds Whitby",         short:"FG Whitby",    loc:"Whitby, ON",      platform:"Podplay",      courts:null,color:"#8e6bbf",type:"competitor" },
+  hisports_durham:       { name:"HiSports Durham Sportsplex", short:"Durham SP",    loc:"Oshawa, ON",      platform:"CatchCorner",  courts:null,color:"#2471a3",type:"competitor" },
+  corte_kitchener:        { name:"Corte Kitchener",            short:"Corte Kitch.", loc:"Kitchener, ON",   platform:"CatchCorner",  courts:4,  color:"#9b59b6", type:"competitor" },
+  prime_time:             { name:"Prime Time Pickleball",      short:"Prime Time",   loc:"LaSalle, ON",     platform:"CourtReserve", courts:8,  color:"#34495e", type:"competitor", limited:true, limitNote:"Login required" },
+  real_pickleball:        { name:"Real Pickleball",            short:"Real PB",      loc:"ON",              platform:"CourtReserve", courts:8,  color:"#1abc9c", type:"competitor" },
+  four_fathers_pickleball:{ name:"Four Fathers Pickleball",    short:"Four Fathers", loc:"ON",              platform:"CourtReserve", courts:7,  color:"#7f8c8d", type:"competitor", limited:true, limitNote:"Login required" },
+  rally_mississauga:      { name:"Rally Mississauga",          short:"Rally Miss.",  loc:"Mississauga, ON", platform:"ClubAutomation", courts:15, color:"#f1c40f", type:"competitor", limited:true, limitNote:"Login required" }
 };
 
 const REGIONS = [
-  { id:"red_deer",    name:"Red Deer, AB",          own:["pickleplex_red_deer"],                                             comp:["fairgrounds_red_deer"] },
-  { id:"north_gta",  name:"North GTA / Vaughan",    own:["pickleplex_vaughan","pickleplex_promenade","pickleplex_aurora"],   comp:["vaughan_sportsplex","picklrs_hub"] },
-  { id:"toronto",    name:"Toronto",                own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west"] },
-  { id:"east_gta",   name:"East GTA",               own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:["fairgrounds_whitby","hisports_durham"] },
-  { id:"burloak",    name:"Oakville / Burlington",  own:["pickleplex_burloak"],                                             comp:["picklex","blue_zone"] },
-  { id:"mississauga",name:"Mississauga",            own:[],                                                                 comp:["rally_mississauga"] },
-  { id:"cambridge",  name:"Cambridge / KW",         own:["pickleplex_cambridge"],                                           comp:["four_fathers_pickleball","real_pickleball","corte_kitchener"] },
-  { id:"brantford",  name:"Brantford / London",     own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
-  { id:"belleville", name:"Belleville, ON",         own:["pickleplex_belleville"],                                          comp:[] },
-  { id:"barrie",     name:"Barrie, ON",             own:["pickleplex_barrie"],                                              comp:[] },
-  { id:"windsor",    name:"Windsor, ON",            own:["pickleplex_windsor"],                                             comp:["prime_time"] },
+  { id:"red_deer",   name:"Red Deer, AB",            own:["pickleplex_red_deer"],                                             comp:["fairgrounds_red_deer"] },
+  { id:"north_gta",  name:"North GTA / Vaughan",      own:["pickleplex_vaughan","pickleplex_promenade","pickleplex_aurora"],   comp:["vaughan_sportsplex","picklrs_hub"] },
+  { id:"toronto",    name:"Toronto",                  own:["pickleplex_downsview","pickleplex_york_mills"],                   comp:["fairgrounds_cloverdale","picklr_toronto_west"] },
+  { id:"east_gta",   name:"East GTA",                 own:["pickleplex_pickering","pickleplex_oshawa"],                       comp:["fairgrounds_whitby","hisports_durham"] },
+  { id:"burloak",    name:"Oakville / Burlington",    own:["pickleplex_burloak"],                                             comp:["picklex","blue_zone"] },
+  { id:"cambridge",  name:"Cambridge / KW",           own:["pickleplex_cambridge"],                                           comp:["corte_kitchener"] },
+  { id:"brantford",  name:"Brantford / London",       own:["pickleplex_brantford"],                                           comp:["smash_pb_london"] },
+  { id:"belleville", name:"Belleville, ON",           own:["pickleplex_belleville"],                                          comp:[] },
+  { id:"barrie",     name:"Barrie, ON",               own:["pickleplex_barrie"],                                              comp:[] },
+  { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:["prime_time"] },
+  { id:"gta_other",  name:"Other GTA / Mississauga",  own:[],                                                                  comp:["real_pickleball","four_fathers_pickleball","rally_mississauga"] },
 ];
 
-// ── TODAY_DATA — replaced daily by scheduled task ──────────────────────
+// ── TODAY_DATA — replaced daily by scheduled task ──────────────────────────
 const TODAY_DATA = {
-  date: "2026-07-23",
-  scraped_at: "2026-07-23T10:50:00",
+  date: "2026-07-24",
+  scraped_at: "2026-07-24T09:00:00",
   note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
   clubs: {
-    pickleplex_barrie:      { util: 67.3, booked: 66,  total: 98,  note: "7 courts × 14 hrs" },
-    pickleplex_windsor:     { util: 34.5, booked: 29,  total: 84,  note: "6 courts × 14 hrs" },
-    pickleplex_pickering:   { util: 81.0, booked: 68,  total: 84,  note: "6 of 7 courts active × 14 hrs" },
-    pickleplex_belleville:  { util: 66.1, booked: 74,  total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_vaughan:     { util: 66.1, booked: 74,  total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_promenade:   { util: 76.2, booked: 64,  total: 84,  note: "6 courts × 14 hrs" },
-    pickleplex_downsview:   { util: 53.3, booked: 97,  total: 182, note: "13 courts × 14 hrs" },
-    pickleplex_oshawa:      { util: 57.1, booked: 80,  total: 140, note: "10 courts × 14 hrs" },
-    pickleplex_cambridge:   { util: 27.6, booked: 27,  total: 98,  note: "7 of 12 courts active × 14 hrs" },
-    pickleplex_red_deer:    { util: 42.9, booked: 54,  total: 126, note: "9 courts × 14 hrs" },
-    pickleplex_aurora:      { util: 79.5, booked: 89,  total: 112, note: "8 courts × 14 hrs" },
-    pickleplex_york_mills:  { util: 64.3, booked: 27,  total: 42,  note: "3 courts × 14 hrs" },
-    pickleplex_brantford:   { util: 25.0, booked: 21,  total: 84,  note: "6 of 8 courts active × 14 hrs" },
-    pickleplex_burloak:     { util: 58.0, booked: 65,  total: 112, note: "8 courts × 14 hrs" },
-    fairgrounds_red_deer:   { util: 26.4, booked: 48,  total: 182, note: "13 time slots (8:30am-9pm), 134 court-hrs avail" },
-    fairgrounds_cloverdale: { util: 80.6, booked: 133, total: 165, note: "11 courts (Standard+Compact); 15 slot-rows combined, 32 court-hrs avail" },
-    fairgrounds_whitby:     { util: 55.6, booked: 25,  total: 45,  note: "5 courts (max seen) x 9 time slots (11am-9pm), 20 court-hrs avail" },
-    picklr_toronto_west:    { util: 91.7, booked: 132, total: 144, note: "9 courts x 16 hrs (7am-11pm); 12 court-hrs avail" },
-    vaughan_sportsplex:     { util: 89.7, booked: 148, total: 165, note: "11 courts x 15 hrs (7am-10pm); 17 court-hrs avail" },
-    hisports_durham:        { util: 95.3, booked: 183, total: 192, note: "12 courts x 16 hrs; 9 court-hrs avail" },
-    picklrs_hub:            { util: 21.3, booked: 16,  total: 75,  note: "9 courts; Reserve=59, Reserved=16, Waitlist=0" },
-    picklex:                { util: 19.8, booked: 20,  total: 101, note: "Reserve=81, Reserved=16, Waitlist=4" },
-    blue_zone:              { util: null, booked: null, total: 160, note: "Session expired - login required" },
-    smash_pb_london:        { util: 66.7, booked: 78,  total: 117, note: "9 courts x 13hrs (7am-8pm)" },
-    four_fathers_pickleball:{ util: 40.0, booked: 28,  total: 70,  note: "7 courts, morn (9am-2pm)=16/35 + aft (5pm-8pm)=12/21 + eve (8pm-10pm)=0/14" },
-    real_pickleball:        { util: 51.8, booked: 58,  total: 112, note: "8 courts x 14 hrs (8am-10pm)" },
-    corte_kitchener:        { util: 25.0, booked: 6,   total: 24,  note: "4 courts x 6 hrs (4pm-10pm), 18 court-hrs avail" },
-    prime_time:             { util: 31.3, booked: 35,  total: 112, note: "8 of 8 courts active x 14 hrs (7am-9pm)" },
-    rally_mississauga:      { util: null, booked: null, total: null, note: "Session expired - login required" }
+    pickleplex_barrie:     { util: 43.9, booked: 43, total: 98, note: "7 courts × 14 hrs" },
+    pickleplex_windsor:    { util: 61.9, booked: 52, total: 84, note: "6 courts × 14 hrs" },
+    pickleplex_pickering:  { util: 78.6, booked: 66, total: 84, note: "6 of 7 courts active × 14 hrs" },
+    pickleplex_belleville: { util: 55.4, booked: 62, total: 112, note: "8 courts × 14 hrs" },
+    pickleplex_vaughan:    { util: 47.3, booked: 53, total: 112, note: "8 courts × 14 hrs" },
+    pickleplex_promenade:  { util: 78.6, booked: 66, total: 84, note: "6 courts × 14 hrs" },
+    pickleplex_downsview:  { util: 57.7, booked: 105, total: 182, note: "13 courts × 14 hrs" },
+    pickleplex_oshawa:     { util: 67.9, booked: 95, total: 140, note: "10 courts × 14 hrs" },
+    pickleplex_cambridge:  { util: 15.9, booked: 20, total: 126, note: "9 of 12 courts active × 14 hrs" },
+    pickleplex_red_deer:   { util: 42.9, booked: 54, total: 126, note: "9 courts × 14 hrs" },
+    pickleplex_aurora:     { util: 76.8, booked: 86, total: 112, note: "8 courts × 14 hrs" },
+    pickleplex_york_mills: { util: 54.8, booked: 23, total: 42, note: "3 courts × 14 hrs" },
+    pickleplex_brantford:  { util: 20.2, booked: 17, total: 84, note: "6 of 8 courts active × 14 hrs" },
+    pickleplex_burloak:    { util: 54.5, booked: 61, total: 112, note: "8 courts × 14 hrs" },
+    fairgrounds_red_deer:   { util: 20.9, booked: 38, total: 182, note: "14 courts, 13 time slots (8am-10pm window), 144 court-hrs avail" },
+    fairgrounds_cloverdale: { util: 65.9, booked: 87, total: 132, note: "11 courts, 12 time slots, 45 court-hrs avail" },
+    fairgrounds_whitby:     { util: 70.9, booked: 39, total: 55, note: "5 courts (max PB5 detected), 11 time slots, 16 court-hrs avail" },
+    picklr_toronto_west:    { util: 91.7, booked: 132, total: 144, note: "9 courts × 16 hrs (7am-11pm), 12 court-hrs avail" },
+    vaughan_sportsplex:     { util: 89.1, booked: 147, total: 165, note: "11 courts × 15 hrs (7am-10pm), 18 court-hrs avail" },
+    hisports_durham:        { util: 48.7, booked: 148, total: 304, note: "19 courts (12 indoor + 7 outdoor) × 16 hrs (7am-11pm); precise data for 10 courts, remaining 9 estimated via category averages" },
+    picklrs_hub:            { util: 36.6, booked: 30, total: 82, note: "Reserve/Reserved/Waitlist button count" },
+    picklex:                { util: 18.7, booked: 20, total: 107, note: "Reserve/Reserved/Waitlist button count" },
+    blue_zone:              { util: null, booked: null, total: 160, note: "Session expired — login required" },
+    smash_pb_london:        { util: 88.9, booked: 104, total: 117, note: "9 courts × 13 hrs (7am-8pm); CIBC Charity Tournament occupied most courts 9am-3pm" },
+    four_fathers_pickleball: { util: null, booked: null, total: 70, note: "Session expired — login required" },
+    real_pickleball:         { util: 32.1, booked: 36, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
+    corte_kitchener:         { util: 25.0, booked: 6, total: 24, note: "4 courts × 6 hrs (4pm-10pm), 18 court-hrs avail" },
+    prime_time:              { util: null, booked: null, total: 112, note: "Session expired — login required" },
+    rally_mississauga:       { util: null, booked: null, total: null, note: "Session expired — login required" }
   }
 };
 
-// ── localStorage history ──────────────────────────────────────────────────
+// ── localStorage history ────────────────────────────────────────────────
 const STORAGE_KEY = 'pb_tracker_v2';
 let history = [];
 try { history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) {}
@@ -256,7 +256,7 @@ if (ti >= 0) history[ti] = TODAY_DATA; else history.push(TODAY_DATA);
 history.sort((a,b) => a.date.localeCompare(b.date));
 try { localStorage.setItem(STORAGE_KEY, JSON.stringify(history)); } catch(e) {}
 
-// ── HELPERS ───────────────────────────────────────────────────────────────
+// ── HELPERS ─────────────────────────────────────────────────────────────
 const CLUB_IDS = Object.keys(CLUBS);
 const OWN_IDS  = CLUB_IDS.filter(id => CLUBS[id].type === 'own');
 const COMP_IDS = CLUB_IDS.filter(id => CLUBS[id].type === 'competitor');
@@ -272,11 +272,11 @@ function utilColor(u) {
 }
 
 function fmtUtil(u) {
-  if (u === null) return '<span class="null-util">&mdash;</span>';
+  if (u === null) return '<span class="null-util">—</span>';
   return `<span style="color:${utilColor(u)}">${u.toFixed(1)}%</span>`;
 }
 
-// ── STATS BAR ─────────────────────────────────────────────────────────────
+// ── STATS BAR ───────────────────────────────────────────────────────────
 function renderStats() {
   const ownUtils = OWN_IDS.map(id => getUtil(id)).filter(u => u !== null);
   const compUtils = COMP_IDS.map(id => getUtil(id)).filter(u => u !== null);
@@ -287,12 +287,12 @@ function renderStats() {
   const diff = avgOwn !== null && avgComp !== null ? avgOwn - avgComp : null;
 
   document.getElementById('stats-bar').innerHTML = [
-    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : '&mdash;', sub: `${ownUtils.length} locations reporting` },
-    { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : '&mdash;', sub: `${compUtils.length} clubs reporting` },
-    { label:'Pickleplex vs Comp',  value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : '&mdash;', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
-    { label:'Top Pickleplex',      value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : '&mdash;', sub: topOwn ? CLUBS[topOwn].short : '' },
-    { label:'Total PX Courts',     value: totalOwnCourts, sub: `${OWN_IDS.length} locations` },
-    { label:'As of',               value: TODAY_DATA.date, sub: 'Updated 9am daily' },
+    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : '—', sub: `${ownUtils.length} locations reporting` },
+    { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : '—', sub: `${compUtils.length} clubs reporting` },
+    { label:'Pickleplex vs Comp', value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : '—', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
+    { label:'Top Pickleplex', value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : '—', sub: topOwn ? CLUBS[topOwn].short : '' },
+    { label:'Total PX Courts', value: totalOwnCourts, sub: `${OWN_IDS.length} locations` },
+    { label:'As of', value: TODAY_DATA.date, sub: 'Updated 9am daily' },
   ].map(s => `<div class="stat">
     <div class="stat-label">${s.label}</div>
     <div class="stat-value" style="color:${s.color||''}">${s.value}</div>
@@ -303,11 +303,12 @@ function renderStats() {
   document.getElementById('hdr-right').innerHTML = `Last scraped: ${TODAY_DATA.scraped_at.replace('T',' ')}<br>Data: Pickleplex admin (CourtReserve) + public scrapers`;
 }
 
-// ── REGIONAL CARDS ────────────────────────────────────────────────────────
+// ── REGIONAL CARDS ──────────────────────────────────────────────────────
 function renderClubCard(id) {
   const c = CLUBS[id];
   const d = TODAY_DATA.clubs[id] || {};
   const u = d.util ?? null;
+  const color = c.type === 'own' ? '#00a651' : CLUBS[id].color;
   const pct = u !== null ? Math.min(u, 100) : 0;
   const limitedBadge = c.limited ? `<div class="limited-badge">${c.limitNote||'Limited data'}</div>` : '';
   const note = d.note ? `<div class="club-card-note">${d.note}</div>` : '';
@@ -315,7 +316,7 @@ function renderClubCard(id) {
     <div class="club-type-pill">${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</div>
     <div class="club-card-name">${c.name}</div>
     <div class="club-card-loc">${c.loc}</div>
-    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">&mdash;</span>'}</div>
+    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">—</span>'}</div>
     <div class="util-bar-bg"><div class="util-bar-fill" style="width:${pct}%;background:${utilColor(u)}"></div></div>
     <div class="club-card-meta"><span>${c.courts ? c.courts+' courts' : ''}</span><span>${c.platform}</span></div>
     ${limitedBadge}${note}
@@ -348,10 +349,10 @@ function renderTable() {
       <td><span class="type-dot" style="background:${c.color}"></span>${c.name}</td>
       <td>${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</td>
       <td>${c.loc}</td>
-      <td>${c.courts ?? '&mdash;'}</td>
+      <td>${c.courts ?? '—'}</td>
       <td>${fmtUtil(u)}</td>
-      <td>${d.booked ?? '&mdash;'}</td>
-      <td>${d.total ?? '&mdash;'}</td>
+      <td>${d.booked ?? '—'}</td>
+      <td>${d.total ?? '—'}</td>
       <td>${c.platform}</td>
     </tr>`;
   }).join('');
@@ -374,7 +375,7 @@ function renderCharts() {
 
 function renderTrends() {
   if (history.length < 2) {
-    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet &mdash; trends appear after 2+ days of scraping.</p>';
+    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet — trends appear after 2+ days of scraping.</p>';
     return;
   }
   const dates = history.map(s => s.date);
@@ -394,7 +395,7 @@ function renderMonthly() {
       if (el) el.parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">' + msg + '</p>';
     });
   };
-  if (history.length < 2) { noData('Not enough historical data yet &mdash; monthly trends appear after multiple days of scraping.'); return; }
+  if (history.length < 2) { noData('Not enough historical data yet — monthly trends appear after multiple days of scraping.'); return; }
   const byMonth = {};
   history.forEach(s => { const m = s.date.slice(0,7); if (!byMonth[m]) byMonth[m]=[]; byMonth[m].push(s); });
   const months = Object.keys(byMonth).sort();
