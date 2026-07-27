@@ -1229,10 +1229,10 @@
         "note": "10 pickleball courts × 16hrs (Court 11 observed with zero bookings today)"
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
+        "util": 74.4,
+        "booked": 87,
         "total": 117,
-        "note": "Site returned 500 Internal Server Error"
+        "note": "9 courts × 13hrs (7am-8pm), 87 court-hrs booked (open play + reservations)"
       },
       "four_fathers_pickleball": {
         "util": 65.7,
