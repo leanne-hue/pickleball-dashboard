@@ -1450,7 +1450,7 @@
   {
     "date": "2026-07-31",
     "scraped_at": "2026-07-31T10:46:00",
-    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Updated later on 2026-07-31: Leanne logged into smash_pb_london, prime_time, four_fathers_pickleball and rally_mississauga herself, so those four were re-scraped using the now-authenticated sessions. blue_zone still showed a login wall in this browser session (saved password autofilled but not submitted) and remains unscraped; picklex remains excluded.",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Updated later on 2026-07-31: Leanne logged into smash_pb_london, prime_time, four_fathers_pickleball and rally_mississauga herself, so those four were re-scraped using the now-authenticated sessions. Further update: blue_zone scraped via its public booking calendar (no login required); picklex scraped via Leanne's personal member login, per her explicit confirmation to include it.",
     "clubs": {
       "pickleplex_barrie": {
         "util": 58.2,
@@ -1579,16 +1579,16 @@
         "note": "Reserve/Reserved/Waitlist button count"
       },
       "picklex": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Excluded: requires personal member login (session-based access) - not scraped to avoid using a customer account to harvest a competitor's booking data"
+        "util": 22.4,
+        "booked": 22,
+        "total": 98,
+        "note": "CourtReserve: 76 Reserve / 17 Reserved / 5 waitlist (scraped via Leanne's personal member login, per her confirmation)"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Login wall still shown in this browser session (saved password autofilled by Chrome but not submitted, per policy against submitting login forms) - util data still not available"
+        "util": 33.8,
+        "booked": 54,
+        "total": 160,
+        "note": "10 pickleball courts x 16hrs (7am-11pm); public booking calendar, no login required. Courts 10 and 11 showed zero bookings"
       },
       "smash_pb_london": {
         "util": 78.6,
