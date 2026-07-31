@@ -212,7 +212,7 @@ const REGIONS = [
 const TODAY_DATA = {
 date: "2026-07-31",
 scraped_at: "2026-07-31T10:46:00",
-note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Updated later on 2026-07-31: Leanne logged into smash_pb_london, prime_time, four_fathers_pickleball and rally_mississauga herself, so those four were re-scraped using the now-authenticated sessions. blue_zone still showed a login wall in this browser session (saved password autofilled but not submitted) and remains unscraped; picklex remains excluded.",
+note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Updated later on 2026-07-31: Leanne logged into smash_pb_london, prime_time, four_fathers_pickleball and rally_mississauga herself, so those four were re-scraped using the now-authenticated sessions. Further update: blue_zone scraped via its public booking calendar (no login required); picklex scraped via Leanne's personal member login, per her explicit confirmation to include it.",
 clubs: {
 pickleplex_barrie: { util: 58.2, booked: 57, total: 98, note: "7 courts × 14 hrs" },
 pickleplex_windsor: { util: 44.0, booked: 37, total: 84, note: "6 courts × 14 hrs" },
@@ -235,8 +235,8 @@ picklr_toronto_west: { util: 77.1, booked: 111, total: 144, note: "9 courts, ded
 vaughan_sportsplex: { util: 80.0, booked: 132, total: 165, note: "11 courts, dedup'd hourly availability, bookings 1pm-11pm; Court 5 showed no availability all day" },
 hisports_durham: { util: 56.3, booked: 108, total: 192, note: "12 indoor courts × 16 hrs; courts continuously available 1pm-8pm per listings (7 outdoor courts excluded from total per prior convention)" },
 picklrs_hub: { util: 39.2, booked: 31, total: 79, note: "Reserve/Reserved/Waitlist button count" },
-picklex: { util: null, booked: null, total: null, note: "Excluded: requires personal member login (session-based access) - not scraped to avoid using a customer account to harvest a competitor's booking data" },
-blue_zone: { util: null, booked: null, total: null, note: "Login wall still shown in this browser session (saved password autofilled by Chrome but not submitted, per policy against submitting login forms) - util data still not available" },
+picklex: { util: 22.4, booked: 22, total: 98, note: "CourtReserve: 76 Reserve / 17 Reserved / 5 waitlist (scraped via Leanne's personal member login, per her confirmation)" },
+blue_zone: { util: 33.8, booked: 54, total: 160, note: "10 pickleball courts x 16hrs (7am-11pm); public booking calendar, no login required. Courts 10 and 11 showed zero bookings" },
 smash_pb_london: { util: 78.6, booked: 92, total: 117, note: "9 courts × 13hrs (7am-8pm nominal); some bookings extend to 8-11pm and are counted (re-scraped after Leanne logged in)" },
 four_fathers_pickleball: { util: 37.1, booked: 26, total: 70, note: "7 courts, morn (9am-2pm)=14/35 + aft (5pm-8pm)=9/21 + eve (8pm-10pm)=3/14 (re-scraped after Leanne logged in)" },
 real_pickleball: { util: 31.6, booked: 31, total: 98, note: "7 of 8 courts active × 14 hrs (8am-10pm)" },
