@@ -1947,10 +1947,10 @@
         "note": "CourtReserve: 91 avail / 14 reserved / 8 waitlist"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
+        "util": 33.8,
+        "booked": 54,
         "total": 160,
-        "note": "Session expired — login required"
+        "note": "10 pickleball courts × 16hrs (7am-11pm), padel ignored, Court 11 empty/excluded (re-scraped after login)"
       },
       "smash_pb_london": {
         "util": 65,
