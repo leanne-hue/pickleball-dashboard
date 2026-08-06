@@ -2496,16 +2496,16 @@
                 "note": "10 pickleball courts x 16hrs, incl Franklin Court as Court 8"
             },
             "smash_pb_london": {
-                "util": null,
-                "booked": null,
+                "util": 70.9,
+                "booked": 83,
                 "total": 117,
-                "note": "Login required \u2014 site now gates calendar behind login"
+                "note": "9 courts \u00d7 13hrs (7am-8pm nominal); some bookings extend later (re-scraped after Leanne logged in)"
             },
             "four_fathers_pickleball": {
-                "util": null,
-                "booked": null,
+                "util": 47.1,
+                "booked": 33,
                 "total": 70,
-                "note": "Session expired \u2014 login required"
+                "note": "7 courts, morn (9am-2pm)=12/35 + aft (5pm-8pm)=11/21 + eve (8pm-10pm)=10/14 (re-scraped after Leanne logged in)"
             },
             "real_pickleball": {
                 "util": 43.8,
@@ -2520,16 +2520,16 @@
                 "note": "4 courts \u00d7 6 hrs (4pm-10pm)"
             },
             "prime_time": {
-                "util": null,
-                "booked": null,
+                "util": 36.6,
+                "booked": 41,
                 "total": 112,
-                "note": "Session expired \u2014 login required"
+                "note": "8 courts \u00d7 14 hrs (7am-9pm) (re-scraped after Leanne logged in)"
             },
             "rally_mississauga": {
-                "util": null,
-                "booked": null,
-                "total": null,
-                "note": "Session expired \u2014 login required"
+                "util": 40.6,
+                "booked": 140,
+                "total": 345,
+                "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 11am-10pm \u2014 TRUNCATED (re-scraped ~10:40am EDT after Leanne logged in; morning hours before 11am already dropped)"
             }
         }
     }
