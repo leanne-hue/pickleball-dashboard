@@ -3076,7 +3076,12 @@
       "picklrs_hub": { "util": 32.0, "booked": 24, "total": 75, "note": "Reserve/Reserved/Waitlist text count" },
       "picklex": { "util": 11.8, "booked": 11, "total": 93, "note": "Reserve/Reserved/Waitlist text count" },
       "blue_zone": { "util": 30.9, "booked": 49.5, "total": 160, "note": "10 pickleball courts × 16hrs, Court 8 = Franklin Court" },
-      "smash_pb_london": { "util": null, "booked": null, "total": 117, "note": "Booking flow now gated behind login before calendar reachable — login required" },
+      "smash_pb_london": {
+        "util": 71.8,
+        "booked": 84,
+        "total": 117,
+        "note": "9 courts × 13 hrs (7am-8pm), 84 court-hrs booked"
+      },
       "four_fathers_pickleball": {
         "util": 52.9,
         "booked": 37,
