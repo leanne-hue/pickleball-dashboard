@@ -3553,10 +3553,10 @@
         "note": "Not scraped - requires authenticated competitor member account, declined per data-access policy"
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
-        "total": 117,
-        "note": "Site UI changed to login-gated booking wizard - no public calendar visible"
+        "util": 39.6,
+        "booked": 19,
+        "total": 48,
+        "note": "Site redesigned - now 3 bookable surfaces (Court 1, Pickleball, Practice Court) x 16 hrs (7am-11pm), not 9 courts; re-scraped after Leanne logged in"
       },
       "four_fathers_pickleball": {
         "util": 42.9,
