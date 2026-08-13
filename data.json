@@ -3541,10 +3541,10 @@
         "note": "Reserve/Reserved/Waitlist button count"
       },
       "picklex": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Not scraped - requires authenticated competitor member account, declined per data-access policy"
+        "util": 23.8,
+        "booked": 20,
+        "total": 84,
+        "note": "CourtReserve: 64 avail / 15 reserved / 5 waitlist; re-scraped after Leanne logged in"
       },
       "blue_zone": {
         "util": null,
@@ -3559,10 +3559,10 @@
         "note": "Site UI changed to login-gated booking wizard - no public calendar visible"
       },
       "four_fathers_pickleball": {
-        "util": null,
-        "booked": null,
+        "util": 42.9,
+        "booked": 30,
         "total": 70,
-        "note": "Session expired - login required"
+        "note": "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); re-scraped after Leanne logged in"
       },
       "real_pickleball": {
         "util": 40.2,
@@ -3577,16 +3577,16 @@
         "note": "4 courts x 6 hrs (4pm-10pm), 16.5 court-hrs avail"
       },
       "prime_time": {
-        "util": null,
-        "booked": null,
+        "util": 36.6,
+        "booked": 41,
         "total": 112,
-        "note": "Session expired - login required"
+        "note": "8 of 8 courts active x 14 hrs (7am-9pm); re-scraped after Leanne logged in"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Not scraped - requires authenticated competitor member account + API access, declined per data-access policy"
+        "util": 67.4,
+        "booked": 192,
+        "total": 285,
+        "note": "15 courts; ClubAutomation live-availability, window 1pm-10pm ONLY (scraped ~1pm ET, morning hours already dropped by API) - TRUNCATED, understates true full-day utilization; re-scraped after Leanne logged in"
       }
     }
   }
