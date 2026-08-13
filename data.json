@@ -3547,10 +3547,10 @@
         "note": "CourtReserve: 64 avail / 15 reserved / 5 waitlist; re-scraped after Leanne logged in"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": 160,
-        "note": "Not scraped - requires authenticated competitor member account, declined per data-access policy"
+        "util": 21.1,
+        "booked": 4,
+        "total": 19,
+        "note": "PROXY METRIC: site redesigned to 2 surfaces (Indoor Pickleball 4 courts, Outdoor Pickleball 4 courts). API only exposes aggregate 'at least 1 of 4 courts free' per 30-min slot, not per-court detail. Value = % of slots where ALL courts in a surface are booked simultaneously - likely UNDERSTATES true per-court utilization vs other sites' methodology; re-scraped after Leanne logged in"
       },
       "smash_pb_london": {
         "util": 39.6,

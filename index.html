@@ -237,7 +237,7 @@ const TODAY_DATA = {
     hisports_durham:        { util: 91.1, booked: 175, total: 192, note: "12 courts x 16 hrs, 17 court-hrs avail" },
     picklrs_hub:            { util: 36.8, booked: 25, total: 68, note: "Reserve/Reserved/Waitlist button count" },
     picklex: { util: 23.8, booked: 20, total: 84, note: "CourtReserve: 64 avail / 15 reserved / 5 waitlist; re-scraped after Leanne logged in" },
-    blue_zone:              { util: null, booked: null, total: 160, note: "Not scraped - requires authenticated competitor member account, declined per data-access policy" },
+    blue_zone: { util: 21.1, booked: 4, total: 19, note: "PROXY METRIC: site redesigned to 2 surfaces (Indoor Pickleball 4 courts, Outdoor Pickleball 4 courts). API only exposes aggregate 'at least 1 of 4 courts free' per 30-min slot, not per-court detail. Value = % of slots where ALL courts in a surface are booked simultaneously - likely UNDERSTATES true per-court utilization vs other sites' methodology; re-scraped after Leanne logged in" },
     smash_pb_london: { util: 39.6, booked: 19, total: 48, note: "Site redesigned - now 3 bookable surfaces (Court 1, Pickleball, Practice Court) x 16 hrs (7am-11pm), not 9 courts; re-scraped after Leanne logged in" },
     four_fathers_pickleball: { util: 42.9, booked: 30, total: 70, note: "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); re-scraped after Leanne logged in" },
     real_pickleball:         { util: 40.2, booked: 45, total: 112, note: "8 courts x 14 hrs (8am-10pm)" },
