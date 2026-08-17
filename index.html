@@ -86,7 +86,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 <div class="header">
   <div>
-    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">🥍 Pickleplex Competitive Dashboard</div>
+    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">🏓 Pickleplex Competitive Dashboard</div>
     <div class="sub" id="hdr-sub">Loading…</div>
   </div>
   <div class="header-right" id="hdr-right"></div>
@@ -159,10 +159,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   </div>
 </div>
 <script>
-// ─── DATA ─────────────────────────────────────────────────────────────────
-
+// DATA SECTION
 const CLUBS = {
-  // ── Pickleplex (own) ──────────────────────────────────────────────────
   pickleplex_barrie:     { name:"Pickleplex Barrie",     short:"Barrie",     loc:"Barrie, ON",       platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:13487 },
   pickleplex_windsor:    { name:"Pickleplex Windsor",    short:"Windsor",    loc:"Windsor, ON",      platform:"CourtReserve", courts:6,  color:"#00a651", type:"own", orgId:13986 },
   pickleplex_pickering:  { name:"Pickleplex Pickering",  short:"Pickering",  loc:"Pickering, ON",    platform:"CourtReserve", courts:7,  color:"#00a651", type:"own", orgId:14195 },
@@ -177,7 +175,6 @@ const CLUBS = {
   pickleplex_york_mills: { name:"Pickleplex York Mills", short:"York Mills", loc:"Toronto, ON",      platform:"CourtReserve", courts:3,  color:"#00a651", type:"own", orgId:17114 },
   pickleplex_brantford:  { name:"Pickleplex Brantford",  short:"Brantford",  loc:"Brantford, ON",    platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17392 },
   pickleplex_burloak:    { name:"Pickleplex Burloak",    short:"Burloak",    loc:"Burlington, ON",   platform:"CourtReserve", courts:8,  color:"#00a651", type:"own", orgId:17621 },
-  // ── Competitors ─────────────────────────────────────────────────────────
   fairgrounds_red_deer:  { name:"Fairgrounds Red Deer",       short:"FG Red Deer",  loc:"Red Deer, AB",    platform:"Podplay",      courts:14, color:"#e74c3c", type:"competitor" },
   fairgrounds_cloverdale:{ name:"Fairgrounds Cloverdale",     short:"FG Cloverdale",loc:"Etobicoke, ON",   platform:"Podplay",      courts:11, color:"#f39c12", type:"competitor" },
   picklr_toronto_west:   { name:"The Picklr Toronto West",    short:"Picklr TW",    loc:"Etobicoke, ON",   platform:"CatchCorner",  courts:9,  color:"#e67e22", type:"competitor" },
@@ -208,45 +205,43 @@ const REGIONS = [
   { id:"windsor",    name:"Windsor, ON",              own:["pickleplex_windsor"],                                             comp:["prime_time"] },
 ];
 
-// ── TODAY_DATA — replaced daily by scheduled task ─────────────────────────
 const TODAY_DATA = {
   date: "2026-08-17",
-  scraped_at: "2026-08-17T10:33:00",
-  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / detected courts x actual operating hours). Competitors: live scrape.",
+  scraped_at: "2026-08-17T11:57:00",
+  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
   clubs: {
-    pickleplex_barrie: { util: 64.3, booked: 63, total: 98, note: "7 courts × 14 hrs (8am-10pm)" },
-    pickleplex_windsor: { util: 72.6, booked: 61, total: 84, note: "6 courts × 14 hrs (8am-10pm)" },
-    pickleplex_pickering: { util: 70.5, booked: 79, total: 112, note: "7 courts × 16 hrs (7am-10pm)" },
-    pickleplex_belleville: { util: 60.7, booked: 68, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
-    pickleplex_vaughan: { util: 63.4, booked: 71, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
-    pickleplex_promenade: { util: 78.6, booked: 66, total: 84, note: "6 courts × 14 hrs (8am-10pm)" },
-    pickleplex_downsview: { util: 73.1, booked: 133, total: 182, note: "13 courts × 14 hrs (8am-10pm)" },
-    pickleplex_oshawa: { util: 56.4, booked: 79, total: 140, note: "10 courts × 14 hrs (8am-10pm)" },
-    pickleplex_cambridge: { util: 29.2, booked: 49, total: 168, note: "12 courts × 14 hrs (8am-10pm)" },
-    pickleplex_red_deer: { util: 40.5, booked: 51, total: 126, note: "9 courts × 14 hrs (8am-10pm)" },
-    pickleplex_aurora: { util: 65.2, booked: 73, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
-    pickleplex_york_mills: { util: 29.6, booked: 16, total: 54, note: "3 courts × 18 hrs (live detected window)" },
-    pickleplex_brantford: { util: 26.5, booked: 26, total: 98, note: "7 of 8 courts active × 14 hrs (8am-10pm)" },
-    pickleplex_burloak: { util: 54.5, booked: 61, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
-    fairgrounds_red_deer: { util: 26.4, booked: 48, total: 182, note: "14 courts, 13 time slots, live scrape" },
-    fairgrounds_cloverdale: { util: 75.1, booked: 157, total: 209, note: "11 courts (Standard+Compact), 19 combined slots" },
-    fairgrounds_whitby: { util: 33.3, booked: 12, total: 36, note: "4 courts (detected max), 9 slots" },
-    picklr_toronto_west: { util: 75.7, booked: 109, total: 144, note: "9 courts × 16 hrs (7am-11pm), 35 court-hrs avail" },
-    vaughan_sportsplex: { util: 77.6, booked: 128, total: 165, note: "11 courts × 15 hrs (7am-10pm), 37 court-hrs avail" },
-    hisports_durham: { util: 82, booked: 157.5, total: 192, note: "12 courts × 16 hrs, 34.5 court-hrs avail" },
-    picklrs_hub: { util: 23, booked: 17, total: 74, note: "Reserve/Reserved/Waitlist button count" },
-    picklex: { util: 23.2, booked: 26, total: 112, note: "Reserve/Reserved/Waitlist button count" },
-    blue_zone: { util: 33.8, booked: 54, total: 160, note: "10 pickleball courts × 16hrs (Padel excluded)" },
-    smash_pb_london: { util: null, booked: null, total: 117, note: "Session expired — login required" },
-    four_fathers_pickleball: { util: null, booked: null, total: 70, note: "Session expired — login required" },
-    real_pickleball: { util: 48.2, booked: 54, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
-    corte_kitchener: { util: 37.5, booked: 9, total: 24, note: "4 courts × 6 hrs (4pm-10pm), 15 court-hrs avail" },
-    prime_time: { util: null, booked: null, total: 112, note: "Session expired — login required" },
-    rally_mississauga: { util: null, booked: null, total: null, note: "Session expired — login required" }
+    pickleplex_barrie:     { util: null, booked: null, total: null, note: "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall, shown logged in; same as prior run, appears to be an ongoing Pickleplex-side UI change" },
+    pickleplex_windsor:    { util: 72.6, booked: 61, total: 84, note: "6 courts x 14 hrs" },
+    pickleplex_pickering:  { util: null, booked: null, total: null, note: "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall; same as prior run" },
+    pickleplex_belleville: { util: null, booked: null, total: null, note: "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall; same as prior run" },
+    pickleplex_vaughan:    { util: 63.4, booked: 71, total: 112, note: "8 courts x 14 hrs" },
+    pickleplex_promenade:  { util: 79.8, booked: 67, total: 84, note: "6 courts x 14 hrs" },
+    pickleplex_downsview:  { util: 73.1, booked: 133, total: 182, note: "13 courts x 14 hrs" },
+    pickleplex_oshawa:     { util: 55.0, booked: 77, total: 140, note: "10 courts x 14 hrs" },
+    pickleplex_cambridge:  { util: 29.8, booked: 50, total: 168, note: "12 courts x 14 hrs" },
+    pickleplex_red_deer:   { util: 40.5, booked: 51, total: 126, note: "9 courts x 14 hrs" },
+    pickleplex_aurora:     { util: 68.8, booked: 77, total: 112, note: "8 courts x 14 hrs" },
+    pickleplex_york_mills: { util: null, booked: null, total: null, note: "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall; same as prior run" },
+    pickleplex_brantford:  { util: 26.5, booked: 26, total: 98, note: "7 of 8 courts active x 14 hrs" },
+    pickleplex_burloak:    { util: 56.3, booked: 63, total: 112, note: "8 courts x 14 hrs" },
+    fairgrounds_red_deer:   { util: 27.5, booked: 50, total: 182, note: "14 courts x 13 time-slots found, 132 court-hrs avail" },
+    fairgrounds_cloverdale: { util: 76.3, booked: 151, total: 198, note: "11 courts x 18 slots (Standard+Compact), 47 court-hrs avail" },
+    fairgrounds_whitby:     { util: 44.4, booked: 16, total: 36, note: "4 courts (max seen) x 9 slots, 20 court-hrs avail" },
+    picklr_toronto_west:    { util: 77.1, booked: 111, total: 144, note: "9 courts x 16 hrs (7am-11pm), 33 court-hrs avail" },
+    vaughan_sportsplex:     { util: 79.4, booked: 131, total: 165, note: "11 courts x 15 hrs (7am-10pm), 34 court-hrs avail" },
+    hisports_durham:        { util: 61.5, booked: 118, total: 192, note: "12 courts x 16 hrs (indoor+outdoor), 74 court-hrs avail" },
+    picklrs_hub:            { util: 23.9, booked: 17, total: 71, note: "Reserve/Reserved/Waitlist text count" },
+    picklex:                { util: 23.2, booked: 26, total: 112, note: "Member login required; Reserve/Reserved/Waitlist text count" },
+    blue_zone:              { util: 33.8, booked: 54, total: 160, note: "10 pickleball courts x 16hrs (Franklin=Court8)" },
+    smash_pb_london:        { util: null, booked: null, total: 117, note: "Login modal blocks calendar view (autofilled credentials present); not submitted per policy" },
+    four_fathers_pickleball: { util: null, booked: null, total: 70, note: "Session expired - redirected to Portal Index" },
+    real_pickleball:         { util: 46.4, booked: 52, total: 112, note: "8 courts x 14 hrs (8am-10pm)" },
+    corte_kitchener:         { util: 56.3, booked: 13.5, total: 24, note: "4 courts x 6 hrs (4pm-10pm), 10.5 court-hrs avail" },
+    prime_time:              { util: null, booked: null, total: 112, note: "Session expired - redirected to /Account/LogIn" },
+    rally_mississauga:       { util: null, booked: null, total: null, note: "Session expired - login required (no Welcome banner)" }
   }
 };
 
-// ── localStorage history ────────────────────────────────────────────────
 const STORAGE_KEY = 'pb_tracker_v2';
 let history = [];
 try { history = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) {}
@@ -255,7 +250,6 @@ if (ti >= 0) history[ti] = TODAY_DATA; else history.push(TODAY_DATA);
 history.sort((a,b) => a.date.localeCompare(b.date));
 try { localStorage.setItem(STORAGE_KEY, JSON.stringify(history)); } catch(e) {}
 
-// ── HELPERS ──────────────────────────────────────────────────────────────
 const CLUB_IDS = Object.keys(CLUBS);
 const OWN_IDS  = CLUB_IDS.filter(id => CLUBS[id].type === 'own');
 const COMP_IDS = CLUB_IDS.filter(id => CLUBS[id].type === 'competitor');
@@ -275,7 +269,6 @@ function fmtUtil(u) {
   return `<span style="color:${utilColor(u)}">${u.toFixed(1)}%</span>`;
 }
 
-// ── STATS BAR ────────────────────────────────────────────────────────────
 function renderStats() {
   const ownUtils = OWN_IDS.map(id => getUtil(id)).filter(u => u !== null);
   const compUtils = COMP_IDS.map(id => getUtil(id)).filter(u => u !== null);
@@ -302,7 +295,6 @@ function renderStats() {
   document.getElementById('hdr-right').innerHTML = `Last scraped: ${TODAY_DATA.scraped_at.replace('T',' ')}<br>Data: Pickleplex admin (CourtReserve) + public scrapers`;
 }
 
-// ── REGIONAL CARDS ───────────────────────────────────────────────────────
 function renderClubCard(id) {
   const c = CLUBS[id];
   const d = TODAY_DATA.clubs[id] || {};
