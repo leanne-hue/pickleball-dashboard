@@ -210,10 +210,10 @@ const TODAY_DATA = {
   scraped_at: "2026-08-17T11:57:00",
   note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
   clubs: {
-    pickleplex_barrie:     { util: null, booked: null, total: null, note: "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall, shown logged in; same as prior run, appears to be an ongoing Pickleplex-side UI change" },
+    pickleplex_barrie:     { util: 66.3, booked: 65, total: 98, note: "7 courts x 14 hrs (8am-10pm); player-mode UI persisted (no .k-scheduler) - recovered via CourtReserve ReadConsolidated hourly-availability API (AvailableCourts per hour), alt extraction method" },
     pickleplex_windsor:    { util: 72.6, booked: 61, total: 84, note: "6 courts x 14 hrs" },
-    pickleplex_pickering:  { util: null, booked: null, total: null, note: "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall; same as prior run" },
-    pickleplex_belleville: { util: null, booked: null, total: null, note: "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall; same as prior run" },
+    pickleplex_pickering:  { util: 73.2, booked: 82, total: 112, note: "6 courts + 1 skinny-singles court x 16 hrs (7am-11pm, per live data); player-mode UI persisted (no .k-scheduler) - recovered via CourtReserve ReadConsolidated hourly-availability API (AvailableCourts per hour), alt extraction method" },
+    pickleplex_belleville: { util: 57.1, booked: 64, total: 112, note: "8 courts x 14 hrs (8am-10pm); player-mode UI persisted (no .k-scheduler) - recovered via CourtReserve ReadConsolidated hourly-availability API (AvailableCourts per hour), alt extraction method" },
     pickleplex_vaughan:    { util: 63.4, booked: 71, total: 112, note: "8 courts x 14 hrs" },
     pickleplex_promenade:  { util: 79.8, booked: 67, total: 84, note: "6 courts x 14 hrs" },
     pickleplex_downsview:  { util: 73.1, booked: 133, total: 182, note: "13 courts x 14 hrs" },
