@@ -86,8 +86,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 <div class="header">
   <div>
-    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">Ã°ÂÂÂ Pickleplex Competitive Dashboard</div>
-    <div class="sub" id="hdr-sub">LoadingÃ¢ÂÂ¦</div>
+    <div class="header h1" style="font-size:1.3rem;font-weight:800;letter-spacing:-0.02em;">ÃÂ°ÃÂÃÂÃÂ Pickleplex Competitive Dashboard</div>
+    <div class="sub" id="hdr-sub">LoadingÃÂ¢ÃÂÃÂ¦</div>
   </div>
   <div class="header-right" id="hdr-right"></div>
 </div>
@@ -109,12 +109,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <div id="tab-charts" class="tab-panel">
   <div class="charts-panel">
     <div class="chart-card">
-      <div class="chart-title">Pickleplex Locations Ã¢ÂÂ Today's Utilization</div>
-      <div class="chart-sub" id="chart-sub-px">Court hours booked ÃÂ· total court hours available (8amÃ¢ÂÂ10pm)</div>
+      <div class="chart-title">Pickleplex Locations ÃÂ¢ÃÂÃÂ Today's Utilization</div>
+      <div class="chart-sub" id="chart-sub-px">Court hours booked ÃÂÃÂ· total court hours available (8amÃÂ¢ÃÂÃÂ10pm)</div>
       <div class="chart-wrap"><canvas id="barChartPX" height="160"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Competitors Ã¢ÂÂ Today's Utilization</div>
+      <div class="chart-title">Competitors ÃÂ¢ÃÂÃÂ Today's Utilization</div>
       <div class="chart-sub">Data scraped from public booking pages</div>
       <div class="chart-wrap"><canvas id="barChartComp" height="100"></canvas></div>
     </div>
@@ -136,7 +136,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="charts-panel">
     <div class="chart-card">
       <div class="chart-title">Utilization Trends Over Time</div>
-      <div class="chart-sub">Historical daily utilization Ã¢ÂÂ accumulated from each 9am scrape</div>
+      <div class="chart-sub">Historical daily utilization ÃÂ¢ÃÂÃÂ accumulated from each 9am scrape</div>
       <div class="chart-wrap"><canvas id="trendChart" height="200"></canvas></div>
       <div class="legend" id="trend-legend"></div>
     </div>
@@ -147,11 +147,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="charts-panel">
     <div class="chart-card">
       <div class="chart-title">Monthly Average Utilization</div>
-      <div class="chart-sub">Average daily utilization per month Ã¢ÂÂ Pickleplex vs competitors</div>
+      <div class="chart-sub">Average daily utilization per month ÃÂ¢ÃÂÃÂ Pickleplex vs competitors</div>
       <div class="chart-wrap"><canvas id="monthlyChart" height="180"></canvas></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Monthly Average Ã¢ÂÂ Individual Locations</div>
+      <div class="chart-title">Monthly Average ÃÂ¢ÃÂÃÂ Individual Locations</div>
       <div class="chart-sub">Per-location monthly averages (top clubs with sufficient data)</div>
       <div class="chart-wrap"><canvas id="monthlyDetailChart" height="220"></canvas></div>
       <div class="legend" id="monthly-legend"></div>
@@ -236,7 +236,7 @@ const TODAY_DATA = {
     picklrs_hub:            { util: 32.0, booked: 24, total: 75, note: "Reserve/Reserved/Waitlist text count" },
     picklex:                { util: 12.8, booked: 14, total: 109, note: "Reserve/Reserved/Waitlist text count" },
     blue_zone:              { util: 26.3, booked: 42, total: 160, note: "10 pickleball courts x 16hrs (Franklin=Court8)" },
-    smash_pb_london:        { util: null, booked: null, total: 117, note: "Site redesigned to a single-court booking widget requiring login to view any availability; this browser session still shows 'LOGIN TO CONTINUE' despite requested re-check - login did not carry over here, not submitted per policy" },
+    smash_pb_london:        { util: 42.4, booked: 14, total: 33, note: "Site redesigned into 3 bookable surfaces (Court 1, Pickleball, Practice court), each 7am-11pm (16 hrs) when full day is visible; re-scraped after login at ~11:40am so morning hours (7am-noon) already elapsed and not shown by the widget (forward-looking only, like Rally Mississauga) - reflects noon-11pm window only (33 of 48 possible court-hours), not comparable to prior 117 total" },
     four_fathers_pickleball: { util: 30, booked: 21, total: 70, note: "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm); re-scraped after login, session live" },
     real_pickleball:         { util: 43.8, booked: 49, total: 112, note: "8 courts x 14 hrs (8am-10pm)" },
     corte_kitchener:         { util: 43.8, booked: 10.5, total: 24, note: "4 courts x 6 hrs (4pm-10pm), 13.5 court-hrs avail" },
@@ -268,7 +268,7 @@ function utilColor(u) {
 }
 
 function fmtUtil(u) {
-  if (u === null) return '<span class="null-util">Ã¢ÂÂ</span>';
+  if (u === null) return '<span class="null-util">ÃÂ¢ÃÂÃÂ</span>';
   return `<span style="color:${utilColor(u)}">${u.toFixed(1)}%</span>`;
 }
 
@@ -282,10 +282,10 @@ function renderStats() {
   const diff = avgOwn !== null && avgComp !== null ? avgOwn - avgComp : null;
 
   document.getElementById('stats-bar').innerHTML = [
-    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : 'Ã¢ÂÂ', sub: `${ownUtils.length} locations reporting` },
-    { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : 'Ã¢ÂÂ', sub: `${compUtils.length} clubs reporting` },
-    { label:'Pickleplex vs Comp', value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : 'Ã¢ÂÂ', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
-    { label:'Top Pickleplex', value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : 'Ã¢ÂÂ', sub: topOwn ? CLUBS[topOwn].short : '' },
+    { label:'Avg Pickleplex Util', value: avgOwn !== null ? avgOwn.toFixed(1)+'%' : 'ÃÂ¢ÃÂÃÂ', sub: `${ownUtils.length} locations reporting` },
+    { label:'Avg Competitor Util', value: avgComp !== null ? avgComp.toFixed(1)+'%' : 'ÃÂ¢ÃÂÃÂ', sub: `${compUtils.length} clubs reporting` },
+    { label:'Pickleplex vs Comp', value: diff !== null ? (diff>=0?'+':'')+diff.toFixed(1)+'%' : 'ÃÂ¢ÃÂÃÂ', sub: 'utilization gap', color: diff!==null?(diff>=0?'#16a34a':'#dc2626'):'' },
+    { label:'Top Pickleplex', value: topOwn ? getUtil(topOwn).toFixed(1)+'%' : 'ÃÂ¢ÃÂÃÂ', sub: topOwn ? CLUBS[topOwn].short : '' },
     { label:'Total PX Courts', value: totalOwnCourts, sub: `${OWN_IDS.length} locations` },
     { label:'As of', value: TODAY_DATA.date, sub: 'Updated 9am daily' },
   ].map(s => `<div class="stat">
@@ -294,7 +294,7 @@ function renderStats() {
     <div class="stat-sub">${s.sub}</div>
   </div>`).join('');
 
-  document.getElementById('hdr-sub').textContent = `${TODAY_DATA.date} ÃÂ· ${TODAY_DATA.note}`;
+  document.getElementById('hdr-sub').textContent = `${TODAY_DATA.date} ÃÂÃÂ· ${TODAY_DATA.note}`;
   document.getElementById('hdr-right').innerHTML = `Last scraped: ${TODAY_DATA.scraped_at.replace('T',' ')}<br>Data: Pickleplex admin (CourtReserve) + public scrapers`;
 }
 
@@ -310,7 +310,7 @@ function renderClubCard(id) {
     <div class="club-type-pill">${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</div>
     <div class="club-card-name">${c.name}</div>
     <div class="club-card-loc">${c.loc}</div>
-    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">Ã¢ÂÂ</span>'}</div>
+    <div class="club-util-num" style="color:${utilColor(u)}">${u !== null ? u.toFixed(1)+'%' : '<span class="null-util">ÃÂ¢ÃÂÃÂ</span>'}</div>
     <div class="util-bar-bg"><div class="util-bar-fill" style="width:${pct}%;background:${utilColor(u)}"></div></div>
     <div class="club-card-meta"><span>${c.courts ? c.courts+' courts' : ''}</span><span>${c.platform}</span></div>
     ${limitedBadge}${note}
@@ -326,7 +326,7 @@ function renderRegions() {
     return `<div class="region-section">
       <div class="region-header">
         <span class="region-name">${region.name}</span>
-        <span style="color:#94a3b8;font-weight:400">${region.own.length} Pickleplex ÃÂ· ${region.comp.length} competitor${region.comp.length!==1?'s':''}</span>
+        <span style="color:#94a3b8;font-weight:400">${region.own.length} Pickleplex ÃÂÃÂ· ${region.comp.length} competitor${region.comp.length!==1?'s':''}</span>
       </div>
       <div class="region-clubs">${ownCards}${divider}${compCards}</div>
     </div>`;
@@ -343,10 +343,10 @@ function renderTable() {
       <td><span class="type-dot" style="background:${c.color}"></span>${c.name}</td>
       <td>${c.type === 'own' ? 'Pickleplex' : 'Competitor'}</td>
       <td>${c.loc}</td>
-      <td>${c.courts ?? 'Ã¢ÂÂ'}</td>
+      <td>${c.courts ?? 'ÃÂ¢ÃÂÃÂ'}</td>
       <td>${fmtUtil(u)}</td>
-      <td>${d.booked ?? 'Ã¢ÂÂ'}</td>
-      <td>${d.total ?? 'Ã¢ÂÂ'}</td>
+      <td>${d.booked ?? 'ÃÂ¢ÃÂÃÂ'}</td>
+      <td>${d.total ?? 'ÃÂ¢ÃÂÃÂ'}</td>
       <td>${c.platform}</td>
     </tr>`;
   }).join('');
@@ -369,7 +369,7 @@ function renderCharts() {
 
 function renderTrends() {
   if (history.length < 2) {
-    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet Ã¢ÂÂ trends appear after 2+ days of scraping.</p>';
+    document.getElementById('trendChart').parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not enough historical data yet ÃÂ¢ÃÂÃÂ trends appear after 2+ days of scraping.</p>';
     return;
   }
   const dates = history.map(s => s.date);
@@ -389,7 +389,7 @@ function renderMonthly() {
       if (el) el.parentElement.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">' + msg + '</p>';
     });
   };
-  if (history.length < 2) { noData('Not enough historical data yet Ã¢ÂÂ monthly trends appear after multiple days of scraping.'); return; }
+  if (history.length < 2) { noData('Not enough historical data yet ÃÂ¢ÃÂÃÂ monthly trends appear after multiple days of scraping.'); return; }
   const byMonth = {};
   history.forEach(s => { const m = s.date.slice(0,7); if (!byMonth[m]) byMonth[m]=[]; byMonth[m].push(s); });
   const months = Object.keys(byMonth).sort();
