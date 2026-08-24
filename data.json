@@ -4316,7 +4316,7 @@
   },
   {
     "date": "2026-08-24",
-    "scraped_at": "2026-08-24T09:00:00",
+    "scraped_at": "2026-08-24T11:30:00",
     "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape of public booking pages; sites requiring an authenticated member login were not scraped (util:null).",
     "clubs": {
       "pickleplex_barrie": {
@@ -4326,14 +4326,14 @@
         "note": "7 courts × 14 hrs"
       },
       "pickleplex_windsor": {
-        "util": 51.2,
-        "booked": 43,
+        "util": 50,
+        "booked": 42,
         "total": 84,
         "note": "6 courts × 14 hrs"
       },
       "pickleplex_pickering": {
-        "util": 86.9,
-        "booked": 73,
+        "util": 82.1,
+        "booked": 69,
         "total": 84,
         "note": "6 of 7 courts active × 14 hrs"
       },
@@ -4347,7 +4347,7 @@
         "util": 100,
         "booked": 112,
         "total": 112,
-        "note": "8 courts × 14 hrs"
+        "note": "8 courts × 14 hrs (fully booked, incl. member-privacy-masked reservations)"
       },
       "pickleplex_promenade": {
         "util": 81,
@@ -4359,7 +4359,7 @@
         "util": 100,
         "booked": 182,
         "total": 182,
-        "note": "13 courts × 14 hrs"
+        "note": "13 courts × 14 hrs — hosting 2026 IG Wealth Management National Championships today"
       },
       "pickleplex_oshawa": {
         "util": 62.1,
@@ -4392,8 +4392,8 @@
         "note": "3 courts × 14 hrs"
       },
       "pickleplex_brantford": {
-        "util": 28.6,
-        "booked": 28,
+        "util": 29.6,
+        "booked": 29,
         "total": 98,
         "note": "7 of 8 courts active × 14 hrs"
       },
@@ -4407,67 +4407,67 @@
         "util": 27.5,
         "booked": 50,
         "total": 182,
-        "note": "14 courts, 13 slot-rows, 132 court-hrs avail"
+        "note": "14 courts, 13 time slots (9:30am-9pm), 132 court-hrs avail"
       },
       "fairgrounds_cloverdale": {
-        "util": 58.4,
-        "booked": 59,
-        "total": 101,
-        "note": "Standard(8 courts)+Compact(3 courts), 17 slot-rows, 42 court-hrs avail"
+        "util": 77.8,
+        "booked": 137,
+        "total": 176,
+        "note": "11 courts (Standard+Compact tabs, 16 combined slots), 39 court-hrs avail"
       },
       "fairgrounds_whitby": {
-        "util": 50,
-        "booked": 30,
-        "total": 60,
-        "note": "5 courts (max open), 12 slot-rows, 30 court-hrs avail"
+        "util": 45.5,
+        "booked": 25,
+        "total": 55,
+        "note": "5 courts (max seen) × 11 slots, 30 court-hrs avail"
       },
       "picklr_toronto_west": {
-        "util": 84,
-        "booked": 121,
+        "util": 76.4,
+        "booked": 110,
         "total": 144,
-        "note": "9 courts × 16 hrs (7am-11pm), 23 court-hrs avail (union of listed slots)"
+        "note": "9 courts × 16 hrs (7am-11pm), 34 court-hrs avail"
       },
       "vaughan_sportsplex": {
-        "util": 91.5,
-        "booked": 151,
+        "util": 82.4,
+        "booked": 136,
         "total": 165,
-        "note": "11 courts × 15 hrs (7am-10pm), 14 court-hrs avail"
+        "note": "11 courts × 15 hrs (7am-10pm), 29 court-hrs avail"
       },
       "hisports_durham": {
-        "util": 48,
-        "booked": 146,
-        "total": 304,
-        "note": "19 courts (12 indoor+7 outdoor) × 16 hrs (7am-11pm), 158 court-hrs avail"
+        "util": 82,
+        "booked": 157.5,
+        "total": 192,
+        "note": "12 courts (5 indoor #8-12 + 7 outdoor #1-7) × 16 hrs (7am-11pm), 34.5 court-hrs avail"
       },
       "picklrs_hub": {
         "util": null,
         "booked": null,
         "total": null,
-        "note": "Login required — not scraped"
+        "note": "Redirected to public portal homepage — no booking grid accessible"
       },
       "picklex": {
         "util": 66.3,
         "booked": 65,
         "total": 98,
-        "note": "7 courts × 14 hrs (8am-10pm), public scheduler"
+        "note": "7 courts × 14 hrs — page now uses Kendo scheduler grid (site updated); scraped via grid method"
       },
       "blue_zone": {
         "util": null,
         "booked": null,
-        "total": null,
-        "note": "Login required (saved member session) — not scraped by policy"
+        "total": 160,
+        "note": "Session expired — login required"
       },
       "smash_pb_london": {
         "util": null,
         "booked": null,
-        "total": null,
-        "note": "Login required (saved member session) — not scraped by policy"
+        "total": 117,
+        "note": "Site now requires login to view calendar (booking widget changed) — not scraped"
       },
       "four_fathers_pickleball": {
         "util": null,
         "booked": null,
-        "total": null,
-        "note": "Login required — not scraped"
+        "total": 70,
+        "note": "Session expired — login required (redirected to public portal)"
       },
       "real_pickleball": {
         "util": 50,
@@ -4484,14 +4484,14 @@
       "prime_time": {
         "util": null,
         "booked": null,
-        "total": null,
+        "total": 112,
         "note": "Session expired — login required"
       },
       "rally_mississauga": {
         "util": null,
         "booked": null,
         "total": null,
-        "note": "Login required (saved member session) — not scraped by policy"
+        "note": "Session expired — login required"
       }
     }
   }
