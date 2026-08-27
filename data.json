@@ -4977,10 +4977,10 @@
         "note": "11 courts×15hrs(7am-10pm); deduped overlapping option cards; excluded post-10pm cards; 14 avail"
       },
       "hisports_durham": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "CatchCorner listing has 19 courts (12 indoor+7 outdoor) with combinatorial overlapping-duration cards and a virtualized infinite-scroll list; could not reliably dedupe full-day availability within scrape window"
+        "util": 21.7,
+        "booked": 33,
+        "total": 152,
+        "note": "19 courts (12 indoor+7 outdoor); retried — fully scrolled listing and deduped overlapping cards to half-hour buckets; scraped ~1pm so only 3pm-11pm window visible (past hours dropped), does not reflect full 7am-11pm day"
       },
       "picklrs_hub": {
         "util": 65.2,
@@ -5001,16 +5001,16 @@
         "note": "10 pickleball courts × 16hrs (7am-11pm)"
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
+        "util": 71.8,
+        "booked": 84,
         "total": 117,
-        "note": "Site UI changed — booking flow now requires login before showing court calendar; did not submit credentials"
+        "note": "9 courts × 13hrs(7am-8pm) capacity model; calendar now extends to 11pm, bookings after 8pm excluded from this total for consistency"
       },
       "four_fathers_pickleball": {
-        "util": null,
-        "booked": null,
+        "util": 44.3,
+        "booked": 31,
         "total": 70,
-        "note": "Session expired — login required"
+        "note": "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); retried ~12:50pm, session valid"
       },
       "real_pickleball": {
         "util": 46.4,
@@ -5025,16 +5025,16 @@
         "note": "4 courts × 6 hrs (4pm-10pm), 12 court-hrs avail"
       },
       "prime_time": {
-        "util": null,
-        "booked": null,
+        "util": 25,
+        "booked": 28,
         "total": 112,
-        "note": "Session expired — login required"
+        "note": "8 of 8 courts active × 14 hrs (7am-9pm); retried ~12:46pm, session valid; bookings before scrape time may show collapsed/zero duration"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 48.4,
+        "booked": 138,
+        "total": 285,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity); retried ~1pm — window 1pm-10pm only (past hours dropped by API), does not reflect full 8am-11pm day"
       }
     }
   }
