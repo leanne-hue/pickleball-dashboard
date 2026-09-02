@@ -1,1 +1,5765 @@
-undefined
+[
+  {
+    "date": "2026-06-25",
+    "scraped_at": "2026-06-25T09:00:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 44.9,
+        "booked": 44,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 48.8,
+        "booked": 41,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 69,
+        "booked": 58,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 47.3,
+        "booked": 53,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 59.8,
+        "booked": 67,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 78.6,
+        "booked": 66,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 63.7,
+        "booked": 116,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 67.1,
+        "booked": 94,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 22.2,
+        "booked": 28,
+        "total": 126,
+        "note": "9 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 44.4,
+        "booked": 56,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 60.7,
+        "booked": 68,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 59.5,
+        "booked": 25,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 20.2,
+        "booked": 17,
+        "total": 84,
+        "note": "6 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 58,
+        "booked": 65,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 19.6,
+        "booked": 33,
+        "total": 168,
+        "note": "14 courts, 12 slots, 135 court-hrs open"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 56.6,
+        "booked": 56,
+        "total": 99,
+        "note": "11 courts, 9 slots, 43 court-hrs open"
+      },
+      "fairgrounds_whitby": {
+        "util": 34,
+        "booked": 17,
+        "total": 50,
+        "note": "~5 courts (max open), 10 slots, 33 court-hrs open"
+      },
+      "picklr_toronto_west": {
+        "util": 96.5,
+        "booked": 139,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs, 5 court-hrs open"
+      },
+      "vaughan_sportsplex": {
+        "util": 85.5,
+        "booked": 141,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs, 24 court-hrs open"
+      },
+      "hisports_durham": {
+        "util": 81.8,
+        "booked": 157,
+        "total": 192,
+        "note": "12 courts ÃÂ 16 hrs (7am-11pm), 35 court-hrs open"
+      },
+      "picklrs_hub": {
+        "util": 39.6,
+        "booked": 21,
+        "total": 53,
+        "note": "CourtReserve: 32 avail / 15 reserved / 6 waitlist"
+      },
+      "picklex": {
+        "util": 16.2,
+        "booked": 18,
+        "total": 111,
+        "note": "CourtReserve: 93 avail / 16 reserved / 2 waitlist"
+      },
+      "blue_zone": {
+        "util": 34.7,
+        "booked": 55.5,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (padel ignored)"
+      },
+      "smash_pb_london": {
+        "util": 69.2,
+        "booked": 81,
+        "total": 117,
+        "note": "9 courts ÃÂ 13hrs, 52 bookings"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "7 courts, morn+aft+eve sessions"
+      },
+      "real_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": null,
+        "booked": null,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm)"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "15 courts; ClubAutomation"
+      }
+    }
+  },
+  {
+    "date": "2026-07-21",
+    "scraped_at": "2026-07-21T13:30:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape. CAVEAT: this run executed ~1:21pm ET (not the usual 9am), so CourtReserve Index-view sites may undercount past bookings and Rally only reflects 1:30pm-10pm.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 74.5,
+        "booked": 73,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 48.8,
+        "booked": 41,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 84.5,
+        "booked": 71,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 63.4,
+        "booked": 71,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 72.3,
+        "booked": 81,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 86.9,
+        "booked": 73,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 56.6,
+        "booked": 103,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 55,
+        "booked": 77,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 31.5,
+        "booked": 53,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 41.3,
+        "booked": 52,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 78.6,
+        "booked": 88,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 50,
+        "booked": 21,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 25.7,
+        "booked": 18,
+        "total": 70,
+        "note": "5 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 20.7,
+        "booked": 29,
+        "total": 140,
+        "note": "14 courts, 10 time slots (11am-9pm)"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 81.2,
+        "booked": 134,
+        "total": 165,
+        "note": "11 courts (Standard+Compact combined), 15 time-slot rows"
+      },
+      "fairgrounds_whitby": {
+        "util": 50,
+        "booked": 18,
+        "total": 36,
+        "note": "4 courts (max seen), 9 time slots"
+      },
+      "picklr_toronto_west": {
+        "util": 91,
+        "booked": 131,
+        "total": 144,
+        "note": "9 courts ÃÂ 16hrs (7am-11pm)"
+      },
+      "vaughan_sportsplex": {
+        "util": 89.1,
+        "booked": 147,
+        "total": 165,
+        "note": "11 courts ÃÂ 15hrs (7am-10pm)"
+      },
+      "hisports_durham": {
+        "util": 100,
+        "booked": 192,
+        "total": 192,
+        "note": "12 indoor courts ÃÂ 16hrs (6am-10pm) fully booked"
+      },
+      "picklrs_hub": {
+        "util": 48.1,
+        "booked": 25,
+        "total": 52,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 30.9,
+        "booked": 29,
+        "total": 94,
+        "note": "Reserve/Reserved/Waitlist button count, session active"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "Session expired - login required"
+      },
+      "smash_pb_london": {
+        "util": 74.4,
+        "booked": 87,
+        "total": 117,
+        "note": "9 courts ÃÂ 13hrs (7am-8pm)"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "Session expired - login required"
+      },
+      "real_pickleball": {
+        "util": 50,
+        "booked": 56,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "Session expired - login required"
+      },
+      "rally_mississauga": {
+        "util": 75.6,
+        "booked": 204,
+        "total": 270,
+        "note": "15 courts; ClubAutomation live-availability, window 13:30-22:00 Ã¢ÂÂ TRUNCATED (run at ~1:21pm ET)"
+      }
+    }
+  },
+  {
+    "date": "2026-07-23",
+    "scraped_at": "2026-07-23T10:50:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 67.3,
+        "booked": 66,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 34.5,
+        "booked": 29,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 81,
+        "booked": 68,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 66.1,
+        "booked": 74,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 66.1,
+        "booked": 74,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 76.2,
+        "booked": 64,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 53.3,
+        "booked": 97,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 57.1,
+        "booked": 80,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 27.6,
+        "booked": 27,
+        "total": 98,
+        "note": "7 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 42.9,
+        "booked": 54,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 79.5,
+        "booked": 89,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 64.3,
+        "booked": 27,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 25,
+        "booked": 21,
+        "total": 84,
+        "note": "6 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 58,
+        "booked": 65,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 26.4,
+        "booked": 48,
+        "total": 182,
+        "note": "13 time slots (8:30am-9pm), 134 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 80.6,
+        "booked": 133,
+        "total": 165,
+        "note": "11 courts (Standard+Compact); 15 slot-rows combined, 32 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "picklr_toronto_west": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "vaughan_sportsplex": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "hisports_durham": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "picklrs_hub": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "picklex": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "Session expired - login required"
+      },
+      "smash_pb_london": {
+        "util": 66.7,
+        "booked": 78,
+        "total": 117,
+        "note": "9 courts x 13hrs (7am-8pm)"
+      },
+      "four_fathers_pickleball": {
+        "util": 40,
+        "booked": 28,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm)=16/35 + aft (5pm-8pm)=12/21 + eve (8pm-10pm)=0/14"
+      },
+      "real_pickleball": {
+        "util": 51.8,
+        "booked": 58,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 25,
+        "booked": 6,
+        "total": 24,
+        "note": "4 courts x 6 hrs (4pm-10pm), 18 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 31.3,
+        "booked": 35,
+        "total": 112,
+        "note": "8 of 8 courts active x 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired - login required"
+      }
+    }
+  },
+  {
+    "date": "2026-07-24",
+    "scraped_at": "2026-07-24T09:00:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 43.9,
+        "booked": 43,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 61.9,
+        "booked": 52,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 78.6,
+        "booked": 66,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 55.4,
+        "booked": 62,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 47.3,
+        "booked": 53,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 78.6,
+        "booked": 66,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 57.7,
+        "booked": 105,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 67.9,
+        "booked": 95,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 15.9,
+        "booked": 20,
+        "total": 126,
+        "note": "9 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 42.9,
+        "booked": 54,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 76.8,
+        "booked": 86,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 54.8,
+        "booked": 23,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 20.2,
+        "booked": 17,
+        "total": 84,
+        "note": "6 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 54.5,
+        "booked": 61,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 20.9,
+        "booked": 38,
+        "total": 182,
+        "note": "14 courts, 13 time slots (8am-10pm window), 144 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 65.9,
+        "booked": 87,
+        "total": 132,
+        "note": "11 courts, 12 time slots, 45 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 70.9,
+        "booked": 39,
+        "total": 55,
+        "note": "5 courts (max PB5 detected), 11 time slots, 16 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 91.7,
+        "booked": 132,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs (7am-11pm), 12 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 89.1,
+        "booked": 147,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs (7am-10pm), 18 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 48.7,
+        "booked": 148,
+        "total": 304,
+        "note": "19 courts (12 indoor + 7 outdoor) ÃÂ 16 hrs (7am-11pm); precise data for 10 courts, remaining 9 estimated via category averages"
+      },
+      "picklrs_hub": {
+        "util": 36.6,
+        "booked": 30,
+        "total": 82,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 18.7,
+        "booked": 20,
+        "total": 107,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 33.1,
+        "booked": 53,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (7am-11pm); Court8 shown as Franklin Court"
+      },
+      "smash_pb_london": {
+        "util": 88.9,
+        "booked": 104,
+        "total": 117,
+        "note": "9 courts ÃÂ 13 hrs (7am-8pm); CIBC Charity Tournament occupied most courts 9am-3pm"
+      },
+      "four_fathers_pickleball": {
+        "util": 34.3,
+        "booked": 24,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 32.1,
+        "booked": 36,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 25,
+        "booked": 6,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), 18 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 18.4,
+        "booked": 18,
+        "total": 98,
+        "note": "7 of 8 courts active ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 48.7,
+        "booked": 146,
+        "total": 300,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 12:30pm-10pm Ã¢ÂÂ TRUNCATED (run after 9am, morning hours already dropped)"
+      }
+    }
+  },
+  {
+    "date": "2026-07-25",
+    "scraped_at": "2026-07-25T09:20:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 44.9,
+        "booked": 44,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 35.7,
+        "booked": 30,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 51.2,
+        "booked": 43,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 45.5,
+        "booked": 51,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 49.1,
+        "booked": 55,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 61.9,
+        "booked": 52,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 61,
+        "booked": 111,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 65,
+        "booked": 91,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 44,
+        "booked": 74,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 69.8,
+        "booked": 88,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 60.7,
+        "booked": 68,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 66.7,
+        "booked": 28,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 14.3,
+        "booked": 8,
+        "total": 56,
+        "note": "4 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 28.6,
+        "booked": 28,
+        "total": 98,
+        "note": "7 of 8 courts active ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 21.4,
+        "booked": 42,
+        "total": 196,
+        "note": "14 courts, 14 time slots (7am-9pm), 154 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 33.6,
+        "booked": 48,
+        "total": 143,
+        "note": "11 courts ÃÂ 13 hrs (9am-9pm), std+compact combined, 95 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 55.6,
+        "booked": 25,
+        "total": 45,
+        "note": "5 courts (max seen) x 9 time slots (11am-9pm), 20 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 91.7,
+        "booked": 132,
+        "total": 144,
+        "note": "9 courts x 16 hrs (7am-11pm); 12 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 89.7,
+        "booked": 148,
+        "total": 165,
+        "note": "11 courts x 15 hrs (7am-10pm); 17 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 95.3,
+        "booked": 183,
+        "total": 192,
+        "note": "12 courts x 16 hrs; 9 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 21.3,
+        "booked": 16,
+        "total": 75,
+        "note": "9 courts; Reserve=59, Reserved=16, Waitlist=0"
+      },
+      "picklex": {
+        "util": 19.8,
+        "booked": 20,
+        "total": 101,
+        "note": "Reserve=81, Reserved=16, Waitlist=4"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "Session expired - login required"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Login wall now required to view calendar Ã¢ÂÂ did not submit saved credentials"
+      },
+      "four_fathers_pickleball": {
+        "util": 27.1,
+        "booked": 19,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 60.7,
+        "booked": 68,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 100,
+        "booked": 24,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), no available slots found for today"
+      },
+      "prime_time": {
+        "util": 26.8,
+        "booked": 30,
+        "total": 112,
+        "note": "8 of 8 courts active ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired Ã¢ÂÂ login required"
+      }
+    }
+  },
+  {
+    "date": "2026-07-26",
+    "scraped_at": "2026-07-26T21:10:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape. CAVEAT: this run executed ~9pm ET / 7pm MT (not the usual 9am), so several time-sensitive sources (Podplay future-only listings, CatchCorner next-available-day jumps, CourtReserve Index past-booking collapse, ClubAutomation future-only API) reflect a partial/late-day snapshot rather than full-day utilization Ã¢ÂÂ see per-club notes.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 41.8,
+        "booked": 41,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 57.1,
+        "booked": 48,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 59.5,
+        "booked": 50,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 64.3,
+        "booked": 72,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 63.4,
+        "booked": 71,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 92.9,
+        "booked": 78,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 79.1,
+        "booked": 144,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 45.7,
+        "booked": 64,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 43.5,
+        "booked": 73,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 84.1,
+        "booked": 106,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 41.1,
+        "booked": 46,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 59.5,
+        "booked": 25,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 32.1,
+        "booked": 27,
+        "total": 84,
+        "note": "6 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 54.5,
+        "booked": 61,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 16.7,
+        "booked": 7,
+        "total": 42,
+        "note": "14 courts; only 3 of ~15 daily slots visible today (evening scrape ~7pm MT, earlier slots already dropped by site)"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 9.1,
+        "booked": 1,
+        "total": 11,
+        "note": "11 courts; only 1 slot (9pm) visible today (evening scrape, earlier slots dropped by site)"
+      },
+      "fairgrounds_whitby": {
+        "util": 0,
+        "booked": 0,
+        "total": 5,
+        "note": "5 courts (PB1-PB5); only 1 slot (9pm) visible today (evening scrape)"
+      },
+      "picklr_toronto_west": {
+        "util": 100,
+        "booked": 144,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs (7am-11pm); no listing cards for today - treated as fully booked (evening scrape ~9pm)"
+      },
+      "vaughan_sportsplex": {
+        "util": 100,
+        "booked": 165,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs (7am-10pm); no listing cards for today - treated as fully booked (evening scrape)"
+      },
+      "hisports_durham": {
+        "util": 100,
+        "booked": 192,
+        "total": 192,
+        "note": "12 courts ÃÂ 16 hrs; no listing cards for today - treated as fully booked (evening scrape)"
+      },
+      "picklrs_hub": {
+        "util": 72.4,
+        "booked": 21,
+        "total": 29,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 62.7,
+        "booked": 32,
+        "total": 51,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 18.4,
+        "booked": 29.5,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (7am-11pm)"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Site showed LOGIN TO CONTINUE wall before calendar - did not submit credentials, skipped"
+      },
+      "four_fathers_pickleball": {
+        "util": 12.9,
+        "booked": 9,
+        "total": 70,
+        "note": "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); 6 of 7 courts detected active"
+      },
+      "real_pickleball": {
+        "util": 26.8,
+        "booked": 30,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm); CourtReserve Index view scraped ~9pm (not 9am) - past bookings may have collapsed/undercounted"
+      },
+      "corte_kitchener": {
+        "util": 100,
+        "booked": 24,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm); no listing cards for today - treated as fully booked (evening scrape)"
+      },
+      "prime_time": {
+        "util": 37.5,
+        "booked": 42,
+        "total": 112,
+        "note": "8 of 8 courts active ÃÂ 14 hrs (7am-9pm); CourtReserve Index view scraped ~9pm - past bookings may have collapsed/undercounted"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired Ã¢ÂÂ login required"
+      }
+    }
+  },
+  {
+    "date": "2026-07-27",
+    "scraped_at": "2026-07-27T09:15:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 71.4,
+        "booked": 70,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 40.5,
+        "booked": 34,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 79.8,
+        "booked": 67,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 62.5,
+        "booked": 70,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 79.8,
+        "booked": 67,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 83.5,
+        "booked": 152,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 55,
+        "booked": 77,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 20.7,
+        "booked": 29,
+        "total": 140,
+        "note": "10 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 54.8,
+        "booked": 69,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 66.1,
+        "booked": 74,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 31,
+        "booked": 13,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 22.6,
+        "booked": 19,
+        "total": 84,
+        "note": "6 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 58,
+        "booked": 65,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 25.5,
+        "booked": 50,
+        "total": 196,
+        "note": "14 courts ÃÂ 14 slots (8am-10pm), 146 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 81,
+        "booked": 98,
+        "total": 121,
+        "note": "11 courts, 11 slots observed (10am-9pm), 23 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 47.3,
+        "booked": 26,
+        "total": 55,
+        "note": "5 courts (max seen PB1-5), 11 slots (10am-9pm), 29 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 75,
+        "booked": 108,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs (7am-11pm), 36 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 78.2,
+        "booked": 129,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs (7am-10pm), 36 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 68.3,
+        "booked": 76.5,
+        "total": 112,
+        "note": "7 outdoor courts ÃÂ 16 hrs (7am-11pm), 35.5 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 11.1,
+        "booked": 8,
+        "total": 72,
+        "note": "CourtReserve Bookings text count (Reserve/Reserved/Waitlist)"
+      },
+      "picklex": {
+        "util": 18.7,
+        "booked": 17,
+        "total": 91,
+        "note": "CourtReserve Index text count (Reserve/Reserved/Waitlist)"
+      },
+      "blue_zone": {
+        "util": 40,
+        "booked": 64,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (Court 11 observed with zero bookings today)"
+      },
+      "smash_pb_london": {
+        "util": 74.4,
+        "booked": 87,
+        "total": 117,
+        "note": "9 courts ÃÂ 13hrs (7am-8pm), 87 court-hrs booked (open play + reservations)"
+      },
+      "four_fathers_pickleball": {
+        "util": 65.7,
+        "booked": 46,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 49.1,
+        "booked": 55,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 26.5,
+        "booked": 26,
+        "total": 98,
+        "note": "7 of 8 courts active ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 45.8,
+        "booked": 165,
+        "total": 360,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 10:30am-10pm (run after 9am Ã¢ÂÂ early hours not captured, likely understates full-day utilization)"
+      }
+    }
+  },
+  {
+    "date": "2026-07-28",
+    "scraped_at": "2026-07-28T09:00:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 64.3,
+        "booked": 63,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 33.3,
+        "booked": 28,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 95.2,
+        "booked": 80,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 71.4,
+        "booked": 80,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 78.6,
+        "booked": 66,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 70.9,
+        "booked": 129,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 54.3,
+        "booked": 76,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 20.2,
+        "booked": 34,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 50,
+        "booked": 63,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 79.5,
+        "booked": 89,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 42.9,
+        "booked": 18,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 18.4,
+        "booked": 18,
+        "total": 98,
+        "note": "7 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 11.7,
+        "booked": 23,
+        "total": 196,
+        "note": "14 courts, 14 hourly slots (8am-9pm)"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 81.5,
+        "booked": 224,
+        "total": 275,
+        "note": "11 courts (std+compact), 25 time slots"
+      },
+      "fairgrounds_whitby": {
+        "util": 56.9,
+        "booked": 37,
+        "total": 65,
+        "note": "5 courts (PB1-PB5), 13 hourly slots (9am-9pm)"
+      },
+      "picklr_toronto_west": {
+        "util": 88.9,
+        "booked": 128,
+        "total": 144,
+        "note": "9 courts ÃÂ 16hrs (7am-11pm); merged overlapping slot cards"
+      },
+      "vaughan_sportsplex": {
+        "util": 89.1,
+        "booked": 147,
+        "total": 165,
+        "note": "11 courts ÃÂ 15hrs (7am-10pm)"
+      },
+      "hisports_durham": {
+        "util": 92.5,
+        "booked": 266.5,
+        "total": 288,
+        "note": "11 indoor + 7 outdoor courts ÃÂ 16hrs (7am-11pm)"
+      },
+      "picklrs_hub": {
+        "util": 25.8,
+        "booked": 17,
+        "total": 66,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 14.2,
+        "booked": 17,
+        "total": 120,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 42.2,
+        "booked": 67.5,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (7am-11pm); Court 8 not offered, Court 11 booked"
+      },
+      "smash_pb_london": {
+        "util": 93.2,
+        "booked": 109,
+        "total": 117,
+        "note": "9 courts ÃÂ 13hrs (7am-8pm nominal); some bookings extend later"
+      },
+      "four_fathers_pickleball": {
+        "util": 27.5,
+        "booked": 25,
+        "total": 91,
+        "note": "7 courts ÃÂ 13 hrs (9am-10pm)"
+      },
+      "real_pickleball": {
+        "util": 44.6,
+        "booked": 50,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 25,
+        "booked": 28,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 54.7,
+        "booked": 119,
+        "total": 217.5,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 8am-10:30pm"
+      }
+    }
+  },
+  {
+    "date": "2026-07-31",
+    "scraped_at": "2026-07-31T10:46:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape. Updated later on 2026-07-31: Leanne logged into smash_pb_london, prime_time, four_fathers_pickleball and rally_mississauga herself, so those four were re-scraped using the now-authenticated sessions. Further update: blue_zone scraped via its public booking calendar (no login required); picklex scraped via Leanne's personal member login, per her explicit confirmation to include it.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 58.2,
+        "booked": 57,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 44,
+        "booked": 37,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 83.3,
+        "booked": 70,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 57.1,
+        "booked": 64,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 38.4,
+        "booked": 43,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 76.2,
+        "booked": 64,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 100,
+        "booked": 182,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs; hosting 2026 Pickleball Ontario Provincial Championship (tournament, all courts booked all day)"
+      },
+      "pickleplex_oshawa": {
+        "util": 65,
+        "booked": 91,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 24,
+        "booked": 37,
+        "total": 154,
+        "note": "11 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 48.4,
+        "booked": 61,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 72.3,
+        "booked": 81,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 59.5,
+        "booked": 25,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 18.6,
+        "booked": 13,
+        "total": 70,
+        "note": "5 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 53.6,
+        "booked": 60,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 26.4,
+        "booked": 48,
+        "total": 182,
+        "note": "13 time slots (8:30am-9pm), 134 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 80.6,
+        "booked": 133,
+        "total": 165,
+        "note": "11 courts (Standard+Compact); 15 slot-rows combined, 32 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 55.6,
+        "booked": 25,
+        "total": 45,
+        "note": "5 courts (max seen) x 9 time slots (11am-9pm), 20 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 91.7,
+        "booked": 132,
+        "total": 144,
+        "note": "9 courts x 16 hrs (7am-11pm); 12 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 89.7,
+        "booked": 148,
+        "total": 165,
+        "note": "11 courts x 15 hrs (7am-10pm); 17 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 95.3,
+        "booked": 183,
+        "total": 192,
+        "note": "12 courts x 16 hrs; 9 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 39.2,
+        "booked": 31,
+        "total": 79,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 22.4,
+        "booked": 22,
+        "total": 98,
+        "note": "CourtReserve: 76 Reserve / 17 Reserved / 5 waitlist (scraped via Leanne's personal member login, per her confirmation)"
+      },
+      "blue_zone": {
+        "util": 33.8,
+        "booked": 54,
+        "total": 160,
+        "note": "10 pickleball courts x 16hrs (7am-11pm); public booking calendar, no login required. Courts 10 and 11 showed zero bookings"
+      },
+      "smash_pb_london": {
+        "util": 78.6,
+        "booked": 92,
+        "total": 117,
+        "note": "9 courts ÃÂ 13hrs (7am-8pm nominal); some bookings extend to 8-11pm and are counted (re-scraped after Leanne logged in); already dropped, likely understates full-day utilization"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "real_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "corte_kitchener": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      }
+    }
+  },
+  {
+    "date": "2026-08-02",
+    "scraped_at": "2026-08-02T17:34:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 79.6,
+        "booked": 78,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 56,
+        "booked": 47,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 60.7,
+        "booked": 51,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 69.6,
+        "booked": 78,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 88.1,
+        "booked": 74,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 100,
+        "booked": 182,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs (full-day tournament: 2026 Pickleball Ontario Provincial Championship)"
+      },
+      "pickleplex_oshawa": {
+        "util": 69.3,
+        "booked": 97,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 14.9,
+        "booked": 25,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs (3 courts had zero bookings today)"
+      },
+      "pickleplex_red_deer": {
+        "util": 67.5,
+        "booked": 85,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 50.9,
+        "booked": 57,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 40.5,
+        "booked": 17,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 8.9,
+        "booked": 10,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 42.9,
+        "booked": 48,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 13.6,
+        "booked": 21,
+        "total": 154,
+        "note": "14 courts, 11 time slots found"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 62.1,
+        "booked": 82,
+        "total": 132,
+        "note": "11 courts, Standard+Compact summed, 12 slots"
+      },
+      "fairgrounds_whitby": {
+        "util": 52.8,
+        "booked": 19,
+        "total": 36,
+        "note": "4 courts (max concurrent open seen), 9 slots"
+      },
+      "picklr_toronto_west": {
+        "util": 88.2,
+        "booked": 127,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs (7am-11pm)"
+      },
+      "vaughan_sportsplex": {
+        "util": 86.1,
+        "booked": 142,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs (7am-10pm)"
+      },
+      "hisports_durham": {
+        "util": 93.8,
+        "booked": 180,
+        "total": 192,
+        "note": "12 courts ÃÂ 16 hrs"
+      },
+      "picklrs_hub": {
+        "util": 39.7,
+        "booked": 23,
+        "total": 58,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 30.4,
+        "booked": 28,
+        "total": 92,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "real_pickleball": {
+        "util": 36.6,
+        "booked": 41,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 76.8,
+        "booked": 86,
+        "total": 112,
+        "note": "8 of 8 courts active ÃÂ 14 hrs (7am-9pm) (re-scraped after login)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": 360,
+        "note": "data not recovered for this date during dashboard sync"
+      }
+    }
+  },
+  {
+    "date": "2026-08-03",
+    "scraped_at": "2026-08-03T09:15:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 81.6,
+        "booked": 80,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 50,
+        "booked": 42,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 91.7,
+        "booked": 77,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_belleville": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 55.4,
+        "booked": 62,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 84.5,
+        "booked": 71,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 76.4,
+        "booked": 139,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 54.3,
+        "booked": 76,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 23.8,
+        "booked": 40,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 57.9,
+        "booked": 73,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 83,
+        "booked": 93,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 33.3,
+        "booked": 14,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 21.4,
+        "booked": 15,
+        "total": 70,
+        "note": "5 of 8 courts active ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_burloak": {
+        "util": 67.9,
+        "booked": 76,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 30.6,
+        "booked": 60,
+        "total": 196,
+        "note": "14 courts, 14 time slots found, 136 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 78.4,
+        "booked": 181,
+        "total": 231,
+        "note": "11 courts, Standard(9 slots)+Compact(12 slots) combined, 50 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 58,
+        "booked": 29,
+        "total": 50,
+        "note": "5 courts (PB1-PB5, max concurrent 4), 10 slots found, 21 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 77.1,
+        "booked": 111,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs (7am-11pm), 33 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 65.5,
+        "booked": 108,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs (7am-10pm), 57 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 64.1,
+        "booked": 123,
+        "total": 192,
+        "note": "12 courts (indoor+outdoor combined) ÃÂ 16 hrs, 69 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 40.7,
+        "booked": 24,
+        "total": 59,
+        "note": "CourtReserve: 35 avail / 16 reserved / 8 waitlist"
+      },
+      "picklex": {
+        "util": 19.5,
+        "booked": 22,
+        "total": 113,
+        "note": "CourtReserve: 91 avail / 14 reserved / 8 waitlist"
+      },
+      "blue_zone": {
+        "util": 33.8,
+        "booked": 54,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (7am-11pm), padel ignored, Court 11 empty/excluded (re-scraped after login)"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "real_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "corte_kitchener": {
+        "util": null,
+        "booked": null,
+        "total": 24,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "data not recovered for this date during dashboard sync"
+      }
+    }
+  },
+  {
+    "date": "2026-08-04",
+    "scraped_at": "2026-08-04T09:00:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 58.2,
+        "booked": 57,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 42.9,
+        "booked": 36,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 84.5,
+        "booked": 71,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 63.4,
+        "booked": 71,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 62.5,
+        "booked": 70,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 76.2,
+        "booked": 64,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 61.5,
+        "booked": 112,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 51.4,
+        "booked": 72,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 18.2,
+        "booked": 28,
+        "total": 154,
+        "note": "11 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 42.9,
+        "booked": 54,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 75,
+        "booked": 84,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 38.1,
+        "booked": 16,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 21.4,
+        "booked": 18,
+        "total": 84,
+        "note": "6 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 61.6,
+        "booked": 69,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 30.8,
+        "booked": 56,
+        "total": 182,
+        "note": "14 courts, 13 hourly slots 9am-9pm"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 68.9,
+        "booked": 91,
+        "total": 132,
+        "note": "11 courts (PB1-PB11), 12 hourly slots 10am-9pm"
+      },
+      "fairgrounds_whitby": {
+        "util": 43.3,
+        "booked": 26,
+        "total": 60,
+        "note": "5 courts detected (PB1-PB5), 12 hourly slots 10am-9pm"
+      },
+      "picklr_toronto_west": {
+        "util": 76.4,
+        "booked": 110,
+        "total": 144,
+        "note": "9 courts x 16 hrs (7am-11pm), 34 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 78.8,
+        "booked": 130,
+        "total": 165,
+        "note": "11 courts x 15 hrs (7am-10pm), 35 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 89.1,
+        "booked": 171,
+        "total": 192,
+        "note": "12 courts x 16 hrs, 21 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 37,
+        "booked": 27,
+        "total": 73,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 13,
+        "booked": 16,
+        "total": 123,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 25.6,
+        "booked": 41,
+        "total": 160,
+        "note": "10 pickleball courts x 16hrs"
+      },
+      "smash_pb_london": {
+        "util": 72.6,
+        "booked": 85,
+        "total": 117,
+        "note": "9 courts ÃÂ 13 hrs (7am-8pm), clipped to window"
+      },
+      "four_fathers_pickleball": {
+        "util": 38.6,
+        "booked": 27,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 37.5,
+        "booked": 42,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 31.3,
+        "booked": 7.5,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), 16.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 31.3,
+        "booked": 35,
+        "total": 112,
+        "note": "8 of 8 courts active ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 54.4,
+        "booked": 196,
+        "total": 360,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 10:30am-10pm (retried later than 9am, partial day)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-05",
+    "scraped_at": "2026-08-05T10:25:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 60.2,
+        "booked": 59,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 34.5,
+        "booked": 29,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 76.2,
+        "booked": 64,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 62.5,
+        "booked": 70,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 78.6,
+        "booked": 66,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 69.8,
+        "booked": 127,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 54.3,
+        "booked": 76,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 21.4,
+        "booked": 30,
+        "total": 140,
+        "note": "10 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 48.4,
+        "booked": 61,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 78.6,
+        "booked": 88,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 35.7,
+        "booked": 15,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 20,
+        "booked": 14,
+        "total": 70,
+        "note": "5 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 66.1,
+        "booked": 74,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 19.9,
+        "booked": 39,
+        "total": 196,
+        "note": "14 courts, 14 hourly slots (8am-9pm)"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 60.6,
+        "booked": 80,
+        "total": 132,
+        "note": "11 courts (7 standard+4 compact), 12 hourly slots (10am-9pm)"
+      },
+      "fairgrounds_whitby": {
+        "util": 27.8,
+        "booked": 10,
+        "total": 36,
+        "note": "3 courts (max seen), 12 hourly slots (10am-9pm)"
+      },
+      "picklr_toronto_west": {
+        "util": 75.7,
+        "booked": 109,
+        "total": 144,
+        "note": "9 courts ÃÂ 16hrs (7am-11pm), 35 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 79.4,
+        "booked": 131,
+        "total": 165,
+        "note": "11 courts ÃÂ 15hrs (7am-10pm), 34 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 68.3,
+        "booked": 76.5,
+        "total": 112,
+        "note": "7 courts ÃÂ 16hrs (7am-11pm); only outdoor courts listed today, down from 12 courts historically"
+      },
+      "picklrs_hub": {
+        "util": 23.1,
+        "booked": 15,
+        "total": 65,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 20.6,
+        "booked": 21,
+        "total": 102,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 21.3,
+        "booked": 34,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (7am-11pm)"
+      },
+      "smash_pb_london": {
+        "util": 51.3,
+        "booked": 60,
+        "total": 117,
+        "note": "9 courts ÃÂ 13hrs (7am-8pm)"
+      },
+      "four_fathers_pickleball": {
+        "util": 31.4,
+        "booked": 22,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 35.7,
+        "booked": 40,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 21.4,
+        "booked": 24,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 33.9,
+        "booked": 122,
+        "total": 360,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 10:30am-10pm (run ~10:25am EDT, later than usual 9am Ã¢ÂÂ morning hours already dropped, understates full-day utilization)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-06",
+    "scraped_at": "2026-08-06T09:44:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler. Competitors: live scrape. CatchCorner sites use union-of-intervals dedup.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 68.4,
+        "booked": 67,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 39.3,
+        "booked": 33,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 90.5,
+        "booked": 76,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 65.2,
+        "booked": 73,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 61.6,
+        "booked": 69,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 81,
+        "booked": 68,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 50,
+        "booked": 91,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 56.4,
+        "booked": 79,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 24.3,
+        "booked": 34,
+        "total": 140,
+        "note": "10 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 36.5,
+        "booked": 46,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 74.1,
+        "booked": 83,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 47.6,
+        "booked": 20,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 28.6,
+        "booked": 28,
+        "total": 98,
+        "note": "7 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 17.9,
+        "booked": 35,
+        "total": 196,
+        "note": "14 courts, 14 hourly slots 8am-9pm"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 64.3,
+        "booked": 92,
+        "total": 143,
+        "note": "11 courts, Standard+Compact tabs identical, 13 slots incl 9:30-10am"
+      },
+      "fairgrounds_whitby": {
+        "util": 56.7,
+        "booked": 34,
+        "total": 60,
+        "note": "5 courts (max seen) x 12 slots"
+      },
+      "picklr_toronto_west": {
+        "util": 79.9,
+        "booked": 115,
+        "total": 144,
+        "note": "9 courts x 16hrs (7am-11pm); union-dedup of duration listings"
+      },
+      "vaughan_sportsplex": {
+        "util": 72.1,
+        "booked": 119,
+        "total": 165,
+        "note": "11 courts x 15hrs (7am-10pm); union-dedup"
+      },
+      "hisports_durham": {
+        "util": 63,
+        "booked": 121,
+        "total": 192,
+        "note": "12 courts x 16hrs; union-dedup"
+      },
+      "picklrs_hub": {
+        "util": 15.7,
+        "booked": 11,
+        "total": 70,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "real_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "corte_kitchener": {
+        "util": null,
+        "booked": null,
+        "total": 24,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "data not recovered for this date during dashboard sync"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 11am-10pm Ã¢ÂÂ TRUNCATED (re-scraped ~10:40am EDT after Leanne logged in; morning hours before 11am already dropped)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-07",
+    "scraped_at": "2026-08-07T09:15:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 55.1,
+        "booked": 54,
+        "total": 98
+      },
+      "pickleplex_windsor": {
+        "util": 42.9,
+        "booked": 36,
+        "total": 84
+      },
+      "pickleplex_pickering": {
+        "util": 84.5,
+        "booked": 71,
+        "total": 84
+      },
+      "pickleplex_belleville": {
+        "util": 74.1,
+        "booked": 83,
+        "total": 112
+      },
+      "pickleplex_vaughan": {
+        "util": 49.1,
+        "booked": 55,
+        "total": 112
+      },
+      "pickleplex_promenade": {
+        "util": 82.1,
+        "booked": 69,
+        "total": 84
+      },
+      "pickleplex_downsview": {
+        "util": 62.6,
+        "booked": 114,
+        "total": 182
+      },
+      "pickleplex_oshawa": {
+        "util": 62.1,
+        "booked": 87,
+        "total": 140
+      },
+      "pickleplex_cambridge": {
+        "util": 17.5,
+        "booked": 22,
+        "total": 126
+      },
+      "pickleplex_red_deer": {
+        "util": 45.2,
+        "booked": 57,
+        "total": 126
+      },
+      "pickleplex_aurora": {
+        "util": 69.6,
+        "booked": 78,
+        "total": 112
+      },
+      "pickleplex_york_mills": {
+        "util": 42.9,
+        "booked": 18,
+        "total": 42
+      },
+      "pickleplex_brantford": {
+        "util": 19.4,
+        "booked": 19,
+        "total": 98
+      },
+      "pickleplex_burloak": {
+        "util": 56.3,
+        "booked": 63,
+        "total": 112
+      },
+      "fairgrounds_red_deer": {
+        "util": 21.9,
+        "booked": 43,
+        "total": 196
+      },
+      "fairgrounds_cloverdale": {
+        "util": 63.6,
+        "booked": 91,
+        "total": 143
+      },
+      "fairgrounds_whitby": {
+        "util": 80,
+        "booked": 52,
+        "total": 65
+      },
+      "picklr_toronto_west": {
+        "util": 75.7,
+        "booked": 109,
+        "total": 144
+      },
+      "vaughan_sportsplex": {
+        "util": 78.8,
+        "booked": 130,
+        "total": 165
+      },
+      "hisports_durham": {
+        "util": 68.3,
+        "booked": 76.5,
+        "total": 112
+      },
+      "picklrs_hub": {
+        "util": 17.1,
+        "booked": 12,
+        "total": 70
+      },
+      "picklex": {
+        "util": 18.3,
+        "booked": 23,
+        "total": 126
+      },
+      "blue_zone": {
+        "util": 37.5,
+        "booked": 60,
+        "total": 160
+      },
+      "smash_pb_london": {
+        "util": 84.6,
+        "booked": 99,
+        "total": 117
+      },
+      "four_fathers_pickleball": {
+        "util": 25.7,
+        "booked": 18,
+        "total": 70
+      },
+      "real_pickleball": {
+        "util": 35.7,
+        "booked": 40,
+        "total": 112
+      },
+      "corte_kitchener": {
+        "util": 31.3,
+        "booked": 7.5,
+        "total": 24
+      },
+      "prime_time": {
+        "util": 19.4,
+        "booked": 19,
+        "total": 98
+      },
+      "rally_mississauga": {
+        "util": 54.8,
+        "booked": 148,
+        "total": 270
+      }
+    }
+  },
+  {
+    "date": "2026-08-09",
+    "scraped_at": "2026-08-09T09:00:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 74.5,
+        "booked": 73,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 38.1,
+        "booked": 32,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 47.6,
+        "booked": 40,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 62.5,
+        "booked": 70,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 49.1,
+        "booked": 55,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 91.7,
+        "booked": 77,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 65.4,
+        "booked": 119,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 42.1,
+        "booked": 59,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 54.8,
+        "booked": 92,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 65.9,
+        "booked": 83,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 39.3,
+        "booked": 44,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 35.7,
+        "booked": 15,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 15.7,
+        "booked": 11,
+        "total": 70,
+        "note": "5 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 39.8,
+        "booked": 39,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 20.9,
+        "booked": 41,
+        "total": 196,
+        "note": "14 courts, 14 half-hour-normalized slots 8am-10pm, Podplay live"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 58.1,
+        "booked": 73.5,
+        "total": 126.5,
+        "note": "11 courts (Standard+Compact combined), duration-weighted 10:30am-10pm"
+      },
+      "fairgrounds_whitby": {
+        "util": 24.6,
+        "booked": 8.5,
+        "total": 34.5,
+        "note": "3 courts (max concurrent open seen), duration-weighted 10:30am-10pm"
+      },
+      "picklr_toronto_west": {
+        "util": 88.9,
+        "booked": 128,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs (7am-11pm), 16 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 89.1,
+        "booked": 147,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs (7am-10pm), 18 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 50.8,
+        "booked": 97.5,
+        "total": 192,
+        "note": "12 courts ÃÂ 16 hrs (7am-11pm), 94.5 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 29.5,
+        "booked": 23,
+        "total": 78,
+        "note": "CourtReserve Bookings view"
+      },
+      "picklex": {
+        "util": 18.1,
+        "booked": 17,
+        "total": 94,
+        "note": "CourtReserve index"
+      },
+      "blue_zone": {
+        "util": 18.4,
+        "booked": 29.5,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (11 detected incl. Franklin Court=Court8)"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Login required Ã¢ÂÂ site now requires account login to view calendar"
+      },
+      "four_fathers_pickleball": {
+        "util": 15.7,
+        "booked": 11,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 28.6,
+        "booked": 32,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 100,
+        "booked": 24,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm), no available slots found for today"
+      },
+      "prime_time": {
+        "util": 18.6,
+        "booked": 13,
+        "total": 70,
+        "note": "5 of 8 courts active ÃÂ 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired Ã¢ÂÂ login required"
+      }
+    }
+  },
+  {
+    "date": "2026-08-10",
+    "scraped_at": "2026-08-10T10:05:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / courts x 14h, 8am-10pm). Competitors: live scrape of public, no-login booking widgets only. Sites requiring saved competitor-account logins or API reverse-engineering (PickleX, Blue Zone Courts, Four Fathers, Prime Time, Rally Mississauga, Smash PB London) were intentionally skipped this run per policy.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 72.4,
+        "booked": 71,
+        "total": 98,
+        "note": "7 courts x 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 58.3,
+        "booked": 49,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 81,
+        "booked": 68,
+        "total": 84,
+        "note": "6 of 7 courts active x 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 79.8,
+        "booked": 67,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 68.1,
+        "booked": 124,
+        "total": 182,
+        "note": "13 courts x 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 58.6,
+        "booked": 82,
+        "total": 140,
+        "note": "10 courts x 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 22.1,
+        "booked": 34,
+        "total": 154,
+        "note": "11 of 12 courts active x 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 37.3,
+        "booked": 47,
+        "total": 126,
+        "note": "9 courts x 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 69.6,
+        "booked": 78,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 35.7,
+        "booked": 15,
+        "total": 42,
+        "note": "3 courts x 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 18.4,
+        "booked": 18,
+        "total": 98,
+        "note": "7 of 8 courts active x 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 60.7,
+        "booked": 68,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 30.2,
+        "booked": 55,
+        "total": 182,
+        "note": "14 courts, 13 time slots, 127 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 70.2,
+        "booked": 85,
+        "total": 121,
+        "note": "11 courts, 11 time slots, 36 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 43.8,
+        "booked": 21,
+        "total": 48,
+        "note": "4 courts (max seen), 12 time slots, 27 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 86.8,
+        "booked": 125,
+        "total": 144,
+        "note": "9 courts, 7am-11pm, 19 court-hrs avail (union of listed slots)"
+      },
+      "vaughan_sportsplex": {
+        "util": 88.5,
+        "booked": 146,
+        "total": 165,
+        "note": "11 courts, 7am-10pm, 19 court-hrs avail (union of listed slots)"
+      },
+      "hisports_durham": {
+        "util": 89.1,
+        "booked": 171,
+        "total": 192,
+        "note": "12 courts x 16 hrs; listing widget showed 25 cards/7 courts, 21 court-hrs avail visible - may undercount availability"
+      },
+      "picklrs_hub": {
+        "util": 11.1,
+        "booked": 7,
+        "total": 63,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Skipped - requires saved competitor member-account login"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Skipped - requires saved competitor member-account login"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Skipped - login wall encountered, requires saved competitor account credentials"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Skipped - requires saved competitor member-account login"
+      },
+      "real_pickleball": {
+        "util": 45.5,
+        "booked": 51,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 33.3,
+        "booked": 8,
+        "total": 24,
+        "note": "4 courts x 6 hrs (4pm-10pm), 16 court-hrs avail"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Skipped - requires saved competitor member-account login"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Skipped - requires saved competitor login plus reverse-engineered internal GraphQL API access"
+      }
+    }
+  },
+  {
+    "date": "2026-08-11",
+    "scraped_at": "2026-08-11T10:05:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 52,
+        "booked": 51,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_windsor": {
+        "util": 57.1,
+        "booked": 48,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_pickering": {
+        "util": 91.7,
+        "booked": 77,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_belleville": {
+        "util": 55.4,
+        "booked": 62,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_vaughan": {
+        "util": 67,
+        "booked": 75,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_promenade": {
+        "util": 65.5,
+        "booked": 55,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_downsview": {
+        "util": 65.4,
+        "booked": 119,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_oshawa": {
+        "util": 57.1,
+        "booked": 80,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_cambridge": {
+        "util": 16.9,
+        "booked": 26,
+        "total": 154,
+        "note": "11 of 12 courts active ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_red_deer": {
+        "util": 45.2,
+        "booked": 57,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_aurora": {
+        "util": 73.2,
+        "booked": 82,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_york_mills": {
+        "util": 47.6,
+        "booked": 20,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_brantford": {
+        "util": 17.9,
+        "booked": 15,
+        "total": 84,
+        "note": "6 of 8 courts active ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_burloak": {
+        "util": 58,
+        "booked": 65,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "fairgrounds_red_deer": {
+        "util": 17.6,
+        "booked": 32,
+        "total": 182,
+        "note": "13 time slots 8am-10pm (incl. merged 8-10am block, 0 courts), 150 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 76,
+        "booked": 117,
+        "total": 154,
+        "note": "Standard+Compact combined, 14 slots ÃÂ 11 courts, 37 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 63.1,
+        "booked": 41,
+        "total": 65,
+        "note": "5 courts (max open seen) ÃÂ 13 slots, 24 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 87.5,
+        "booked": 126,
+        "total": 144,
+        "note": "9 courts ÃÂ 16 hrs (7am-11pm), 18 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 87.9,
+        "booked": 145,
+        "total": 165,
+        "note": "11 courts ÃÂ 15 hrs (7am-10pm), 20 court-hrs avail (9 of 11 courts had any listings)"
+      },
+      "hisports_durham": {
+        "util": 87.5,
+        "booked": 98,
+        "total": 112,
+        "note": "7 outdoor courts ÃÂ 16 hrs (7am-11pm), indoor courts not offered today (was 12 courts historically), 14 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 32,
+        "booked": 24,
+        "total": 75,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "picklex": {
+        "util": 11.8,
+        "booked": 11,
+        "total": 93,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "blue_zone": {
+        "util": 30.9,
+        "booked": 49.5,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs, Court 8 = Franklin Court"
+      },
+      "smash_pb_london": {
+        "util": 71.8,
+        "booked": 84,
+        "total": 117,
+        "note": "9 courts ÃÂ 13 hrs (7am-8pm), 84 court-hrs booked"
+      },
+      "four_fathers_pickleball": {
+        "util": 52.9,
+        "booked": 37,
+        "total": 70,
+        "note": "7 courts: AM 25/35, PM 12/21, Eve 0/14 (Reserve/Reserved/Waitlist text count)"
+      },
+      "real_pickleball": {
+        "util": 30.4,
+        "booked": 34,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 23.8,
+        "booked": 20,
+        "total": 84,
+        "note": "CourtReserve text count"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "not fully captured"
+      }
+    }
+  },
+  {
+    "date": "2026-08-12",
+    "scraped_at": "2026-08-12T16:35:00",
+    "note": "Off-schedule afternoon run (~4:30pm ET, not the usual 9am). Most competitor sites only expose forward-looking availability, so several figures below reflect a partial remaining-day window rather than the full operating day Ã¢ÂÂ see individual notes. 5 of 15 competitor sessions had expired and were skipped (no login attempted).",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 70.4,
+        "booked": 69,
+        "total": 98,
+        "note": "7 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_windsor": {
+        "util": 44,
+        "booked": 37,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_pickering": {
+        "util": 91.7,
+        "booked": 77,
+        "total": 84,
+        "note": "6 of 7 courts active ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_belleville": {
+        "util": 42,
+        "booked": 47,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_vaughan": {
+        "util": 67.9,
+        "booked": 76,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_promenade": {
+        "util": 88.1,
+        "booked": 74,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_downsview": {
+        "util": 80.2,
+        "booked": 146,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_oshawa": {
+        "util": 65.7,
+        "booked": 92,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_cambridge": {
+        "util": 25.6,
+        "booked": 43,
+        "total": 168,
+        "note": "12 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_red_deer": {
+        "util": 64.3,
+        "booked": 81,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_aurora": {
+        "util": 71.4,
+        "booked": 80,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_york_mills": {
+        "util": 26.2,
+        "booked": 11,
+        "total": 42,
+        "note": "3 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_brantford": {
+        "util": 25.5,
+        "booked": 25,
+        "total": 98,
+        "note": "7 of 8 courts active ÃÂ 14 hrs (8am-10pm)"
+      },
+      "pickleplex_burloak": {
+        "util": 59.8,
+        "booked": 67,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "fairgrounds_red_deer": {
+        "util": 38.4,
+        "booked": 43,
+        "total": 112,
+        "note": "Late-day run Ã¢ÂÂ partial day; 8 slots visible 2:30pm-10pm (local), earlier hours not captured"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 50,
+        "booked": 33,
+        "total": 66,
+        "note": "Late-day run Ã¢ÂÂ partial day; Standard+Compact combined, 6 slots ÃÂ 11 courts visible 4:30pm-10pm"
+      },
+      "fairgrounds_whitby": {
+        "util": 50,
+        "booked": 6,
+        "total": 12,
+        "note": "Late-day run Ã¢ÂÂ partial day; 3 courts (max open seen) ÃÂ 4 slots visible 4:30pm-10pm"
+      },
+      "picklr_toronto_west": {
+        "util": 81.5,
+        "booked": 22,
+        "total": 27,
+        "note": "Late-day run Ã¢ÂÂ partial day; only 8pm-11pm window visible, 2 of 9 courts had listings"
+      },
+      "vaughan_sportsplex": {
+        "util": 54.5,
+        "booked": 12,
+        "total": 22,
+        "note": "Late-day run Ã¢ÂÂ partial day; only 10pm-12am window visible, 6 of 11 courts had listings"
+      },
+      "hisports_durham": {
+        "util": 0,
+        "booked": 0,
+        "total": 14,
+        "note": "Late-day run Ã¢ÂÂ partial day; 7 outdoor courts, only 7pm-9pm window visible, fully open"
+      },
+      "picklrs_hub": {
+        "util": 51.5,
+        "booked": 17,
+        "total": 33,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "picklex": {
+        "util": 32.5,
+        "booked": 25,
+        "total": 77,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "Session expired Ã¢ÂÂ login required"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Session expired Ã¢ÂÂ login required"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "Session expired Ã¢ÂÂ login required"
+      },
+      "real_pickleball": {
+        "util": 39.3,
+        "booked": 44,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm); late-day run may undercount already-passed bookings"
+      },
+      "corte_kitchener": {
+        "util": 50,
+        "booked": 3,
+        "total": 6,
+        "note": "Late-day run Ã¢ÂÂ partial day; 4 courts, only 8:30-10pm window visible"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "Session expired Ã¢ÂÂ login required"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired Ã¢ÂÂ login required"
+      }
+    }
+  },
+  {
+    "date": "2026-08-13",
+    "scraped_at": "2026-08-13T11:38:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / courts x 14h, 8am-10pm). Competitors: live scrape. picklex, blue_zone, rally_mississauga intentionally skipped (require authenticated competitor accounts).",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 57.1,
+        "booked": 56,
+        "total": 98,
+        "note": "7 courts x 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 35.7,
+        "booked": 30,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 83.3,
+        "booked": 70,
+        "total": 84,
+        "note": "6 of 7 courts active x 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 61.6,
+        "booked": 69,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 71.4,
+        "booked": 60,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 63.7,
+        "booked": 116,
+        "total": 182,
+        "note": "13 courts x 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 66.4,
+        "booked": 93,
+        "total": 140,
+        "note": "10 courts x 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 29.8,
+        "booked": 50,
+        "total": 168,
+        "note": "12 courts x 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 46.8,
+        "booked": 59,
+        "total": 126,
+        "note": "9 courts x 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 72.3,
+        "booked": 81,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 47.6,
+        "booked": 20,
+        "total": 42,
+        "note": "3 courts x 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 17.9,
+        "booked": 15,
+        "total": 84,
+        "note": "6 of 8 courts active x 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 61.6,
+        "booked": 69,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 28.6,
+        "booked": 52,
+        "total": 182,
+        "note": "14 courts, 13 time slots (9:30am-9pm)"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 64.5,
+        "booked": 78,
+        "total": 121,
+        "note": "11 courts (standard+compact combined), 11 time slots"
+      },
+      "fairgrounds_whitby": {
+        "util": 48,
+        "booked": 24,
+        "total": 50,
+        "note": "5 courts (max open seen), 10 time slots"
+      },
+      "picklr_toronto_west": {
+        "util": 88.2,
+        "booked": 127,
+        "total": 144,
+        "note": "9 courts x 16 hrs (7am-11pm), 17 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 88.5,
+        "booked": 146,
+        "total": 165,
+        "note": "11 courts x 15 hrs (7am-10pm), 19 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 91.1,
+        "booked": 175,
+        "total": 192,
+        "note": "12 courts x 16 hrs, 17 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 36.8,
+        "booked": 25,
+        "total": 68,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 23.8,
+        "booked": 20,
+        "total": 84,
+        "note": "CourtReserve text count"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "intentionally skipped (requires authenticated competitor account)"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "not fully captured"
+      },
+      "four_fathers_pickleball": {
+        "util": 42.9,
+        "booked": 30,
+        "total": 70,
+        "note": "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); re-scraped after Leanne logged in"
+      },
+      "real_pickleball": {
+        "util": 40.2,
+        "booked": 45,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 31.3,
+        "booked": 7.5,
+        "total": 24,
+        "note": "4 courts x 6 hrs (4pm-10pm), 16.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 36.6,
+        "booked": 41,
+        "total": 112,
+        "note": "8 of 8 courts active x 14 hrs (7am-9pm); re-scraped after Leanne logged in"
+      },
+      "rally_mississauga": {
+        "util": 67.4,
+        "booked": 192,
+        "total": 285,
+        "note": "15 courts; ClubAutomation live-availability, window 1pm-10pm ONLY (scraped ~1pm ET, morning hours already dropped by API) - TRUNCATED, understates true full-day utilization; re-scraped after Leanne logged in"
+      }
+    }
+  },
+  {
+    "date": "2026-08-15",
+    "scraped_at": "2026-08-15T09:00:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape. 4 Pickleplex locations (Barrie, Pickering, Belleville, York Mills) migrated to a new CourtReserve portal UI without a Kendo scheduler Ã¢ÂÂ scraper needs an update for those.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "New CourtReserve portal UI (bundle-portal.js) Ã¢ÂÂ no Kendo scheduler found, not a login wall. Scraper needs update."
+      },
+      "pickleplex_windsor": {
+        "util": 42.9,
+        "booked": 36,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "New CourtReserve portal UI (bundle-portal.js) Ã¢ÂÂ no Kendo scheduler found, not a login wall. Scraper needs update."
+      },
+      "pickleplex_belleville": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "New CourtReserve portal UI (bundle-portal.js) Ã¢ÂÂ no Kendo scheduler found, not a login wall. Scraper needs update."
+      },
+      "pickleplex_vaughan": {
+        "util": 46.4,
+        "booked": 52,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 73.8,
+        "booked": 62,
+        "total": 84,
+        "note": "6 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 69.8,
+        "booked": 127,
+        "total": 182,
+        "note": "13 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 70,
+        "booked": 98,
+        "total": 140,
+        "note": "10 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 22.9,
+        "booked": 32,
+        "total": 140,
+        "note": "10 of 12 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 64.3,
+        "booked": 81,
+        "total": 126,
+        "note": "9 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 58,
+        "booked": 65,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "New CourtReserve portal UI (bundle-portal.js) Ã¢ÂÂ no Kendo scheduler found, not a login wall. Scraper needs update."
+      },
+      "pickleplex_brantford": {
+        "util": 19.6,
+        "booked": 11,
+        "total": 56,
+        "note": "4 of 8 courts active ÃÂ 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 45.5,
+        "booked": 51,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 22,
+        "booked": 40,
+        "total": 182,
+        "note": "13 time slots (incl. 8-10am closed block) ÃÂ 14 courts"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 62,
+        "booked": 184,
+        "total": 297,
+        "note": "Standard(13 slots,74 avail)+Compact(14 slots,39 avail), 11 courts total"
+      },
+      "fairgrounds_whitby": {
+        "util": 35.7,
+        "booked": 25,
+        "total": 70,
+        "note": "5 courts (max seen) ÃÂ 14 hourly slots (8am-9pm)"
+      },
+      "picklr_toronto_west": {
+        "util": 88.9,
+        "booked": 128,
+        "total": 144,
+        "note": "9 courtsÃÂ16hrs(7am-11pm); dedup court-hours from overlapping duration-option cards; only 5/9 courts showed any availability"
+      },
+      "vaughan_sportsplex": {
+        "util": 87.3,
+        "booked": 144,
+        "total": 165,
+        "note": "11 courtsÃÂ15hrs(7am-10pm); dedup court-hours from overlapping duration-option cards"
+      },
+      "hisports_durham": {
+        "util": 92.7,
+        "booked": 178,
+        "total": 192,
+        "note": "12 courtsÃÂ16hrs(7am-11pm) per facility ref; dedup court-hours; only 25 listing cards total for the day (7 courts had any avail)"
+      },
+      "picklrs_hub": {
+        "util": 15,
+        "booked": 12,
+        "total": 80,
+        "note": "CourtReserve: 68 avail / 12 reserved / 0 waitlist"
+      },
+      "picklex": {
+        "util": 3.9,
+        "booked": 5,
+        "total": 128,
+        "note": "CourtReserve: 123 avail / 5 reserved / 0 waitlist"
+      },
+      "blue_zone": {
+        "util": 23.1,
+        "booked": 37,
+        "total": 160,
+        "note": "10 pickleball courts ÃÂ 16hrs (padel & offices excluded)"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Booking flow now requires login before calendar/time slots are shown Ã¢ÂÂ public calendar no longer accessible"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "Session expired Ã¢ÂÂ login required (redirected to public Portal/Index page)"
+      },
+      "real_pickleball": {
+        "util": 71.4,
+        "booked": 80,
+        "total": 112,
+        "note": "8 courts ÃÂ 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 100,
+        "booked": 24,
+        "total": 24,
+        "note": "4 courts ÃÂ 6 hrs (4pm-10pm); no available slots found for today"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "Session expired Ã¢ÂÂ login required (redirected to /Account/LogIn)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired Ã¢ÂÂ login required (redirected to homepage login, no 'Welcome, Leanne' banner)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-17",
+    "scraped_at": "2026-08-17T11:57:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÃÂ· courts ÃÂ 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 66.3,
+        "booked": 65,
+        "total": 98,
+        "note": "7 courts x 14 hrs (8am-10pm); player-mode UI persisted (no .k-scheduler) - recovered via CourtReserve ReadConsolidated hourly-availability API (AvailableCourts per hour), alt extraction method"
+      },
+      "pickleplex_windsor": {
+        "util": 72.6,
+        "booked": 61,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 73.2,
+        "booked": 82,
+        "total": 112,
+        "note": "6 courts + 1 skinny-singles court x 16 hrs (7am-11pm, per live data); player-mode UI persisted (no .k-scheduler) - recovered via CourtReserve ReadConsolidated hourly-availability API (AvailableCourts per hour), alt extraction method"
+      },
+      "pickleplex_belleville": {
+        "util": 57.1,
+        "booked": 64,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm); player-mode UI persisted (no .k-scheduler) - recovered via CourtReserve ReadConsolidated hourly-availability API (AvailableCourts per hour), alt extraction method"
+      },
+      "pickleplex_vaughan": {
+        "util": 63.4,
+        "booked": 71,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 79.8,
+        "booked": 67,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 73.1,
+        "booked": 133,
+        "total": 182,
+        "note": "13 courts x 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 55,
+        "booked": 77,
+        "total": 140,
+        "note": "10 courts x 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 29.8,
+        "booked": 50,
+        "total": 168,
+        "note": "12 courts x 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 40.5,
+        "booked": 51,
+        "total": 126,
+        "note": "9 courts x 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Player-mode summary UI rendered (no .k-scheduler grid) - not a login wall; same as prior run"
+      },
+      "pickleplex_brantford": {
+        "util": 26.5,
+        "booked": 26,
+        "total": 98,
+        "note": "7 of 8 courts active x 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 56.3,
+        "booked": 63,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 27.5,
+        "booked": 50,
+        "total": 182,
+        "note": "14 courts x 13 time-slots found, 132 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 76.3,
+        "booked": 151,
+        "total": 198,
+        "note": "11 courts x 18 slots (Standard+Compact), 47 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 44.4,
+        "booked": 16,
+        "total": 36,
+        "note": "4 courts (max seen) x 9 slots, 20 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 77.1,
+        "booked": 111,
+        "total": 144,
+        "note": "9 courts x 16 hrs (7am-11pm), 33 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 79.4,
+        "booked": 131,
+        "total": 165,
+        "note": "11 courts x 15 hrs (7am-10pm), 34 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 61.5,
+        "booked": 118,
+        "total": 192,
+        "note": "12 courts x 16 hrs (indoor+outdoor), 74 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 23.9,
+        "booked": 17,
+        "total": 71,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "picklex": {
+        "util": 23.2,
+        "booked": 26,
+        "total": 112,
+        "note": "Member login required; Reserve/Reserved/Waitlist text count"
+      },
+      "blue_zone": {
+        "util": 33.8,
+        "booked": 54,
+        "total": 160,
+        "note": "10 pickleball courts x 16hrs (Franklin=Court8)"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Login modal blocks calendar view (autofilled credentials present); not submitted per policy"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "Session expired - redirected to Portal Index"
+      },
+      "real_pickleball": {
+        "util": 46.4,
+        "booked": 52,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 56.3,
+        "booked": 13.5,
+        "total": 24,
+        "note": "4 courts x 6 hrs (4pm-10pm), 10.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "Session expired - redirected to /Account/LogIn"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired - login required (no Welcome banner)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-18",
+    "scraped_at": "2026-08-18T10:06:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / courts x 14h, 8am-10pm); several locations now render a redesigned player-mode UI with no .k-scheduler grid and were recovered via the CourtReserve ReadConsolidated hourly-availability API instead. Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 58.2,
+        "booked": 57,
+        "total": 98,
+        "note": "7 courts x 14 hrs (8am-10pm)"
+      },
+      "pickleplex_windsor": {
+        "util": 39.3,
+        "booked": 33,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 91.8,
+        "booked": 90,
+        "total": 98,
+        "note": "7 courts x 14 hrs (8am-10pm); player-mode UI (no .k-scheduler) - recovered via CourtReserve ReadConsolidated API"
+      },
+      "pickleplex_belleville": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm); player-mode UI (no .k-scheduler) - recovered via CourtReserve ReadConsolidated API"
+      },
+      "pickleplex_vaughan": {
+        "util": 63.4,
+        "booked": 71,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 75,
+        "booked": 63,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 62.1,
+        "booked": 113,
+        "total": 182,
+        "note": "13 courts x 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 55.7,
+        "booked": 78,
+        "total": 140,
+        "note": "10 courts x 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 22,
+        "booked": 37,
+        "total": 168,
+        "note": "12 courts x 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 42.1,
+        "booked": 53,
+        "total": 126,
+        "note": "9 courts x 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 72.3,
+        "booked": 81,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 42.9,
+        "booked": 18,
+        "total": 42,
+        "note": "3 courts (2 Smart + 1 Compact Smart) x 14 hrs; player-mode UI (no .k-scheduler) - recovered via CourtReserve ReadConsolidated API"
+      },
+      "pickleplex_brantford": {
+        "util": 14.3,
+        "booked": 12,
+        "total": 84,
+        "note": "6 of 8 courts active x 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 19.2,
+        "booked": 35,
+        "total": 182,
+        "note": "14 courts x 13 time-slots found (8am-10pm), 147 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 67.5,
+        "booked": 104,
+        "total": 154,
+        "note": "11 courts (Standard+Compact) x 14 hrs, summer camp blocks treated as fully booked, 50 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 44,
+        "booked": 22,
+        "total": 50,
+        "note": "5 courts (max seen) x 10 time-slots, 28 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 87.5,
+        "booked": 126,
+        "total": 144,
+        "note": "9 courts x 16hrs (7am-11pm), 18 court-hrs avail (merged overlapping listing durations)"
+      },
+      "vaughan_sportsplex": {
+        "util": 90.3,
+        "booked": 149,
+        "total": 165,
+        "note": "11 courts x 15hrs (7am-10pm), 16 court-hrs avail (merged)"
+      },
+      "hisports_durham": {
+        "util": 46.4,
+        "booked": 89,
+        "total": 192,
+        "note": "12 courts x 16 hrs, 103 court-hrs avail (merged)"
+      },
+      "picklrs_hub": {
+        "util": 32,
+        "booked": 24,
+        "total": 75,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "picklex": {
+        "util": 12.8,
+        "booked": 14,
+        "total": 109,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "blue_zone": {
+        "util": 26.3,
+        "booked": 42,
+        "total": 160,
+        "note": "10 pickleball courts x 16hrs (Franklin=Court8)"
+      },
+      "smash_pb_london": {
+        "util": 42.4,
+        "booked": 14,
+        "total": 33,
+        "note": "Site redesigned into 3 bookable surfaces (Court 1, Pickleball, Practice court), each 7am-11pm (16 hrs) when full day is visible; re-scraped after login at ~11:40am so morning hours (7am-noon) already elapsed and not shown by the widget (forward-looking only, like Rally Mississauga) - reflects noon-11pm window only (33 of 48 possible court-hours), not comparable to prior 117 total"
+      },
+      "four_fathers_pickleball": {
+        "util": 30,
+        "booked": 21,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm); re-scraped after login, session live"
+      },
+      "real_pickleball": {
+        "util": 43.8,
+        "booked": 49,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts x 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 30.4,
+        "booked": 34,
+        "total": 112,
+        "note": "8 of 8 courts active x 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 58.7,
+        "booked": 185,
+        "total": 315,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 12:00pm-10:00pm; re-scraped at 11:33am so morning hours (8am-12pm) already elapsed and dropped by API - reflects remaining-day window only, not comparable to full 8am-10pm day total"
+      }
+    }
+  },
+  {
+    "date": "2026-08-19",
+    "scraped_at": "2026-08-19T09:23:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 56.1,
+        "booked": 55,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 45.2,
+        "booked": 38,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 89.3,
+        "booked": 75,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 64.3,
+        "booked": 72,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 79.8,
+        "booked": 67,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 58.2,
+        "booked": 106,
+        "total": 182,
+        "note": "13 courts × 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 52.1,
+        "booked": 73,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 25.6,
+        "booked": 43,
+        "total": 168,
+        "note": "12 courts × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 42.9,
+        "booked": 54,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 67.9,
+        "booked": 76,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 64.3,
+        "booked": 27,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 21.4,
+        "booked": 21,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 64.3,
+        "booked": 72,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 18.7,
+        "booked": 34,
+        "total": 182,
+        "note": "14 courts, 13 time slots (8am-9pm), Podplay"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 54.5,
+        "booked": 78,
+        "total": 143,
+        "note": "11 courts (8 standard+3 compact), 13 hrly slots (9am-9pm)"
+      },
+      "fairgrounds_whitby": {
+        "util": 46.7,
+        "booked": 28,
+        "total": 60,
+        "note": "5 courts (max open seen), 12 hrly slots (9am-9pm)"
+      },
+      "picklr_toronto_west": {
+        "util": 75.7,
+        "booked": 109,
+        "total": 144,
+        "note": "9 courts × 16hrs (7am-11pm), 35 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 78.2,
+        "booked": 129,
+        "total": 165,
+        "note": "11 courts × 15hrs (7am-10pm), 36 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 81.5,
+        "booked": 156.5,
+        "total": 192,
+        "note": "12 courts × 16hrs (7am-11pm), 35.5 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 25,
+        "booked": 18,
+        "total": 72,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 12.6,
+        "booked": 16,
+        "total": 127,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "Session expired — login required"
+      },
+      "smash_pb_london": {
+        "util": 78.6,
+        "booked": 92,
+        "total": 117,
+        "note": "9 courts × 13hrs (7am-8pm)"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "Session expired — login required"
+      },
+      "real_pickleball": {
+        "util": 42.9,
+        "booked": 48,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "Session expired — login required"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      }
+    }
+  },
+  {
+    "date": "2026-08-24",
+    "scraped_at": "2026-08-24T11:30:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape of public booking pages; sites requiring an authenticated member login were not scraped (util:null).",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 70.4,
+        "booked": 69,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 50,
+        "booked": 42,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 82.1,
+        "booked": 69,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 100,
+        "booked": 112,
+        "total": 112,
+        "note": "8 courts × 14 hrs (fully booked, incl. member-privacy-masked reservations)"
+      },
+      "pickleplex_promenade": {
+        "util": 81,
+        "booked": 68,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 100,
+        "booked": 182,
+        "total": 182,
+        "note": "13 courts × 14 hrs — hosting 2026 IG Wealth Management National Championships today"
+      },
+      "pickleplex_oshawa": {
+        "util": 62.1,
+        "booked": 87,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 25,
+        "booked": 42,
+        "total": 168,
+        "note": "12 courts × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 47.6,
+        "booked": 60,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 80.4,
+        "booked": 90,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 40.5,
+        "booked": 17,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 29.6,
+        "booked": 29,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 59.8,
+        "booked": 67,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 27.5,
+        "booked": 50,
+        "total": 182,
+        "note": "14 courts, 13 time slots (9:30am-9pm), 132 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 77.8,
+        "booked": 137,
+        "total": 176,
+        "note": "11 courts (Standard+Compact tabs, 16 combined slots), 39 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 45.5,
+        "booked": 25,
+        "total": 55,
+        "note": "5 courts (max seen) × 11 slots, 30 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 76.4,
+        "booked": 110,
+        "total": 144,
+        "note": "9 courts × 16 hrs (7am-11pm), 34 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 82.4,
+        "booked": 136,
+        "total": 165,
+        "note": "11 courts × 15 hrs (7am-10pm), 29 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 82,
+        "booked": 157.5,
+        "total": 192,
+        "note": "12 courts (5 indoor #8-12 + 7 outdoor #1-7) × 16 hrs (7am-11pm), 34.5 court-hrs avail"
+      },
+      "picklrs_hub": {
+        "util": 30.8,
+        "booked": 20,
+        "total": 65,
+        "note": "CourtReserve: 45 avail / 12 reserved / 8 waitlist"
+      },
+      "picklex": {
+        "util": 66.3,
+        "booked": 65,
+        "total": 98,
+        "note": "7 courts × 14 hrs — page now uses Kendo scheduler grid (site updated); scraped via grid method"
+      },
+      "blue_zone": {
+        "util": 30.6,
+        "booked": 49,
+        "total": 160,
+        "note": "10 pickleball courts × 16hrs (7am-11pm); padel courts excluded"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Site now requires login to view calendar (booking widget changed) — not scraped"
+      },
+      "four_fathers_pickleball": {
+        "util": 58.6,
+        "booked": 41,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 50,
+        "booked": 56,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 50,
+        "booked": 12,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 12 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 24.1,
+        "booked": 27,
+        "total": 112,
+        "note": "8 of 8 courts active × 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 47,
+        "booked": 141,
+        "total": 300,
+        "note": "15 courts; ClubAutomation live-availability, window 12:30pm-10pm (run mid-day, not 9am — understates full-day utilization)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-25",
+    "scraped_at": "2026-08-25T09:00:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / courts x 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 60.2,
+        "booked": 59,
+        "total": 98,
+        "note": "7 courts x 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 47.1,
+        "booked": 33,
+        "total": 70,
+        "note": "5 of 6 courts active x 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 88.1,
+        "booked": 74,
+        "total": 84,
+        "note": "6 of 7 courts active x 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 49.1,
+        "booked": 55,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 100,
+        "booked": 112,
+        "total": 112,
+        "note": "8 courts x 14 hrs (fully booked)"
+      },
+      "pickleplex_promenade": {
+        "util": 86.9,
+        "booked": 73,
+        "total": 84,
+        "note": "6 courts x 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 100,
+        "booked": 182,
+        "total": 182,
+        "note": "13 courts x 14 hrs (fully booked)"
+      },
+      "pickleplex_oshawa": {
+        "util": 59.3,
+        "booked": 83,
+        "total": 140,
+        "note": "10 courts x 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 24.6,
+        "booked": 31,
+        "total": 126,
+        "note": "9 of 12 courts active x 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 42.9,
+        "booked": 54,
+        "total": 126,
+        "note": "9 courts x 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 73.2,
+        "booked": 82,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 50,
+        "booked": 21,
+        "total": 42,
+        "note": "3 courts x 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 25,
+        "booked": 21,
+        "total": 84,
+        "note": "6 of 8 courts active x 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 52.7,
+        "booked": 59,
+        "total": 112,
+        "note": "8 courts x 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 26.4,
+        "booked": 48,
+        "total": 182,
+        "note": "14 courts; 13 time slots parsed"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 65.2,
+        "booked": 86,
+        "total": 132,
+        "note": "11 courts; 12 time slots parsed"
+      },
+      "fairgrounds_whitby": {
+        "util": 49.1,
+        "booked": 27,
+        "total": 55,
+        "note": "5 courts (max open seen); 11 time slots parsed"
+      },
+      "picklr_toronto_west": {
+        "util": 75,
+        "booked": 108,
+        "total": 144,
+        "note": "9 courts x 16 hrs (7am-11pm), 36 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 80,
+        "booked": 132,
+        "total": 165,
+        "note": "11 courts x 15 hrs (7am-10pm), 33 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 68.3,
+        "booked": 76.5,
+        "total": 112,
+        "note": "7 outdoor courts active today x 16 hrs (7am-11pm)"
+      },
+      "picklrs_hub": {
+        "util": 26.3,
+        "booked": 20,
+        "total": 76,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 17.8,
+        "booked": 21,
+        "total": 118,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 25.9,
+        "booked": 41.5,
+        "total": 160,
+        "note": "10 pickleball courts x 16hrs"
+      },
+      "smash_pb_london": {
+        "util": 77.8,
+        "booked": 91,
+        "total": 117,
+        "note": "9 courts x 13hrs (7am-8pm)"
+      },
+      "four_fathers_pickleball": {
+        "util": 30,
+        "booked": 21,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 52.7,
+        "booked": 59,
+        "total": 112,
+        "note": "8 courts x 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 56.3,
+        "booked": 13.5,
+        "total": 24,
+        "note": "4 courts x 6 hrs (4pm-10pm), 10.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 32.1,
+        "booked": 36,
+        "total": 112,
+        "note": "8 of 8 courts active x 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 50,
+        "booked": 135,
+        "total": 270,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 13:30-22:00 (scraped mid-day - truncated to remaining hours, not full-day)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-26",
+    "scraped_at": "2026-08-26T10:30:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 77.6,
+        "booked": 76,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 36.9,
+        "booked": 31,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 85.7,
+        "booked": 72,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 52.7,
+        "booked": 59,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 100,
+        "booked": 112,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 92.9,
+        "booked": 78,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 100,
+        "booked": 182,
+        "total": 182,
+        "note": "13 courts × 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 55.7,
+        "booked": 78,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 30.4,
+        "booked": 51,
+        "total": 168,
+        "note": "12 courts × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 42.9,
+        "booked": 54,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 66.1,
+        "booked": 74,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 76.2,
+        "booked": 32,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 31,
+        "booked": 26,
+        "total": 84,
+        "note": "6 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 59.8,
+        "booked": 67,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 19.2,
+        "booked": 35,
+        "total": 182,
+        "note": "14 courts, 13 time slots 8am-10pm (Open Play Beginner spike 6-7pm)"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 57.3,
+        "booked": 82,
+        "total": 143,
+        "note": "11 courts (8 standard+3 compact), 9am-9pm window; kids camp on compact courts treated as fully booked"
+      },
+      "fairgrounds_whitby": {
+        "util": 36.4,
+        "booked": 16,
+        "total": 44,
+        "note": "4 courts (detected max), 11 time slots 10am-10pm"
+      },
+      "picklr_toronto_west": {
+        "util": 80.6,
+        "booked": 116,
+        "total": 144,
+        "note": "9 courts × 16 hrs (7am-11pm)"
+      },
+      "vaughan_sportsplex": {
+        "util": 81.8,
+        "booked": 135,
+        "total": 165,
+        "note": "11 courts × 15 hrs (7am-10pm); 9 courts had availability today"
+      },
+      "hisports_durham": {
+        "util": 40.1,
+        "booked": 77,
+        "total": 192,
+        "note": "12 courts × 16 hrs, 30-min granularity"
+      },
+      "picklrs_hub": {
+        "util": 28.4,
+        "booked": 21,
+        "total": 74,
+        "note": "9 courts, Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 17.4,
+        "booked": 21,
+        "total": 121,
+        "note": "CourtReserve index, Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 33.5,
+        "booked": 59,
+        "total": 176,
+        "note": "11 courts detected (Franklin=Court8) × 16 hrs (7am-11pm)"
+      },
+      "smash_pb_london": {
+        "util": 74.4,
+        "booked": 87,
+        "total": 117,
+        "note": "9 courts × 13 hrs (7am-8pm)"
+      },
+      "four_fathers_pickleball": {
+        "util": 37.1,
+        "booked": 26,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 45.5,
+        "booked": 51,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 50,
+        "booked": 12,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 12 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 23.5,
+        "booked": 23,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 45,
+        "booked": 135,
+        "total": 300,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 12:30-22:00 (scraped mid-day ~12:16pm ET - truncated, not full-day)"
+      }
+    }
+  },
+  {
+    "date": "2026-08-27",
+    "scraped_at": "2026-08-27T10:24:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 55.1,
+        "booked": 54,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 33.3,
+        "booked": 28,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 88.1,
+        "booked": 74,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 59.8,
+        "booked": 67,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 100,
+        "booked": 112,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 66.7,
+        "booked": 56,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 100,
+        "booked": 182,
+        "total": 182,
+        "note": "13 courts × 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 63.6,
+        "booked": 89,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 24.7,
+        "booked": 38,
+        "total": 154,
+        "note": "11 of 12 courts active × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 34.9,
+        "booked": 44,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 74.1,
+        "booked": 83,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 50,
+        "booked": 21,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 29.8,
+        "booked": 25,
+        "total": 84,
+        "note": "6 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 56.3,
+        "booked": 63,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 25.3,
+        "booked": 46,
+        "total": 182,
+        "note": "13 time slots (8am-9pm incl 8-10am block); 136 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 74.4,
+        "booked": 131,
+        "total": 176,
+        "note": "11 courts (Standard+Compact combined); 16 slots; 45 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 31.7,
+        "booked": 19,
+        "total": 60,
+        "note": "5 courts (max open seen); 12 hrly slots 10am-9pm; 41 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 87.5,
+        "booked": 126,
+        "total": 144,
+        "note": "9 courts x16hrs(7am-11pm); deduped overlapping-duration option cards to unique court-hrs; 18 avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 91.5,
+        "booked": 151,
+        "total": 165,
+        "note": "11 courts×15hrs(7am-10pm); deduped overlapping option cards; excluded post-10pm cards; 14 avail"
+      },
+      "hisports_durham": {
+        "util": 21.7,
+        "booked": 33,
+        "total": 152,
+        "note": "19 courts (12 indoor+7 outdoor); retried — fully scrolled listing and deduped overlapping cards to half-hour buckets; scraped ~1pm so only 3pm-11pm window visible (past hours dropped), does not reflect full 7am-11pm day"
+      },
+      "picklrs_hub": {
+        "util": 65.2,
+        "booked": 43,
+        "total": 66,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 12.5,
+        "booked": 16,
+        "total": 128,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 25.6,
+        "booked": 41,
+        "total": 160,
+        "note": "10 pickleball courts × 16hrs (7am-11pm)"
+      },
+      "smash_pb_london": {
+        "util": 71.8,
+        "booked": 84,
+        "total": 117,
+        "note": "9 courts × 13hrs(7am-8pm) capacity model; calendar now extends to 11pm, bookings after 8pm excluded from this total for consistency"
+      },
+      "four_fathers_pickleball": {
+        "util": 44.3,
+        "booked": 31,
+        "total": 70,
+        "note": "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); retried ~12:50pm, session valid"
+      },
+      "real_pickleball": {
+        "util": 46.4,
+        "booked": 52,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 50,
+        "booked": 12,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 12 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 25,
+        "booked": 28,
+        "total": 112,
+        "note": "8 of 8 courts active × 14 hrs (7am-9pm); retried ~12:46pm, session valid; bookings before scrape time may show collapsed/zero duration"
+      },
+      "rally_mississauga": {
+        "util": 48.4,
+        "booked": 138,
+        "total": 285,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity); retried ~1pm — window 1pm-10pm only (past hours dropped by API), does not reflect full 8am-11pm day"
+      }
+    }
+  },
+  {
+    "date": "2026-08-28",
+    "scraped_at": "2026-08-28T14:30:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 62.2,
+        "booked": 61,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 41.7,
+        "booked": 35,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 89.3,
+        "booked": 75,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 55.4,
+        "booked": 62,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 100,
+        "booked": 112,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 82.1,
+        "booked": 69,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 100,
+        "booked": 182,
+        "total": 182,
+        "note": "13 courts × 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 55.7,
+        "booked": 78,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 29.8,
+        "booked": 50,
+        "total": 168,
+        "note": "12 courts × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 54,
+        "booked": 68,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 60.7,
+        "booked": 68,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 45.2,
+        "booked": 19,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 23.8,
+        "booked": 20,
+        "total": 84,
+        "note": "6 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 58,
+        "booked": 65,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 25,
+        "booked": 35,
+        "total": 140,
+        "note": "14 courts, 10 time slots, 105 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 74,
+        "booked": 114,
+        "total": 154,
+        "note": "Standard+Compact, 11 courts baseline, 14 slots, 40 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 33.3,
+        "booked": 8,
+        "total": 24,
+        "note": "3 courts (max seen) × 8 slots, 16 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 88.9,
+        "booked": 128,
+        "total": 144,
+        "note": "9 courts × 16hrs (7am-11pm), 16 court-hrs avail today"
+      },
+      "vaughan_sportsplex": {
+        "util": 93.9,
+        "booked": 155,
+        "total": 165,
+        "note": "11 courts × 15hrs (7am-10pm), 10 court-hrs avail today"
+      },
+      "hisports_durham": {
+        "util": 91,
+        "booked": 276.5,
+        "total": 304,
+        "note": "19 courts (12 indoor+7 outdoor) × 16hrs (7am-11pm), 27.5 court-hrs avail today"
+      },
+      "picklrs_hub": {
+        "util": 42.3,
+        "booked": 22,
+        "total": 52,
+        "note": "CourtReserve Bookings, Reserve/Reserved/Waitlist count"
+      },
+      "picklex": {
+        "util": 11.9,
+        "booked": 13,
+        "total": 109,
+        "note": "CourtReserve Index, Reserve/Reserved/Waitlist count"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "Session expired — login required"
+      },
+      "smash_pb_london": {
+        "util": 76.1,
+        "booked": 89,
+        "total": 117,
+        "note": "9 courts × 13hrs (7am-8pm), incl. maintenance blocks"
+      },
+      "four_fathers_pickleball": {
+        "util": 31.4,
+        "booked": 22,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm) + aft (5pm-8pm) + eve (8pm-10pm)"
+      },
+      "real_pickleball": {
+        "util": 37.5,
+        "booked": 42,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 87.5,
+        "booked": 21,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 3.0 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 23.5,
+        "booked": 23,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      }
+    }
+  },
+  {
+    "date": "2026-08-31",
+    "scraped_at": "2026-08-31T14:34:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 65.3,
+        "booked": 64,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 35.7,
+        "booked": 30,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 79.8,
+        "booked": 67,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 60.7,
+        "booked": 68,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 58,
+        "booked": 65,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 85.7,
+        "booked": 72,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 76.4,
+        "booked": 139,
+        "total": 182,
+        "note": "13 courts × 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 69.3,
+        "booked": 97,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 27.4,
+        "booked": 46,
+        "total": 168,
+        "note": "12 courts × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 49.2,
+        "booked": 62,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 50,
+        "booked": 21,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 17.9,
+        "booked": 15,
+        "total": 84,
+        "note": "6 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 47.3,
+        "booked": 53,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 25.8,
+        "booked": 47,
+        "total": 182,
+        "note": "14 courts, 13 time slots (8:30am-10pm), 135 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 56.2,
+        "booked": 68,
+        "total": 121,
+        "note": "11 courts (Standard+Compact combined), ~11 hourly slots (11am-10pm), 53 court-hrs avail; estimate due to mixed programming"
+      },
+      "fairgrounds_whitby": {
+        "util": 60,
+        "booked": 33,
+        "total": 55,
+        "note": "5 courts (max seen), 11 time slots (10:30am-10pm), 22 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 48.6,
+        "booked": 70,
+        "total": 144,
+        "note": "9 courts × 16 hrs (7am-11pm), 74 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 59.4,
+        "booked": 98,
+        "total": 165,
+        "note": "11 courts × 15 hrs (7am-10pm), 67 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 10.4,
+        "booked": 20,
+        "total": 192,
+        "note": "12 indoor courts × 16 hrs (7am-11pm); 7 outdoor courts excluded (seasonal, overlapping multi-duration listings)"
+      },
+      "picklrs_hub": {
+        "util": 12.9,
+        "booked": 9,
+        "total": 70,
+        "note": "CourtReserve: 61 avail / 9 reserved / 0 waitlist"
+      },
+      "picklex": {
+        "util": 18.6,
+        "booked": 22,
+        "total": 118,
+        "note": "CourtReserve: 96 avail / 8 reserved / 14 waitlist"
+      },
+      "blue_zone": {
+        "util": 35,
+        "booked": 56,
+        "total": 160,
+        "note": "10 pickleball courts × 16hrs (7am-11pm)"
+      },
+      "smash_pb_london": {
+        "util": 71.8,
+        "booked": 84,
+        "total": 117,
+        "note": "9 courts × 13hrs (7am-8pm); some reservations extend to 9pm"
+      },
+      "four_fathers_pickleball": {
+        "util": 57.1,
+        "booked": 40,
+        "total": 70,
+        "note": "7 courts, morn (9am-2pm)=19/35 + aft (5pm-8pm)=16/21 + eve (8pm-10pm)=5/14"
+      },
+      "real_pickleball": {
+        "util": 50.9,
+        "booked": 57,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": 23.2,
+        "booked": 26,
+        "total": 112,
+        "note": "8 of 8 courts active × 14 hrs (7am-9pm)"
+      },
+      "rally_mississauga": {
+        "util": 69,
+        "booked": 176,
+        "total": 255,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 2pm-10pm (scraped mid-day ~2pm ET — truncated to remaining hours, not full-day)"
+      }
+    }
+  },
+  {
+    "date": "2026-09-01",
+    "scraped_at": "2026-09-01T09:30:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 57.1,
+        "booked": 56,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 36.9,
+        "booked": 31,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 85.7,
+        "booked": 72,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 60.7,
+        "booked": 68,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 77.7,
+        "booked": 87,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 71.4,
+        "booked": 60,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 58.8,
+        "booked": 107,
+        "total": 182,
+        "note": "13 courts × 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 62.1,
+        "booked": 87,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 33.3,
+        "booked": 56,
+        "total": 168,
+        "note": "12 courts × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 41.3,
+        "booked": 52,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 67,
+        "booked": 75,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 35.7,
+        "booked": 15,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 21.4,
+        "booked": 21,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 46.4,
+        "booked": 52,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 18.4,
+        "booked": 36,
+        "total": 196,
+        "note": "14 courts × 14 hrs (8am-9pm), 160 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 70.6,
+        "booked": 101,
+        "total": 143,
+        "note": "11 courts (7 standard+4 compact) × 13 hrs (9am-9pm), 42 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 61.5,
+        "booked": 40,
+        "total": 65,
+        "note": "5 courts (max seen) × 13 hrs (9am-9pm), 25 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 78.5,
+        "booked": 113,
+        "total": 144,
+        "note": "9 courts × 16 hrs (7am-11pm), 31 court-hrs avail (union of overlapping duration options)"
+      },
+      "vaughan_sportsplex": {
+        "util": 77.6,
+        "booked": 128,
+        "total": 165,
+        "note": "11 courts × 15 hrs (7am-10pm), 37 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 26.7,
+        "booked": 28,
+        "total": 105,
+        "note": "7 courts with availability × 15 hrs (8am-11pm), 77 court-hrs avail (live API)"
+      },
+      "picklrs_hub": {
+        "util": 32.8,
+        "booked": 19,
+        "total": 58,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "picklex": {
+        "util": 12.2,
+        "booked": 14,
+        "total": 115,
+        "note": "Reserve/Reserved/Waitlist button count"
+      },
+      "blue_zone": {
+        "util": 26.9,
+        "booked": 43,
+        "total": 160,
+        "note": "10 pickleball courts × 16hrs (7am-11pm)"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Booking site now requires login to view calendar (login wall) — skipped per policy"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "Session expired — login required"
+      },
+      "real_pickleball": {
+        "util": 44.6,
+        "booked": 50,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 50,
+        "booked": 12,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 12 court-hrs avail"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "Session expired — login required"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      }
+    }
+  },
+  {
+    "date": "2026-09-02",
+    "scraped_at": "2026-09-02T14:24:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 62.2,
+        "booked": 61,
+        "total": 98,
+        "note": "7 courts × 14 hrs"
+      },
+      "pickleplex_windsor": {
+        "util": 33.3,
+        "booked": 28,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_pickering": {
+        "util": 79.8,
+        "booked": 67,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs"
+      },
+      "pickleplex_belleville": {
+        "util": 59.8,
+        "booked": 67,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_vaughan": {
+        "util": 57.1,
+        "booked": 64,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_promenade": {
+        "util": 81,
+        "booked": 68,
+        "total": 84,
+        "note": "6 courts × 14 hrs"
+      },
+      "pickleplex_downsview": {
+        "util": 60.4,
+        "booked": 110,
+        "total": 182,
+        "note": "13 courts × 14 hrs"
+      },
+      "pickleplex_oshawa": {
+        "util": 71.4,
+        "booked": 100,
+        "total": 140,
+        "note": "10 courts × 14 hrs"
+      },
+      "pickleplex_cambridge": {
+        "util": 37.5,
+        "booked": 63,
+        "total": 168,
+        "note": "12 courts × 14 hrs"
+      },
+      "pickleplex_red_deer": {
+        "util": 40.5,
+        "booked": 51,
+        "total": 126,
+        "note": "9 courts × 14 hrs"
+      },
+      "pickleplex_aurora": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "pickleplex_york_mills": {
+        "util": 47.6,
+        "booked": 20,
+        "total": 42,
+        "note": "3 courts × 14 hrs"
+      },
+      "pickleplex_brantford": {
+        "util": 21.4,
+        "booked": 21,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs"
+      },
+      "pickleplex_burloak": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts × 14 hrs"
+      },
+      "fairgrounds_red_deer": {
+        "util": 17.6,
+        "booked": 32,
+        "total": 182,
+        "note": "13 time slots 8am-10pm, 150 court-hrs avail"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 47.7,
+        "booked": 63,
+        "total": 132,
+        "note": "11 courts (Standard+Compact), 12 slots, 69 court-hrs avail"
+      },
+      "fairgrounds_whitby": {
+        "util": 37.5,
+        "booked": 15,
+        "total": 40,
+        "note": "4 courts (max seen), 10 slots, 25 court-hrs avail"
+      },
+      "picklr_toronto_west": {
+        "util": 42.4,
+        "booked": 61,
+        "total": 144,
+        "note": "9 courts × 16hrs (7am-11pm), 83 court-hrs avail"
+      },
+      "vaughan_sportsplex": {
+        "util": 75.8,
+        "booked": 125,
+        "total": 165,
+        "note": "11 courts × 15hrs (7am-10pm), 40 court-hrs avail"
+      },
+      "hisports_durham": {
+        "util": 0,
+        "booked": 0,
+        "total": 112,
+        "note": "7 outdoor courts × 16hrs; overlapping duration listings inflated avail-hrs to 591.5 (data anomaly, clamped to 0)"
+      },
+      "picklrs_hub": {
+        "util": 30.1,
+        "booked": 22,
+        "total": 73,
+        "note": "Reserve/Reserved/Waitlist text count"
+      },
+      "picklex": {
+        "util": 12.6,
+        "booked": 16,
+        "total": 127,
+        "note": "Member login active"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": 160,
+        "note": "Booking UI changed to login-gated wizard, no calendar grid visible"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": 117,
+        "note": "Booking UI changed to login-gated wizard, no calendar grid visible"
+      },
+      "four_fathers_pickleball": {
+        "util": null,
+        "booked": null,
+        "total": 70,
+        "note": "Session expired — login required"
+      },
+      "real_pickleball": {
+        "util": 54.5,
+        "booked": 61,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am-10pm)"
+      },
+      "corte_kitchener": {
+        "util": 43.8,
+        "booked": 10.5,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm-10pm), 13.5 court-hrs avail"
+      },
+      "prime_time": {
+        "util": null,
+        "booked": null,
+        "total": 112,
+        "note": "Session expired — login required"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      }
+    }
+  }
+]
