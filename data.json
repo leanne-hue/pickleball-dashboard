@@ -6449,10 +6449,10 @@
         "note": "Session expired — login required"
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
+        "util": 64.1,
+        "booked": 75,
         "total": 117,
-        "note": "Session expired — login required"
+        "note": "9 courts × 13 hrs (7am-8pm); reservations/programs/open play/clinics/maintenance counted as booked; re-scraped after login"
       },
       "four_fathers_pickleball": {
         "util": 41.4,
