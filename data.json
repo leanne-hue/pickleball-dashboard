@@ -6483,6 +6483,12 @@
         "booked": 27,
         "total": 45,
         "note": "15 courts; ClubAutomation live-availability, window 21:00-22:00 — TRUNCATED (re-scraped at 5:06pm ET; hours before 9pm already fully booked so this overstates typical utilization, not comparable to a 9am reading)"
+      },
+      "backyard_club": {
+        "util": 17.3,
+        "booked": 37,
+        "total": 214,
+        "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape, closed/unavailable evening slots on most courts excluded from denominator (80 closed slots); booked = Booked+Program+Open Play blocks"
       }
     }
   }

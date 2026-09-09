@@ -185,6 +185,7 @@ fairgrounds_cloverdale:{ name:"Fairgrounds Cloverdale", short:"FG Cloverdale",lo
 picklr_toronto_west: { name:"The Picklr Toronto West", short:"Picklr TW", loc:"Etobicoke, ON", platform:"CatchCorner", courts:9, color:"#e67e22", type:"competitor" },
 vaughan_sportsplex: { name:"Vaughan Sportsplex", short:"Vaughan SP", loc:"Vaughan, ON", platform:"CatchCorner", courts:11, color:"#2980b9", type:"competitor" },
 picklrs_hub: { name:"Picklrs Hub", short:"Picklrs Hub", loc:"GTA, ON", platform:"CourtReserve", courts:9, color:"#8e44ad", type:"competitor" },
+backyard_club: { name:"The Backyard Club", short:"Backyard Club", loc:"Vaughan, ON", platform:"Custom", courts:21, color:"#5f27cd", type:"competitor" },
 picklex: { name:"PickleX", short:"PickleX", loc:"Oakville, ON", platform:"CourtReserve", courts:null,color:"#c0392b",type:"competitor", limited:true, limitNote:"Member login" },
 blue_zone: { name:"Blue Zone", short:"Blue Zone", loc:"Burlington, ON", platform:"Custom", courts:null,color:"#16a085",type:"competitor", limited:true, limitNote:"Login required" },
 smash_pb_london: { name:"Smash PB London", short:"Smash PB", loc:"London, ON", platform:"Custom", courts:9, color:"#d35400", type:"competitor" },
@@ -200,7 +201,7 @@ rally_mississauga: { name:"Rally Pickleball Mississauga", short:"Rally Mississau
 
 const REGIONS = [
 { id:"red_deer", name:"Red Deer, AB", own:["pickleplex_red_deer"], comp:["fairgrounds_red_deer"] },
-{ id:"north_gta", name:"North GTA / Vaughan", own:["pickleplex_vaughan","pickleplex_promenade","pickleplex_aurora"], comp:["vaughan_sportsplex","picklrs_hub"] },
+{ id:"north_gta", name:"North GTA / Vaughan", own:["pickleplex_vaughan","pickleplex_promenade","pickleplex_aurora"], comp:["vaughan_sportsplex","picklrs_hub","backyard_club"] },
 { id:"toronto", name:"Toronto", own:["pickleplex_downsview","pickleplex_york_mills"], comp:["fairgrounds_cloverdale","picklr_toronto_west"] },
 { id:"east_gta", name:"East GTA", own:["pickleplex_pickering","pickleplex_oshawa"], comp:["fairgrounds_whitby","hisports_durham"] },
 { id:"burloak", name:"Oakville / Burlington", own:["pickleplex_burloak"], comp:["picklex","blue_zone"] },
@@ -241,6 +242,7 @@ picklr_toronto_west: { util: 50.0, booked: 72, total: 144, note: "9 courts x 16 
 vaughan_sportsplex: { util: 44.8, booked: 74, total: 165, note: "11 courts x 15 hrs (7am-10pm), 91 court-hrs avail" },
 hisports_durham: { util: 67.5, booked: 218, total: 323, note: "19 courts (12 indoor+7 outdoor) x 17 hrs (7am-12am), 105 court-hrs avail" },
 picklrs_hub: { util: 31.3, booked: 20, total: 64, note: "CourtReserve text count: Reserve 44, Reserved 16, Waitlist 4" },
+backyard_club: { util: 17.3, booked: 37, total: 214, note: "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape, closed/unavailable evening slots on most courts excluded from denominator (80 closed slots); booked = Booked+Program+Open Play blocks" },
 picklex: { util: 6.7, booked: 13, total: 195, note: "CourtReserve text count: Reserve 182, Reserved 9, Waitlist 4; session active" },
 blue_zone: { util: 36.3, booked: 58, total: 160, note: "10 pickleball courts × 16hrs (7am-11pm); Court8 shown as Franklin Court; re-scraped after login" },
 smash_pb_london: { util: null, booked: null, total: 117, note: "Session expired — login required" },
