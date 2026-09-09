@@ -6443,16 +6443,16 @@
         "note": "CourtReserve text count: Reserve 182, Reserved 9, Waitlist 4; session active"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
+        "util": 36.3,
+        "booked": 58,
         "total": 160,
-        "note": "Session expired — login required"
+        "note": "10 pickleball courts × 16hrs (7am-11pm); Court8 shown as Franklin Court; re-scraped after login"
       },
       "smash_pb_london": {
-        "util": 64.1,
-        "booked": 75,
+        "util": null,
+        "booked": null,
         "total": 117,
-        "note": "9 courts × 13 hrs (7am-8pm); reservations/programs/open play/clinics/maintenance counted as booked; re-scraped after login"
+        "note": "Session expired — login required"
       },
       "four_fathers_pickleball": {
         "util": 41.4,
