@@ -6666,10 +6666,16 @@
         "note": "8 of 8 courts active × 14 hrs (7am-9pm); scraped ~10:31am — early bookings before scrape time may be lost to CourtReserve's past-booking collapse, likely understating true utilization"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 53,
+        "booked": 159,
+        "total": 300,
+        "note": "15 courts; ClubAutomation live-availability, window 12:30pm-10pm — TRUNCATED (re-scraped at 12:30pm ET; morning hours 8am-12:30pm not captured)"
+      },
+      "backyard_club": {
+        "util": 24.4,
+        "booked": 29,
+        "total": 119,
+        "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape, closed/unavailable slots on most courts excluded from denominator (175 closed slots); booked = Booked+Program+Open Play blocks"
       }
     }
   }
