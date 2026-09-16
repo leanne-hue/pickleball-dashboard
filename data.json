@@ -7242,8 +7242,8 @@
   },
   {
     "date": "2026-09-16",
-    "scraped_at": "2026-09-16T10:30:00",
-    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / courts x 14h, 8am-10pm). Competitors: live scrape.",
+    "scraped_at": "2026-09-16T15:10:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours / courts x 14h, 8am-10pm). Competitors: live scrape. Smash PB, Four Fathers, Prime Time and Rally re-scraped at 3pm after member re-login.",
     "clubs": {
       "pickleplex_barrie": {
         "util": 72.4,
@@ -7384,16 +7384,16 @@
         "note": "Session expired - login required"
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
-        "total": 117,
-        "note": "Session expired - login required"
+        "util": 69.4,
+        "booked": 100,
+        "total": 144,
+        "note": "9 courts x 16 hrs (7am-11pm); calendar scrape after re-login; RESERVATION/PROGRAM/OPEN PLAY/CLINIC/PRIVATE EVENT/MAINTENANCE all counted as booked"
       },
       "four_fathers_pickleball": {
-        "util": null,
-        "booked": null,
-        "total": 70,
-        "note": "Session expired - login required (redirected to portal homepage)"
+        "util": 21.4,
+        "booked": 12,
+        "total": 56,
+        "note": "7 courts; live session windows today: morning 8-10am (14) + afternoon 2-6pm (28) + evening 8-10pm (14) = 56 court-hrs; differs from the 70-hr morn/aft/eve model in the task file"
       },
       "real_pickleball": {
         "util": 55.4,
@@ -7408,16 +7408,16 @@
         "note": "4 courts x 6 hrs (4pm-10pm), 10 court-hrs avail"
       },
       "prime_time": {
-        "util": null,
-        "booked": null,
+        "util": 42,
+        "booked": 47,
         "total": 112,
-        "note": "Session expired - login required"
+        "note": "8 courts x 14 hrs (7am-9pm); re-scraped 3pm after login, all 34 bookings retained real durations (no past-booking collapse)"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired - login required"
+        "util": 69.7,
+        "booked": 115,
+        "total": 165,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), observed window 5pm-10pm only (11 slots) - re-run at 3pm and every slot before 5pm was already booked, so this is an evening-only reading, not comparable to a full-day 9am run"
       },
       "backyard_club": {
         "util": 79.6,
