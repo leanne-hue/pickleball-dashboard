@@ -7752,10 +7752,10 @@
         "note": "Button count: 126 Reserve, 8 Reserved, 4 Join Waitlist"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": 160,
-        "note": "Session expired — login required"
+        "util": 27.3,
+        "booked": 48,
+        "total": 176,
+        "note": "11 pickleball courts (C1-C11) × 16 hrs (7am-11pm); calendar scrape on retry — session was live, earlier null was a slow-load false negative; Padel courts excluded"
       },
       "smash_pb_london": {
         "util": 70.1,
@@ -7788,10 +7788,10 @@
         "note": "6 of 8 courts active × 14 hrs (7am-9pm)"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 72.9,
+        "booked": 153,
+        "total": 210,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), observed window 3:30pm-10pm only (14 slots) — every slot before 3:30pm was already booked at scrape time, so this is a late-window reading and understates true full-day utilization"
       },
       "backyard_club": {
         "util": 66,
