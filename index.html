@@ -218,8 +218,8 @@ const REGIONS = [
 
 const TODAY_DATA = {
   date: "2026-09-21",
-  scraped_at: "2026-09-21T13:05:00",
-  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run midday (12:37pm-1:05pm) rather than the usual 9am, so forward-looking-availability sources (CatchCorner, CourtReserve Index, ClubAutomation) understate morning availability. Smash PB / Prime Time / Rally re-scraped successfully on a retry after their sessions came back.",
+  scraped_at: "2026-09-21T13:25:00",
+  note: "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run midday (12:37pm-1:25pm) rather than the usual 9am, so forward-looking-availability sources (CatchCorner, CourtReserve Index, ClubAutomation) understate morning availability. All 30 clubs captured.",
   clubs: {
     pickleplex_barrie: { util: 70.4, booked: 69, total: 98, note: "7 courts × 14 hrs (8am-10pm)" },
     pickleplex_windsor: { util: 35.7, booked: 30, total: 84, note: "6 courts × 14 hrs (8am-10pm)" },
@@ -245,7 +245,7 @@ const TODAY_DATA = {
     picklex: { util: 20.7, booked: 24, total: 116, note: "Reserve/Reserved/Waitlist button count (92/13/11)" },
     blue_zone: { util: 27.8, booked: 44.5, total: 160, note: "11 court blocks detected (Court 8 = 'Franklin Court'); denominator 10 courts × 16 hrs (7am-11pm) per spec" },
     smash_pb_london: { util: 65, booked: 76, total: 117, note: "9 courts × 13 hrs (7am-8pm), 76 booked court-hrs; retry after session restored" },
-    four_fathers_pickleball: { util: null, booked: null, total: 70, note: "Session expired — login required (redirected to Portal/Index/10849)" },
+    four_fathers_pickleball: { util: 57.1, booked: 40, total: 70, note: "7 courts, morn (9am-2pm) 18/35 + aft (5pm-8pm) 19/21 + eve (8pm-10pm) 3/14; new CourtReserve UI has no Kendo scheduler and does not render at 0-width — read from the captured member-expanded API payload instead" },
     real_pickleball: { util: 52.7, booked: 59, total: 112, note: "8 courts × 14 hrs (8am-10pm)" },
     corte_kitchener: { util: 37.5, booked: 9, total: 24, note: "4 courts × 6 hrs (4pm-10pm), 15 court-hrs avail" },
     prime_time: { util: 29.5, booked: 33, total: 112, note: "8 courts × 14 hrs (7am-9pm); retry after session restored; midday run so past bookings may have collapsed" },

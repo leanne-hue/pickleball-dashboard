@@ -8177,8 +8177,8 @@
   },
   {
     "date": "2026-09-21",
-    "scraped_at": "2026-09-21T13:05:00",
-    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run midday (12:37pm-1:05pm) rather than the usual 9am, so forward-looking-availability sources (CatchCorner, CourtReserve Index, ClubAutomation) understate morning availability. Smash PB / Prime Time / Rally re-scraped successfully on a retry after their sessions came back.",
+    "scraped_at": "2026-09-21T13:25:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run midday (12:37pm-1:25pm) rather than the usual 9am, so forward-looking-availability sources (CatchCorner, CourtReserve Index, ClubAutomation) understate morning availability. All 30 clubs captured.",
     "clubs": {
       "pickleplex_barrie": {
         "util": 70.4,
@@ -8325,10 +8325,10 @@
         "note": "9 courts × 13 hrs (7am-8pm), 76 booked court-hrs; retry after session restored"
       },
       "four_fathers_pickleball": {
-        "util": null,
-        "booked": null,
+        "util": 57.1,
+        "booked": 40,
         "total": 70,
-        "note": "Session expired — login required (redirected to Portal/Index/10849)"
+        "note": "7 courts, morn (9am-2pm) 18/35 + aft (5pm-8pm) 19/21 + eve (8pm-10pm) 3/14; new CourtReserve UI has no Kendo scheduler and does not render at 0-width — read from the captured member-expanded API payload instead"
       },
       "real_pickleball": {
         "util": 52.7,
