@@ -8177,12 +8177,12 @@
   },
   {
     "date": "2026-09-21",
-    "scraped_at": "2026-09-21T10:14:00",
-    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
+    "scraped_at": "2026-09-21T12:37:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run at 12:37pm rather than the usual 9am, so forward-looking-availability sources (CatchCorner, CourtReserve Index) understate morning availability.",
     "clubs": {
       "pickleplex_barrie": {
-        "util": 71.4,
-        "booked": 70,
+        "util": 70.4,
+        "booked": 69,
         "total": 98,
         "note": "7 courts × 14 hrs (8am-10pm)"
       },
@@ -8205,8 +8205,8 @@
         "note": "8 courts × 14 hrs (8am-10pm)"
       },
       "pickleplex_vaughan": {
-        "util": 50,
-        "booked": 56,
+        "util": 52.7,
+        "booked": 59,
         "total": 112,
         "note": "8 courts × 14 hrs (8am-10pm)"
       },
@@ -8241,8 +8241,8 @@
         "note": "9 courts × 14 hrs (8am-10pm)"
       },
       "pickleplex_aurora": {
-        "util": 62.5,
-        "booked": 70,
+        "util": 57.1,
+        "booked": 64,
         "total": 112,
         "note": "8 courts × 14 hrs (8am-10pm)"
       },
@@ -8253,10 +8253,10 @@
         "note": "3 courts × 14 hrs (8am-10pm)"
       },
       "pickleplex_brantford": {
-        "util": 21.4,
-        "booked": 18,
-        "total": 84,
-        "note": "6 of 8 courts active × 14 hrs (8am-10pm); index redirects to Compact session, used main Book a Court session"
+        "util": 22.4,
+        "booked": 22,
+        "total": 98,
+        "note": "7 of 8 courts active × 14 hrs (8am-10pm); read from 'Book a Court' session (sId=34668) — index defaults to Compact session"
       },
       "pickleplex_burloak": {
         "util": 58,
@@ -8265,74 +8265,74 @@
         "note": "8 courts × 14 hrs (8am-10pm)"
       },
       "fairgrounds_red_deer": {
-        "util": 37.8,
-        "booked": 74,
-        "total": 196,
-        "note": "14 courts × 14 hourly slots (8am-10pm), 122 court-hrs avail"
+        "util": 22.1,
+        "booked": 34,
+        "total": 154,
+        "note": "14 courts × 11 time-slot rows; 120 court-hrs open"
       },
       "fairgrounds_cloverdale": {
-        "util": 97.2,
-        "booked": 139,
-        "total": 143,
-        "note": "11 courts × 13 hourly slots (9am-10pm), only 4 court-hrs avail"
+        "util": 90.9,
+        "booked": 40,
+        "total": 44,
+        "note": "11 courts × 4 time-slot rows; long 'No courts available' spans count as 1 row each"
       },
       "fairgrounds_whitby": {
-        "util": 35,
-        "booked": 21,
-        "total": 60,
-        "note": "5 courts (max open seen) × 12 hourly slots (10am-10pm), 39 court-hrs avail"
+        "util": 40,
+        "booked": 20,
+        "total": 50,
+        "note": "5 courts (max open seen) × 10 time-slot rows; 30 court-hrs open"
       },
       "picklr_toronto_west": {
-        "util": 80.6,
-        "booked": 116,
+        "util": 91.7,
+        "booked": 132,
         "total": 144,
-        "note": "9 courts × 16 hrs (7am-11pm), 28 court-hrs avail (union of overlapping listing cards)"
+        "note": "9 courts × 16 hrs (7am-11pm), 12 court-hrs avail; run at 12:37pm so past slots count as booked"
       },
       "vaughan_sportsplex": {
-        "util": 76.4,
-        "booked": 126,
+        "util": 87.9,
+        "booked": 145,
         "total": 165,
-        "note": "11 courts × 15 hrs (7am-10pm), 39 court-hrs avail (union of overlapping cards)"
+        "note": "11 courts × 15 hrs (7am-10pm), 20 court-hrs avail; run at 12:37pm so past slots count as booked"
       },
       "hisports_durham": {
-        "util": 43.8,
-        "booked": 91,
+        "util": 63.2,
+        "booked": 131.5,
         "total": 208,
-        "note": "13 courts (6 indoor + 7 outdoor) × 16 hrs (7am-11pm), 117 court-hrs avail"
+        "note": "13 courts (6 indoor + 7 outdoor) × 16 hrs (6am-10pm), 76.5 court-hrs avail; via CatchCorner listings API"
       },
       "picklrs_hub": {
-        "util": 33.3,
-        "booked": 21,
-        "total": 63,
-        "note": "Reserve/Reserved/Waitlist button count (9 courts)"
+        "util": 69,
+        "booked": 87,
+        "total": 126,
+        "note": "9 courts × 14 hrs (9am-10pm); new CourtReserve grid UI — counted 39 'Reserve' cells via DOM scan (old text-count method returns 0 here)"
       },
       "picklex": {
-        "util": 20.2,
-        "booked": 23,
-        "total": 114,
-        "note": "Reserve/Reserved/Waitlist button count; member login active"
+        "util": 20.7,
+        "booked": 24,
+        "total": 116,
+        "note": "Reserve/Reserved/Waitlist button count (92/13/11)"
       },
       "blue_zone": {
-        "util": 30,
-        "booked": 48,
+        "util": 27.8,
+        "booked": 44.5,
         "total": 160,
-        "note": "10 pickleball courts × 16 hrs (7am-11pm); 11 court columns rendered today"
+        "note": "11 court blocks detected (Court 8 = 'Franklin Court'); denominator 10 courts × 16 hrs (7am-11pm) per spec"
       },
       "smash_pb_london": {
         "util": null,
         "booked": null,
         "total": 117,
-        "note": "Session expired — login required"
+        "note": "Session expired — login required ('LOGIN TO CONTINUE', no calendar)"
       },
       "four_fathers_pickleball": {
         "util": null,
         "booked": null,
         "total": 70,
-        "note": "Session expired — login required"
+        "note": "Session expired — login required (redirected to Portal/Index/10849)"
       },
       "real_pickleball": {
-        "util": 53.6,
-        "booked": 60,
+        "util": 52.7,
+        "booked": 59,
         "total": 112,
         "note": "8 courts × 14 hrs (8am-10pm)"
       },
@@ -8346,19 +8346,19 @@
         "util": null,
         "booked": null,
         "total": 112,
-        "note": "Session expired — login required"
+        "note": "Session expired — login required (redirected to /Account/login/11991)"
       },
       "rally_mississauga": {
         "util": null,
         "booked": null,
         "total": null,
-        "note": "Session expired — login required"
+        "note": "Session expired — login required (ClubAutomation login page)"
       },
       "backyard_club": {
-        "util": 68.2,
-        "booked": 90,
-        "total": 132,
-        "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape, closed/unavailable slots excluded from denominator (162 closed slots); booked = Booked+Program+Open Play blocks, counting multi-court program column spans"
+        "util": 14.7,
+        "booked": 23,
+        "total": 156,
+        "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape, closed/unavailable slots excluded from denominator (138 closed slots); booked = Booked+Program+Open Play blocks"
       }
     }
   }
