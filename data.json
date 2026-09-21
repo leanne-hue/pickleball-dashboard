@@ -8177,8 +8177,8 @@
   },
   {
     "date": "2026-09-21",
-    "scraped_at": "2026-09-21T12:37:00",
-    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run at 12:37pm rather than the usual 9am, so forward-looking-availability sources (CatchCorner, CourtReserve Index) understate morning availability.",
+    "scraped_at": "2026-09-21T13:05:00",
+    "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run midday (12:37pm-1:05pm) rather than the usual 9am, so forward-looking-availability sources (CatchCorner, CourtReserve Index, ClubAutomation) understate morning availability. Smash PB / Prime Time / Rally re-scraped successfully on a retry after their sessions came back.",
     "clubs": {
       "pickleplex_barrie": {
         "util": 70.4,
@@ -8319,10 +8319,10 @@
         "note": "11 court blocks detected (Court 8 = 'Franklin Court'); denominator 10 courts × 16 hrs (7am-11pm) per spec"
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
+        "util": 65,
+        "booked": 76,
         "total": 117,
-        "note": "Session expired — login required ('LOGIN TO CONTINUE', no calendar)"
+        "note": "9 courts × 13 hrs (7am-8pm), 76 booked court-hrs; retry after session restored"
       },
       "four_fathers_pickleball": {
         "util": null,
@@ -8343,16 +8343,16 @@
         "note": "4 courts × 6 hrs (4pm-10pm), 15 court-hrs avail"
       },
       "prime_time": {
-        "util": null,
-        "booked": null,
+        "util": 29.5,
+        "booked": 33,
         "total": 112,
-        "note": "Session expired — login required (redirected to /Account/login/11991)"
+        "note": "8 courts × 14 hrs (7am-9pm); retry after session restored; midday run so past bookings may have collapsed"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required (ClubAutomation login page)"
+        "util": 69.6,
+        "booked": 188,
+        "total": 270,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 1:30pm-10pm — TRUNCATED: run at ~1pm, so morning/early-afternoon slots were already dropped by the API; not comparable to a 9am run"
       },
       "backyard_club": {
         "util": 14.7,
