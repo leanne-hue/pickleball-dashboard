@@ -219,7 +219,7 @@ const REGIONS = [
 const TODAY_DATA = {
   "date": "2026-09-23",
   "scraped_at": "2026-09-23T12:45:00",
-  "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run was mid-day (~12:40pm ET), not 9am — forward-looking competitor sites (Podplay, CatchCorner) likely overstate. 5 competitor sites (Picklrs Hub, Blue Zone, Four Fathers, Prime Time, Rally Mississauga) had expired sessions.",
+  "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run was mid-day (~12:40pm ET), not 9am — forward-looking competitor sites (Podplay, CatchCorner) likely overstate. 3 competitor sites (Picklrs Hub, Blue Zone, Prime Time) had expired sessions; Four Fathers and Rally re-scraped after re-login (~1-2pm).",
   "clubs": {
     "pickleplex_barrie": {
       "util": 72.4,
@@ -366,10 +366,10 @@ const TODAY_DATA = {
       "note": "9 courts × 13 hrs (7am–8pm); incl. 2h morning maintenance on all courts"
     },
     "four_fathers_pickleball": {
-      "util": null,
-      "booked": null,
-      "total": 70,
-      "note": "Session expired — login required"
+      "util": 26.8,
+      "booked": 15,
+      "total": 56,
+      "note": "7 courts; sessions changed: morn (8am-10am) + aft (2pm-6pm) + eve (8pm-10pm) = 8 hrs; now a non-Kendo grid, counted booked blocks per cell (6+3+6). Re-scraped ~1:15pm after re-login"
     },
     "real_pickleball": {
       "util": 50,
@@ -390,10 +390,10 @@ const TODAY_DATA = {
       "note": "Session expired — login required"
     },
     "rally_mississauga": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Session expired — login required"
+      "util": 59.6,
+      "booked": 152,
+      "total": 255,
+      "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 2pm-11pm (last start 10pm) — TRUNCATED: re-scraped ~2pm after re-login, so morning/midday not included"
     },
     "backyard_club": {
       "util": 58.7,
