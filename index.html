@@ -219,7 +219,7 @@ const REGIONS = [
 const TODAY_DATA = {
   "date": "2026-09-23",
   "scraped_at": "2026-09-23T12:45:00",
-  "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run was mid-day (~12:40pm ET), not 9am — forward-looking competitor sites (Podplay, CatchCorner) likely overstate. 3 competitor sites (Picklrs Hub, Blue Zone, Prime Time) had expired sessions; Four Fathers and Rally re-scraped after re-login (~1-2pm).",
+  "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Run was mid-day (~12:40pm ET), not 9am — forward-looking competitor sites (Podplay, CatchCorner) likely overstate. Four Fathers, Rally, Prime Time, Picklrs Hub and Blue Zone re-scraped after re-login (~1-2pm) — see per-club notes for truncated windows.",
   "clubs": {
     "pickleplex_barrie": {
       "util": 72.4,
@@ -342,10 +342,10 @@ const TODAY_DATA = {
       "note": "13 courts (6 indoor + 7 outdoor) × 16 hrs (7am–11pm); 83 court-hrs avail (all 3pm+) (scraped ~12:40pm ET; hours already past show no open slots, so this likely overstates full-day util)"
     },
     "picklrs_hub": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Session expired — login required (Bookings page redirected to portal)"
+      "util": 65.3,
+      "booked": 47,
+      "total": 72,
+      "note": "9 courts × 8 hrs (3pm-11pm) forward window only; re-scraped ~2pm after re-login; new React grid — counted 25 open 'Reserve' cells via DOM scan (past hours not shown as open)"
     },
     "picklex": {
       "util": 55.1,
@@ -354,10 +354,10 @@ const TODAY_DATA = {
       "note": "7 courts × 14 hrs (8am–10pm); read from Kendo grid (Reserve-button count returned 0/13/0 = bogus 100%)"
     },
     "blue_zone": {
-      "util": null,
-      "booked": null,
+      "util": 47.2,
+      "booked": 75.5,
       "total": 160,
-      "note": "Session expired — login required"
+      "note": "10 pickleball courts × 16 hrs (7am-11pm); 11 court columns seen incl. Franklin Court (C10/C11 empty); padel excluded; re-scraped ~2pm after re-login"
     },
     "smash_pb_london": {
       "util": 65.8,
@@ -384,10 +384,10 @@ const TODAY_DATA = {
       "note": "4 courts × 6 hrs (4pm-10pm), 7.5 court-hrs avail"
     },
     "prime_time": {
-      "util": null,
-      "booked": null,
+      "util": 37.5,
+      "booked": 42,
       "total": 112,
-      "note": "Session expired — login required"
+      "note": "8 of 8 courts active × 14 hrs (7am-9pm); re-scraped ~2pm after re-login — bookings already started/ended lose timing on Index view, so likely understates"
     },
     "rally_mississauga": {
       "util": 59.6,
