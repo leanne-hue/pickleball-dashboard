@@ -9061,10 +9061,10 @@
         "note": "7 courts × 14 hrs (8am–10pm); Kendo scheduler still present — used dataSource method instead of the Reserve-button text count, which reads 0 available in this org's current UI"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 30.6,
+        "booked": 49,
+        "total": 160,
+        "note": "10 pickleball courts × 16 hrs (7am-11pm); Court 8 shown as sponsor 'Franklin Court'; re-scraped after re-login"
       },
       "smash_pb_london": {
         "util": 65.8,
@@ -9097,10 +9097,10 @@
         "note": "8 of 8 courts active × 14 hrs (7am-9pm)"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required (redirected to login homepage; 'Welcome, Leanne!' not present)"
+        "util": 56.9,
+        "booked": 145,
+        "total": 255,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 14:00-22:00 — TRUNCATED (re-scraped 1:50pm ET, not the 9am run): reflects afternoon/evening only, morning hours not captured, does not represent full-day utilization"
       },
       "backyard_club": {
         "util": 30.4,
