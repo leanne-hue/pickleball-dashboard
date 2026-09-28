@@ -9423,10 +9423,10 @@
         "note": "13 courts (7 outdoor+6 indoor) × 16 hrs (7am-11pm), 98.5 court-hrs avail"
       },
       "picklrs_hub": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 28.6,
+        "booked": 16,
+        "total": 56,
+        "note": "Reserve/Reserved/Join Waitlist button count; session restored on retry"
       },
       "picklex": {
         "util": 65.3,
@@ -9441,16 +9441,16 @@
         "note": "10 pickleball courts × 16hrs, Franklin=Court 8"
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
+        "util": 66.7,
+        "booked": 78,
         "total": 117,
-        "note": "Session expired — login required"
+        "note": "9 courts × 13 hrs (7am-8pm); session restored on retry"
       },
       "four_fathers_pickleball": {
-        "util": null,
-        "booked": null,
+        "util": 12.9,
+        "booked": 9,
         "total": 70,
-        "note": "Session expired — login required"
+        "note": "7 courts, morn(9am-2pm)+aft(5pm-8pm)+eve(8pm-10pm); session restored on retry, non-Kendo grid parsed manually"
       },
       "real_pickleball": {
         "util": 53.6,
@@ -9465,10 +9465,10 @@
         "note": "4 courts × 6 hrs (4pm-10pm), 13.5 court-hrs avail"
       },
       "prime_time": {
-        "util": null,
-        "booked": null,
+        "util": 25.9,
+        "booked": 29,
         "total": 112,
-        "note": "Session expired — login required"
+        "note": "8 of 8 courts active × 14 hrs (7am-9pm); session restored on retry"
       },
       "rally_mississauga": {
         "util": null,
