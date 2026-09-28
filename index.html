@@ -65,7 +65,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .chart-card { background: white; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); padding: 20px; }
 .chart-title { font-size: 0.85rem; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
 .chart-sub { font-size: 0.72rem; color: #94a3b8; margin-bottom: 16px; }
-.chart-wrap { position: relative; }
+.chart-wrap { position: relative; height: 340px; }
 
 /* TRENDS CONTROLS */
 .trend-controls { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
@@ -89,6 +89,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 0.72rem; color: #475569; }
 .legend-item { display: flex; align-items: center; gap: 5px; }
 .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.trend-table-wrap { margin-top: 20px; max-height: 380px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 8px; }
+.trend-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+.trend-table thead th { position: sticky; top: 0; background: #f8fafc; text-align: left; padding: 8px 12px; font-weight: 700; color: #475569; border-bottom: 1px solid #e2e8f0; white-space: nowrap; z-index: 1; }
+.trend-table tbody td { padding: 7px 12px; border-bottom: 1px solid #f1f5f9; white-space: nowrap; }
+.trend-table tbody tr:hover td { background: #f8fafc; }
+.trend-table .period-cell { font-weight: 600; color: #0f172a; }
+.trend-table .util-cell { font-variant-numeric: tabular-nums; color: #334155; }
 </style>
 </head>
 
@@ -145,7 +152,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <div class="charts-panel">
 <div class="chart-card">
 <div class="chart-title">Utilization Trends</div>
-<div class="chart-sub">Historical utilization accumulated from each daily scrape — group by day, week or month, and pick a club</div>
+<div class="chart-sub">Historical utilization accumulated from each daily scrape — group by day, week or month, pick a club, and scroll the table below for exact values</div>
 <div class="trend-controls">
 <div class="granularity-toggle" id="granularity-toggle">
 <button class="gran-btn active" data-gran="day">Day</button>
@@ -156,6 +163,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 </div>
 <div class="chart-wrap"><canvas id="trendChart" height="220"></canvas></div>
 <div class="legend" id="trend-legend"></div>
+<div class="trend-table-wrap"><table class="trend-table" id="trend-table"></table></div>
 </div>
 </div>
 </div>
@@ -419,6 +427,7 @@ options: { plugins:{legend:{display:false}}, scales:{y:{min:0,max:100,ticks:{cal
 let trendChartInstance = null;
 let currentGranularity = 'day';
 let currentClubView = '__top__';
+const TREND_PALETTE = ['#00a651','#e74c3c','#2980b9','#f39c12','#8e44ad','#16a085','#d35400','#2c3e50'];
 
 function bucketKey(dateStr, granularity) {
 if (granularity === 'day') return dateStr;
@@ -432,7 +441,7 @@ return monday.toISOString().slice(0,10);
 }
 
 function bucketLabel(key, granularity) {
-if (granularity === 'day') return key.slice(5);
+if (granularity === 'day') { const d = new Date(key+'T00:00:00'); return d.toLocaleString('en-CA',{weekday:'short'}) + ' ' + d.toLocaleString('en-CA',{month:'short',day:'numeric'}); }
 if (granularity === 'month') {
 const [y,mo] = key.split('-');
 return new Date(+y,+mo-1,1).toLocaleString('en-CA',{month:'short',year:'numeric'});
@@ -495,7 +504,7 @@ wrap.innerHTML = '<p style="color:#94a3b8;font-size:0.8rem;padding:20px">Not eno
 return;
 }
 
-let labels, datasets, legendIds = [];
+let labels, datasets, legendIds = [], legendColors = [];
 if (currentClubView === '__own_avg__') {
 const keys = [...new Set(history.map(s => bucketKey(s.date, currentGranularity)))].sort();
 const avgFor = (ids, key) => {
@@ -512,8 +521,10 @@ datasets = [
 const ids = currentClubView === '__top__' ? topClubIds() : [currentClubView];
 const agg = aggregate(ids, currentGranularity);
 labels = agg.labels;
-datasets = ids.map(id => ({ label: CLUBS[id].short, data: agg.series[id], borderColor: CLUBS[id].color, tension:0.3, spanGaps:true, pointRadius: currentGranularity==='day'?2:4, borderWidth:1.75 }));
+const colors = ids.map((id,i) => ids.length>1 ? TREND_PALETTE[i % TREND_PALETTE.length] : CLUBS[id].color);
+datasets = ids.map((id,i) => ({ label: CLUBS[id].short, data: agg.series[id], borderColor: colors[i], tension:0.3, spanGaps:true, pointRadius: currentGranularity==='day'?2:4, borderWidth:1.75 }));
 legendIds = ids;
+legendColors = colors;
 }
 
 if (trendChartInstance) trendChartInstance.destroy();
@@ -523,12 +534,30 @@ data: { labels, datasets },
 options: {
 plugins: { legend: { display: currentClubView === '__own_avg__', position:'top' } },
 scales: { y: { min:0, max:100, ticks:{ callback:v=>v+'%' } } },
-responsive: true
+responsive: true,
+maintainAspectRatio: false
 }
 });
 
 const legendEl = document.getElementById('trend-legend');
-legendEl.innerHTML = legendIds.map(id => `<div class="legend-item"><div class="legend-dot" style="background:${CLUBS[id].color}"></div>${CLUBS[id].short}</div>`).join('');
+legendEl.innerHTML = legendIds.map((id,i) => `<div class="legend-item"><div class="legend-dot" style="background:${legendColors[i] || CLUBS[id].color}"></div>${CLUBS[id].short}</div>`).join('');
+renderTrendTable(labels, datasets);
+}
+
+function renderTrendTable(labels, datasets) {
+const tbl = document.getElementById('trend-table');
+if (!tbl) return;
+if (!labels.length) { tbl.innerHTML = ''; return; }
+const thead = '<thead><tr><th>Period</th>' + datasets.map(ds => `<th><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${ds.borderColor};margin-right:5px"></span>${ds.label}</th>`).join('') + '</tr></thead>';
+const rowIdxs = labels.map((_,i)=>i).reverse();
+const rows = rowIdxs.map(i => {
+const cells = datasets.map(ds => {
+const v = ds.data[i];
+return `<td class="util-cell">${v===null||v===undefined ? '—' : v.toFixed(1)+'%'}</td>`;
+}).join('');
+return `<tr><td class="period-cell">${labels[i]}</td>${cells}</tr>`;
+}).join('');
+tbl.innerHTML = thead + '<tbody>' + rows + '</tbody>';
 }
 
 function initTrendControls() {
