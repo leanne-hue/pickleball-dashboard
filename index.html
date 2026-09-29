@@ -226,7 +226,7 @@ const REGIONS = [
 
 const TODAY_DATA = {
   "date": "2026-09-29",
-  "scraped_at": "2026-09-29T11:45:00",
+  "scraped_at": "2026-09-29T13:30:00",
   "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
   "clubs": {
     "pickleplex_barrie": {
@@ -332,22 +332,22 @@ const TODAY_DATA = {
       "note": "5 courts × 11 slots (11am–10pm); 35 open court-hrs. Scraped ~11:30am ET: hours already elapsed are not shown by the booking page."
     },
     "picklr_toronto_west": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Scrape unreliable — CatchCorner list capped at 25 cards (all Sep 29 early slots), availability incomplete"
+      "util": 96.5,
+      "booked": 139,
+      "total": 144,
+      "note": "9 courts × 16 hrs (7am-11pm); per-court CatchCorner availability, 5 court-hrs open. Scraped ~1pm ET; hours already elapsed count as booked."
     },
     "vaughan_sportsplex": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Scrape unreliable — CatchCorner list capped at 25 cards (all Sep 29 early slots), availability incomplete"
+      "util": 92.1,
+      "booked": 152,
+      "total": 165,
+      "note": "11 courts × 15 hrs (7am-10pm); per-court CatchCorner availability, 13 court-hrs open. Scraped ~1pm ET; hours already elapsed count as booked."
     },
     "hisports_durham": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Scrape unreliable — CatchCorner list capped at 25 cards (all Sep 29 early slots), availability incomplete"
+      "util": 85.4,
+      "booked": 164,
+      "total": 192,
+      "note": "12 indoor courts × 16 hrs (7am-11pm); per-court CatchCorner availability, 28 court-hrs open (Courts 7-12 show no availability; 7 outdoor courts excluded). Scraped ~1pm ET; hours already elapsed count as booked."
     },
     "picklrs_hub": {
       "util": 48.4,
@@ -404,10 +404,10 @@ const TODAY_DATA = {
       "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 12:30pm-10pm — TRUNCATED (run at ~11:40am ET, earlier slots not returned), not a full-day reading"
     },
     "backyard_club": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Session expired — login required (schedule grid shows Members only)"
+      "util": 73,
+      "booked": 162,
+      "total": 222,
+      "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape via Book Hourly view, closed/unavailable slots excluded from denominator (72 closed slots); booked = Booked+Program+Open Play blocks. Scraped ~1pm ET; hours already elapsed count as booked."
     }
   }
 };
