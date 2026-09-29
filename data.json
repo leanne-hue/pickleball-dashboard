@@ -9486,7 +9486,7 @@
   },
   {
     "date": "2026-09-29",
-    "scraped_at": "2026-09-29T13:30:00",
+    "scraped_at": "2026-09-29T13:45:00",
     "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
     "clubs": {
       "pickleplex_barrie": {
@@ -9622,10 +9622,10 @@
         "note": "7 courts × 14 hrs (8am–10pm); Kendo scheduler (page now renders a scheduler grid, not Reserve buttons)"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 26.1,
+        "booked": 46,
+        "total": 176,
+        "note": "11 pickleball courts × 16hrs (7am-11pm; Franklin=Court 8; Padel/offices ignored). Live count is 11 courts (history used 10). Scraped ~1:30pm ET."
       },
       "smash_pb_london": {
         "util": 70.1,
