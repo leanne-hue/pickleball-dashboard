@@ -9673,7 +9673,7 @@
   },
   {
     "date": "2026-09-30",
-    "scraped_at": "2026-09-30T13:30:00",
+    "scraped_at": "2026-09-30T14:00:00",
     "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Scraped midday; some sites incomplete.",
     "clubs": {
       "pickleplex_barrie": {
@@ -9797,16 +9797,16 @@
         "note": "12 courts (4 indoor + 7 outdoor seen + 1) × 16 hrs (7am-11pm), 19 court-hrs avail"
       },
       "picklrs_hub": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 49.1,
+        "booked": 53,
+        "total": 108,
+        "note": "9 courts × 12 hrs (9am-9pm visible grid); counted from rendered booking cards (events + reservations), logged-out view, scraped ~2pm"
       },
       "picklex": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Only Reserved buttons visible (not logged in) — unreliable, skipped"
+        "util": 63.9,
+        "booked": 47,
+        "total": 73.5,
+        "note": "7 courts × 10.5 hrs (8am-6:30pm visible grid, window partly inferred); counted from rendered booking cards, logged-out view — lower confidence"
       },
       "blue_zone": {
         "util": 32.1,
@@ -9821,10 +9821,10 @@
         "note": "Session expired — login required"
       },
       "four_fathers_pickleball": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Scheduler did not render — scrape unavailable"
+        "util": 19.6,
+        "booked": 11,
+        "total": 56,
+        "note": "7 courts; only partial windows visible on session pages: morn 8-10am, aft 2-6pm, eve 8-10pm (10am-2pm and 6-8pm not shown) — lower confidence, not comparable to prior days"
       },
       "real_pickleball": {
         "util": 52.7,
