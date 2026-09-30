@@ -226,7 +226,7 @@ const REGIONS = [
 
 const TODAY_DATA = {
   "date": "2026-09-30",
-  "scraped_at": "2026-09-30T12:55:00",
+  "scraped_at": "2026-09-30T13:30:00",
   "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape. Scraped midday; some sites incomplete.",
   "clubs": {
     "pickleplex_barrie": {
@@ -398,16 +398,16 @@ const TODAY_DATA = {
       "note": "8 of 8 courts active × 14 hrs (7am-9pm); scraped midday so past bookings may be undercounted"
     },
     "rally_mississauga": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Session expired — login required"
+      "util": 72.2,
+      "booked": 195,
+      "total": 270,
+      "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 1:30pm-10pm — TRUNCATED (run mid-day, past slots dropped), understates full-day utilization"
     },
     "backyard_club": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Grid did not render — scrape failure (page layout changed to list view)"
+      "util": 41.1,
+      "booked": 72,
+      "total": 175,
+      "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape (via Book Hourly view), closed/unavailable slots excluded from denominator (119 closed slots; may include elapsed hours since scraped ~1:30pm); booked = Booked+Program+Open Play blocks"
     }
   }
 };
