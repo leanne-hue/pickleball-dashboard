@@ -9860,7 +9860,7 @@
   },
   {
     "date": "2026-10-01",
-    "scraped_at": "2026-10-01T16:55:00",
+    "scraped_at": "2026-10-01T11:45:00",
     "note": "Pickleplex: live court-grid utilization from CourtReserve scheduler (booked court-hours ÷ courts × 14h, 8am-10pm). Competitors: live scrape.",
     "clubs": {
       "pickleplex_barrie": {
@@ -9984,16 +9984,16 @@
         "note": "13 courts (6 indoor + 7 outdoor) × 16 hrs, 21 court-hrs avail"
       },
       "picklrs_hub": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Retry: redirects to public portal (login required); no booking grid"
+        "util": 36.5,
+        "booked": 46,
+        "total": 126,
+        "note": "9 courts × 14 hrs (9am-11pm); parsed from rendered court grid (no Kendo scheduler object on page), Reserved + program blocks counted"
       },
       "picklex": {
         "util": null,
         "booked": null,
         "total": null,
-        "note": "Retry: logged-out view, no scheduler/Reserve buttons — login required"
+        "note": "Page layout changed — no Reserve buttons/Kendo scheduler to count reliably"
       },
       "blue_zone": {
         "util": null,
@@ -10011,7 +10011,7 @@
         "util": null,
         "booked": null,
         "total": null,
-        "note": "Retry: logged-out list view, no Kendo scheduler — login required"
+        "note": "Page layout changed — Kendo scheduler not found on Morning page; scrape failure"
       },
       "real_pickleball": {
         "util": 42,
@@ -10032,16 +10032,16 @@
         "note": "8 of 8 courts active × 14 hrs (7am-9pm); scraped ~11:38am so past bookings may be undercounted"
       },
       "rally_mississauga": {
-        "util": 80.6,
-        "booked": 133,
-        "total": 165,
-        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 5pm-10pm (retry run ~4:52pm: earlier hours already dropped, truncated/unrepresentative of full day)"
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
       },
       "backyard_club": {
         "util": null,
         "booked": null,
         "total": null,
-        "note": "Retry: grid not rendered, shows logged-out list view (Members only) — login required"
+        "note": "Grid did not render — scrape failure"
       }
     }
   }
