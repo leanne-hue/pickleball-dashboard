@@ -10219,10 +10219,10 @@
         "note": "7 of 8 courts active × 14 hrs (7am-9pm)"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 62.2,
+        "booked": 28,
+        "total": 45,
+        "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 9pm-10pm only — TRUNCATED/unrepresentative: scraped ~5pm so past slots dropped and all earlier remaining slots were already booked (17 free of 45)"
       },
       "backyard_club": {
         "util": null,
