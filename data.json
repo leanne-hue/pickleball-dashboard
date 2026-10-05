@@ -10732,16 +10732,16 @@
         "note": "CatchCorner listing paginated (25/scroll, 30-min slots, indoor+outdoor); could not load full day — scrape incomplete"
       },
       "picklrs_hub": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 47.6,
+        "booked": 60,
+        "total": 126,
+        "note": "9 courts × 14 hrs (9am-11pm); read from rendered grid geometry (logged-out public view) at ~1pm ET, block positions mapped to court/hour"
       },
       "picklex": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required (page shows Create Account/Log In; grid lists booked blocks only)"
+        "util": 63.6,
+        "booked": 49,
+        "total": 77,
+        "note": "7 courts × 11 hrs (8am-7pm assumed from visible grid); read from rendered grid geometry (logged-out public view) at ~1pm ET; operating hours uncertain"
       },
       "blue_zone": {
         "util": null,
