@@ -10684,10 +10684,10 @@
         "note": "3 courts × 14 hrs (8am–10pm)"
       },
       "pickleplex_brantford": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "No 'Court #N' columns in scheduler (page showed only a Compact court session, 0 events) — scrape failure"
+        "util": 23.8,
+        "booked": 20,
+        "total": 84,
+        "note": "7 courts × 12 hrs (9am–9pm scheduler window); read from CourtReserve admin Expanded Scheduler (Court #3 had no events)"
       },
       "pickleplex_burloak": {
         "util": 59.8,
@@ -10786,10 +10786,10 @@
         "note": "15 courts; ClubAutomation live-availability (30-min granularity), window 1pm-10pm — TRUNCATED: run at ~12:40pm ET so earlier hours dropped; understates/unrepresentative of full day"
       },
       "backyard_club": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Grid did not render — schedule page now shows a list view, no grid-area cells"
+        "util": 25.5,
+        "booked": 40,
+        "total": 157,
+        "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid scrape via Book Hourly view, closed/unavailable slots excluded from denominator (137 closed slots, incl. past hours at midday run); booked = Booked+Program+Open Play blocks"
       }
     }
   }
