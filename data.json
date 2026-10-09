@@ -11170,7 +11170,7 @@
   {
     "date": "2026-10-09",
     "scraped_at": "10:30 ET",
-    "note": "Run fired late (~10:21am ET instead of 9am). Past hours drop out of availability-based sources, so util is overstated for CatchCorner/Podplay and Prime Time past bookings may have collapsed. Blue Zone and Rally Mississauga need login (null).",
+    "note": "Run fired late (~10:21am ET instead of 9am). Past hours drop out of availability-based sources, so util is overstated for CatchCorner/Podplay/ClubAutomation and Prime Time past bookings may have collapsed. Blue Zone and Rally Mississauga re-scraped successfully ~10:45am ET.",
     "clubs": {
       "pickleplex_barrie": {
         "util": 70.4,
@@ -11305,10 +11305,10 @@
         "note": "7 courts × 11 hrs (8am–7pm window, operating hours assumed); grid geometry method"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 28.1,
+        "booked": 45,
+        "total": 160,
+        "note": "10 courts × 16 hrs (7am–11pm); Court 8 = Franklin Court (sponsor name) counted normally; rescraped ~10:45am ET so bookings only; past hours not collapsed"
       },
       "smash_pb_london": {
         "util": 63.2,
@@ -11341,10 +11341,10 @@
         "note": "8 courts × 14 hrs (7am–9pm); run late (~10:25am ET) so past bookings may have collapsed — understated"
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 45.6,
+        "booked": 123,
+        "total": 270,
+        "note": "15 courts × 18 slots (30-min, 1:30pm–10:30pm); earliest availability 1:30pm so run was late — past hours counted booked, util overstated (rescraped ~10:45am ET)"
       },
       "backyard_club": {
         "util": 31.6,
