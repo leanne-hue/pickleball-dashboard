@@ -11914,5 +11914,192 @@
         "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid via Book Hourly view; closed/unavailable (incl. past hours) slots excluded (165 closed)"
       }
     }
+  },
+  {
+    "date": "2026-10-14",
+    "scraped_at": "2026-10-14T10:56:00",
+    "note": "LATE RUN: started ~10:35am ET instead of 9am. Past hours drop out of availability-based sources (CatchCorner/Podplay) so util is overstated for those; Prime Time understated (past bookings collapse). Blue Zone and Rally need login.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 78.6,
+        "booked": 77,
+        "total": 98,
+        "note": "7 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_windsor": {
+        "util": 47.6,
+        "booked": 40,
+        "total": 84,
+        "note": "6 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_pickering": {
+        "util": 73.8,
+        "booked": 62,
+        "total": 84,
+        "note": "6 courts × 14 hrs (8am–10pm); 6 of 7 courts active"
+      },
+      "pickleplex_belleville": {
+        "util": 64.3,
+        "booked": 72,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_vaughan": {
+        "util": 61.6,
+        "booked": 69,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_promenade": {
+        "util": 89.3,
+        "booked": 75,
+        "total": 84,
+        "note": "6 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_downsview": {
+        "util": 59.9,
+        "booked": 109,
+        "total": 182,
+        "note": "13 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_oshawa": {
+        "util": 56.4,
+        "booked": 79,
+        "total": 140,
+        "note": "10 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_cambridge": {
+        "util": 29.8,
+        "booked": 50,
+        "total": 168,
+        "note": "12 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_red_deer": {
+        "util": 57.9,
+        "booked": 73,
+        "total": 126,
+        "note": "9 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_aurora": {
+        "util": 65.2,
+        "booked": 73,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_york_mills": {
+        "util": 33.3,
+        "booked": 14,
+        "total": 42,
+        "note": "3 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_brantford": {
+        "util": 65.5,
+        "booked": 55,
+        "total": 84,
+        "note": "7 courts × 12 hrs (9am–9pm scheduler window)"
+      },
+      "pickleplex_burloak": {
+        "util": 64.3,
+        "booked": 72,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "fairgrounds_red_deer": {
+        "util": 29.1,
+        "booked": 53,
+        "total": 182,
+        "note": "14 courts × 13 slots found (9am–9pm); past slots not shown (run ~10:35am ET, 8:30–9am slot excluded)"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 59.1,
+        "booked": 52,
+        "total": 88,
+        "note": "11 courts × 8 slots found (1pm,3pm–9pm); slots with programs/no open courts excluded; past slots not shown (late run)"
+      },
+      "fairgrounds_whitby": {
+        "util": 20,
+        "booked": 9,
+        "total": 45,
+        "note": "5 courts (max open seen, low confidence) × 9 slots found (11am–5pm, 8pm, 9pm); past slots not shown (late run)"
+      },
+      "picklr_toronto_west": {
+        "util": 87.5,
+        "booked": 126,
+        "total": 144,
+        "note": "9 courts × 16 hrs (7am–11pm); first available slot 2pm so past hours counted booked — util overstated (late run)"
+      },
+      "vaughan_sportsplex": {
+        "util": 84.8,
+        "booked": 140,
+        "total": 165,
+        "note": "11 courts × 15 hrs (7am–10pm); first available slot 1pm so past hours counted booked — util overstated (late run)"
+      },
+      "hisports_durham": {
+        "util": 52.4,
+        "booked": 109,
+        "total": 208,
+        "note": "13 courts (6 indoor + 7 outdoor) × 16 hrs (7am–11pm); merged overlapping availability; first available slot 1pm so past hours counted booked — util overstated (late run)"
+      },
+      "picklrs_hub": {
+        "util": 53.2,
+        "booked": 67,
+        "total": 126,
+        "note": "9 courts × 14 hrs (9am–11pm); grid geometry method"
+      },
+      "picklex": {
+        "util": 59.7,
+        "booked": 46,
+        "total": 77,
+        "note": "7 courts × 11 hrs (8am–7pm, assumed hours); grid geometry method"
+      },
+      "blue_zone": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      },
+      "smash_pb_london": {
+        "util": 57.3,
+        "booked": 67,
+        "total": 117,
+        "note": "9 courts × 13 hrs (7am–8pm)"
+      },
+      "four_fathers_pickleball": {
+        "util": 14.3,
+        "booked": 8,
+        "total": 56,
+        "note": "7 courts × 8 hrs (8–10am, 2–6pm, 8–10pm sessions); grid geometry method"
+      },
+      "real_pickleball": {
+        "util": 68.8,
+        "booked": 77,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "corte_kitchener": {
+        "util": 62.5,
+        "booked": 15,
+        "total": 24,
+        "note": "4 courts × 6 hrs (4pm–10pm); based on available slots"
+      },
+      "prime_time": {
+        "util": 28.6,
+        "booked": 32,
+        "total": 112,
+        "note": "8 courts × 14 hrs (7am–9pm); LATE RUN — past bookings collapse after they start so util understated"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      },
+      "backyard_club": {
+        "util": 13.9,
+        "booked": 41,
+        "total": 294,
+        "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid via Book Hourly view; closed/unavailable (incl. past hours) slots excluded (0 closed)"
+      }
+    }
   }
 ]
