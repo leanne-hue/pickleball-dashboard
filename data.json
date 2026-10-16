@@ -12105,7 +12105,7 @@
   {
     "date": "2026-10-16",
     "scraped_at": "2026-10-16T13:05:00",
-    "note": "Run started ~12:20pm ET (not 9am). Past hours drop out of availability-based sources, so util is overstated for CatchCorner (Picklr West, Vaughan Sportsplex, Durham, Corte), Podplay (Fairgrounds) and Backyard Club (closed/past slots excluded). Four Fathers, Prime Time and Rally were re-scraped after login. Smash PB London re-scraped after login. Blue Zone still needs login (null).",
+    "note": "Run started ~12:20pm ET (not 9am). Past hours drop out of availability-based sources, so util is overstated for CatchCorner (Picklr West, Vaughan Sportsplex, Durham, Corte), Podplay (Fairgrounds) and Backyard Club (closed/past slots excluded). Four Fathers, Prime Time and Rally were re-scraped after login. Smash PB London re-scraped after login. Blue Zone re-scraped after login; all 30 clubs now have data.",
     "clubs": {
       "pickleplex_barrie": {
         "util": 88.8,
@@ -12240,10 +12240,10 @@
         "note": "7 courts × 16 hrs (8am–midnight window; grid now spans to ~11:30pm so window widened from 8am–7pm — assumption; 8am–7pm alone would be 63.6%, 49/77)"
       },
       "blue_zone": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Login required (LOGIN TO CONTINUE)"
+        "util": 36.6,
+        "booked": 58.5,
+        "total": 160,
+        "note": "10 courts × 16 hrs (7am–11pm) per spec; logged in; Courts 1–7 + Franklin Court (court 8) booked 58.5 court-hrs; Pickleball Courts 9–11 listed but show no bookings; run ~1pm ET"
       },
       "smash_pb_london": {
         "util": 72.6,
