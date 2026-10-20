@@ -12475,5 +12475,192 @@
         "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid via Book Hourly view; closed/unavailable (incl. past hours) slots excluded (169 closed) (run at ~10:40am ET, not 9am)"
       }
     }
+  },
+  {
+    "date": "2026-10-20",
+    "scraped_at": "2026-10-20 14:55 ET",
+    "note": "Run was late: started ~2:40pm ET instead of ~9am ET. Past hours drop out of availability-based sources (CatchCorner/Podplay/Backyard), so util is overstated for those; Prime Time past bookings collapse.",
+    "clubs": {
+      "pickleplex_barrie": {
+        "util": 72.4,
+        "booked": 71,
+        "total": 98,
+        "note": "7 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_windsor": {
+        "util": 69,
+        "booked": 58,
+        "total": 84,
+        "note": "6 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_pickering": {
+        "util": 61.9,
+        "booked": 52,
+        "total": 84,
+        "note": "6 of 7 courts active × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_belleville": {
+        "util": 50.9,
+        "booked": 57,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_vaughan": {
+        "util": 76.8,
+        "booked": 86,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_promenade": {
+        "util": 72.6,
+        "booked": 61,
+        "total": 84,
+        "note": "6 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_downsview": {
+        "util": 68.7,
+        "booked": 125,
+        "total": 182,
+        "note": "13 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_oshawa": {
+        "util": 61.4,
+        "booked": 86,
+        "total": 140,
+        "note": "10 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_cambridge": {
+        "util": 35.7,
+        "booked": 60,
+        "total": 168,
+        "note": "12 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_red_deer": {
+        "util": 58.7,
+        "booked": 74,
+        "total": 126,
+        "note": "9 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_aurora": {
+        "util": 58.9,
+        "booked": 66,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_york_mills": {
+        "util": 45.2,
+        "booked": 19,
+        "total": 42,
+        "note": "3 courts × 14 hrs (8am–10pm)"
+      },
+      "pickleplex_brantford": {
+        "util": 61.5,
+        "booked": 59,
+        "total": 96,
+        "note": "8 courts × 12 hrs (9am–9pm scheduler window); scheduler header shows 8 court columns (expected 7)"
+      },
+      "pickleplex_burloak": {
+        "util": 53.6,
+        "booked": 60,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "fairgrounds_red_deer": {
+        "util": 27.1,
+        "booked": 38,
+        "total": 140,
+        "note": "Run started ~2:40pm ET instead of ~9am; Podplay: 14 courts × 10 slots found (12:30pm \"no courts\" row + 1pm–9pm); past slots not shown, util likely overstated"
+      },
+      "fairgrounds_cloverdale": {
+        "util": 73.9,
+        "booked": 65,
+        "total": 88,
+        "note": "Run started ~2:40pm ET instead of ~9am; Podplay: 11 courts × 8 slots found (2:30pm row + 3pm–9pm); past slots not shown, util likely overstated"
+      },
+      "fairgrounds_whitby": {
+        "util": 70,
+        "booked": 28,
+        "total": 40,
+        "note": "Run started ~2:40pm ET instead of ~9am; Podplay: court count = max open seen (5), LOW confidence; 8 slots found (2:30pm, 3pm–9pm incl. 6–9pm no-courts block as 3 slots); past slots not shown"
+      },
+      "picklr_toronto_west": {
+        "util": 98.6,
+        "booked": 142,
+        "total": 144,
+        "note": "Run started ~2:40pm ET instead of ~9am; CatchCorner: 9 courts × 16 hrs (7am–11pm); only 2 court-hrs still available (6–7pm); past hours drop out so util overstated"
+      },
+      "vaughan_sportsplex": {
+        "util": 98.8,
+        "booked": 163,
+        "total": 165,
+        "note": "Run started ~2:40pm ET instead of ~9am; CatchCorner: 11 courts × 15 hrs (7am–10pm); only 2 court-hrs available in window (5–6pm; 11pm–12am slots outside window ignored); util overstated"
+      },
+      "hisports_durham": {
+        "util": 70.2,
+        "booked": 146,
+        "total": 208,
+        "note": "Run started ~2:40pm ET instead of ~9am; CatchCorner: 13 courts (6 indoor + 7 outdoor) × 16 hrs (7am–11pm); union of availability intervals = 62 court-hrs (first availability 5pm today); past hours counted booked so util overstated"
+      },
+      "picklrs_hub": {
+        "util": 37.3,
+        "booked": 47,
+        "total": 126,
+        "note": "9 courts × 14 hrs (9am–11pm); grid geometry method"
+      },
+      "picklex": {
+        "util": 36.4,
+        "booked": 28,
+        "total": 77,
+        "note": "7 courts × 11 hrs (8am–7pm window, assumed); grid also shows evening league blocks until ~10:30pm that are outside the window"
+      },
+      "blue_zone": {
+        "util": 36.4,
+        "booked": 64,
+        "total": 176,
+        "note": "11 pickleball courts detected (C1–7, sponsor-named court 8, C9–11) × 16 hrs (7am–11pm) vs 10 courts expected in spec; per-court booked hrs clipped 7am–11pm"
+      },
+      "smash_pb_london": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      },
+      "four_fathers_pickleball": {
+        "util": 19.6,
+        "booked": 11,
+        "total": 56,
+        "note": "7 courts × 8 hrs (Morning 8–10am, Afternoon 2–6pm, Evening 8–10pm sessions); logged in"
+      },
+      "real_pickleball": {
+        "util": 50,
+        "booked": 56,
+        "total": 112,
+        "note": "8 courts × 14 hrs (8am–10pm)"
+      },
+      "corte_kitchener": {
+        "util": 87.5,
+        "booked": 21,
+        "total": 24,
+        "note": "Run started ~2:40pm ET instead of ~9am; CatchCorner: 4 courts × 6 hrs (4pm–10pm); only 3 court-hrs available (8:30–10pm on 2 courts)"
+      },
+      "prime_time": {
+        "util": 37.5,
+        "booked": 42,
+        "total": 112,
+        "note": "Run started ~2:40pm ET instead of ~9am; 8 courts × 14 hrs (7am–9pm); past bookings collapse after they start so util is understated"
+      },
+      "rally_mississauga": {
+        "util": null,
+        "booked": null,
+        "total": null,
+        "note": "Session expired — login required"
+      },
+      "backyard_club": {
+        "util": 30.3,
+        "booked": 56,
+        "total": 185,
+        "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid via Book Hourly view; closed/unavailable (incl. past hours) slots excluded (109 closed)"
+      }
+    }
   }
 ]
