@@ -13788,7 +13788,7 @@
   {
     "date": "2026-11-05",
     "scraped_at": "2026-11-05 10:20 ET",
-    "note": "Run started ~9:48am ET (later than the 9am target): past hours drop out of availability-based sources, so util is overstated for CatchCorner/Podplay clubs. Pickleplex & CourtReserve clubs now use the new React grid (block geometry) instead of Kendo events. Nulls: Brantford (admin facility not switched), Smash PB London (booking flow changed), Rally Mississauga (login expired).",
+    "note": "Run started ~9:48am ET (later than the 9am target): past hours drop out of availability-based sources, so util is overstated for CatchCorner/Podplay/ClubAutomation clubs. Pickleplex & CourtReserve clubs now use the new React grid (block geometry) instead of Kendo events. Smash PB London and Rally Mississauga re-run ~10:30am ET. Remaining null: Brantford (admin facility not switched).",
     "clubs": {
       "pickleplex_barrie": {
         "util": 87.8,
@@ -13929,10 +13929,10 @@
         "note": "8 courts (Pickleball Courts 1–7 + Franklin Court) × 16 hrs (7am–11pm); page shows 8 pickleball courts, not 10. Padel/offices excluded."
       },
       "smash_pb_london": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Booking flow changed — no VIEW CALENDAR/court grid; page now only shows reservation-time windows. Scraper needs updating."
+        "util": 61.5,
+        "booked": 72,
+        "total": 117,
+        "note": "9 courts × 13 hrs (7am–8pm); rerun ~10:30am ET via VIEW CALENDAR. Past hours included in bookings."
       },
       "four_fathers_pickleball": {
         "util": 26.8,
@@ -13959,10 +13959,10 @@
         "note": "8 courts × 14 hrs (7am–9pm); grid starts 9am, so only 9am run is fully accurate (ran ~10:10am ET). Scraped from new CourtReserve grid (block geometry); Open Play/program blocks counted booked."
       },
       "rally_mississauga": {
-        "util": null,
-        "booked": null,
-        "total": null,
-        "note": "Session expired — login required"
+        "util": 60.3,
+        "booked": 217,
+        "total": 360,
+        "note": "15 courts × 24 half-hour slots (10:30am–10pm); earliest available slot 10:30am — late rerun (~10:30am ET), so past hours are excluded and util is likely overstated slightly. Free slots only."
       },
       "backyard_club": {
         "util": 62.6,
