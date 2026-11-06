@@ -227,7 +227,7 @@ const REGIONS = [
 const TODAY_DATA = {
   "date": "2026-11-06",
   "scraped_at": "2026-11-06 10:15 ET",
-  "note": "Run started ~9:37am ET (slightly later than the 9am target): past hours drop out of availability-based sources, so util may be overstated for CatchCorner/Podplay clubs. Pickleplex & CourtReserve clubs use the new React grid (block geometry). Nulls: Brantford (admin session on Don Mills org), Blue Zone (blank page), Rally Mississauga (login required).",
+  "note": "Run started ~9:37am ET (slightly later than the 9am target): past hours drop out of availability-based sources, so util may be overstated for CatchCorner/Podplay clubs. Pickleplex & CourtReserve clubs use the new React grid (block geometry). Re-run for Brantford and Rally Mississauga at ~10:55am ET (both now populated). Remaining null: Blue Zone (blank page).",
   "clubs": {
     "pickleplex_barrie": {
       "util": 74.5,
@@ -302,10 +302,10 @@ const TODAY_DATA = {
       "note": "3 courts × 14 hrs (8am–10pm). Scraped from new CourtReserve grid (block geometry); program/Open Play blocks counted booked."
     },
     "pickleplex_brantford": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Admin Expanded Scheduler session is signed in to the Don Mills org, not Brantford — could not scrape; public page has no events."
+      "util": 25,
+      "booked": 21,
+      "total": 84,
+      "note": "7 courts × 12 hrs (9am–9pm scheduler window); CourtReserve admin Expanded Scheduler (Brantford org)."
     },
     "pickleplex_burloak": {
       "util": 39.3,
@@ -398,10 +398,10 @@ const TODAY_DATA = {
       "note": "8 courts × 14 hrs (7am–9pm window); grid starts at 9am so 7–9am hours not visible (util may be understated); past bookings may collapse — run at ~9:45am ET."
     },
     "rally_mississauga": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Session expired — login required (ClubAutomation showed login form)."
+      "util": 58.1,
+      "booked": 209,
+      "total": 360,
+      "note": "15 courts × 24 half-hour start slots (10:30am–10pm window, free slots only from ClubAutomation GraphQL); re-run ~10:55am ET so earlier past hours are missing — util overstated."
     },
     "backyard_club": {
       "util": 29.3,
