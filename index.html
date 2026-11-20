@@ -227,7 +227,7 @@ const REGIONS = [
 const TODAY_DATA = {
   "date": "2026-11-20",
   "scraped_at": "2026-11-20 09:38 ET",
-  "note": "Run 9:19–9:40am ET (on time). CourtReserve public mobileapp pages changed to a new React portal that did not load; Pickleplex/competitor CourtReserve data read via the logged-in app.courtreserve.com Kendo scheduler. Smash PB and Blue Zone switched to a new booking widget (Smash = estimate). Hisports Durham shows no listings (null); Rally login expired (null).",
+  "note": "Run 9:19–9:40am ET (on time). CourtReserve public mobileapp pages changed to a new React portal that did not load; Pickleplex/competitor CourtReserve data read via the logged-in app.courtreserve.com Kendo scheduler. Smash PB and Blue Zone switched to a new booking widget (Smash = estimate). Hisports Durham shows no listings (null); Rally re-scraped at 9:49am after re-login (window 10am–10pm, truncated).",
   "clubs": {
     "pickleplex_barrie": {
       "util": 99,
@@ -398,10 +398,10 @@ const TODAY_DATA = {
       "note": "8 courts × 14 hrs (7am–9pm); scraped ~9:25am ET so bookings before then may have collapsed"
     },
     "rally_mississauga": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Session expired — login required"
+      "util": 56.5,
+      "booked": 212,
+      "total": 375,
+      "note": "Re-scraped 9:49am ET after Leanne re-logged in. 15 courts × 25 half-hour start slots (10:00–22:00); 163 free 60-min start slots. Window truncated: slots before 10:00 had already dropped off (run after 9:30), so util is overstated"
     },
     "backyard_club": {
       "util": 53.5,
