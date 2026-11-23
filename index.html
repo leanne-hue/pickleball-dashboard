@@ -227,7 +227,7 @@ const REGIONS = [
 const TODAY_DATA = {
   "date": "2026-11-23",
   "scraped_at": "2026-11-23 11:37 ET",
-  "note": "Run started late (11:22am ET instead of ~9am): availability-based sources (CatchCorner, Podplay, Smash/Blue Zone widgets) overstate util; Prime Time past bookings may have collapsed. CourtReserve public pages moved to a new React grid — all Pickleplex + CR competitors measured via grid geometry. Nulls: hisports_durham (no listings), rally_mississauga (login).",
+  "note": "Run started late (11:22am ET instead of ~9am): availability-based sources (CatchCorner, Podplay, Smash/Blue Zone widgets) overstate util; Prime Time past bookings may have collapsed. CourtReserve public pages moved to a new React grid — all Pickleplex + CR competitors measured via grid geometry. Nulls: hisports_durham (no listings). rally_mississauga re-scraped 12:09pm ET after re-login (afternoon/evening window only).",
   "clubs": {
     "pickleplex_barrie": {
       "util": 85.7,
@@ -398,10 +398,10 @@ const TODAY_DATA = {
       "note": "8 courts × 14 hrs (7am–9pm); grid geometry; grid starts at 9am. Run at 11:22am, so bookings that already started may have collapsed — likely understated."
     },
     "rally_mississauga": {
-      "util": null,
-      "booked": null,
-      "total": null,
-      "note": "Session expired — login required"
+      "util": 60.3,
+      "booked": 181,
+      "total": 300,
+      "note": "15 courts × 20 half-hour start slots (12:30pm–10pm); 119 free 60-min start slots via ClubAutomation GraphQL. Re-scraped 12:09pm ET after re-login — window truncated (morning dropped), so util covers afternoon/evening only."
     },
     "backyard_club": {
       "util": 73.1,
