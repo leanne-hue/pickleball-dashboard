@@ -225,189 +225,189 @@ const REGIONS = [
 // ── TODAY_DATA — replaced daily by scheduled task ──────────────────────────
 
 const TODAY_DATA = {
-  "date": "2026-11-23",
-  "scraped_at": "2026-11-23 11:37 ET",
-  "note": "Run started late (11:22am ET instead of ~9am): availability-based sources (CatchCorner, Podplay, Smash/Blue Zone widgets) overstate util; Prime Time past bookings may have collapsed. CourtReserve public pages moved to a new React grid — all Pickleplex + CR competitors measured via grid geometry. Nulls: hisports_durham (no listings). rally_mississauga re-scraped 12:09pm ET after re-login (afternoon/evening window only).",
+  "date": "2026-11-24",
+  "scraped_at": "2026-11-24 11:48 ET",
+  "note": "Run fired late: started ~10:40am ET (scheduled 9am), finished ~11:45am ET. Availability-based sources (CatchCorner, Podplay, Blue Zone, Smash) count past hours as booked so util is overstated; Prime Time past bookings may have collapsed. Pickleplex & several CourtReserve competitors moved to CourtReserve's new React grid — measured by grid geometry. Blue Zone & Smash booking sites redesigned (window-level availability, low confidence). Nulls: hisports_durham (no CatchCorner listings all week), rally_mississauga (login expired).",
   "clubs": {
     "pickleplex_barrie": {
-      "util": 85.7,
-      "booked": 84,
+      "util": 73.5,
+      "booked": 72,
       "total": 98,
-      "note": "7 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 7 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_windsor": {
-      "util": 77.4,
-      "booked": 65,
+      "util": 71.4,
+      "booked": 60,
       "total": 84,
-      "note": "6 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 6 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_pickering": {
-      "util": 69.4,
-      "booked": 68,
+      "util": 53.1,
+      "booked": 52,
       "total": 98,
-      "note": "7 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 7 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_belleville": {
-      "util": 69.6,
-      "booked": 78,
+      "util": 61.6,
+      "booked": 69,
       "total": 112,
-      "note": "8 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 8 courts × 14 hrs (8am–10pm); Court 5 header shows sponsor 'B Sens 5'"
     },
     "pickleplex_vaughan": {
-      "util": 50.9,
-      "booked": 57,
+      "util": 65.2,
+      "booked": 73,
       "total": 112,
-      "note": "8 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 8 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_promenade": {
-      "util": 81,
-      "booked": 68,
+      "util": 86.9,
+      "booked": 73,
       "total": 84,
-      "note": "6 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 6 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_downsview": {
-      "util": 56,
-      "booked": 102,
+      "util": 69.8,
+      "booked": 127,
       "total": 182,
-      "note": "13 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 13 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_oshawa": {
-      "util": 63.6,
-      "booked": 89,
+      "util": 68.6,
+      "booked": 96,
       "total": 140,
-      "note": "10 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 10 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_cambridge": {
-      "util": 22,
-      "booked": 37,
+      "util": 34.5,
+      "booked": 58,
       "total": 168,
-      "note": "12 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 12 courts × 14 hrs (8am–10pm)"
     },
     "pickleplex_red_deer": {
-      "util": 55.6,
-      "booked": 70,
+      "util": 56.3,
+      "booked": 71,
       "total": 126,
-      "note": "9 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry. Grid starts at 9am."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 9 courts × 14 hrs (8am–10pm); grid opens at 9am so 8–9am counted as open capacity"
     },
     "pickleplex_aurora": {
-      "util": 57.1,
-      "booked": 64,
+      "util": 70.5,
+      "booked": 79,
       "total": 112,
-      "note": "8 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 8 courts × 14 hrs (8am–10pm); grid opens at 9am so 8–9am counted as open capacity"
     },
     "pickleplex_york_mills": {
-      "util": 54.8,
-      "booked": 23,
+      "util": 31,
+      "booked": 13,
       "total": 42,
-      "note": "3 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 3 courts × 14 hrs (8am–10pm); grid shows 6am–midnight"
     },
     "pickleplex_brantford": {
-      "util": 38.1,
-      "booked": 32,
+      "util": 47.6,
+      "booked": 40,
       "total": 84,
-      "note": "7 courts × 12 hrs (9am–9pm scheduler window); public page index/17392 now shows the full 7-court grid (admin scheduler session was on Don Mills), measured via grid geometry; Compact court excluded."
+      "note": "7 courts × 12 hrs (9am–9pm scheduler window); admin Expanded Scheduler (Court #8 Compact Doubles excluded)"
     },
     "pickleplex_burloak": {
-      "util": 33.9,
-      "booked": 38,
+      "util": 36.6,
+      "booked": 41,
       "total": 112,
-      "note": "8 courts × 14 hrs (8am–10pm) CourtReserve switched to the new React grid (Kendo gone); measured via grid geometry."
+      "note": "Pickleplex public pages now use CourtReserve's new React grid (no Kendo); measured by grid geometry. 8 courts × 14 hrs (8am–10pm)"
     },
     "fairgrounds_red_deer": {
-      "util": 4,
-      "booked": 5,
-      "total": 126,
-      "note": "14 courts × 9 hourly slots (11am–6pm, 9pm; 7–9pm DUPR program row excluded); 121 open. 10:30–11am shown as No courts available (partial slot, excluded). Earlier slots already past. Run started 11:22am ET (late) — past hours dropped from availability-based sources, so util is overstated."
+      "util": 23.4,
+      "booked": 36,
+      "total": 154,
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). Podplay: 11 hourly slots (11am–5pm, 6–8pm no courts, 8–9pm) × 14 courts; 118 open; earlier slots not shown"
     },
     "fairgrounds_cloverdale": {
-      "util": 80.9,
-      "booked": 89,
+      "util": 81.8,
+      "booked": 90,
       "total": 110,
-      "note": "11 courts × 10 hourly slots (12pm–10pm); 11:30am–3pm shown as No courts available (12–2pm counted 0 open); 21 open court-hrs. Run started 11:22am ET (late) — past hours dropped from availability-based sources, so util is overstated."
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). Podplay: 10 hourly slots (12pm–5pm, 6–9pm no courts, 9pm) × 11 courts; 20 open; earlier slots not shown"
     },
     "fairgrounds_whitby": {
-      "util": 90,
-      "booked": 36,
-      "total": 40,
-      "note": "Court count = 4 (max open seen in prior runs; today max open was 2) — LOW CONFIDENCE. 4 courts × 10 hrs (12pm–10pm); open only 3–6pm (4 open); 11:30am–3pm and 6–10pm No courts available. Run started 11:22am ET (late) — past hours dropped from availability-based sources, so util is overstated."
+      "util": 62,
+      "booked": 31,
+      "total": 50,
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). Podplay: 10 hourly slots (12pm–5pm, 6–9pm no courts, 9pm) × 5 courts (court count = max open seen, low confidence); 19 open"
     },
     "picklr_toronto_west": {
-      "util": 88.9,
-      "booked": 128,
+      "util": 86.1,
+      "booked": 124,
       "total": 144,
-      "note": "9 courts × 16 hrs (7am–11pm); 16 available court-hrs (overlapping slots merged per court); first availability today at 3pm — earlier hours counted booked. Run started 11:22am ET (late) — past hours dropped from availability-based sources, so util is overstated."
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). CatchCorner: 9 courts × 16 hrs (7am–11pm); 20 available court-hrs (overlaps merged); first availability 3pm, so past/morning hours counted booked — util overstated"
     },
     "vaughan_sportsplex": {
-      "util": 82.4,
-      "booked": 136,
+      "util": 81.2,
+      "booked": 134,
       "total": 165,
-      "note": "11 courts × 15 hrs (7am–10pm); 29 available court-hrs (merged per court); first availability today at 2pm — earlier hours counted booked. Run started 11:22am ET (late) — past hours dropped from availability-based sources, so util is overstated."
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). CatchCorner: 11 courts × 15 hrs (7am–10pm); 31 available court-hrs (overlaps merged); first availability 2pm — util overstated"
     },
     "hisports_durham": {
       "util": null,
       "booked": null,
       "total": null,
-      "note": "Scrape failed: CatchCorner page shows 'No Availability' for the entire week (weekly grid empty); listings appear removed/paused — not counted as 100%."
+      "note": "CatchCorner shows 'No Availability' — no listings for the entire week (Nov 22–28), weekly grid empty; likely listings disabled rather than fully booked"
     },
     "picklrs_hub": {
-      "util": 40.5,
-      "booked": 51,
+      "util": 62.7,
+      "booked": 79,
       "total": 126,
-      "note": "9 courts × 14 hrs (9am–11pm); grid geometry (React grid); 13 zero-registrant event blocks excluded."
+      "note": "New CourtReserve grid (geometry): 9 courts × 14 hrs (9am–11pm)"
     },
     "picklex": {
-      "util": 70.4,
-      "booked": 69,
-      "total": 98,
-      "note": "7 courts × 14 hrs (8am–10pm) — window updated: new React grid shows 8am–10pm (was 8am–7pm assumed, 77). Grid geometry."
+      "util": 60,
+      "booked": 63,
+      "total": 105,
+      "note": "New CourtReserve grid (geometry): 7 courts × 15 hrs (8am–11pm) — grid now shows 8am–11pm, window updated from 8am–7pm"
     },
     "blue_zone": {
-      "util": 64.1,
-      "booked": 82,
-      "total": 128,
-      "note": "New booking widget (no calendar): free courts read per hourly slot, 46 free court-hrs (slots offered 12pm–11pm only). Widget lists 8 courts (Courts 1–7 + Franklin Court) × 16 hrs (7am–11pm). Run started 11:22am ET (late) — past hours dropped from availability-based sources, so util is overstated."
+      "util": 81.9,
+      "booked": 131,
+      "total": 160,
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). Booking site redesigned (no VIEW CALENDAR; date → sport → hourly windows). Free court-hrs read per window: 12–1pm 2, 1–2 2, 2–3 2, 4–5 5, 5–6 5, 9–10 5, 10–11 8 = 29. Total kept at 10 courts × 16 hrs (7am–11pm) though only 8 court names appeared (Court 8 = Franklin Court); morning/past hours counted booked — low confidence"
     },
     "smash_pb_london": {
-      "util": 88.9,
-      "booked": 104,
+      "util": 85.5,
+      "booked": 100,
       "total": 117,
-      "note": "ESTIMATE — new booking widget (no calendar). Free slots today: 1–3pm (Courts 2,8,9), 3–5pm (Court 9), 5–7pm (Courts 3,5), 7–9pm (Court 3, clipped to 8pm) = 13 free court-hrs; 9 courts × 13 hrs (7am–8pm). Run started 11:22am ET (late) — past hours dropped from availability-based sources, so util is overstated."
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). Booking site redesigned (no VIEW CALENDAR; 2-hr windows only). Free court-hrs within 7am–8pm: 1–3pm 1 court, 3–5pm 6, 5–7pm 1, 7–8pm 1 = 17; 9 courts × 13 hrs; morning/past hours and sub-2hr gaps counted booked — low confidence"
     },
     "four_fathers_pickleball": {
-      "util": 17.9,
-      "booked": 10,
+      "util": 26.8,
+      "booked": 15,
       "total": 56,
-      "note": "7 courts × 8 hrs across 3 session pages: Morning 8–10am (3), Afternoon 2–6pm (4), Evening 8–10pm (3); verified by screenshot."
+      "note": "New CourtReserve grid (geometry), 3 session pages: Morning 8–10am (2), Afternoon 2–6pm (5), Evening 8–10pm (8); 7 courts × 8 hrs"
     },
     "real_pickleball": {
-      "util": 74.1,
-      "booked": 83,
+      "util": 52.7,
+      "booked": 59,
       "total": 112,
-      "note": "8 courts × 14 hrs (8am–10pm); new React grid via grid geometry (grid shows 7am–10pm)."
+      "note": "New CourtReserve grid (geometry): 8 courts × 14 hrs (8am–10pm); grid shows 9am–10pm"
     },
     "corte_kitchener": {
       "util": 43.8,
       "booked": 10.5,
       "total": 24,
-      "note": "4 courts × 6 hrs (4pm–10pm); 13.5 available court-hrs (4–5:30pm ×4, 5:30–7pm ×3, 8:30–10pm ×2)."
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). CatchCorner: 4 courts × 6 hrs (4pm–10pm); 13.5 available court-hrs (overlaps merged)"
     },
     "prime_time": {
-      "util": 49.1,
-      "booked": 55,
+      "util": 52.7,
+      "booked": 59,
       "total": 112,
-      "note": "8 courts × 14 hrs (7am–9pm); grid geometry; grid starts at 9am. Run at 11:22am, so bookings that already started may have collapsed — likely understated."
+      "note": "Run started late (~10:40am ET, scrape finished ~11:45am ET). New CourtReserve grid (geometry): 8 courts × 14 hrs (7am–9pm); run late (~11:30am) so past bookings may have collapsed — util may be understated"
     },
     "rally_mississauga": {
-      "util": 60.3,
-      "booked": 181,
-      "total": 300,
-      "note": "15 courts × 20 half-hour start slots (12:30pm–10pm); 119 free 60-min start slots via ClubAutomation GraphQL. Re-scraped 12:09pm ET after re-login — window truncated (morning dropped), so util covers afternoon/evening only."
+      "util": null,
+      "booked": null,
+      "total": null,
+      "note": "Session expired — login required (ClubAutomation redirected to login form)"
     },
     "backyard_club": {
-      "util": 73.1,
-      "booked": 106,
-      "total": 145,
-      "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid via Book Hourly view; closed/unavailable (incl. past hours) slots excluded (149 closed)"
+      "util": 66.4,
+      "booked": 89,
+      "total": 134,
+      "note": "21 courts (C1-C21) x 14 hrs (8am-10pm); grid via Book Hourly view; closed/unavailable (incl. past hours) slots excluded (160 closed)"
     }
   }
 };
